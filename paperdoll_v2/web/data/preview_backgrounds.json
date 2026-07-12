@@ -1,0 +1,59 @@
+[
+  {
+    "id": "transparent",
+    "name": "透明",
+    "type": "checkerboard"
+  },
+  {
+    "id": "black",
+    "name": "黑色",
+    "type": "color",
+    "value": "#10131a"
+  },
+  {
+    "id": "white",
+    "name": "白色",
+    "type": "color",
+    "value": "#ffffff"
+  },
+  {
+    "id": "ground_1",
+    "name": "草地",
+    "type": "texture",
+    "src": "assets/backgrounds/ground_1.webp",
+    "size": "256px 256px",
+    "source": "tex1.bmp"
+  },
+  {
+    "id": "ground_2",
+    "name": "花瓣草地",
+    "type": "texture",
+    "src": "assets/backgrounds/ground_2.webp",
+    "size": "256px 256px",
+    "source": "tex2.bmp"
+  },
+  {
+    "id": "ground_3",
+    "name": "紅石地",
+    "type": "texture",
+    "src": "assets/backgrounds/ground_3.webp",
+    "size": "512px 512px",
+    "source": "tex3.bmp"
+  },
+  {
+    "id": "ground_4",
+    "name": "灰磚地",
+    "type": "texture",
+    "src": "assets/backgrounds/ground_4.webp",
+    "size": "256px 256px",
+    "source": "tex4.bmp"
+  },
+  {
+    "id": "ground_5",
+    "name": "綠石地",
+    "type": "texture",
+    "src": "assets/backgrounds/ground_5.webp",
+    "size": "512px 512px",
+    "source": "tex5.bmp"
+  }
+]

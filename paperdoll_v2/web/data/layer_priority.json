@@ -1,0 +1,2092 @@
+{
+  "defaults": {
+    "bottom": 300,
+    "mid": 200,
+    "robe": 405,
+    "top": 400
+  },
+  "items": {
+    "ACCESSORY_Atque_Poenitentia": {
+      "default": 422,
+      "directions": {
+        "3": 301,
+        "4": 301,
+        "5": 301
+      }
+    },
+    "ACCESSORY_BELL_PIGEON": {
+      "default": 480
+    },
+    "ACCESSORY_BLUE_EYESHADOW": {
+      "default": 100
+    },
+    "ACCESSORY_Bear_Candy_Cart": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_Believers_Cap": {
+      "default": 80
+    },
+    "ACCESSORY_Belka_Strelka": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_Black_Dragon_Style": {
+      "default": 150
+    },
+    "ACCESSORY_Blessing_Of_Angels": {
+      "default": 450
+    },
+    "ACCESSORY_Blessing_Sky_Lantern": {
+      "default": 450
+    },
+    "ACCESSORY_Blinking_Eyes": {
+      "default": 100
+    },
+    "ACCESSORY_Blinking_Thin_Eyes": {
+      "default": 100
+    },
+    "ACCESSORY_C_2022Cosutama_Imp_JP": {
+      "default": 450
+    },
+    "ACCESSORY_C_AB_Hair_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_BU": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_GN": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_PP": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_AB_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Adventurer_Map": {
+      "default": 480
+    },
+    "ACCESSORY_C_Adventurer_Pope_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Agnes_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Airy_Two_Side_Up_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Airy_Two_Side_Up_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Airy_Two_Side_Up_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Alchemist_Square_Bag": {
+      "default": 450
+    },
+    "ACCESSORY_C_Alpha_Long_Pony": {
+      "default": 150
+    },
+    "ACCESSORY_C_American_S_hair": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Angel_Berry_Wig": {
+      "default": 150
+    },
+    "ACCESSORY_C_Angel_Berry_Wig_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_Angelic_Long_BD": {
+      "default": 145,
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Angelic_Long_RBD": {
+      "default": 145,
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Angelic_Long_RSV": {
+      "default": 145,
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Angelic_Long_SV": {
+      "default": 145,
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Angeling_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Aurelie_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Avenger": {
+      "default": 193
+    },
+    "ACCESSORY_C_B_Shiba_Inu_TW": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_B_Thin_Eyes_B_TW": {
+      "default": 100
+    },
+    "ACCESSORY_C_Baby_Panda": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Baby_Penguin": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Baby_Polar_Bear": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Baby_Seal2": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Bear_Head": {
+      "default": 193
+    },
+    "ACCESSORY_C_Bell_Cat_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Berner_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Bird_Cage_Candle_Hold": {
+      "default": 140,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "2": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_C_BirthDay_Balloon_TW": {
+      "default": 140
+    },
+    "ACCESSORY_C_Black_Cat": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Blanc_Neige_Prince": {
+      "default": 150
+    },
+    "ACCESSORY_C_Blink_Eyes_A_Dragon": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Bloody": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Chocolate": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Cosmic": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_D_Freyja": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Forest": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Frozen": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Golden": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Halloween": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Rigel": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_Sakura_Princess": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blink_Eyes_WH_Serpent": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blinking_Eyes_BU": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blinking_Eyes_Cocktai_BU": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blinking_Eyes_RD": {
+      "default": 100
+    },
+    "ACCESSORY_C_Blue_Sunbed": {
+      "default": 5,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Bouquet_Valletta": {
+      "default": 200,
+      "directions": {
+        "3": 450,
+        "4": 450,
+        "5": 450
+      }
+    },
+    "ACCESSORY_C_Braid_Ring": {
+      "default": 150
+    },
+    "ACCESSORY_C_Braids_Wave": {
+      "default": 150
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_BL": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_BU": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_GN": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_OM": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_PP": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_RD": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_WH": {
+      "default": 160
+    },
+    "ACCESSORY_C_Bun_Twin_Tail_YL": {
+      "default": 160
+    },
+    "ACCESSORY_C_Buoyant_Parasol_B": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_CB_Fullb_Twintails": {
+      "default": 150
+    },
+    "ACCESSORY_C_CB_Fullb_Twosideup": {
+      "default": 150
+    },
+    "ACCESSORY_C_Carefree_Face": {
+      "default": 100
+    },
+    "ACCESSORY_C_Cat_Ear_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Cat_Ear_Short": {
+      "default": 150
+    },
+    "ACCESSORY_C_Cat_Footprints": {
+      "default": 75,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Cat_Straight_Long_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Cat_Whisper_Cloth": {
+      "default": 194
+    },
+    "ACCESSORY_C_Cha_Ex_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_C_Chained_Bear": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Cherry_Ribbon": {
+      "default": 450,
+      "directions": {
+        "4": 321
+      }
+    },
+    "ACCESSORY_C_Chewy_Low_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_C_Clover_Hairpin": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_C_Come_On_Soda": {
+      "default": 480
+    },
+    "ACCESSORY_C_Commentary_Booth": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Cons_Of_Wind": {
+      "default": 480
+    },
+    "ACCESSORY_C_Consecrate_F_Aureola": {
+      "default": 79,
+      "directions": {
+        "3": 402,
+        "4": 402,
+        "5": 402
+      },
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Consecrate_F_Aureola_RD": {
+      "default": 138,
+      "directions": {
+        "3": 400,
+        "4": 400,
+        "5": 400
+      }
+    },
+    "ACCESSORY_C_Debris_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Deep_You": {
+      "default": 150
+    },
+    "ACCESSORY_C_Deep_You_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_Demi_Freyja_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Desert_Wolf_B": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Divine_Twinkling": {
+      "default": 450
+    },
+    "ACCESSORY_C_Dreaming_Rose_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Electro_Two_Side_Up": {
+      "default": 150
+    },
+    "ACCESSORY_C_Elegant_Wave": {
+      "default": 150
+    },
+    "ACCESSORY_C_ElenaVolkova_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Elumina_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Emperor_Penguin": {
+      "default": 805,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Eternal_Rose": {
+      "default": 150
+    },
+    "ACCESSORY_C_Evil_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Exotic_Bob_L_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_L_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_L_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_L_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_R_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_R_BW": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_R_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Exotic_Bob_R_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_Experiment_Mind": {
+      "default": 480
+    },
+    "ACCESSORY_C_Eye_Mask": {
+      "default": 100
+    },
+    "ACCESSORY_C_Eye_Mask_2": {
+      "default": 100
+    },
+    "ACCESSORY_C_Eyes_Closed": {
+      "default": 100
+    },
+    "ACCESSORY_C_Eyes_Phen": {
+      "default": 100
+    },
+    "ACCESSORY_C_Face_Crusher": {
+      "default": 200,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "2": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_C_Fairy_Long_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fairy_Long_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Feather_Hair_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Feather_Hair_TT": {
+      "default": 150
+    },
+    "ACCESSORY_C_Festival_Stalls": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Fish_Marche": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Fishbone_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Floating_Parasol": {
+      "default": 450
+    },
+    "ACCESSORY_C_Floral_Waltz": {
+      "default": 480
+    },
+    "ACCESSORY_C_Flower_L_Knitting": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Bakery": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Fluffy_Rabbit_Cape": {
+      "default": 195
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Fluffy_Semi_Long_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Flying_Tilby": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      }
+    },
+    "ACCESSORY_C_Forest_Friends": {
+      "default": 430,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Fox": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Friendly_White_Fox": {
+      "default": 300,
+      "directions": {
+        "0": 480,
+        "1": 480,
+        "7": 480
+      }
+    },
+    "ACCESSORY_C_Frill_Collar": {
+      "default": 120
+    },
+    "ACCESSORY_C_Frog_Hood": {
+      "default": 195
+    },
+    "ACCESSORY_C_GCM_Hair_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_GCM_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_GC_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Gear_Monocle": {
+      "default": 200,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_C_Geisha_Make": {
+      "default": 100
+    },
+    "ACCESSORY_C_Ghost_Bat_TW": {
+      "default": 480
+    },
+    "ACCESSORY_C_Gods_Rabbit_Pet": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Great_Pyrenees": {
+      "default": 805,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Guardian_Of_Abyss": {
+      "default": 141,
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Gulaling_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_HN_Hair_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_HN_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Hair_Bun_Wave": {
+      "default": 150
+    },
+    "ACCESSORY_C_HalloCandy_Hair_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_Halloween_Candy_Hair": {
+      "default": 400,
+      "directions": {
+        "3": 195,
+        "4": 195,
+        "5": 195
+      }
+    },
+    "ACCESSORY_C_Halloween_Candypouch": {
+      "default": 405,
+      "helm_robe": true
+    },
+    "ACCESSORY_C_Halloween_Cat_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Halloween_Cat_Short": {
+      "default": 150
+    },
+    "ACCESSORY_C_Halloween_Pumpkin": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Happening_Clover": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Happy_Cat_TW": {
+      "default": 480
+    },
+    "ACCESSORY_C_Heart_Angel_TW": {
+      "default": 480
+    },
+    "ACCESSORY_C_Heine_Tab_1": {
+      "default": 450,
+      "directions": {
+        "1": 193,
+        "2": 193,
+        "3": 140,
+        "4": 140,
+        "5": 140
+      }
+    },
+    "ACCESSORY_C_Heine_Tab_2": {
+      "default": 450,
+      "directions": {
+        "1": 193,
+        "2": 193,
+        "3": 140,
+        "4": 140,
+        "5": 140
+      }
+    },
+    "ACCESSORY_C_Heine_Tab_3": {
+      "default": 450,
+      "directions": {
+        "1": 193,
+        "2": 193,
+        "3": 140,
+        "4": 140,
+        "5": 140
+      }
+    },
+    "ACCESSORY_C_Hill_Wind_Mask": {
+      "default": 195
+    },
+    "ACCESSORY_C_Hopping_Twin_Pigtail": {
+      "default": 150
+    },
+    "ACCESSORY_C_Hot_Spring": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_HwaHoJumJung": {
+      "default": 194
+    },
+    "ACCESSORY_C_Inner_Color_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Intake_BL": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_BU": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_GN": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_OM": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_PP": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_RD": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_WH": {
+      "default": 170
+    },
+    "ACCESSORY_C_Intake_YL": {
+      "default": 170
+    },
+    "ACCESSORY_C_JP_EV15": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Japanes_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Jellyfish": {
+      "default": 75,
+      "directions": {
+        "3": 930,
+        "4": 930,
+        "5": 930
+      }
+    },
+    "ACCESSORY_C_Jormun_Cape": {
+      "default": 194
+    },
+    "ACCESSORY_C_Jumbo_Rabbit": {
+      "default": 805,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Katashiro_Flying": {
+      "default": 450
+    },
+    "ACCESSORY_C_King_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Kishu_Inu": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Kitchen_Car": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Knit_Ribbon_Lowtwin": {
+      "default": 150
+    },
+    "ACCESSORY_C_Knit_Ribbon_Lowtwin_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_Kotatsu": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Kururinpa_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Kururinpa_Hair_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_L_Knitting_Low_Twin_W": {
+      "default": 150
+    },
+    "ACCESSORY_C_L_Knitting_Wave_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_L_Knitting_Wave_RBD": {
+      "default": 150
+    },
+    "ACCESSORY_C_L_Knitting_Wave_RSV": {
+      "default": 150
+    },
+    "ACCESSORY_C_L_Knitting_Wave_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Lady_Tanee": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Lehar_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Leopard_Cat": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Libra_Of_Judgement": {
+      "default": 450
+    },
+    "ACCESSORY_C_Little_Abyss_Dragon": {
+      "default": 450
+    },
+    "ACCESSORY_C_Long_Ribbon": {
+      "default": 200,
+      "directions": {
+        "3": 450,
+        "4": 450,
+        "5": 450
+      }
+    },
+    "ACCESSORY_C_Long_Wave_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Long_Wave_LBW": {
+      "default": 150
+    },
+    "ACCESSORY_C_Long_Wave_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Loose_Knitting_Low_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_C_Lots_Braided_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Love_Piece_BL": {
+      "default": 480
+    },
+    "ACCESSORY_C_Lovely_Ribbon_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Luna_On_Shoulder": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_C_Lunatic_Kamakura": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_MN_Hair_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_MN_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Magaleta_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Magic_Heir_TW": {
+      "default": 450
+    },
+    "ACCESSORY_C_Maid_Frill": {
+      "default": 119
+    },
+    "ACCESSORY_C_Marlbron_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Medium_Wave": {
+      "default": 150
+    },
+    "ACCESSORY_C_Medium_Wave_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Medjed_Cloth": {
+      "default": 194
+    },
+    "ACCESSORY_C_Meer_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Mermaid_Wig": {
+      "default": 150
+    },
+    "ACCESSORY_C_Mermaid_Wig_Peach": {
+      "default": 150
+    },
+    "ACCESSORY_C_Midnight_Candle": {
+      "default": 450
+    },
+    "ACCESSORY_C_Mike_Stand": {
+      "default": 450,
+      "directions": {
+        "3": 79,
+        "4": 79,
+        "5": 79
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Miracle_Plant": {
+      "default": 480,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Miriam_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Miyabi_Long_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Miyabi_Long_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Mobile_Pursuit_System": {
+      "default": 480
+    },
+    "ACCESSORY_C_Mvp": {
+      "default": 450
+    },
+    "ACCESSORY_C_N_Forest_Cat": {
+      "default": 805,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_N_Piamette_RollHair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Neon_Half_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Nine_Tail_Fox_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Nursing_Poring": {
+      "default": 805,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Ocean_Color_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Omega_Golf_Bag": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_OneEyedJack": {
+      "default": 100
+    },
+    "ACCESSORY_C_One_Sho_Bottle": {
+      "default": 140,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "2": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_C_Orange_Rabbit": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Orange_Tabby_Cat": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_P_blossom_Hairpin": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_C_Panda_Rabbit": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Pet_Popcorn_Box": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Piamette_Roll_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Piamette_Roll_Hair_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Picnic_Basket": {
+      "default": 450
+    },
+    "ACCESSORY_C_Pierced_Apple": {
+      "default": 195
+    },
+    "ACCESSORY_C_Pigtail_Red_Hood": {
+      "default": 150
+    },
+    "ACCESSORY_C_Pool": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Poring_On_Shoulder": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_C_Poring_Soap_Pipe": {
+      "default": 480
+    },
+    "ACCESSORY_C_Poulet_TW": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_RAM_Hair_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_RAM_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_RA_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_BU": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_GN": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_PP": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_RK_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_ROROGO": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Rabbit_Two_Side_Up": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rabbit_Winged_Robe": {
+      "default": 300,
+      "directions": {
+        "2": 480,
+        "3": 480,
+        "4": 480,
+        "5": 480,
+        "6": 480
+      }
+    },
+    "ACCESSORY_C_Ragdoll": {
+      "default": 805,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Randgris_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Ribbon_Braid_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rigel_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rocking_Short_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rose_Wave_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rose_Wave_BDP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rose_Wave_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Rose_Wave_SVB": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_GN": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_PP": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_SR_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_S_Two_Side_Up_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_S_Two_Side_Up_BDP": {
+      "default": 150
+    },
+    "ACCESSORY_C_S_Two_Side_Up_BLP": {
+      "default": 150
+    },
+    "ACCESSORY_C_S_Two_Side_Up_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_SavageB_On_Shoulder": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_C_Sberry_Donut_In_Mouth": {
+      "default": 480
+    },
+    "ACCESSORY_C_Serving_Rabbit": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Seyren_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Seyren_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Shadow_Devil": {
+      "default": 75,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Sheep_Horn": {
+      "default": 200,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "2": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_C_Shiba_Inu": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Shih_Tzu_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Signon_Loop": {
+      "default": 150
+    },
+    "ACCESSORY_C_Silk_Of_Soul": {
+      "default": 100
+    },
+    "ACCESSORY_C_Silky_Long_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Silky_Long_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Silky_Long_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_BD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_SV": {
+      "default": 150
+    },
+    "ACCESSORY_C_Skia_Two_Side_Up_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Smiling_Eyes": {
+      "default": 100
+    },
+    "ACCESSORY_C_Snow_Rabbit_Wig": {
+      "default": 150
+    },
+    "ACCESSORY_C_Snug_Nyar_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Somtam": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Sonic_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Sparkly_Rainbow_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Spica_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Spinning_Skulls": {
+      "default": 480
+    },
+    "ACCESSORY_C_Starry_Long_Wave": {
+      "default": 150
+    },
+    "ACCESSORY_C_Starry_Ribbon_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_BU": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_GL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_GN": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_PP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Straight_Long_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_Suit_Sollar": {
+      "default": 120
+    },
+    "ACCESSORY_C_Super_Sonic_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Sweet_Corone": {
+      "default": 150
+    },
+    "ACCESSORY_C_TV_Hair_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_Tails_Mini": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Temari_Candy_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Tent": {
+      "default": 850,
+      "helm_robe": true,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Tiger": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Tiger_WH": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_TopPlayer_TW": {
+      "default": 490
+    },
+    "ACCESSORY_C_Traditors_Low_Tail": {
+      "default": 150
+    },
+    "ACCESSORY_C_Traveller_Oil_Lantern": {
+      "default": 140,
+      "directions": {
+        "0": 450,
+        "1": 450,
+        "7": 450
+      }
+    },
+    "ACCESSORY_C_Tuktuk": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Twin_Milkyway": {
+      "default": 150
+    },
+    "ACCESSORY_C_Twin_Milkyway_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_Twinkle_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_C_Twinkle_Twin_B": {
+      "default": 150
+    },
+    "ACCESSORY_C_Twinkle_Wave": {
+      "default": 150
+    },
+    "ACCESSORY_C_Vacation_Pope_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Valkyrie_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Volume_Low_Twin_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Volume_Low_Twin_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_WH_Cat_Eyes": {
+      "default": 100
+    },
+    "ACCESSORY_C_WH_Fox_Hood_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_C_WH_Fox_Hood_Twin_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_BL": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_BU": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_GN": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_PK": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_PP": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_RD": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_WL_Hair_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Waggy_Nyar_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_BG": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_CB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_JBL": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_LB": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_LPP": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_OM": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_SWH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_WH": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wanderer_Curl_YL": {
+      "default": 150
+    },
+    "ACCESSORY_C_White_Cat_On_Shoulder": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_C_White_Corone": {
+      "default": 150
+    },
+    "ACCESSORY_C_White_Rabbit_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wichienmaat_Bangkaew": {
+      "default": 450,
+      "directions": {
+        "3": 403,
+        "4": 403,
+        "5": 403
+      },
+      "ignore_riding": true
+    },
+    "ACCESSORY_C_Wonderful_Long": {
+      "default": 150
+    },
+    "ACCESSORY_C_Wonderful_Long_N": {
+      "default": 150
+    },
+    "ACCESSORY_C_bullhead": {
+      "default": 194
+    },
+    "ACCESSORY_C_white_tteok": {
+      "default": 410
+    },
+    "ACCESSORY_Charcoal_Stove": {
+      "default": 320
+    },
+    "ACCESSORY_Chatty_Cockatiel": {
+      "default": 480
+    },
+    "ACCESSORY_Clay_Poring_Jar": {
+      "default": 450,
+      "directions": {
+        "3": 79,
+        "4": 79,
+        "5": 79
+      }
+    },
+    "ACCESSORY_Cons_Of_Darkness": {
+      "default": 480,
+      "ignore_riding": true
+    },
+    "ACCESSORY_Cons_Of_Earth": {
+      "default": 480
+    },
+    "ACCESSORY_Cons_Of_Fire": {
+      "default": 480
+    },
+    "ACCESSORY_Cookie_PinkRibbon": {
+      "default": 140
+    },
+    "ACCESSORY_Cor_Core_Headset": {
+      "default": 450
+    },
+    "ACCESSORY_DIA_DAM": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_DancingButterfly": {
+      "default": 450
+    },
+    "ACCESSORY_Darkness_Veil": {
+      "default": 320
+    },
+    "ACCESSORY_Demons_Familiar": {
+      "default": 450
+    },
+    "ACCESSORY_Draco_Eques": {
+      "default": 422,
+      "directions": {
+        "3": 301,
+        "4": 301,
+        "5": 301
+      }
+    },
+    "ACCESSORY_Durumagi": {
+      "default": 150
+    },
+    "ACCESSORY_Elephangel_TH": {
+      "default": 450
+    },
+    "ACCESSORY_EvilEye_of_FalseGods": {
+      "default": 451,
+      "directions": {
+        "3": 401,
+        "4": 401,
+        "5": 401
+      },
+      "helm_robe": true
+    },
+    "ACCESSORY_FACEBOX2": {
+      "default": 80
+    },
+    "ACCESSORY_FANCY_PHANTOM_MAS": {
+      "default": 503,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_Floating_Ball": {
+      "default": 450
+    },
+    "ACCESSORY_Flower_Blossom": {
+      "default": 450
+    },
+    "ACCESSORY_Fluffy_Lovely_Fox": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_FlyingGalapago": {
+      "default": 480
+    },
+    "ACCESSORY_Flying_Drone": {
+      "default": 450
+    },
+    "ACCESSORY_Frantic_Looking": {
+      "default": 100
+    },
+    "ACCESSORY_GOSSIP_RAVEN": {
+      "default": 450
+    },
+    "ACCESSORY_Ground_Seal_Rose": {
+      "default": 480,
+      "directions": {
+        "3": 139,
+        "4": 139,
+        "5": 139
+      }
+    },
+    "ACCESSORY_HAPPY_PARROT": {
+      "default": 480
+    },
+    "ACCESSORY_Happy_Balloon_J": {
+      "default": 300,
+      "directions": {
+        "3": 480,
+        "4": 480,
+        "5": 480
+      }
+    },
+    "ACCESSORY_Happy_Cat_JP_BL": {
+      "default": 480
+    },
+    "ACCESSORY_Horse_King": {
+      "default": 194
+    },
+    "ACCESSORY_Horse_King_Red": {
+      "default": 194
+    },
+    "ACCESSORY_INJURED_EYEPATCH": {
+      "default": 100
+    },
+    "ACCESSORY_Interdimensional_Rift": {
+      "default": 421,
+      "helm_robe": true
+    },
+    "ACCESSORY_JACK_CASTLE_BAT": {
+      "default": 480
+    },
+    "ACCESSORY_Lightning_Savage": {
+      "default": 450,
+      "directions": {
+        "3": 321,
+        "4": 321,
+        "5": 321
+      }
+    },
+    "ACCESSORY_Little_Aquarium": {
+      "default": 502
+    },
+    "ACCESSORY_Lolita_Two_Side_Up": {
+      "default": 150
+    },
+    "ACCESSORY_Love_Cheek": {
+      "default": 501
+    },
+    "ACCESSORY_Love_Feeling": {
+      "default": 450
+    },
+    "ACCESSORY_MANGMOK": {
+      "default": 80
+    },
+    "ACCESSORY_MUSLIM_F": {
+      "default": 194
+    },
+    "ACCESSORY_Magic_Celestial_Globe": {
+      "default": 450
+    },
+    "ACCESSORY_Majestic_Fox": {
+      "default": 300,
+      "directions": {
+        "0": 480,
+        "1": 480,
+        "7": 480
+      }
+    },
+    "ACCESSORY_Midgard_Insignia": {
+      "default": 121,
+      "helm_robe": true
+    },
+    "ACCESSORY_Midgard_Integrity": {
+      "default": 250,
+      "directions": {
+        "0": 415,
+        "1": 415,
+        "2": 415,
+        "6": 415,
+        "7": 415
+      }
+    },
+    "ACCESSORY_Mobile_Support_Systems": {
+      "default": 480
+    },
+    "ACCESSORY_Morocc_Kid_Servant": {
+      "default": 450
+    },
+    "ACCESSORY_NUT_DONUT_MOUTH": {
+      "default": 480
+    },
+    "ACCESSORY_Nightmare_Looker_TW": {
+      "default": 480
+    },
+    "ACCESSORY_Nut_Cracker": {
+      "default": 195
+    },
+    "ACCESSORY_PRETTY_RABBIT_HOOD": {
+      "default": 195
+    },
+    "ACCESSORY_Phalanx": {
+      "default": 450
+    },
+    "ACCESSORY_Poporing_Soap_Pipe": {
+      "default": 480
+    },
+    "ACCESSORY_Poring_Traffic_Light": {
+      "default": 480
+    },
+    "ACCESSORY_RabbitFamilyBalloon": {
+      "default": 200,
+      "directions": {
+        "3": 450,
+        "4": 450,
+        "5": 450
+      }
+    },
+    "ACCESSORY_Rebel_Pocket_Watch": {
+      "default": 200,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "2": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_Ruin_Tempest": {
+      "default": 480
+    },
+    "ACCESSORY_SAMAN_BAIYA": {
+      "default": 150
+    },
+    "ACCESSORY_SS_BANDANA": {
+      "default": 194
+    },
+    "ACCESSORY_STRONGMAN_HAIR": {
+      "default": 195
+    },
+    "ACCESSORY_STRONGMAN_HAIR_BLUE": {
+      "default": 195
+    },
+    "ACCESSORY_STRONGMAN_HAIR_RED": {
+      "default": 195
+    },
+    "ACCESSORY_STRONGMAN_HAIR_WHITE": {
+      "default": 195
+    },
+    "ACCESSORY_Scratching_Cat": {
+      "default": 480
+    },
+    "ACCESSORY_Serpent_Crystal": {
+      "default": 450
+    },
+    "ACCESSORY_Sinister_Horn_Gear": {
+      "default": 200,
+      "directions": {
+        "0": 410,
+        "1": 410,
+        "2": 410,
+        "6": 410,
+        "7": 410
+      }
+    },
+    "ACCESSORY_Sleep_Sheep": {
+      "default": 480
+    },
+    "ACCESSORY_Snow_Fox": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_Solid_State_Recognition": {
+      "default": 131,
+      "helm_robe": true
+    },
+    "ACCESSORY_Straight_Long_BL": {
+      "default": 150
+    },
+    "ACCESSORY_Straight_Long_WH": {
+      "default": 150
+    },
+    "ACCESSORY_Straight_Long_YL": {
+      "default": 150
+    },
+    "ACCESSORY_Straw_Rice_Bag": {
+      "default": 193
+    },
+    "ACCESSORY_Subject_Aura": {
+      "default": 801
+    },
+    "ACCESSORY_Subject_Aura_Red": {
+      "default": 480
+    },
+    "ACCESSORY_SurviveOrb": {
+      "default": 480
+    },
+    "ACCESSORY_Sweet_Potato_In_Mouth": {
+      "default": 480
+    },
+    "ACCESSORY_Tone_Of_Gold": {
+      "default": 802
+    },
+    "ACCESSORY_Undead_Seal_Rose": {
+      "default": 480,
+      "directions": {
+        "3": 139,
+        "4": 139,
+        "5": 139
+      }
+    },
+    "ACCESSORY_VIP_Hair_2024": {
+      "default": 150
+    },
+    "ACCESSORY_Volume_Low_Twin": {
+      "default": 150
+    },
+    "ACCESSORY_WEISSWURST": {
+      "default": 480
+    },
+    "ACCESSORY_Wall": {
+      "default": 450
+    },
+    "ACCESSORY_Whistle": {
+      "default": 480
+    },
+    "ACCESSORY_White_Cat": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_White_Clay_Filler": {
+      "default": 100
+    },
+    "ACCESSORY_White_Rabbit": {
+      "default": 450,
+      "ignore_riding": true
+    },
+    "ACCESSORY_White_Serpent_Hair": {
+      "default": 150
+    },
+    "ACCESSORY_Wish_Tree_Hat": {
+      "default": 450
+    },
+    "ACCESSORY_Wonder_Egg_Basket": {
+      "default": 450
+    },
+    "ACCESSORY_Yesterday_Once_More": {
+      "default": 480
+    }
+  },
+  "source": "workspace_assets/official/lub/tb_layer_priority.lub",
+  "source_sha256": "93193d93971d02763f889f04e7ff5c6dc79544a023ff502642a37a381a659d90",
+  "summary": {
+    "direction_overrides": 66,
+    "helm_robe": 22,
+    "ignore_riding": 78,
+    "items": 541
+  }
+}

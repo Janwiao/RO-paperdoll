@@ -1,0 +1,1683 @@
+{
+  "cape": {
+    "102": {
+      "effect": true
+    },
+    "112": {
+      "effect": true
+    },
+    "126": {
+      "effect": true
+    },
+    "136": {
+      "motion": true
+    },
+    "150": {
+      "motion": true
+    },
+    "164": {
+      "effect": true
+    },
+    "175": {
+      "effect": true
+    },
+    "181": {
+      "effect": true,
+      "motion": true
+    },
+    "182": {
+      "effect": true
+    },
+    "183": {
+      "effect": true
+    },
+    "197": {
+      "effect": true
+    },
+    "198": {
+      "effect": true
+    },
+    "202": {
+      "motion": true
+    },
+    "223": {
+      "motion": true
+    },
+    "224": {
+      "motion": true
+    },
+    "225": {
+      "effect": true
+    },
+    "249": {
+      "effect": true
+    },
+    "258": {
+      "motion": true
+    },
+    "259": {
+      "motion": true
+    },
+    "276": {
+      "motion": true
+    },
+    "277": {
+      "motion": true
+    },
+    "291": {
+      "effect": true
+    },
+    "61": {
+      "motion": true
+    },
+    "72": {
+      "motion": true
+    },
+    "73": {
+      "motion": true
+    },
+    "74": {
+      "motion": true
+    },
+    "75": {
+      "motion": true
+    },
+    "77": {
+      "motion": true
+    },
+    "78": {
+      "motion": true
+    }
+  },
+  "headgear": {
+    "1001": {
+      "motion": true
+    },
+    "1003": {
+      "motion": true
+    },
+    "1005": {
+      "motion": true
+    },
+    "1006": {
+      "motion": true
+    },
+    "1007": {
+      "motion": true
+    },
+    "1008": {
+      "motion": true
+    },
+    "1017": {
+      "motion": true
+    },
+    "1018": {
+      "motion": true
+    },
+    "1023": {
+      "motion": true
+    },
+    "1033": {
+      "motion": true
+    },
+    "1036": {
+      "motion": true
+    },
+    "1038": {
+      "motion": true
+    },
+    "1039": {
+      "motion": true
+    },
+    "1040": {
+      "motion": true
+    },
+    "1041": {
+      "motion": true
+    },
+    "1045": {
+      "motion": true
+    },
+    "1048": {
+      "motion": true
+    },
+    "1050": {
+      "motion": true
+    },
+    "1057": {
+      "motion": true
+    },
+    "1059": {
+      "motion": true
+    },
+    "1069": {
+      "motion": true
+    },
+    "1073": {
+      "motion": true
+    },
+    "1082": {
+      "motion": true
+    },
+    "1083": {
+      "motion": true
+    },
+    "1084": {
+      "motion": true
+    },
+    "1087": {
+      "motion": true
+    },
+    "1091": {
+      "motion": true
+    },
+    "1092": {
+      "motion": true
+    },
+    "1096": {
+      "motion": true
+    },
+    "1098": {
+      "motion": true
+    },
+    "1104": {
+      "motion": true
+    },
+    "1114": {
+      "motion": true
+    },
+    "1115": {
+      "motion": true
+    },
+    "1122": {
+      "motion": true
+    },
+    "1131": {
+      "motion": true
+    },
+    "1132": {
+      "motion": true
+    },
+    "1133": {
+      "motion": true
+    },
+    "1135": {
+      "motion": true
+    },
+    "1138": {
+      "motion": true
+    },
+    "1139": {
+      "motion": true
+    },
+    "1145": {
+      "motion": true
+    },
+    "1146": {
+      "motion": true
+    },
+    "1147": {
+      "motion": true
+    },
+    "1148": {
+      "motion": true
+    },
+    "1157": {
+      "motion": true
+    },
+    "1159": {
+      "motion": true
+    },
+    "1161": {
+      "motion": true
+    },
+    "1183": {
+      "motion": true
+    },
+    "1188": {
+      "motion": true
+    },
+    "1191": {
+      "motion": true
+    },
+    "1193": {
+      "motion": true
+    },
+    "1194": {
+      "motion": true
+    },
+    "1195": {
+      "motion": true
+    },
+    "1196": {
+      "motion": true
+    },
+    "1197": {
+      "motion": true
+    },
+    "1198": {
+      "motion": true
+    },
+    "1199": {
+      "motion": true
+    },
+    "1203": {
+      "effect": true
+    },
+    "1219": {
+      "motion": true
+    },
+    "1228": {
+      "motion": true
+    },
+    "1229": {
+      "motion": true
+    },
+    "1233": {
+      "motion": true
+    },
+    "1234": {
+      "motion": true
+    },
+    "1235": {
+      "motion": true
+    },
+    "1236": {
+      "motion": true
+    },
+    "1238": {
+      "motion": true
+    },
+    "1239": {
+      "effect": true,
+      "motion": true
+    },
+    "1244": {
+      "motion": true
+    },
+    "1245": {
+      "motion": true
+    },
+    "1246": {
+      "motion": true
+    },
+    "1247": {
+      "motion": true
+    },
+    "1248": {
+      "motion": true
+    },
+    "1251": {
+      "motion": true
+    },
+    "1258": {
+      "motion": true
+    },
+    "1259": {
+      "motion": true
+    },
+    "1260": {
+      "motion": true
+    },
+    "1265": {
+      "motion": true
+    },
+    "1266": {
+      "motion": true
+    },
+    "1267": {
+      "motion": true
+    },
+    "1279": {
+      "effect": true
+    },
+    "1281": {
+      "motion": true
+    },
+    "1282": {
+      "motion": true
+    },
+    "1283": {
+      "motion": true
+    },
+    "1285": {
+      "motion": true
+    },
+    "1286": {
+      "motion": true
+    },
+    "1287": {
+      "motion": true
+    },
+    "1289": {
+      "motion": true
+    },
+    "1292": {
+      "motion": true
+    },
+    "1294": {
+      "motion": true
+    },
+    "1295": {
+      "motion": true
+    },
+    "1301": {
+      "motion": true
+    },
+    "1302": {
+      "motion": true
+    },
+    "1310": {
+      "motion": true
+    },
+    "1313": {
+      "motion": true
+    },
+    "1315": {
+      "motion": true
+    },
+    "1316": {
+      "motion": true
+    },
+    "1317": {
+      "motion": true
+    },
+    "1318": {
+      "motion": true
+    },
+    "1324": {
+      "motion": true
+    },
+    "1326": {
+      "motion": true
+    },
+    "1335": {
+      "motion": true
+    },
+    "1338": {
+      "motion": true
+    },
+    "1341": {
+      "motion": true
+    },
+    "1350": {
+      "motion": true
+    },
+    "1351": {
+      "motion": true
+    },
+    "1352": {
+      "motion": true
+    },
+    "1353": {
+      "motion": true
+    },
+    "1354": {
+      "motion": true
+    },
+    "1355": {
+      "motion": true
+    },
+    "1358": {
+      "motion": true
+    },
+    "1362": {
+      "motion": true
+    },
+    "1363": {
+      "motion": true
+    },
+    "1406": {
+      "motion": true
+    },
+    "1414": {
+      "motion": true
+    },
+    "1418": {
+      "motion": true
+    },
+    "1422": {
+      "motion": true
+    },
+    "1423": {
+      "effect": true
+    },
+    "1425": {
+      "effect": true,
+      "motion": true
+    },
+    "1426": {
+      "motion": true
+    },
+    "1427": {
+      "motion": true
+    },
+    "1428": {
+      "motion": true
+    },
+    "1429": {
+      "motion": true
+    },
+    "1430": {
+      "motion": true
+    },
+    "1431": {
+      "motion": true
+    },
+    "1432": {
+      "motion": true
+    },
+    "1433": {
+      "motion": true
+    },
+    "1434": {
+      "motion": true
+    },
+    "1435": {
+      "motion": true
+    },
+    "1436": {
+      "motion": true
+    },
+    "1437": {
+      "motion": true
+    },
+    "1438": {
+      "motion": true
+    },
+    "1440": {
+      "motion": true
+    },
+    "1445": {
+      "motion": true
+    },
+    "1447": {
+      "motion": true
+    },
+    "1449": {
+      "motion": true
+    },
+    "1450": {
+      "motion": true
+    },
+    "1451": {
+      "motion": true
+    },
+    "1452": {
+      "motion": true
+    },
+    "1478": {
+      "motion": true
+    },
+    "1479": {
+      "motion": true
+    },
+    "1488": {
+      "motion": true
+    },
+    "1499": {
+      "motion": true
+    },
+    "153": {
+      "motion": true
+    },
+    "1531": {
+      "motion": true
+    },
+    "1548": {
+      "motion": true
+    },
+    "1551": {
+      "motion": true
+    },
+    "1554": {
+      "motion": true
+    },
+    "1557": {
+      "motion": true
+    },
+    "1560": {
+      "motion": true
+    },
+    "1561": {
+      "motion": true
+    },
+    "1562": {
+      "motion": true
+    },
+    "1565": {
+      "motion": true
+    },
+    "1576": {
+      "motion": true
+    },
+    "1579": {
+      "motion": true
+    },
+    "1588": {
+      "motion": true
+    },
+    "1589": {
+      "motion": true
+    },
+    "1595": {
+      "motion": true
+    },
+    "1597": {
+      "motion": true
+    },
+    "1602": {
+      "motion": true
+    },
+    "1634": {
+      "motion": true
+    },
+    "1638": {
+      "motion": true
+    },
+    "1645": {
+      "motion": true
+    },
+    "1647": {
+      "motion": true
+    },
+    "1648": {
+      "motion": true
+    },
+    "1649": {
+      "motion": true
+    },
+    "1650": {
+      "motion": true
+    },
+    "1655": {
+      "motion": true
+    },
+    "1657": {
+      "motion": true
+    },
+    "1658": {
+      "motion": true
+    },
+    "1665": {
+      "effect": true
+    },
+    "1666": {
+      "motion": true
+    },
+    "1667": {
+      "effect": true
+    },
+    "1668": {
+      "motion": true
+    },
+    "1672": {
+      "motion": true
+    },
+    "1677": {
+      "motion": true
+    },
+    "1685": {
+      "motion": true
+    },
+    "1687": {
+      "motion": true
+    },
+    "1689": {
+      "motion": true
+    },
+    "169": {
+      "motion": true
+    },
+    "1690": {
+      "motion": true
+    },
+    "1691": {
+      "motion": true
+    },
+    "1692": {
+      "motion": true
+    },
+    "1693": {
+      "motion": true
+    },
+    "1717": {
+      "motion": true
+    },
+    "1720": {
+      "motion": true
+    },
+    "1729": {
+      "effect": true,
+      "motion": true
+    },
+    "1730": {
+      "motion": true
+    },
+    "1731": {
+      "motion": true
+    },
+    "1732": {
+      "motion": true
+    },
+    "1733": {
+      "motion": true
+    },
+    "1734": {
+      "motion": true
+    },
+    "1740": {
+      "motion": true
+    },
+    "1745": {
+      "motion": true
+    },
+    "1746": {
+      "motion": true
+    },
+    "1747": {
+      "motion": true
+    },
+    "1748": {
+      "motion": true
+    },
+    "1750": {
+      "motion": true
+    },
+    "1751": {
+      "motion": true
+    },
+    "176": {
+      "motion": true
+    },
+    "1760": {
+      "motion": true
+    },
+    "1763": {
+      "motion": true
+    },
+    "1764": {
+      "motion": true
+    },
+    "1768": {
+      "motion": true
+    },
+    "177": {
+      "motion": true
+    },
+    "1771": {
+      "motion": true
+    },
+    "1773": {
+      "motion": true
+    },
+    "1786": {
+      "motion": true
+    },
+    "1787": {
+      "motion": true
+    },
+    "1788": {
+      "motion": true
+    },
+    "1795": {
+      "motion": true
+    },
+    "1796": {
+      "motion": true
+    },
+    "1797": {
+      "motion": true
+    },
+    "1799": {
+      "effect": true,
+      "motion": true
+    },
+    "1800": {
+      "motion": true
+    },
+    "1802": {
+      "motion": true
+    },
+    "1808": {
+      "motion": true
+    },
+    "1809": {
+      "motion": true
+    },
+    "1810": {
+      "motion": true
+    },
+    "1814": {
+      "motion": true
+    },
+    "1817": {
+      "motion": true
+    },
+    "1819": {
+      "motion": true
+    },
+    "1822": {
+      "motion": true
+    },
+    "1823": {
+      "effect": true
+    },
+    "1824": {
+      "motion": true
+    },
+    "1826": {
+      "effect": true
+    },
+    "1827": {
+      "motion": true
+    },
+    "1858": {
+      "motion": true
+    },
+    "1868": {
+      "motion": true
+    },
+    "1871": {
+      "motion": true
+    },
+    "1872": {
+      "motion": true
+    },
+    "1881": {
+      "motion": true
+    },
+    "1888": {
+      "motion": true
+    },
+    "1890": {
+      "motion": true
+    },
+    "1895": {
+      "motion": true
+    },
+    "1896": {
+      "motion": true
+    },
+    "1899": {
+      "motion": true
+    },
+    "1902": {
+      "effect": true
+    },
+    "1903": {
+      "effect": true
+    },
+    "1904": {
+      "effect": true
+    },
+    "1908": {
+      "effect": true
+    },
+    "1918": {
+      "motion": true
+    },
+    "1924": {
+      "motion": true
+    },
+    "1926": {
+      "motion": true
+    },
+    "1930": {
+      "motion": true
+    },
+    "1943": {
+      "effect": true
+    },
+    "1945": {
+      "motion": true
+    },
+    "1949": {
+      "motion": true
+    },
+    "1980": {
+      "motion": true
+    },
+    "1982": {
+      "motion": true
+    },
+    "1991": {
+      "motion": true
+    },
+    "1995": {
+      "motion": true
+    },
+    "1996": {
+      "effect": true,
+      "motion": true
+    },
+    "1997": {
+      "effect": true
+    },
+    "1998": {
+      "effect": true
+    },
+    "1999": {
+      "effect": true
+    },
+    "2004": {
+      "motion": true
+    },
+    "2005": {
+      "motion": true
+    },
+    "2006": {
+      "motion": true
+    },
+    "2009": {
+      "motion": true
+    },
+    "2012": {
+      "effect": true,
+      "motion": true
+    },
+    "2013": {
+      "effect": true,
+      "motion": true
+    },
+    "2014": {
+      "effect": true,
+      "motion": true
+    },
+    "2016": {
+      "motion": true
+    },
+    "2017": {
+      "motion": true
+    },
+    "2020": {
+      "motion": true
+    },
+    "2022": {
+      "motion": true
+    },
+    "2024": {
+      "motion": true
+    },
+    "2025": {
+      "motion": true
+    },
+    "2060": {
+      "motion": true
+    },
+    "2075": {
+      "motion": true
+    },
+    "2076": {
+      "motion": true
+    },
+    "2079": {
+      "effect": true
+    },
+    "2082": {
+      "motion": true
+    },
+    "2091": {
+      "motion": true
+    },
+    "2093": {
+      "motion": true
+    },
+    "2094": {
+      "effect": true,
+      "motion": true
+    },
+    "2096": {
+      "motion": true
+    },
+    "2121": {
+      "motion": true
+    },
+    "2126": {
+      "motion": true
+    },
+    "2127": {
+      "motion": true
+    },
+    "2134": {
+      "effect": true
+    },
+    "2136": {
+      "effect": true,
+      "motion": true
+    },
+    "2137": {
+      "motion": true
+    },
+    "2142": {
+      "motion": true
+    },
+    "2143": {
+      "motion": true
+    },
+    "2144": {
+      "motion": true
+    },
+    "2153": {
+      "motion": true
+    },
+    "2154": {
+      "motion": true
+    },
+    "2156": {
+      "motion": true
+    },
+    "2170": {
+      "motion": true
+    },
+    "2179": {
+      "motion": true
+    },
+    "2198": {
+      "motion": true
+    },
+    "2201": {
+      "motion": true
+    },
+    "2204": {
+      "motion": true
+    },
+    "2212": {
+      "motion": true
+    },
+    "2264": {
+      "motion": true
+    },
+    "2265": {
+      "motion": true
+    },
+    "2273": {
+      "motion": true
+    },
+    "2277": {
+      "motion": true
+    },
+    "2280": {
+      "motion": true
+    },
+    "2281": {
+      "motion": true
+    },
+    "2284": {
+      "motion": true
+    },
+    "2285": {
+      "motion": true
+    },
+    "2296": {
+      "effect": true
+    },
+    "2298": {
+      "motion": true
+    },
+    "2299": {
+      "motion": true
+    },
+    "2301": {
+      "motion": true
+    },
+    "2308": {
+      "motion": true
+    },
+    "2309": {
+      "motion": true
+    },
+    "2310": {
+      "effect": true
+    },
+    "2316": {
+      "motion": true
+    },
+    "2317": {
+      "motion": true
+    },
+    "2318": {
+      "motion": true
+    },
+    "2319": {
+      "motion": true
+    },
+    "2322": {
+      "motion": true
+    },
+    "2323": {
+      "motion": true
+    },
+    "2327": {
+      "motion": true
+    },
+    "2335": {
+      "motion": true
+    },
+    "2336": {
+      "motion": true
+    },
+    "2344": {
+      "effect": true,
+      "motion": true
+    },
+    "2347": {
+      "motion": true
+    },
+    "2355": {
+      "motion": true
+    },
+    "2363": {
+      "motion": true
+    },
+    "2364": {
+      "motion": true
+    },
+    "2370": {
+      "motion": true
+    },
+    "2372": {
+      "motion": true
+    },
+    "2378": {
+      "motion": true
+    },
+    "2386": {
+      "motion": true
+    },
+    "2396": {
+      "effect": true,
+      "motion": true
+    },
+    "2400": {
+      "motion": true
+    },
+    "2401": {
+      "motion": true
+    },
+    "2405": {
+      "motion": true
+    },
+    "2406": {
+      "motion": true
+    },
+    "2407": {
+      "motion": true
+    },
+    "2409": {
+      "motion": true
+    },
+    "2410": {
+      "motion": true
+    },
+    "2414": {
+      "motion": true
+    },
+    "2427": {
+      "motion": true
+    },
+    "2428": {
+      "motion": true
+    },
+    "2430": {
+      "motion": true
+    },
+    "2433": {
+      "motion": true
+    },
+    "2436": {
+      "motion": true
+    },
+    "2437": {
+      "motion": true
+    },
+    "2438": {
+      "motion": true
+    },
+    "2439": {
+      "motion": true
+    },
+    "2450": {
+      "motion": true
+    },
+    "2479": {
+      "motion": true
+    },
+    "2481": {
+      "effect": true,
+      "motion": true
+    },
+    "2482": {
+      "motion": true
+    },
+    "2485": {
+      "motion": true
+    },
+    "2488": {
+      "motion": true
+    },
+    "2492": {
+      "motion": true
+    },
+    "2495": {
+      "motion": true
+    },
+    "2501": {
+      "motion": true
+    },
+    "2503": {
+      "motion": true
+    },
+    "2512": {
+      "motion": true
+    },
+    "2513": {
+      "motion": true
+    },
+    "2514": {
+      "motion": true
+    },
+    "2518": {
+      "motion": true
+    },
+    "2528": {
+      "motion": true
+    },
+    "2529": {
+      "effect": true,
+      "motion": true
+    },
+    "2531": {
+      "motion": true
+    },
+    "2532": {
+      "motion": true
+    },
+    "2533": {
+      "effect": true
+    },
+    "2538": {
+      "motion": true
+    },
+    "2539": {
+      "effect": true
+    },
+    "2540": {
+      "effect": true
+    },
+    "2541": {
+      "effect": true
+    },
+    "2555": {
+      "motion": true
+    },
+    "2569": {
+      "motion": true
+    },
+    "2570": {
+      "motion": true
+    },
+    "2571": {
+      "motion": true
+    },
+    "2576": {
+      "motion": true
+    },
+    "2579": {
+      "motion": true
+    },
+    "2580": {
+      "motion": true
+    },
+    "2583": {
+      "motion": true
+    },
+    "2598": {
+      "motion": true
+    },
+    "2602": {
+      "motion": true
+    },
+    "2604": {
+      "motion": true
+    },
+    "2605": {
+      "motion": true
+    },
+    "2609": {
+      "motion": true
+    },
+    "264": {
+      "motion": true
+    },
+    "2646": {
+      "motion": true
+    },
+    "2647": {
+      "motion": true
+    },
+    "2649": {
+      "motion": true
+    },
+    "2651": {
+      "motion": true
+    },
+    "2652": {
+      "motion": true
+    },
+    "2653": {
+      "motion": true
+    },
+    "2664": {
+      "motion": true
+    },
+    "2667": {
+      "motion": true
+    },
+    "2668": {
+      "motion": true
+    },
+    "2679": {
+      "motion": true
+    },
+    "2684": {
+      "motion": true
+    },
+    "2685": {
+      "motion": true
+    },
+    "2688": {
+      "motion": true
+    },
+    "2694": {
+      "motion": true
+    },
+    "2699": {
+      "motion": true
+    },
+    "270": {
+      "motion": true
+    },
+    "2702": {
+      "motion": true
+    },
+    "2705": {
+      "motion": true
+    },
+    "2707": {
+      "motion": true
+    },
+    "2708": {
+      "motion": true
+    },
+    "2710": {
+      "motion": true
+    },
+    "2711": {
+      "motion": true
+    },
+    "2716": {
+      "motion": true
+    },
+    "2717": {
+      "motion": true
+    },
+    "2724": {
+      "motion": true
+    },
+    "2727": {
+      "motion": true
+    },
+    "2730": {
+      "motion": true
+    },
+    "2739": {
+      "motion": true
+    },
+    "2741": {
+      "motion": true
+    },
+    "2742": {
+      "motion": true
+    },
+    "2746": {
+      "motion": true
+    },
+    "2747": {
+      "motion": true
+    },
+    "2748": {
+      "motion": true
+    },
+    "275": {
+      "motion": true
+    },
+    "2751": {
+      "effect": true
+    },
+    "2752": {
+      "motion": true
+    },
+    "2753": {
+      "motion": true
+    },
+    "2784": {
+      "motion": true
+    },
+    "2791": {
+      "motion": true
+    },
+    "2795": {
+      "motion": true
+    },
+    "2802": {
+      "motion": true
+    },
+    "2803": {
+      "motion": true
+    },
+    "2807": {
+      "motion": true
+    },
+    "2809": {
+      "motion": true
+    },
+    "2810": {
+      "motion": true
+    },
+    "2811": {
+      "motion": true
+    },
+    "2813": {
+      "motion": true
+    },
+    "2817": {
+      "motion": true
+    },
+    "311": {
+      "motion": true
+    },
+    "320": {
+      "motion": true
+    },
+    "332": {
+      "motion": true
+    },
+    "341": {
+      "motion": true
+    },
+    "342": {
+      "motion": true
+    },
+    "344": {
+      "motion": true
+    },
+    "345": {
+      "motion": true
+    },
+    "347": {
+      "motion": true
+    },
+    "348": {
+      "motion": true
+    },
+    "349": {
+      "motion": true
+    },
+    "357": {
+      "motion": true
+    },
+    "368": {
+      "motion": true
+    },
+    "378": {
+      "motion": true
+    },
+    "382": {
+      "motion": true
+    },
+    "383": {
+      "motion": true
+    },
+    "386": {
+      "motion": true
+    },
+    "387": {
+      "motion": true
+    },
+    "388": {
+      "motion": true
+    },
+    "393": {
+      "motion": true
+    },
+    "408": {
+      "motion": true
+    },
+    "413": {
+      "motion": true
+    },
+    "421": {
+      "motion": true
+    },
+    "422": {
+      "motion": true
+    },
+    "431": {
+      "motion": true
+    },
+    "432": {
+      "motion": true
+    },
+    "471": {
+      "motion": true
+    },
+    "500": {
+      "motion": true
+    },
+    "563": {
+      "motion": true
+    },
+    "572": {
+      "motion": true
+    },
+    "575": {
+      "motion": true
+    },
+    "589": {
+      "motion": true
+    },
+    "590": {
+      "motion": true
+    },
+    "591": {
+      "motion": true
+    },
+    "612": {
+      "motion": true
+    },
+    "616": {
+      "motion": true
+    },
+    "643": {
+      "motion": true
+    },
+    "649": {
+      "motion": true
+    },
+    "654": {
+      "motion": true
+    },
+    "668": {
+      "motion": true
+    },
+    "671": {
+      "motion": true
+    },
+    "672": {
+      "motion": true
+    },
+    "673": {
+      "motion": true
+    },
+    "674": {
+      "motion": true
+    },
+    "681": {
+      "motion": true
+    },
+    "688": {
+      "motion": true
+    },
+    "691": {
+      "motion": true
+    },
+    "692": {
+      "motion": true
+    },
+    "702": {
+      "motion": true
+    },
+    "704": {
+      "motion": true
+    },
+    "705": {
+      "motion": true
+    },
+    "718": {
+      "motion": true
+    },
+    "719": {
+      "motion": true
+    },
+    "720": {
+      "motion": true
+    },
+    "721": {
+      "motion": true
+    },
+    "727": {
+      "motion": true
+    },
+    "733": {
+      "motion": true
+    },
+    "764": {
+      "motion": true
+    },
+    "765": {
+      "motion": true
+    },
+    "768": {
+      "motion": true
+    },
+    "769": {
+      "motion": true
+    },
+    "817": {
+      "motion": true
+    },
+    "832": {
+      "motion": true
+    },
+    "871": {
+      "motion": true
+    },
+    "873": {
+      "motion": true
+    },
+    "879": {
+      "motion": true
+    },
+    "882": {
+      "motion": true
+    },
+    "885": {
+      "motion": true
+    },
+    "886": {
+      "motion": true
+    },
+    "887": {
+      "motion": true
+    },
+    "900": {
+      "motion": true
+    },
+    "907": {
+      "motion": true
+    },
+    "915": {
+      "motion": true
+    },
+    "926": {
+      "motion": true
+    },
+    "929": {
+      "motion": true
+    },
+    "930": {
+      "motion": true
+    },
+    "942": {
+      "motion": true
+    },
+    "943": {
+      "motion": true
+    },
+    "944": {
+      "motion": true
+    },
+    "945": {
+      "motion": true
+    },
+    "947": {
+      "motion": true
+    },
+    "951": {
+      "motion": true
+    },
+    "953": {
+      "motion": true
+    },
+    "955": {
+      "motion": true
+    },
+    "957": {
+      "motion": true
+    },
+    "958": {
+      "motion": true
+    },
+    "959": {
+      "motion": true
+    },
+    "961": {
+      "motion": true
+    },
+    "965": {
+      "motion": true
+    },
+    "975": {
+      "motion": true
+    },
+    "976": {
+      "motion": true
+    },
+    "985": {
+      "motion": true
+    },
+    "986": {
+      "motion": true
+    },
+    "989": {
+      "motion": true
+    },
+    "994": {
+      "motion": true
+    },
+    "998": {
+      "motion": true
+    }
+  }
+}

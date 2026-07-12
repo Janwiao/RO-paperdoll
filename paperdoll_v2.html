@@ -1,0 +1,266 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Nori Preview List 紙娃娃 V2 測試頁，支援 Ragnarok 職業外觀、髮型、服飾、披風與方向切換。" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>紙娃娃 V2 - Nori Preview List</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css?v=20260712-paperdoll-v2-mount-buttons-6" />
+</head>
+<body class="section-paperdoll">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">TW</div>
+        <div class="brand-text">
+          <strong>Nori Toolkit</strong>
+          <span>Ragnarok Data</span>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="https://ropreview.nori-labs.com/">TOP (首頁)</a>
+        <a class="menu-item" href="https://ropreview.nori-labs.com/npclist.html">NPCs &amp; Mobs (NPC/魔物)</a>
+        <a class="menu-item" href="https://ropreview.nori-labs.com/headgear.html">Headgear (頭飾)</a>
+        <a class="menu-item" href="https://ropreview.nori-labs.com/capes.html">Capes (披風)</a>
+        <a class="menu-item" href="https://ropreview.nori-labs.com/hateffect.html">Hateffects (特效)</a>
+        <a class="menu-item active" href="paperdoll_v2.html">Paperdoll V2 (紙娃娃 V2)</a>
+        <a class="menu-item" href="https://rotools.nori-labs.com" target="_blank" rel="noopener noreferrer">Nori-Tools</a>
+        <a class="menu-item" href="https://ropreview.nori-labs.com/about.html">About (關於)</a>
+      </nav>
+      <div class="theme-box">
+        <label for="themeSelect">主題</label>
+        <select id="themeSelect">
+          <option value="default">Default</option>
+          <option value="classic">Classic</option>
+          <option value="sand">Sand</option>
+          <option value="night">Night</option>
+        </select>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="title-row">
+          <h1>紙娃娃 V2</h1>
+          <span class="generated-at">開發測試版：2026-07-08</span>
+        </div>
+        <div class="toolbar-controls">
+          <button class="paperdoll-icon-button" id="playButton" type="button" title="播放動畫" aria-label="播放動畫">&gt;</button>
+          <button class="paperdoll-icon-button" id="fitButton" type="button" title="重新置中" aria-label="重新置中">◎</button>
+          <button class="paperdoll-icon-button toolbar-text-button" id="shareButton" type="button" title="複製分享連結" aria-label="複製分享連結">連結 (Link)</button>
+          <button class="paperdoll-icon-button toolbar-text-button" id="saveImageButton" type="button" title="儲存 PNG" aria-label="儲存 PNG">儲存 (Save)</button>
+          <button class="paperdoll-icon-button toolbar-text-button" id="clearButton" type="button" title="清空穿戴" aria-label="清空穿戴">清除 (Clear)</button>
+        </div>
+      </header>
+
+      <section class="paperdoll-workbench" aria-label="紙娃娃 V2 測試工具">
+        <section class="stage-panel" aria-label="紙娃娃預覽">
+          <div class="stage-toolbar">
+            <div class="stage-title">
+              <strong>Nori 紙娃娃 V2</strong>
+              <span id="statusText">載入資料中...</span>
+            </div>
+            <label class="stage-background-control">
+              <span>背景</span>
+              <select id="backgroundSelect" aria-label="背景"></select>
+            </label>
+          </div>
+          <div class="preview-wrap" id="previewWrap">
+            <div class="effect-layer effect-layer-behind" id="effectLayerBehind" aria-hidden="true"></div>
+            <canvas id="paperCanvas" width="180" height="180" aria-label="紙娃娃畫布"></canvas>
+            <div class="effect-layer effect-layer-front" id="effectLayerFront" aria-hidden="true"></div>
+          </div>
+          <div class="worn-panel" aria-label="目前穿戴">
+            <div class="worn-row" data-worn-slot="headgear-0">
+              <span>服飾 1</span>
+              <button type="button" data-clear-slot="headgear-0">無</button>
+            </div>
+            <div class="worn-row" data-worn-slot="headgear-1">
+              <span>服飾 2</span>
+              <button type="button" data-clear-slot="headgear-1">無</button>
+            </div>
+            <div class="worn-row" data-worn-slot="headgear-2">
+              <span>服飾 3</span>
+              <button type="button" data-clear-slot="headgear-2">無</button>
+            </div>
+            <div class="worn-row" data-worn-slot="cape">
+              <span>肩飾</span>
+              <button type="button" data-clear-slot="cape">無</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="control-panel" aria-label="紙娃娃控制">
+          <div class="control-group">
+            <label>性別</label>
+            <div class="segmented" role="group" aria-label="角色性別">
+              <button type="button" data-sex="female" class="active">女性</button>
+              <button type="button" data-sex="male">男性</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>職業外觀</label>
+            <select id="jobSelect" aria-label="職業外觀"></select>
+          </div>
+
+          <div class="control-group is-hidden">
+            <label>ACT</label>
+            <select id="actionSelect" aria-label="動作"></select>
+          </div>
+
+          <div class="control-group">
+        <label>其他</label>
+        <div class="job-mode-controls" role="group" aria-label="其他">
+          <select id="mountSelect" class="is-hidden" aria-hidden="true" tabindex="-1">
+            <option value="none">無 (None)</option>
+          </select>
+          <div class="button-strip mount-button-strip" id="mountButtons" role="group" aria-label="坐騎">
+            <button type="button" data-mount-category="general" title="General Mount">一般坐騎</button>
+            <button type="button" data-mount-category="job" title="Job Mount">職業坐騎</button>
+          </div>
+          <div class="button-strip">
+          <button type="button" data-mode-toggle="secondCostume">第二服裝 (Second Costume)</button>
+          </div>
+        </div>
+          </div>
+
+          <div class="control-group">
+            <label>服染</label>
+            <select id="bodyColorSelect" aria-label="服染">
+              <option>標準</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label>髮型</label>
+            <select id="hairSelect" aria-label="髮型"></select>
+          </div>
+
+          <div class="control-group">
+            <label>髮色</label>
+            <select id="hairColorSelect" aria-label="髮色">
+              <option>標準</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label>服飾</label>
+            <div class="equipment-quick-filters" role="group" aria-label="服飾快捷篩選">
+              <button type="button" data-equipment-filter="all" class="active" title="全部 (All)">全部</button>
+              <button type="button" data-equipment-filter="motion" title="動態 (Motion)">動態</button>
+              <button type="button" data-equipment-filter="effect" title="特效 (Effect)">特效</button>
+              <button type="button" data-equipment-filter="top" title="上段 (Upper)">上段</button>
+              <button type="button" data-equipment-filter="mid" title="中段 (Middle)">中段</button>
+              <button type="button" data-equipment-filter="low" title="下段 (Lower)">下段</button>
+              <button type="button" data-equipment-filter="cape" title="披肩 (Garment)">披肩</button>
+            </div>
+            <input id="headgearFilter" class="filter-input" type="search" placeholder="篩選 ID 或名稱" aria-label="篩選服飾" />
+            <select id="headgearSelect1" aria-label="服飾 1"></select>
+            <select id="headgearSelect2" aria-label="服飾 2"></select>
+            <select id="headgearSelect3" aria-label="服飾 3"></select>
+          </div>
+
+          <div class="control-group">
+            <label>肩飾</label>
+            <input id="capeFilter" class="filter-input" type="search" placeholder="篩選 ID 或名稱" aria-label="篩選披風" />
+            <select id="capeSelect" aria-label="披風"></select>
+          </div>
+
+          <section class="item-browser is-hidden" aria-label="服飾庫">
+            <div class="item-browser-head">
+              <label>服飾庫</label>
+              <div class="button-strip" role="group" aria-label="服飾庫分類">
+                <button type="button" data-browser-kind="headgear" class="active">服飾</button>
+                <button type="button" data-browser-kind="cape">肩飾</button>
+              </div>
+            </div>
+            <input id="itemSearch" class="filter-input" type="search" placeholder="搜尋 ID / 名稱 / const" aria-label="搜尋服飾庫" />
+            <div id="itemResults" class="item-results" aria-live="polite"></div>
+          </section>
+
+          <div class="control-group">
+            <label>狀態</label>
+            <div class="button-strip" role="group" aria-label="狀態">
+              <button type="button" data-pose="stand" class="active">立</button>
+              <button type="button" data-pose="sit">坐</button>
+              <button type="button" data-pose="walk">走</button>
+              <button type="button" data-pose="pick">拾</button>
+              <button type="button" data-pose="wait">待</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>身體方向</label>
+            <div class="direction-grid" role="group" aria-label="身體方向">
+              <button type="button" data-action="0" class="active" title="下" aria-label="下">&darr;</button>
+              <button type="button" data-action="1" title="左下" aria-label="左下">&swarr;</button>
+              <button type="button" data-action="2" title="左" aria-label="左">&larr;</button>
+              <button type="button" data-action="3" title="左上" aria-label="左上">&nwarr;</button>
+              <button type="button" data-action="4" title="上" aria-label="上">&uarr;</button>
+              <button type="button" data-action="5" title="右上" aria-label="右上">&nearr;</button>
+              <button type="button" data-action="6" title="右" aria-label="右">&rarr;</button>
+              <button type="button" data-action="7" title="右下" aria-label="右下">&searr;</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>臉方向</label>
+            <div class="button-strip" role="group" aria-label="臉方向">
+              <button type="button" data-face="left">左</button>
+              <button type="button" data-face="center" class="active">中央</button>
+              <button type="button" data-face="right">右</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>動畫</label>
+            <div class="button-strip" role="group" aria-label="動畫">
+              <button type="button" id="playButtonInline">自動</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>顯示大小</label>
+            <div class="button-strip" role="group" aria-label="顯示大小">
+              <button type="button" data-display-size="compact">縮小</button>
+              <button type="button" data-display-size="normal" class="active">標準</button>
+              <button type="button" data-display-size="large">放大</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label>幀數</label>
+            <input id="frameSlider" type="range" min="0" max="0" value="0" />
+          </div>
+
+          <div class="readout">
+            <div>
+              <span>圖層順序</span>
+              <strong id="stackReadout">-</strong>
+            </div>
+            <div>
+              <span>錨點</span>
+              <strong id="anchorReadout">-</strong>
+            </div>
+            <div>
+              <span>目前幀</span>
+              <strong id="frameReadout">-</strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="legal">
+        <p>所有與《Ragnarok》相關之圖像與素材，其著作權屬於 © 2002-2026 Gravity Co., Ltd. 與 Lee Myoungjin。</p>
+        <p>部分《Ragnarok》相關圖像素材之著作權屬於 © 2026 GungHo Online Entertainment, Inc.。</p>
+        <p>本專案與 Gravity Co., Ltd. 無任何官方從屬、合作、授權、維護、贊助或背書關係。官方網站：<a href="https://gravity.co.kr/" target="_blank" rel="noopener noreferrer">https://gravity.co.kr/</a></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="paperdoll_v2/web/app.js?v=20260713-paperdoll-v2-layer-priority-12"></script>
+</body>
+</html>
