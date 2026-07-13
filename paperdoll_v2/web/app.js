@@ -1,4 +1,4 @@
-const state = {
+﻿const state = {
   data: null,
   effectBindings: { cape: {}, headgear: {} },
   itemFlags: { cape: {}, headgear: {} },
@@ -2373,19 +2373,21 @@ function selectBrowserItem(item) {
   prepareAndDraw();
 }
 
+const ITEM_THUMBNAIL_BASE = "paperdoll_v2/web/thumbnails";
+
 function itemThumbnailPaths(item, kind = state.browserKind) {
   const id = encodeURIComponent(String(item.id));
   const sex = state.sex === "male" ? "male" : "female";
   if (kind === "cape") {
     const otherSex = sex === "male" ? "female" : "male";
     return {
-      primary: `../workspace_assets/official/thumbnails/capes/${sex}/a0/${id}.png`,
-      fallback: `../workspace_assets/official/thumbnails/capes/${otherSex}/a0/${id}.png`,
+      primary: `${ITEM_THUMBNAIL_BASE}/capes/${sex}/a0/${id}.png`,
+      fallback: `${ITEM_THUMBNAIL_BASE}/capes/${otherSex}/a0/${id}.png`,
     };
   }
   return {
-    primary: `../workspace_assets/official/thumbnails/headgear/plain/a0/${id}.png`,
-    fallback: `../workspace_assets/official/thumbnails/headgear/${sex}/a0/${id}.png`,
+    primary: `${ITEM_THUMBNAIL_BASE}/headgear/plain/a0/${id}.png`,
+    fallback: `${ITEM_THUMBNAIL_BASE}/headgear/${sex}/a0/${id}.png`,
   };
 }
 
