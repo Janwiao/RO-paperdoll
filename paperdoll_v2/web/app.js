@@ -36,7 +36,18 @@ const state = {
   renderFitBounds: null,
   frameMs: 150,
   displaySize: "normal",
+  zoom: 1,
   previewBackground: "transparent",
+  backgroundColor: "#ffffff",
+  customBackgroundData: "",
+  backgroundOffsetX: 0,
+  backgroundOffsetY: 0,
+  showShadow: true,
+  pngSize: 256,
+  pngBackground: "current",
+  pngIncludeInfo: false,
+  gifDuration: 2400,
+  gifBackground: "current",
   language: "zh",
   browserKind: "headgear",
   equipmentFilter: "all",
@@ -48,6 +59,9 @@ const canvas = document.getElementById("paperCanvas");
 const ctx = canvas.getContext("2d");
 const effectLayerBehind = document.getElementById("effectLayerBehind");
 const effectLayerFront = document.getElementById("effectLayerFront");
+const effectRuntime = window.NoriEffectRuntime
+  ? new window.NoriEffectRuntime(effectLayerBehind, effectLayerFront)
+  : null;
 const renderCanvas = document.createElement("canvas");
 const renderCtx = renderCanvas.getContext("2d", { willReadFrequently: true });
 let activeCtx = ctx;
@@ -60,7 +74,28 @@ const bodyColorSelect = document.getElementById("bodyColorSelect");
 const hairColorSelect = document.getElementById("hairColorSelect");
 const actionSelect = document.getElementById("actionSelect");
 const previewWrap = document.getElementById("previewWrap");
+const paperdollShadow = document.getElementById("paperdollShadow");
+const shadowToggle = document.getElementById("shadowToggle");
 const backgroundSelect = document.getElementById("backgroundSelect");
+const backgroundColor = document.getElementById("backgroundColor");
+const backgroundFile = document.getElementById("backgroundFile");
+const backgroundFileButton = document.getElementById("backgroundFileButton");
+const backgroundResetButton = document.getElementById("backgroundResetButton");
+const zoomOutButton = document.getElementById("zoomOutButton");
+const zoomInButton = document.getElementById("zoomInButton");
+const zoomReadout = document.getElementById("zoomReadout");
+const closetName = document.getElementById("closetName");
+const saveClosetButton = document.getElementById("saveClosetButton");
+const closetList = document.getElementById("closetList");
+const exportClosetButton = document.getElementById("exportClosetButton");
+const importClosetFile = document.getElementById("importClosetFile");
+const pngDialog = document.getElementById("pngDialog");
+const pngIncludeInfo = document.getElementById("pngIncludeInfo");
+const cancelPngButton = document.getElementById("cancelPngButton");
+const confirmPngButton = document.getElementById("confirmPngButton");
+const gifDialog = document.getElementById("gifDialog");
+const cancelGifButton = document.getElementById("cancelGifButton");
+const confirmGifButton = document.getElementById("confirmGifButton");
 const headgearSelect = document.getElementById("headgearSelect");
 const capeSelect = document.getElementById("capeSelect");
 const headgearFilter = document.getElementById("headgearFilter");
@@ -71,12 +106,21 @@ const playButtonInline = document.getElementById("playButtonInline");
 const fitButton = document.getElementById("fitButton");
 const shareButton = document.getElementById("shareButton");
 const saveImageButton = document.getElementById("saveImageButton");
+const saveGifButton = document.getElementById("saveGifButton");
 const clearButton = document.getElementById("clearButton");
 const stackReadout = document.getElementById("stackReadout");
 const anchorReadout = document.getElementById("anchorReadout");
 const frameReadout = document.getElementById("frameReadout");
 const itemSearch = document.getElementById("itemSearch");
 const itemResults = document.getElementById("itemResults");
+const itemBrowserCount = document.getElementById("itemBrowserCount");
+const itemBrowserDialog = document.getElementById("itemBrowserDialog");
+const openItemBrowserButton = document.getElementById("openItemBrowserButton");
+const closeItemBrowserButton = document.getElementById("closeItemBrowserButton");
+const finishItemBrowserButton = document.getElementById("finishItemBrowserButton");
+const clearItemBrowserSlotButton = document.getElementById("clearItemBrowserSlotButton");
+const itemBrowserSlotButtons = [...document.querySelectorAll("[data-browser-slot]")];
+const itemBrowserFilterButtons = [...document.querySelectorAll("[data-browser-filter]")];
 const equipmentQuickFilterButtons = [...document.querySelectorAll("[data-equipment-filter]")];
 const headgearSelects = [
   document.getElementById("headgearSelect1") || headgearSelect,
@@ -146,6 +190,7 @@ const languageOptions = {
       walk: "走",
       pick: "拾",
       wait: "待",
+      dead: "倒",
       faceLeft: "左",
       faceCenter: "中央",
       faceRight: "右",
@@ -165,7 +210,9 @@ const languageOptions = {
       itemSearch: "搜尋 ID / 名稱 / const (Search)",
       shareCopied: "分享連結已複製 (Link copied)",
       shareUpdated: "分享連結已更新到網址列 (URL updated)",
-      pngSaved: "PNG 已儲存（暫不含動態特效）(PNG saved, no animated effects)",
+      pngSaved: "PNG 已儲存，包含背景與目前特效畫面 (PNG saved with background and effects)",
+      gifSaved: "GIF 動畫已儲存 (GIF saved)",
+      gifSaving: "正在製作 GIF... (Creating GIF...)",
       cleared: "穿戴已清空 (Outfit cleared)",
       noResults: "沒有符合的項目 (No matching items)",
       motion: "動態 (Motion)",
@@ -179,6 +226,7 @@ const languageOptions = {
       fit: "重新置中 (Recenter)",
       shareTitle: "複製分享連結 (Copy link)",
       saveTitle: "儲存 PNG (Save PNG)",
+      gifTitle: "儲存 GIF 動畫 (Save GIF)",
       clearTitle: "清空穿戴 (Clear outfit)",
     },
   },
@@ -226,6 +274,7 @@ const languageOptions = {
       walk: "Walk",
       pick: "Pick",
       wait: "Ready",
+      dead: "Dead",
       faceLeft: "Left",
       faceCenter: "Center",
       faceRight: "Right",
@@ -245,7 +294,9 @@ const languageOptions = {
       itemSearch: "Search ID / name / const",
       shareCopied: "Share link copied",
       shareUpdated: "Share link updated in URL",
-      pngSaved: "PNG saved (animated effects excluded)",
+      pngSaved: "PNG saved with background and current effects (已包含背景與目前特效畫面)",
+      gifSaved: "GIF saved (動畫已儲存)",
+      gifSaving: "Creating GIF... (正在製作)",
       cleared: "Outfit cleared",
       noResults: "No matching items",
       motion: "Motion",
@@ -259,6 +310,7 @@ const languageOptions = {
       fit: "Recenter",
       shareTitle: "Copy share link",
       saveTitle: "Save PNG",
+      gifTitle: "Save GIF animation",
       clearTitle: "Clear outfit",
     },
   },
@@ -306,6 +358,7 @@ const languageOptions = {
       walk: "Andar",
       pick: "Pegar",
       wait: "Pronto",
+      dead: "Morto",
       faceLeft: "Esq.",
       faceCenter: "Centro",
       faceRight: "Dir.",
@@ -325,7 +378,9 @@ const languageOptions = {
       itemSearch: "Buscar ID / nome / const",
       shareCopied: "Link copiado",
       shareUpdated: "Link atualizado na URL",
-      pngSaved: "PNG salvo (sem efeitos animados)",
+      pngSaved: "PNG salvo com fundo e efeitos atuais",
+      gifSaved: "GIF salvo (動畫已儲存)",
+      gifSaving: "Criando GIF... (正在製作)",
       cleared: "Visual limpo",
       noResults: "Nenhum item encontrado",
       motion: "Motion",
@@ -339,13 +394,17 @@ const languageOptions = {
       fit: "Recentralizar",
       shareTitle: "Copiar link",
       saveTitle: "Salvar PNG",
+      gifTitle: "Salvar animação GIF",
       clearTitle: "Limpar visual",
     },
   },
 };
 
-const appVersion = "20260713-paperdoll-v2-layer-priority-12";
+const appVersion = "20260713-paperdoll-v2-item-browser-5";
 const storageKey = "nori.paperdoll.state.v2";
+const closetStorageKey = "nori.paperdoll.closet.v2";
+const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
+const exportStorageKey = "nori.paperdoll.export.v2";
 const scriptUrl = document.currentScript?.src || new URL("app.js", window.location.href).href;
 const appBaseUrl = new URL(".", scriptUrl);
 const hiddenJobLabelTokens = ["魔導機甲", "融合"];
@@ -358,7 +417,17 @@ const selectSearchLimit = 260;
 const filterDebounceMs = 140;
 const renderPadding = 160;
 let equipmentFilterTimer = 0;
+let itemBrowserSlot = "0";
+let itemBrowserFilter = "all";
+let itemThumbnailObserver = null;
+let itemBrowserLoadObserver = null;
+let itemBrowserMatches = [];
+let itemBrowserRenderedCount = 0;
+const itemBrowserBatchSize = 72;
+const itemBrowserFavoritesKey = "nori.paperdoll.item-browser.favorites.v1";
+let itemBrowserFavorites = loadItemBrowserFavorites();
 let browserFilterTimer = 0;
+let backgroundDrag = null;
 const forceRgbaFlipYAllActionItemIds = new Set([
   668, 958, 961, 975, 976, 1005, 1038, 1039, 1040,
   1132, 1133, 1145, 1146, 1147, 1148, 1248, 1326,
@@ -368,11 +437,15 @@ const forceRgbaFlipYAllActionItemIds = new Set([
 const forceRgbaFlipYA16ItemIds = new Set([1426, 1427, 1428, 1429, 1430]);
 const confirmedRgbaNoFlipItemIds = new Set([2280]);
 const rgbaSingleLayerEffectFlipCache = new WeakMap();
+const rgbaSingleLayerEffectActionFlipCache = new WeakMap();
 const displaySizeSettings = {
   compact: { scale: 0.5 },
   normal: { scale: 1 },
   large: { scale: 2 },
 };
+const zoomMin = 0.5;
+const zoomMax = 1.5;
+const zoomStep = 0.1;
 
 const statusOffsets = new Map([
   ["stand", 0],
@@ -380,6 +453,7 @@ const statusOffsets = new Map([
   ["sit", 16],
   ["pick", 24],
   ["wait", 32],
+  ["dead", 64],
 ]);
 
 const faceFrameIndexes = new Map([
@@ -466,6 +540,7 @@ function applyLanguage() {
   setButtonText("[data-pose='walk']", tr("button", "walk"));
   setButtonText("[data-pose='pick']", tr("button", "pick"));
   setButtonText("[data-pose='wait']", tr("button", "wait"));
+  setButtonText("[data-pose='dead']", tr("button", "dead"));
   setButtonText("[data-face='left']", tr("button", "faceLeft"));
   setButtonText("[data-face='center']", tr("button", "faceCenter"));
   setButtonText("[data-face='right']", tr("button", "faceRight"));
@@ -483,6 +558,8 @@ function applyLanguage() {
   setAttr("#shareButton", "aria-label", tr("text", "shareTitle"));
   setAttr("#saveImageButton", "title", tr("text", "saveTitle"));
   setAttr("#saveImageButton", "aria-label", tr("text", "saveTitle"));
+  setAttr("#saveGifButton", "title", tr("text", "gifTitle"));
+  setAttr("#saveGifButton", "aria-label", tr("text", "gifTitle"));
   setAttr("#clearButton", "title", tr("text", "clearTitle"));
   setAttr("#clearButton", "aria-label", tr("text", "clearTitle"));
   setButtonText("#shareButton", tr("button", "share"));
@@ -504,7 +581,38 @@ function applyLanguage() {
 }
 
 function backgroundById(id) {
+  if (id === "custom-color") {
+    return { id, name: "純色 (Solid Color)", type: "custom-color", value: state.backgroundColor };
+  }
+  if (id === "custom-image") {
+    return { id, name: "自訂圖片 (Custom Image)", type: "custom-image", src: state.customBackgroundData };
+  }
   return state.previewBackgrounds.find((item) => item.id === id) || state.previewBackgrounds[0];
+}
+
+function availableBackgrounds() {
+  return [
+    ...state.previewBackgrounds,
+    { id: "custom-color", name: "純色 (Color)", type: "custom-color" },
+    { id: "custom-image", name: "自訂圖片 (Image)", type: "custom-image" },
+  ];
+}
+
+function syncBackgroundControls() {
+  const isColor = state.previewBackground === "custom-color";
+  const isImage = state.previewBackground === "custom-image";
+  const draggable = ["custom-image", "texture"].includes(backgroundById(state.previewBackground)?.type);
+  backgroundColor?.classList.toggle("is-hidden", !isColor);
+  backgroundFileButton?.classList.toggle("is-hidden", !isImage);
+  backgroundResetButton?.classList.toggle("is-hidden", !draggable);
+  previewWrap?.classList.toggle("is-background-draggable", draggable);
+  if (backgroundColor) {
+    backgroundColor.value = state.backgroundColor;
+  }
+}
+
+function backgroundPositionCss() {
+  return `calc(50% + ${state.backgroundOffsetX}px) calc(50% + ${state.backgroundOffsetY}px)`;
 }
 
 function applyPreviewBackground() {
@@ -516,13 +624,18 @@ function applyPreviewBackground() {
   previewWrap.style.backgroundImage = "";
   previewWrap.style.backgroundSize = "";
   previewWrap.style.backgroundPosition = "";
-  if (bg.type === "color") {
+  if (bg.type === "color" || bg.type === "custom-color") {
     previewWrap.style.backgroundColor = bg.value || "#fff";
     previewWrap.style.backgroundImage = "none";
+  } else if (bg.type === "custom-image") {
+    previewWrap.style.backgroundColor = state.backgroundColor;
+    previewWrap.style.backgroundImage = bg.src ? `url(${JSON.stringify(bg.src)})` : "none";
+    previewWrap.style.backgroundSize = "cover";
+    previewWrap.style.backgroundPosition = backgroundPositionCss();
   } else if (bg.type === "texture" && bg.src) {
     previewWrap.style.backgroundImage = `url(${JSON.stringify(appUrl(bg.src))})`;
     previewWrap.style.backgroundSize = bg.size || "256px 256px";
-    previewWrap.style.backgroundPosition = "center";
+    previewWrap.style.backgroundPosition = backgroundPositionCss();
   } else {
     previewWrap.style.backgroundColor = "#fff";
     previewWrap.style.backgroundImage = [
@@ -534,6 +647,55 @@ function applyPreviewBackground() {
     previewWrap.style.backgroundSize = "20px 20px";
     previewWrap.style.backgroundPosition = "0 0, 0 10px, 10px -10px, -10px 0";
   }
+  syncBackgroundControls();
+}
+
+function resetBackgroundPosition(shouldNotify = true) {
+  state.backgroundOffsetX = 0;
+  state.backgroundOffsetY = 0;
+  applyPreviewBackground();
+  saveLocalState();
+  if (shouldNotify) {
+    notifyStatus("背景位置已重設 (Background position reset)");
+  }
+}
+
+function startBackgroundDrag(event) {
+  const bg = backgroundById(state.previewBackground);
+  if (!previewWrap || !["custom-image", "texture"].includes(bg?.type) || event.button !== 0) {
+    return;
+  }
+  event.preventDefault();
+  backgroundDrag = {
+    pointerId: event.pointerId,
+    startX: event.clientX,
+    startY: event.clientY,
+    offsetX: state.backgroundOffsetX,
+    offsetY: state.backgroundOffsetY,
+  };
+  previewWrap.setPointerCapture(event.pointerId);
+  previewWrap.classList.add("is-background-dragging");
+}
+
+function moveBackgroundDrag(event) {
+  if (!backgroundDrag || event.pointerId !== backgroundDrag.pointerId) {
+    return;
+  }
+  state.backgroundOffsetX = Math.max(-512, Math.min(512, Math.round(backgroundDrag.offsetX + event.clientX - backgroundDrag.startX)));
+  state.backgroundOffsetY = Math.max(-512, Math.min(512, Math.round(backgroundDrag.offsetY + event.clientY - backgroundDrag.startY)));
+  applyPreviewBackground();
+}
+
+function finishBackgroundDrag(event) {
+  if (!backgroundDrag || event.pointerId !== backgroundDrag.pointerId) {
+    return;
+  }
+  if (previewWrap.hasPointerCapture(event.pointerId)) {
+    previewWrap.releasePointerCapture(event.pointerId);
+  }
+  previewWrap.classList.remove("is-background-dragging");
+  backgroundDrag = null;
+  saveLocalState();
 }
 
 function refreshBackgroundSelect() {
@@ -542,13 +704,13 @@ function refreshBackgroundSelect() {
     return;
   }
   backgroundSelect.replaceChildren();
-  for (const bg of state.previewBackgrounds) {
+  for (const bg of availableBackgrounds()) {
     const option = document.createElement("option");
     option.value = bg.id;
     option.textContent = bg.name || bg.id;
     backgroundSelect.appendChild(option);
   }
-  if (!backgroundById(state.previewBackground)) {
+  if (!availableBackgrounds().some((item) => item.id === state.previewBackground)) {
     state.previewBackground = state.previewBackgrounds[0]?.id || "transparent";
   }
   backgroundSelect.value = state.previewBackground;
@@ -673,7 +835,13 @@ function currentFramesForPart(partKey, action = state.action) {
   if (!part || !part.actions) {
     return [];
   }
-  return part.actions[String(action)] || part.actions[action] || [];
+  const exact = part.actions[String(action)] || part.actions[action] || [];
+  const actionNumber = Number(action);
+  if (exact.length || actionNumber < 64 || actionNumber > 71) {
+    return exact;
+  }
+  const fallbackAction = String(actionNumber % 8);
+  return part.actions[fallbackAction] || [];
 }
 
 function currentFrames() {
@@ -714,6 +882,9 @@ function partTimelineFrameCount(partKey, action = state.action) {
 function visibleFrameCount() {
   if (!state.data) {
     return 1;
+  }
+  if (state.status === "dead") {
+    return Math.max(1, partTimelineFrameCount(selectedJobBodyPartKey(), state.action));
   }
   return Math.max(
     1,
@@ -890,8 +1061,32 @@ function isRgbaSingleLayerEffectPart(part) {
   return shouldFlip;
 }
 
+function isRgbaSingleLayerEffectAction(part, action) {
+  if (!part || typeof part !== "object") {
+    return false;
+  }
+  let actionCache = rgbaSingleLayerEffectActionFlipCache.get(part);
+  if (!actionCache) {
+    actionCache = new Map();
+    rgbaSingleLayerEffectActionFlipCache.set(part, actionCache);
+  }
+  const actionKey = String(action);
+  if (actionCache.has(actionKey)) {
+    return actionCache.get(actionKey);
+  }
+  const frames = part.actions?.[actionKey];
+  const layers = Array.isArray(frames) && frames.length ? frames[0]?.layers : null;
+  const shouldFlip = Array.isArray(layers)
+    && layers.length >= 1
+    && layers.length <= 2
+    && layers.every((layer) => Number(layer.image_type || 0) === 1);
+  actionCache.set(actionKey, shouldFlip);
+  return shouldFlip;
+}
+
 function forceRgbaFlipYForPart(part) {
-  const autoEffectFlip = isRgbaSingleLayerEffectPart(part);
+  const autoEffectFlip = isRgbaSingleLayerEffectPart(part)
+    || isRgbaSingleLayerEffectAction(part, state.action);
   if (part?.kind !== "headgear") {
     return autoEffectFlip;
   }
@@ -1548,6 +1743,8 @@ function drawFittedRender(clear = true) {
     "--effect-anchor-y",
     `${targetAnchorY - EFFECT_CENTER_TO_ACTOR_ANCHOR_Y}px`,
   );
+  previewWrap.style.setProperty("--character-anchor-y", `${targetAnchorY}px`);
+  previewWrap.style.setProperty("--preview-zoom", String(state.zoom));
   const dx = Math.round(targetAnchorX - anchorX * scale);
   const dy = Math.round(targetAnchorY - anchorY * scale);
   if (clear) {
@@ -1598,8 +1795,14 @@ function syncEffectLayer(layer, effects) {
 
 function renderEffectLayers() {
   const effects = selectedEffectBindings();
-  syncEffectLayer(effectLayerBehind, effects.filter((effect) => Boolean(effect.render_before_character)));
-  syncEffectLayer(effectLayerFront, effects.filter((effect) => !effect.render_before_character));
+  const behind = effects.filter((effect) => Boolean(effect.render_before_character));
+  const front = effects.filter((effect) => !effect.render_before_character);
+  if (effectRuntime) {
+    effectRuntime.sync({ behind, front, sex: state.sex, resolveUrl: appUrl, version: appVersion });
+    return;
+  }
+  syncEffectLayer(effectLayerBehind, behind);
+  syncEffectLayer(effectLayerFront, front);
 }
 
 function draw() {
@@ -1691,7 +1894,12 @@ function statePayload() {
     headgear: state.headgearSlots.join(","),
     cape: state.cape,
     size: state.displaySize,
+    zoom: String(state.zoom),
     bg: state.previewBackground,
+    bgColor: state.backgroundColor,
+    bgX: String(state.backgroundOffsetX),
+    bgY: String(state.backgroundOffsetY),
+    shadow: state.showShadow ? "1" : "0",
   };
 }
 
@@ -1752,7 +1960,16 @@ function applyStatePayload(payload) {
   }
   if (payload.cape) state.cape = String(payload.cape);
   if (payload.size) state.displaySize = String(payload.size);
+  if (payload.zoom !== undefined) state.zoom = Number(payload.zoom);
   if (payload.bg) state.previewBackground = String(payload.bg);
+  if (payload.bgColor && /^#[0-9a-f]{6}$/i.test(String(payload.bgColor))) {
+    state.backgroundColor = String(payload.bgColor);
+  }
+  if (payload.bgX !== undefined) state.backgroundOffsetX = Number(payload.bgX);
+  if (payload.bgY !== undefined) state.backgroundOffsetY = Number(payload.bgY);
+  if (payload.shadow !== undefined) {
+    state.showShadow = String(payload.shadow) === "1" || String(payload.shadow) === "true";
+  }
 }
 
 function normalizeState() {
@@ -1772,7 +1989,15 @@ function normalizeState() {
   if (!displaySizeSettings[state.displaySize]) {
     state.displaySize = "normal";
   }
-  if (!backgroundById(state.previewBackground)) {
+  if (!Number.isFinite(state.zoom)) {
+    state.zoom = 1;
+  }
+  state.zoom = Math.min(zoomMax, Math.max(zoomMin, Math.round(state.zoom * 10) / 10));
+  if (!Number.isFinite(state.backgroundOffsetX)) state.backgroundOffsetX = 0;
+  if (!Number.isFinite(state.backgroundOffsetY)) state.backgroundOffsetY = 0;
+  state.backgroundOffsetX = Math.max(-512, Math.min(512, Math.round(state.backgroundOffsetX)));
+  state.backgroundOffsetY = Math.max(-512, Math.min(512, Math.round(state.backgroundOffsetY)));
+  if (!availableBackgrounds().some((item) => item.id === state.previewBackground)) {
     state.previewBackground = state.previewBackgrounds[0]?.id || "transparent";
   }
   state.language = "zh";
@@ -1841,6 +2066,7 @@ function syncControls() {
   equipmentQuickFilterButtons.forEach((button) => {
     button.classList.toggle("active", button.dataset.equipmentFilter === state.equipmentFilter);
   });
+  syncItemBrowserControls();
   actionSelect.value = state.action;
   jobSelect.value = state.job;
   if (mountSelect) {
@@ -1856,15 +2082,34 @@ function syncControls() {
   if (backgroundSelect) {
     backgroundSelect.value = state.previewBackground;
   }
+  if (shadowToggle) {
+    shadowToggle.checked = state.showShadow;
+  }
+  if (paperdollShadow) {
+    paperdollShadow.classList.toggle("is-hidden", !state.showShadow);
+    paperdollShadow.classList.toggle("is-riding", state.riding);
+  }
+  if (zoomReadout) {
+    zoomReadout.value = `${Math.round(state.zoom * 100)}%`;
+    zoomReadout.textContent = zoomReadout.value;
+  }
+  if (zoomOutButton) {
+    zoomOutButton.disabled = state.zoom <= zoomMin;
+  }
+  if (zoomInButton) {
+    zoomInButton.disabled = state.zoom >= zoomMax;
+  }
   applyPreviewBackground();
   headgearSelects.forEach((select, index) => {
     select.value = state.headgearSlots[index] || "none";
   });
   capeSelect.value = state.cape;
   playButton.textContent = state.playing ? "II" : ">";
+  playButton.disabled = state.status === "dead";
   playButton.title = state.playing ? tr("text", "pause") : tr("text", "play");
   playButton.setAttribute("aria-label", playButton.title);
   if (playButtonInline) {
+    playButtonInline.disabled = state.status === "dead";
     playButtonInline.classList.toggle("active", state.playing);
     playButtonInline.textContent = state.playing ? tr("button", "stop") : tr("button", "auto");
   }
@@ -1909,8 +2154,8 @@ function itemMetaFor(item, explicitKind = null) {
   return state.itemMeta?.[kind]?.[String(item.id)] || null;
 }
 
-function itemMatchesEquipmentFilter(item, explicitKind = null) {
-  const filter = state.equipmentFilter || "all";
+function itemMatchesEquipmentFilter(item, explicitKind = null, explicitFilter = null) {
+  const filter = explicitFilter || state.equipmentFilter || "all";
   if (filter === "all") {
     return true;
   }
@@ -1920,6 +2165,9 @@ function itemMatchesEquipmentFilter(item, explicitKind = null) {
   }
   if (filter === "effect") {
     return itemHasEffect(item, kind);
+  }
+  if (filter === "favorite") {
+    return isItemBrowserFavorite(item, kind);
   }
   if (filter === "cape") {
     return kind === "cape";
@@ -2054,89 +2302,307 @@ function browserItems() {
   return state.browserKind === "cape" ? (state.data.capes || []) : (state.data.headgear || []);
 }
 
+function loadItemBrowserFavorites() {
+  try {
+    const values = JSON.parse(localStorage.getItem(itemBrowserFavoritesKey) || "[]");
+    return new Set(Array.isArray(values) ? values.map(String) : []);
+  } catch (_error) {
+    return new Set();
+  }
+}
+
+function saveItemBrowserFavorites() {
+  try {
+    localStorage.setItem(itemBrowserFavoritesKey, JSON.stringify([...itemBrowserFavorites]));
+  } catch (_error) {
+    // Favorites remain available for the current session when storage is unavailable.
+  }
+}
+
+function itemBrowserFavoriteKey(item, kind = state.browserKind) {
+  return `${kind}:${item?.id}`;
+}
+
+function isItemBrowserFavorite(item, kind = state.browserKind) {
+  return Boolean(item && itemBrowserFavorites.has(itemBrowserFavoriteKey(item, kind)));
+}
+
+function toggleItemBrowserFavorite(item, kind = state.browserKind) {
+  const key = itemBrowserFavoriteKey(item, kind);
+  if (itemBrowserFavorites.has(key)) {
+    itemBrowserFavorites.delete(key);
+  } else {
+    itemBrowserFavorites.add(key);
+  }
+  saveItemBrowserFavorites();
+  if (itemBrowserFilter === "favorite") {
+    refreshItemBrowser();
+    return;
+  }
+  const card = [...itemResults.querySelectorAll(".item-card")]
+    .find((candidate) => candidate.dataset.itemId === String(item.id) && candidate.dataset.itemKind === kind);
+  const button = card?.querySelector(".item-favorite");
+  if (button) {
+    const active = isItemBrowserFavorite(item, kind);
+    button.classList.toggle("active", active);
+    button.textContent = active ? "★" : "☆";
+  }
+}
+
 function itemIsSelected(item) {
   if (!item) {
     return false;
   }
-  if (state.browserKind === "cape") {
+  if (itemBrowserSlot === "cape") {
     return String(state.cape) === String(item.id);
   }
-  return state.headgearSlots.some((value) => String(value) === String(item.id));
+  return String(state.headgearSlots[Number(itemBrowserSlot)] || "none") === String(item.id);
 }
 
 function selectBrowserItem(item) {
   if (!item) {
     return;
   }
-  if (state.browserKind === "cape") {
+  if (itemBrowserSlot === "cape") {
     state.cape = String(item.id);
   } else {
-    const existing = state.headgearSlots.findIndex((value) => String(value) === String(item.id));
-    if (existing >= 0) {
-      state.headgearSlots[existing] = "none";
-    } else {
-      const empty = state.headgearSlots.findIndex((value) => !value || value === "none");
-      state.headgearSlots[empty >= 0 ? empty : 0] = String(item.id);
-    }
+    state.headgearSlots[Number(itemBrowserSlot)] = String(item.id);
   }
   refreshEquipmentSelects();
-  refreshItemBrowser();
+  syncItemBrowserSelection();
   prepareAndDraw();
 }
 
+function itemThumbnailPaths(item, kind = state.browserKind) {
+  const id = encodeURIComponent(String(item.id));
+  const sex = state.sex === "male" ? "male" : "female";
+  if (kind === "cape") {
+    const otherSex = sex === "male" ? "female" : "male";
+    return {
+      primary: `../workspace_assets/official/thumbnails/capes/${sex}/a0/${id}.png`,
+      fallback: `../workspace_assets/official/thumbnails/capes/${otherSex}/a0/${id}.png`,
+    };
+  }
+  return {
+    primary: `../workspace_assets/official/thumbnails/headgear/plain/a0/${id}.png`,
+    fallback: `../workspace_assets/official/thumbnails/headgear/${sex}/a0/${id}.png`,
+  };
+}
+
+function observeItemThumbnails() {
+  itemThumbnailObserver?.disconnect();
+  const images = [...itemResults.querySelectorAll("img[data-src]")];
+  const loadThumbnail = (image) => {
+    image.src = image.dataset.src;
+    image.removeAttribute("data-src");
+  };
+  if (!("IntersectionObserver" in window)) {
+    images.forEach(loadThumbnail);
+    return;
+  }
+  itemThumbnailObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) {
+        continue;
+      }
+      itemThumbnailObserver.unobserve(entry.target);
+      loadThumbnail(entry.target);
+    }
+  }, { root: itemResults, rootMargin: "120px" });
+  images.forEach((image) => itemThumbnailObserver.observe(image));
+}
+
+function createItemBrowserCard(item) {
+  const kind = state.browserKind;
+  const card = document.createElement("div");
+  card.className = "item-card";
+  card.classList.toggle("active", itemIsSelected(item));
+  card.dataset.itemId = String(item.id);
+  card.dataset.itemKind = kind;
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+
+  const favorite = document.createElement("button");
+  favorite.type = "button";
+  favorite.className = "item-favorite";
+  favorite.classList.toggle("active", isItemBrowserFavorite(item, kind));
+  favorite.textContent = favorite.classList.contains("active") ? "★" : "☆";
+  favorite.title = "收藏 (Favorite)";
+  favorite.setAttribute("aria-label", "收藏物品");
+  favorite.addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleItemBrowserFavorite(item, kind);
+  });
+
+  const thumb = document.createElement("span");
+  thumb.className = "item-thumb";
+  const thumbImage = document.createElement("img");
+  const thumbPaths = itemThumbnailPaths(item, kind);
+  thumbImage.dataset.src = thumbPaths.primary;
+  thumbImage.dataset.fallback = thumbPaths.fallback;
+  thumbImage.alt = "";
+  thumbImage.loading = "lazy";
+  thumbImage.addEventListener("error", () => {
+    if (!thumbImage.dataset.fallbackUsed && thumbImage.dataset.fallback) {
+      thumbImage.dataset.fallbackUsed = "1";
+      thumbImage.src = thumbImage.dataset.fallback;
+      return;
+    }
+    thumbImage.hidden = true;
+  });
+  thumb.appendChild(thumbImage);
+
+  const id = document.createElement("span");
+  id.className = "item-id";
+  const metaInfo = itemMetaFor(item, kind);
+  id.textContent = metaInfo?.primary_itemid ? `${item.id} / ${metaInfo.primary_itemid}` : String(item.id);
+  const name = document.createElement("strong");
+  name.textContent = shortItemName(item, kind);
+  const meta = document.createElement("span");
+  meta.className = "item-meta";
+  const slotText = metaInfo?.slots?.length ? ` · ${metaInfo.slots.join("/")}` : "";
+  meta.textContent = `${item.const || " "}${slotText}`;
+  card.title = itemDisplayName(item, kind);
+
+  const content = [favorite, thumb, id];
+  const flags = itemFlagLabels(item, kind);
+  if (flags.length) {
+    const tagRow = document.createElement("span");
+    tagRow.className = "item-tags";
+    for (const flag of flags) {
+      const tag = document.createElement("span");
+      tag.className = `item-tag ${flag}`;
+      tag.textContent = trText(flag);
+      tagRow.appendChild(tag);
+    }
+    content.push(tagRow);
+  }
+  content.push(name, meta);
+  card.append(...content);
+  card.addEventListener("click", () => selectBrowserItem(item));
+  card.addEventListener("keydown", (event) => {
+    if (event.target !== card || (event.key !== "Enter" && event.key !== " ")) {
+      return;
+    }
+    event.preventDefault();
+    selectBrowserItem(item);
+  });
+  return card;
+}
+
+function syncItemBrowserSelection() {
+  itemResults?.querySelectorAll(".item-card").forEach((card) => {
+    const selected = itemBrowserSlot === "cape"
+      ? String(state.cape) === card.dataset.itemId
+      : String(state.headgearSlots[Number(itemBrowserSlot)] || "none") === card.dataset.itemId;
+    card.classList.toggle("active", selected);
+  });
+}
+
+function updateItemBrowserCount() {
+  if (itemBrowserCount) {
+    itemBrowserCount.textContent = `顯示 ${itemBrowserRenderedCount} / ${itemBrowserMatches.length}`;
+  }
+}
+
+function appendItemBrowserBatch() {
+  itemBrowserLoadObserver?.disconnect();
+  itemResults.querySelector(".item-load-more")?.remove();
+  const end = Math.min(itemBrowserRenderedCount + itemBrowserBatchSize, itemBrowserMatches.length);
+  const fragment = document.createDocumentFragment();
+  for (const item of itemBrowserMatches.slice(itemBrowserRenderedCount, end)) {
+    fragment.appendChild(createItemBrowserCard(item));
+  }
+  itemResults.appendChild(fragment);
+  itemBrowserRenderedCount = end;
+  updateItemBrowserCount();
+  observeItemThumbnails();
+
+  if (itemBrowserRenderedCount >= itemBrowserMatches.length) {
+    return;
+  }
+  const more = document.createElement("button");
+  more.type = "button";
+  more.className = "item-load-more";
+  more.textContent = "載入更多 (Load more)";
+  more.addEventListener("click", appendItemBrowserBatch);
+  itemResults.appendChild(more);
+  if (!("IntersectionObserver" in window)) {
+    return;
+  }
+  itemBrowserLoadObserver = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      appendItemBrowserBatch();
+    }
+  }, { root: itemResults, rootMargin: "180px" });
+  itemBrowserLoadObserver.observe(more);
+}
+
 function refreshItemBrowser() {
-  if (!itemResults) {
+  if (!itemResults || !itemBrowserDialog?.open) {
     return;
   }
   const query = itemSearch?.value.trim() || "";
-  const items = browserItems()
+  itemBrowserMatches = browserItems()
     .filter((item) => itemMatchesQuery(item, query, state.browserKind))
-    .filter((item) => itemMatchesEquipmentFilter(item, state.browserKind))
-    .slice(0, 72);
+    .filter((item) => itemMatchesEquipmentFilter(item, state.browserKind, itemBrowserFilter))
+    .sort((left, right) => Number(isItemBrowserFavorite(right, state.browserKind)) - Number(isItemBrowserFavorite(left, state.browserKind)));
+  itemBrowserRenderedCount = 0;
+  itemThumbnailObserver?.disconnect();
+  itemBrowserLoadObserver?.disconnect();
   itemResults.replaceChildren();
-  if (!items.length) {
+  itemResults.scrollTop = 0;
+  updateItemBrowserCount();
+  if (!itemBrowserMatches.length) {
     const empty = document.createElement("p");
     empty.className = "item-empty";
     empty.textContent = trText("noResults");
     itemResults.appendChild(empty);
     return;
   }
-  for (const item of items) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "item-card";
-    button.classList.toggle("active", itemIsSelected(item));
-    button.dataset.itemId = String(item.id);
+  appendItemBrowserBatch();
+}
 
-    const id = document.createElement("span");
-    id.className = "item-id";
-    const metaInfo = itemMetaFor(item, state.browserKind);
-    id.textContent = metaInfo?.primary_itemid ? `${item.id} / ${metaInfo.primary_itemid}` : String(item.id);
-    const name = document.createElement("strong");
-    name.textContent = shortItemName(item, state.browserKind);
-    const meta = document.createElement("span");
-    meta.className = "item-meta";
-    const slotText = metaInfo?.slots?.length ? ` · ${metaInfo.slots.join("/")}` : "";
-    meta.textContent = `${item.const || " "}${slotText}`;
-    button.title = itemDisplayName(item, state.browserKind);
+function syncItemBrowserControls() {
+  itemBrowserSlotButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.browserSlot === itemBrowserSlot);
+  });
+  itemBrowserFilterButtons.forEach((button) => {
+    const filter = button.dataset.browserFilter || "all";
+    button.classList.toggle("active", filter === itemBrowserFilter);
+    button.disabled = itemBrowserSlot === "cape" && ["top", "mid", "low"].includes(filter);
+  });
+}
 
-    const flags = itemFlagLabels(item, state.browserKind);
-    if (flags.length) {
-      const tagRow = document.createElement("span");
-      tagRow.className = "item-tags";
-      for (const flag of flags) {
-        const tag = document.createElement("span");
-        tag.className = `item-tag ${flag}`;
-        tag.textContent = trText(flag);
-        tagRow.appendChild(tag);
-      }
-      button.append(id, tagRow, name, meta);
-    } else {
-      button.append(id, name, meta);
-    }
-    button.addEventListener("click", () => selectBrowserItem(item));
-    itemResults.appendChild(button);
+function setItemBrowserSlot(slot) {
+  itemBrowserSlot = slot === "cape" ? "cape" : String(Math.min(2, Math.max(0, Number(slot) || 0)));
+  state.browserKind = itemBrowserSlot === "cape" ? "cape" : "headgear";
+  if (itemBrowserSlot === "cape" && ["top", "mid", "low"].includes(itemBrowserFilter)) {
+    itemBrowserFilter = "all";
   }
+  syncItemBrowserControls();
+  refreshItemBrowser();
+}
+
+function clearItemBrowserSlot() {
+  if (itemBrowserSlot === "cape") {
+    state.cape = "none";
+  } else {
+    state.headgearSlots[Number(itemBrowserSlot)] = "none";
+  }
+  refreshEquipmentSelects();
+  syncItemBrowserSelection();
+  prepareAndDraw();
+}
+
+function openItemBrowser() {
+  if (!itemBrowserDialog || itemBrowserDialog.open) {
+    return;
+  }
+  setItemBrowserSlot(itemBrowserSlot);
+  itemBrowserDialog.showModal();
+  refreshItemBrowser();
+  window.setTimeout(() => itemSearch?.focus(), 0);
 }
 
 function refreshEquipmentSelects() {
@@ -2145,7 +2611,6 @@ function refreshEquipmentSelects() {
   });
   fillItemSelect(capeSelect, state.data.capes || [], state.cape, capeFilter.value.trim(), trText("none"), "cape");
   refreshWornPanel();
-  refreshItemBrowser();
 }
 
 function refreshColorSelect(select, items, value) {
@@ -2303,12 +2768,19 @@ async function prepareAndDraw() {
   saveLocalState();
 }
 
-function setAction(action) {
+async function setAction(action) {
   state.action = String(action);
   state.frame = 0;
   state.wearableFrame = 0;
   state.lastWearableTick = performance.now();
-  prepareAndDraw();
+  await prepareAndDraw();
+  if (state.status === "dead" && !state.playing) {
+    state.frame = Math.max(0, visibleFrameCount() - 1);
+    state.wearableFrame = state.frame;
+    syncControls();
+    draw();
+    saveLocalState();
+  }
 }
 
 function setStatus(status) {
@@ -2329,6 +2801,10 @@ function advanceAnimationFrame() {
   if (frameCount <= 1) {
     return false;
   }
+  if (state.status === "dead" && state.frame >= frameCount - 1) {
+    state.playing = false;
+    return true;
+  }
   state.frame = (state.frame + 1) % frameCount;
   return true;
 }
@@ -2344,6 +2820,13 @@ function advanceWearableFrame() {
 }
 
 function togglePlayback() {
+  if (state.status === "dead") {
+    return;
+  }
+  if (!state.playing && state.status === "dead" && state.frame >= visibleFrameCount() - 1) {
+    state.frame = -1;
+    state.wearableFrame = 0;
+  }
   state.playing = !state.playing;
   state.lastTick = performance.now();
   if (state.playing) {
@@ -2381,6 +2864,418 @@ function tick(timestamp) {
   window.requestAnimationFrame(tick);
 }
 
+function setZoom(value) {
+  state.zoom = Math.min(zoomMax, Math.max(zoomMin, Math.round(Number(value) * 10) / 10));
+  syncControls();
+  draw();
+  saveLocalState();
+}
+
+async function imageFromSource(src) {
+  const image = new Image();
+  image.decoding = "async";
+  image.src = src;
+  if (image.decode) {
+    await image.decode();
+  } else {
+    await new Promise((resolve, reject) => {
+      image.onload = resolve;
+      image.onerror = reject;
+    });
+  }
+  return image;
+}
+
+async function setCustomBackgroundFile(file) {
+  if (!file || !file.type.startsWith("image/")) {
+    return;
+  }
+  const sourceUrl = URL.createObjectURL(file);
+  try {
+    const image = await imageFromSource(sourceUrl);
+    const maxSide = 1024;
+    const scale = Math.min(1, maxSide / Math.max(image.naturalWidth, image.naturalHeight));
+    const work = document.createElement("canvas");
+    work.width = Math.max(1, Math.round(image.naturalWidth * scale));
+    work.height = Math.max(1, Math.round(image.naturalHeight * scale));
+    const workCtx = work.getContext("2d");
+    workCtx.drawImage(image, 0, 0, work.width, work.height);
+    state.customBackgroundData = work.toDataURL("image/webp", 0.86);
+    localStorage.setItem(customBackgroundStorageKey, state.customBackgroundData);
+    state.previewBackground = "custom-image";
+    state.backgroundOffsetX = 0;
+    state.backgroundOffsetY = 0;
+    if (backgroundSelect) {
+      backgroundSelect.value = state.previewBackground;
+    }
+    applyPreviewBackground();
+    saveLocalState();
+    notifyStatus("自訂背景已載入 (Custom background loaded)");
+  } catch (error) {
+    console.error(error);
+    notifyStatus("無法讀取背景圖片 (Unable to load image)");
+  } finally {
+    URL.revokeObjectURL(sourceUrl);
+    if (backgroundFile) {
+      backgroundFile.value = "";
+    }
+  }
+}
+
+function readCloset() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(closetStorageKey) || "[]");
+    return Array.isArray(saved) ? saved.slice(0, 24) : [];
+  } catch (_) {
+    return [];
+  }
+}
+
+function writeCloset(items) {
+  try {
+    localStorage.setItem(closetStorageKey, JSON.stringify(items.slice(0, 24)));
+    return true;
+  } catch (error) {
+    console.error(error);
+    notifyStatus("衣櫃儲存失敗 (Closet storage failed)");
+    return false;
+  }
+}
+
+function defaultClosetName() {
+  const equipped = [
+    ...state.headgearSlots.map((_, index) => headgearEntryAt(index)),
+    selectedCapeEntry(),
+  ].filter(Boolean);
+  if (equipped.length) {
+    return shortItemName(equipped[0], equipped[0] === selectedCapeEntry() ? "cape" : "headgear");
+  }
+  return selectedJob()?.label || "紙娃娃穿搭";
+}
+
+function refreshCloset() {
+  if (!closetList) {
+    return;
+  }
+  const saved = readCloset();
+  if (!saved.length) {
+    const empty = document.createElement("span");
+    empty.className = "closet-empty";
+    empty.textContent = "尚未收藏穿搭 (No saved looks)";
+    closetList.replaceChildren(empty);
+    return;
+  }
+  const rows = saved.map((entry) => {
+    const row = document.createElement("div");
+    row.className = "closet-row";
+    const load = document.createElement("button");
+    load.type = "button";
+    load.className = "closet-load";
+    load.dataset.closetLoad = entry.id;
+    load.textContent = entry.name || "未命名穿搭";
+    load.title = "套用穿搭 (Apply Look)";
+    const manage = document.createElement("select");
+    manage.className = "closet-manage";
+    manage.dataset.closetManage = entry.id;
+    manage.dataset.noWheel = "true";
+    manage.title = "管理穿搭 (Manage Look)";
+    manage.setAttribute("aria-label", `${manage.title}: ${load.textContent}`);
+    for (const [value, label] of [
+      ["", "⋯"],
+      ["overwrite", "覆蓋 (Overwrite)"],
+      ["rename", "重新命名 (Rename)"],
+    ]) {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = label;
+      manage.appendChild(option);
+    }
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "closet-remove";
+    remove.dataset.closetRemove = entry.id;
+    remove.textContent = "×";
+    remove.title = "刪除穿搭 (Delete Look)";
+    remove.setAttribute("aria-label", `${remove.title}: ${load.textContent}`);
+    row.append(load, manage, remove);
+    return row;
+  });
+  closetList.replaceChildren(...rows);
+}
+
+function saveCurrentLook() {
+  const items = readCloset();
+  const typedName = closetName?.value.trim();
+  items.unshift({
+    id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+    name: typedName || defaultClosetName(),
+    state: statePayload(),
+  });
+  writeCloset(items);
+  if (closetName) {
+    closetName.value = "";
+  }
+  refreshCloset();
+  notifyStatus("穿搭已收藏 (Look saved)");
+}
+
+function overwriteClosetLook(id) {
+  const items = readCloset();
+  const entry = items.find((item) => item.id === id);
+  if (!entry) {
+    return;
+  }
+  entry.state = statePayload();
+  if (writeCloset(items)) {
+    refreshCloset();
+    notifyStatus(`已覆蓋：${entry.name} (Look overwritten)`);
+  }
+}
+
+function renameClosetLook(id) {
+  const items = readCloset();
+  const entry = items.find((item) => item.id === id);
+  if (!entry) {
+    return;
+  }
+  const nextName = window.prompt("新的穿搭名稱 (New look name)", entry.name || "");
+  if (nextName === null) {
+    return;
+  }
+  const normalized = nextName.trim().slice(0, 32);
+  if (!normalized) {
+    notifyStatus("穿搭名稱不可空白 (Look name is required)");
+    return;
+  }
+  entry.name = normalized;
+  if (writeCloset(items)) {
+    refreshCloset();
+    notifyStatus(`已重新命名：${normalized} (Look renamed)`);
+  }
+}
+
+async function applyClosetLook(id) {
+  const entry = readCloset().find((item) => item.id === id);
+  if (!entry?.state) {
+    return;
+  }
+  state.playing = false;
+  applyStatePayload(entry.state);
+  normalizeState();
+  refreshJobSelect();
+  refreshMountSelect();
+  refreshHairSelect();
+  refreshColorSelects();
+  refreshEquipmentSelects();
+  refreshBackgroundSelect();
+  await prepareAndDraw();
+  notifyStatus(`已套用：${entry.name} (Look applied)`);
+}
+
+function removeClosetLook(id) {
+  writeCloset(readCloset().filter((item) => item.id !== id));
+  refreshCloset();
+  notifyStatus("穿搭已刪除 (Look deleted)");
+}
+
+function exportClosetJson() {
+  const payload = {
+    format: "nori-paperdoll-closet",
+    version: 2,
+    exportedAt: new Date().toISOString(),
+    looks: readCloset(),
+  };
+  const blob = new Blob([`${JSON.stringify(payload, null, 2)}\n`], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.download = "nori-paperdoll-closet.json";
+  link.href = url;
+  link.click();
+  URL.revokeObjectURL(url);
+  notifyStatus("衣櫃 JSON 已匯出 (Closet exported)");
+}
+
+function sanitizeImportedLook(entry, index) {
+  if (!entry || typeof entry !== "object" || !entry.state || typeof entry.state !== "object") {
+    return null;
+  }
+  const name = String(entry.name || `匯入穿搭 ${index + 1}`).trim().slice(0, 32);
+  return {
+    id: String(entry.id || `import-${Date.now()}-${index}-${Math.random().toString(36).slice(2, 7)}`),
+    name: name || `匯入穿搭 ${index + 1}`,
+    state: { ...entry.state },
+  };
+}
+
+async function importClosetJson(file) {
+  if (!file) {
+    return;
+  }
+  try {
+    const parsed = JSON.parse(await file.text());
+    const source = Array.isArray(parsed) ? parsed : parsed?.looks;
+    if (!Array.isArray(source)) {
+      throw new Error("Invalid closet JSON");
+    }
+    const imported = source.map(sanitizeImportedLook).filter(Boolean);
+    if (!imported.length) {
+      throw new Error("No valid looks");
+    }
+    const merged = [...imported, ...readCloset()];
+    const seen = new Set();
+    const unique = merged.filter((entry) => {
+      if (seen.has(entry.id)) {
+        return false;
+      }
+      seen.add(entry.id);
+      return true;
+    });
+    if (writeCloset(unique)) {
+      refreshCloset();
+      notifyStatus(`已匯入 ${imported.length} 套穿搭 (Looks imported)`);
+    }
+  } catch (error) {
+    console.error(error);
+    notifyStatus("衣櫃 JSON 格式不正確 (Invalid closet JSON)");
+  } finally {
+    if (importClosetFile) {
+      importClosetFile.value = "";
+    }
+  }
+}
+
+function drawCover(exportCtx, image, width, height, offsetX = 0, offsetY = 0) {
+  const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+  const drawWidth = image.naturalWidth * scale;
+  const drawHeight = image.naturalHeight * scale;
+  exportCtx.drawImage(
+    image,
+    ((width - drawWidth) / 2) + offsetX,
+    ((height - drawHeight) / 2) + offsetY,
+    drawWidth,
+    drawHeight,
+  );
+}
+
+async function drawExportBackground(exportCtx, width, height, mode = "current", outputScale = 1) {
+  if (mode === "transparent") {
+    return;
+  }
+  const bg = backgroundById(state.previewBackground);
+  if (!bg || bg.type === "checkerboard") {
+    return;
+  }
+  if (bg.type === "color" || bg.type === "custom-color") {
+    exportCtx.fillStyle = bg.value || state.backgroundColor;
+    exportCtx.fillRect(0, 0, width, height);
+    return;
+  }
+  if (bg.type === "custom-image") {
+    exportCtx.fillStyle = state.backgroundColor;
+    exportCtx.fillRect(0, 0, width, height);
+    if (bg.src) {
+      drawCover(
+        exportCtx,
+        await imageFromSource(bg.src),
+        width,
+        height,
+        state.backgroundOffsetX * outputScale,
+        state.backgroundOffsetY * outputScale,
+      );
+    }
+    return;
+  }
+  if (bg.type === "texture" && bg.src) {
+    const image = await imageFromSource(appUrl(bg.src));
+    const sizes = String(bg.size || "256px 256px").match(/[0-9.]+/g) || [256, 256];
+    const tileWidth = (Number(sizes[0]) || 256) * outputScale;
+    const tileHeight = (Number(sizes[1] || sizes[0]) || Number(sizes[0]) || 256) * outputScale;
+    const centerX = ((width - tileWidth) / 2) + (state.backgroundOffsetX * outputScale);
+    const centerY = ((height - tileHeight) / 2) + (state.backgroundOffsetY * outputScale);
+    const startX = centerX % tileWidth - tileWidth;
+    const startY = centerY % tileHeight - tileHeight;
+    for (let y = startY; y < height; y += tileHeight) {
+      for (let x = startX; x < width; x += tileWidth) {
+        exportCtx.drawImage(image, x, y, tileWidth, tileHeight);
+      }
+    }
+  }
+}
+
+async function drawEffectLayerForExport(exportCtx, layer, originRect, outputScale = 1) {
+  for (const image of layer?.querySelectorAll("img, canvas") || []) {
+    try {
+      if (image.decode) {
+        await image.decode();
+      }
+      const rect = image.getBoundingClientRect();
+      exportCtx.save();
+      exportCtx.globalAlpha = Number(getComputedStyle(image).opacity || 1);
+      exportCtx.globalCompositeOperation = image.dataset.composite === "plus-lighter" ? "lighter" : "source-over";
+      exportCtx.drawImage(
+        image,
+        (rect.left - originRect.left) * outputScale,
+        (rect.top - originRect.top) * outputScale,
+        rect.width * outputScale,
+        rect.height * outputScale,
+      );
+      exportCtx.restore();
+    } catch (error) {
+      console.warn("Effect frame could not be exported", error);
+    }
+  }
+}
+
+function drawShadowForExport(exportCtx, originRect, outputScale = 1) {
+  if (!state.showShadow || !paperdollShadow || paperdollShadow.classList.contains("is-hidden")) {
+    return;
+  }
+  const rect = paperdollShadow.getBoundingClientRect();
+  const centerX = (rect.left - originRect.left + rect.width / 2) * outputScale;
+  const centerY = (rect.top - originRect.top + rect.height / 2) * outputScale;
+  const radiusX = rect.width * outputScale / 2;
+  const radiusY = rect.height * outputScale / 2;
+  exportCtx.save();
+  exportCtx.translate(centerX, centerY);
+  exportCtx.scale(radiusX, radiusY);
+  exportCtx.beginPath();
+  exportCtx.arc(0, 0, 1, 0, Math.PI * 2);
+  exportCtx.fillStyle = "rgba(26, 32, 44, 0.28)";
+  exportCtx.fill();
+  exportCtx.restore();
+}
+
+async function composeStageExport(stageSize, backgroundMode, includeInfo = false) {
+  const outputScale = stageSize / previewWrap.clientWidth;
+  const infoHeight = includeInfo ? 74 * outputScale : 0;
+  const exportCanvas = document.createElement("canvas");
+  exportCanvas.width = stageSize;
+  exportCanvas.height = stageSize + infoHeight;
+  const exportCtx = exportCanvas.getContext("2d", { willReadFrequently: true });
+  const wrapRect = previewWrap.getBoundingClientRect();
+  const originRect = {
+    left: wrapRect.left + previewWrap.clientLeft,
+    top: wrapRect.top + previewWrap.clientTop,
+  };
+  await drawExportBackground(exportCtx, stageSize, stageSize, backgroundMode, outputScale);
+  await drawEffectLayerForExport(exportCtx, effectLayerBehind, originRect, outputScale);
+  drawShadowForExport(exportCtx, originRect, outputScale);
+  const canvasRect = canvas.getBoundingClientRect();
+  exportCtx.imageSmoothingEnabled = false;
+  exportCtx.drawImage(
+    canvas,
+    (canvasRect.left - originRect.left) * outputScale,
+    (canvasRect.top - originRect.top) * outputScale,
+    canvasRect.width * outputScale,
+    canvasRect.height * outputScale,
+  );
+  await drawEffectLayerForExport(exportCtx, effectLayerFront, originRect, outputScale);
+  if (includeInfo) {
+    drawPngInformation(exportCtx, stageSize, outputScale);
+  }
+  return exportCanvas;
+}
+
 async function copyShareLink() {
   const url = new URL(window.location.href);
   url.hash = stateHash();
@@ -2393,13 +3288,203 @@ async function copyShareLink() {
   }
 }
 
-function saveCurrentPng() {
+function truncateCanvasText(exportCtx, text, maxWidth) {
+  if (exportCtx.measureText(text).width <= maxWidth) {
+    return text;
+  }
+  let value = text;
+  while (value.length > 1 && exportCtx.measureText(`${value}…`).width > maxWidth) {
+    value = value.slice(0, -1);
+  }
+  return `${value}…`;
+}
+
+function drawPngInformation(exportCtx, stageSize, outputScale) {
+  const infoTop = stageSize;
+  const infoHeight = 74 * outputScale;
+  const padding = 10 * outputScale;
+  const maxWidth = stageSize - (padding * 2);
+  const costumeNames = state.headgearSlots.map((_, index) => {
+    const item = headgearEntryAt(index);
+    return item ? shortItemName(item, "headgear") : trText("none");
+  });
+  const cape = selectedCapeEntry();
+  const jobName = selectedJob()?.label || tr("label", "job");
+  const sexName = tr("button", state.sex) || sexLabels.get(state.sex) || state.sex;
+  exportCtx.fillStyle = "rgba(255, 255, 255, 0.94)";
+  exportCtx.fillRect(0, infoTop, stageSize, infoHeight);
+  exportCtx.strokeStyle = "#d7dee8";
+  exportCtx.lineWidth = Math.max(1, outputScale);
+  exportCtx.beginPath();
+  exportCtx.moveTo(0, infoTop + 0.5);
+  exportCtx.lineTo(stageSize, infoTop + 0.5);
+  exportCtx.stroke();
+  exportCtx.fillStyle = "#172033";
+  exportCtx.font = `600 ${12 * outputScale}px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif`;
+  exportCtx.fillText(truncateCanvasText(exportCtx, `${sexName} · ${jobName}`, maxWidth), padding, infoTop + (20 * outputScale));
+  exportCtx.font = `${10 * outputScale}px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif`;
+  exportCtx.fillStyle = "#516078";
+  exportCtx.fillText(
+    truncateCanvasText(exportCtx, `服飾 (Costume): ${costumeNames.join(" / ")}`, maxWidth),
+    padding,
+    infoTop + (40 * outputScale),
+  );
+  exportCtx.fillText(
+    truncateCanvasText(exportCtx, `披肩 (Garment): ${cape ? shortItemName(cape, "cape") : trText("none")}`, maxWidth),
+    padding,
+    infoTop + (58 * outputScale),
+  );
+}
+
+function saveExportSettings() {
+  try {
+    localStorage.setItem(exportStorageKey, JSON.stringify({
+      size: state.pngSize,
+      background: state.pngBackground,
+      includeInfo: state.pngIncludeInfo,
+    }));
+  } catch (_) {}
+}
+
+function loadExportSettings() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(exportStorageKey) || "null");
+    if ([256, 512].includes(Number(saved?.size))) state.pngSize = Number(saved.size);
+    if (["current", "transparent"].includes(saved?.background)) state.pngBackground = saved.background;
+    state.pngIncludeInfo = Boolean(saved?.includeInfo);
+  } catch (_) {}
+}
+
+function syncPngDialog() {
+  document.querySelectorAll("[data-png-size]").forEach((button) => {
+    button.classList.toggle("active", Number(button.dataset.pngSize) === state.pngSize);
+  });
+  document.querySelectorAll("[data-png-background]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.pngBackground === state.pngBackground);
+  });
+  if (pngIncludeInfo) {
+    pngIncludeInfo.checked = state.pngIncludeInfo;
+  }
+}
+
+function openPngDialog() {
+  syncPngDialog();
+  if (pngDialog?.showModal) {
+    pngDialog.showModal();
+  } else {
+    saveCurrentPng().catch(console.error);
+  }
+}
+
+async function saveCurrentPng() {
+  const stageSize = state.pngSize;
+  const exportCanvas = await composeStageExport(stageSize, state.pngBackground, state.pngIncludeInfo);
   const link = document.createElement("a");
   const job = (selectedJob()?.label || "paperdoll").replace(/[\\/:*?"<>|]+/g, "_");
   link.download = `nori-paperdoll-${job}.png`;
-  link.href = canvas.toDataURL("image/png");
+  link.href = exportCanvas.toDataURL("image/png");
   link.click();
+  saveExportSettings();
   notifyStatus(trText("pngSaved"));
+}
+
+function syncGifDialog() {
+  document.querySelectorAll("[data-gif-duration]").forEach((button) => {
+    button.classList.toggle("active", Number(button.dataset.gifDuration) === state.gifDuration);
+  });
+  document.querySelectorAll("[data-gif-background]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.gifBackground === state.gifBackground);
+  });
+}
+
+function openGifDialog() {
+  syncGifDialog();
+  gifDialog?.showModal();
+}
+
+async function saveCurrentGif() {
+  const sampleMs = 100;
+  const frameCount = Math.max(1, Math.round(state.gifDuration / sampleMs));
+  const saved = {
+    frame: state.frame,
+    wearableFrame: state.wearableFrame,
+    playing: state.playing,
+    renderFitScale: state.renderFitScale,
+    renderFitBounds: state.renderFitBounds ? { ...state.renderFitBounds } : null,
+  };
+  saveGifButton.disabled = true;
+  notifyStatus(trText("gifSaving"));
+
+  try {
+    await effectRuntime?.waitUntilSettled(8000);
+    const hasNativeEffect = Boolean(document.querySelector(".effect-runtime-fallback"));
+    effectRuntime?.beginCapture();
+    state.playing = true;
+    state.renderFitScale = null;
+    state.renderFitBounds = null;
+
+    const characterFrameCount = Math.max(1, visibleFrameCount());
+    for (let index = 0; index < characterFrameCount; index += 1) {
+      state.frame = index;
+      state.wearableFrame = index;
+      draw();
+    }
+
+    const rgbaFrames = [];
+    for (let index = 0; index < frameCount; index += 1) {
+      const elapsed = index * sampleMs;
+      state.frame = Math.floor(elapsed / state.frameMs) % characterFrameCount;
+      state.wearableFrame = state.frame;
+      draw();
+      effectRuntime?.captureAt(elapsed);
+      const frameCanvas = await composeStageExport(256, state.gifBackground, false);
+      rgbaFrames.push(frameCanvas.getContext("2d").getImageData(0, 0, 256, 256).data);
+      if (hasNativeEffect && index < frameCount - 1) {
+        await new Promise((resolve) => setTimeout(resolve, sampleMs));
+      }
+    }
+
+    const { GIFEncoder, quantize, applyPalette } = await import(appUrl("vendor/gifenc.esm.js"));
+    const gif = GIFEncoder();
+    const transparentOutput = state.gifBackground === "transparent";
+    for (const rgba of rgbaFrames) {
+      const format = transparentOutput ? "rgba4444" : "rgb565";
+      const palette = quantize(rgba, 256, transparentOutput
+        ? { format, oneBitAlpha: 8, clearAlpha: true }
+        : { format });
+      const indexed = applyPalette(rgba, palette, format);
+      const transparentIndex = transparentOutput
+        ? palette.findIndex((color) => color.length > 3 && color[3] === 0)
+        : -1;
+      gif.writeFrame(indexed, 256, 256, {
+        palette,
+        delay: sampleMs,
+        repeat: 0,
+        transparent: transparentIndex >= 0,
+        transparentIndex: Math.max(0, transparentIndex),
+        dispose: 2,
+      });
+    }
+    gif.finish();
+    const blobUrl = URL.createObjectURL(new Blob([gif.bytes()], { type: "image/gif" }));
+    const link = document.createElement("a");
+    const job = (selectedJob()?.label || "paperdoll").replace(/[\\/:*?"<>|]+/g, "_");
+    link.download = `nori-paperdoll-${job}.gif`;
+    link.href = blobUrl;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+    notifyStatus(trText("gifSaved"));
+  } finally {
+    effectRuntime?.endCapture();
+    state.frame = saved.frame;
+    state.wearableFrame = saved.wearableFrame;
+    state.playing = saved.playing;
+    state.renderFitScale = saved.renderFitScale;
+    state.renderFitBounds = saved.renderFitBounds;
+    saveGifButton.disabled = false;
+    syncControls();
+    draw();
+  }
 }
 
 function clearWearables() {
@@ -2425,7 +3510,7 @@ function clearWearables() {
 }
 
 function enableSelectWheel(select) {
-  if (!select) {
+  if (!select || select.dataset.noWheel === "true") {
     return;
   }
   select.addEventListener("wheel", (event) => {
@@ -2492,6 +3577,12 @@ async function boot() {
   } catch (error) {
     console.warn("Preview backgrounds unavailable", error);
   }
+  try {
+    state.customBackgroundData = localStorage.getItem(customBackgroundStorageKey) || "";
+  } catch (_) {
+    state.customBackgroundData = "";
+  }
+  loadExportSettings();
   canvas.width = DISPLAY_CANVAS_SIZE;
   canvas.height = DISPLAY_CANVAS_SIZE;
   renderCanvas.width = state.data.canvas.width;
@@ -2514,6 +3605,7 @@ async function boot() {
   refreshColorSelects();
   refreshEquipmentSelects();
   refreshBackgroundSelect();
+  refreshCloset();
 
   document.querySelectorAll("[data-sex]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -2581,6 +3673,28 @@ async function boot() {
       syncControls();
       refreshItemBrowser();
     });
+  });
+  openItemBrowserButton?.addEventListener("click", openItemBrowser);
+  closeItemBrowserButton?.addEventListener("click", () => itemBrowserDialog?.close());
+  finishItemBrowserButton?.addEventListener("click", () => itemBrowserDialog?.close());
+  clearItemBrowserSlotButton?.addEventListener("click", clearItemBrowserSlot);
+  itemBrowserSlotButtons.forEach((button) => {
+    button.addEventListener("click", () => setItemBrowserSlot(button.dataset.browserSlot || "0"));
+  });
+  itemBrowserFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.disabled) {
+        return;
+      }
+      itemBrowserFilter = button.dataset.browserFilter || "all";
+      syncItemBrowserControls();
+      refreshItemBrowser();
+    });
+  });
+  itemBrowserDialog?.addEventListener("click", (event) => {
+    if (event.target === itemBrowserDialog) {
+      itemBrowserDialog.close();
+    }
   });
   equipmentQuickFilterButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -2696,10 +3810,133 @@ async function boot() {
   if (backgroundSelect) {
     backgroundSelect.addEventListener("change", () => {
       state.previewBackground = backgroundSelect.value;
+      state.backgroundOffsetX = 0;
+      state.backgroundOffsetY = 0;
       applyPreviewBackground();
       saveLocalState();
     });
   }
+  if (backgroundColor) {
+    backgroundColor.addEventListener("input", () => {
+      state.backgroundColor = backgroundColor.value;
+      applyPreviewBackground();
+      saveLocalState();
+    });
+  }
+  if (shadowToggle) {
+    shadowToggle.addEventListener("change", () => {
+      state.showShadow = shadowToggle.checked;
+      syncControls();
+      saveLocalState();
+    });
+  }
+  if (backgroundFile) {
+    backgroundFile.addEventListener("change", () => setCustomBackgroundFile(backgroundFile.files?.[0]));
+  }
+  if (backgroundResetButton) {
+    backgroundResetButton.addEventListener("click", () => resetBackgroundPosition());
+  }
+  if (previewWrap) {
+    previewWrap.addEventListener("pointerdown", startBackgroundDrag);
+    previewWrap.addEventListener("pointermove", moveBackgroundDrag);
+    previewWrap.addEventListener("pointerup", finishBackgroundDrag);
+    previewWrap.addEventListener("pointercancel", finishBackgroundDrag);
+  }
+  if (zoomOutButton) {
+    zoomOutButton.addEventListener("click", () => setZoom(state.zoom - zoomStep));
+  }
+  if (zoomInButton) {
+    zoomInButton.addEventListener("click", () => setZoom(state.zoom + zoomStep));
+  }
+  if (saveClosetButton) {
+    saveClosetButton.addEventListener("click", () => saveCurrentLook());
+  }
+  if (closetName) {
+    closetName.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        saveCurrentLook();
+      }
+    });
+  }
+  if (closetList) {
+    closetList.addEventListener("click", (event) => {
+      const load = event.target.closest("[data-closet-load]");
+      const remove = event.target.closest("[data-closet-remove]");
+      if (load) {
+        applyClosetLook(load.dataset.closetLoad);
+      } else if (remove) {
+        removeClosetLook(remove.dataset.closetRemove);
+      }
+    });
+    closetList.addEventListener("change", (event) => {
+      const manage = event.target.closest("[data-closet-manage]");
+      if (!manage || !manage.value) {
+        return;
+      }
+      if (manage.value === "overwrite") {
+        overwriteClosetLook(manage.dataset.closetManage);
+      } else if (manage.value === "rename") {
+        renameClosetLook(manage.dataset.closetManage);
+      }
+      manage.value = "";
+    });
+  }
+  if (exportClosetButton) {
+    exportClosetButton.addEventListener("click", () => exportClosetJson());
+  }
+  if (importClosetFile) {
+    importClosetFile.addEventListener("change", () => importClosetJson(importClosetFile.files?.[0]));
+  }
+  document.querySelectorAll("[data-png-size]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.pngSize = Number(button.dataset.pngSize) === 512 ? 512 : 256;
+      syncPngDialog();
+    });
+  });
+  document.querySelectorAll("[data-png-background]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.pngBackground = button.dataset.pngBackground === "transparent" ? "transparent" : "current";
+      syncPngDialog();
+    });
+  });
+  if (pngIncludeInfo) {
+    pngIncludeInfo.addEventListener("change", () => {
+      state.pngIncludeInfo = pngIncludeInfo.checked;
+    });
+  }
+  if (cancelPngButton) {
+    cancelPngButton.addEventListener("click", () => pngDialog?.close());
+  }
+  if (confirmPngButton) {
+    confirmPngButton.addEventListener("click", () => {
+      pngDialog?.close();
+      saveCurrentPng().catch((error) => {
+        console.error(error);
+        notifyStatus("PNG 儲存失敗 (PNG export failed)");
+      });
+    });
+  }
+  document.querySelectorAll("[data-gif-duration]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.gifDuration = Number(button.dataset.gifDuration) || 2400;
+      syncGifDialog();
+    });
+  });
+  document.querySelectorAll("[data-gif-background]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.gifBackground = button.dataset.gifBackground || "current";
+      syncGifDialog();
+    });
+  });
+  cancelGifButton?.addEventListener("click", () => gifDialog?.close());
+  confirmGifButton?.addEventListener("click", () => {
+    gifDialog?.close();
+    saveCurrentGif().catch((error) => {
+      console.error(error);
+      notifyStatus("GIF 儲存失敗 (GIF export failed)");
+    });
+  });
   frameSlider.addEventListener("input", () => {
     state.playing = false;
     state.frame = Number(frameSlider.value);
@@ -2716,14 +3953,16 @@ async function boot() {
   }
   fitButton.addEventListener("click", () => {
     state.displaySize = "normal";
+    state.zoom = 1;
     prepareAndDraw();
   });
   if (shareButton) {
     shareButton.addEventListener("click", () => copyShareLink());
   }
   if (saveImageButton) {
-    saveImageButton.addEventListener("click", () => saveCurrentPng());
+    saveImageButton.addEventListener("click", () => openPngDialog());
   }
+  saveGifButton?.addEventListener("click", () => openGifDialog());
   if (clearButton) {
     clearButton.addEventListener("click", () => clearWearables());
   }
@@ -2731,6 +3970,12 @@ async function boot() {
 
   syncControls();
   await prepareAndDraw();
+  if (state.status === "dead" && !state.playing) {
+    state.frame = Math.max(0, visibleFrameCount() - 1);
+    state.wearableFrame = state.frame;
+    syncControls();
+    draw();
+  }
   window.requestAnimationFrame(tick);
 }
 

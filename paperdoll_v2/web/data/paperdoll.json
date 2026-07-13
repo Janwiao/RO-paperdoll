@@ -1,5 +1,5 @@
 {
-  "schema": "nori-paperdoll-poc/v1",
+  "schema": "nori-paperdoll/v2",
   "canvas": {
     "width": 180,
     "height": 180
@@ -48,7 +48,15 @@
     36,
     37,
     38,
-    39
+    39,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
   ],
   "statuses": [
     {
@@ -75,6 +83,11 @@
       "key": "wait",
       "label": "待",
       "offset": 32
+    },
+    {
+      "key": "dead",
+      "label": "倒",
+      "offset": 64
     }
   ],
   "directions": [
@@ -31563,6 +31576,30 @@
       "label": "機械工匠 第二服裝 male",
       "data": "data/parts/job_male_mechanic_c1.json"
     },
+    "job_female_mechanic_mado": {
+      "key": "job_female_mechanic_mado",
+      "kind": "body",
+      "label": "機械工匠 魔導機甲 female",
+      "data": "data/parts/job_female_mechanic_mado.json"
+    },
+    "job_female_mechanic_mado_c1": {
+      "key": "job_female_mechanic_mado_c1",
+      "kind": "body",
+      "label": "機械工匠 魔導機甲 第二服裝 female",
+      "data": "data/parts/job_female_mechanic_mado_c1.json"
+    },
+    "job_male_mechanic_mado": {
+      "key": "job_male_mechanic_mado",
+      "kind": "body",
+      "label": "機械工匠 魔導機甲 male",
+      "data": "data/parts/job_male_mechanic_mado.json"
+    },
+    "job_male_mechanic_mado_c1": {
+      "key": "job_male_mechanic_mado_c1",
+      "kind": "body",
+      "label": "機械工匠 魔導機甲 第二服裝 male",
+      "data": "data/parts/job_male_mechanic_mado_c1.json"
+    },
     "job_female_guillotine_cross": {
       "key": "job_female_guillotine_cross",
       "kind": "body",
@@ -31971,6 +32008,18 @@
       "label": "機甲神匠 騎乘 male",
       "data": "data/parts/job_male_meister_mount.json"
     },
+    "job_female_meister_madogear": {
+      "key": "job_female_meister_madogear",
+      "kind": "body",
+      "label": "機甲神匠 魔導機甲 female",
+      "data": "data/parts/job_female_meister_madogear.json"
+    },
+    "job_male_meister_madogear": {
+      "key": "job_male_meister_madogear",
+      "kind": "body",
+      "label": "機甲神匠 魔導機甲 male",
+      "data": "data/parts/job_male_meister_madogear.json"
+    },
     "job_female_shadow_cross": {
       "key": "job_female_shadow_cross",
       "kind": "body",
@@ -32318,6 +32367,906 @@
       "kind": "body",
       "label": "靈導士 male",
       "data": "data/parts/job_male_soul_ascetic.json"
+    },
+    "job_female_novice_poring": {
+      "key": "job_female_novice_poring",
+      "kind": "body",
+      "label": "初學者 波利 female",
+      "data": "data/parts/job_female_novice_poring.json"
+    },
+    "job_male_novice_poring": {
+      "key": "job_male_novice_poring",
+      "kind": "body",
+      "label": "初學者 波利 male",
+      "data": "data/parts/job_male_novice_poring.json"
+    },
+    "job_female_swordman_peco": {
+      "key": "job_female_swordman_peco",
+      "kind": "body",
+      "label": "劍士 大嘴鳥 female",
+      "data": "data/parts/job_female_swordman_peco.json"
+    },
+    "job_male_swordman_peco": {
+      "key": "job_male_swordman_peco",
+      "kind": "body",
+      "label": "劍士 大嘴鳥 male",
+      "data": "data/parts/job_male_swordman_peco.json"
+    },
+    "job_female_thief_cerberus": {
+      "key": "job_female_thief_cerberus",
+      "kind": "body",
+      "label": "盜賊 地獄犬 female",
+      "data": "data/parts/job_female_thief_cerberus.json"
+    },
+    "job_male_thief_cerberus": {
+      "key": "job_male_thief_cerberus",
+      "kind": "body",
+      "label": "盜賊 地獄犬 male",
+      "data": "data/parts/job_male_thief_cerberus.json"
+    },
+    "job_female_assassin_cerberus": {
+      "key": "job_female_assassin_cerberus",
+      "kind": "body",
+      "label": "刺客 地獄犬 female",
+      "data": "data/parts/job_female_assassin_cerberus.json"
+    },
+    "job_male_assassin_cerberus": {
+      "key": "job_male_assassin_cerberus",
+      "kind": "body",
+      "label": "刺客 地獄犬 male",
+      "data": "data/parts/job_male_assassin_cerberus.json"
+    },
+    "job_female_rogue_cerberus": {
+      "key": "job_female_rogue_cerberus",
+      "kind": "body",
+      "label": "流氓 地獄犬 female",
+      "data": "data/parts/job_female_rogue_cerberus.json"
+    },
+    "job_male_rogue_cerberus": {
+      "key": "job_male_rogue_cerberus",
+      "kind": "body",
+      "label": "流氓 地獄犬 male",
+      "data": "data/parts/job_male_rogue_cerberus.json"
+    },
+    "job_female_assassin_cross_cerberus": {
+      "key": "job_female_assassin_cross_cerberus",
+      "kind": "body",
+      "label": "十字刺客 地獄犬 female",
+      "data": "data/parts/job_female_assassin_cross_cerberus.json"
+    },
+    "job_male_assassin_cross_cerberus": {
+      "key": "job_male_assassin_cross_cerberus",
+      "kind": "body",
+      "label": "十字刺客 地獄犬 male",
+      "data": "data/parts/job_male_assassin_cross_cerberus.json"
+    },
+    "job_female_stalker_cerberus": {
+      "key": "job_female_stalker_cerberus",
+      "kind": "body",
+      "label": "神行太保 地獄犬 female",
+      "data": "data/parts/job_female_stalker_cerberus.json"
+    },
+    "job_male_stalker_cerberus": {
+      "key": "job_male_stalker_cerberus",
+      "kind": "body",
+      "label": "神行太保 地獄犬 male",
+      "data": "data/parts/job_male_stalker_cerberus.json"
+    },
+    "job_female_guillotine_cross_cerberus": {
+      "key": "job_female_guillotine_cross_cerberus",
+      "kind": "body",
+      "label": "十字斬首者 地獄犬 female",
+      "data": "data/parts/job_female_guillotine_cross_cerberus.json"
+    },
+    "job_female_guillotine_cross_cerberus_c1": {
+      "key": "job_female_guillotine_cross_cerberus_c1",
+      "kind": "body",
+      "label": "十字斬首者 地獄犬 第二服裝 female",
+      "data": "data/parts/job_female_guillotine_cross_cerberus_c1.json"
+    },
+    "job_male_guillotine_cross_cerberus": {
+      "key": "job_male_guillotine_cross_cerberus",
+      "kind": "body",
+      "label": "十字斬首者 地獄犬 male",
+      "data": "data/parts/job_male_guillotine_cross_cerberus.json"
+    },
+    "job_male_guillotine_cross_cerberus_c1": {
+      "key": "job_male_guillotine_cross_cerberus_c1",
+      "kind": "body",
+      "label": "十字斬首者 地獄犬 第二服裝 male",
+      "data": "data/parts/job_male_guillotine_cross_cerberus_c1.json"
+    },
+    "job_female_shadow_chaser_cerberus": {
+      "key": "job_female_shadow_chaser_cerberus",
+      "kind": "body",
+      "label": "魅影追蹤者 地獄犬 female",
+      "data": "data/parts/job_female_shadow_chaser_cerberus.json"
+    },
+    "job_female_shadow_chaser_cerberus_c1": {
+      "key": "job_female_shadow_chaser_cerberus_c1",
+      "kind": "body",
+      "label": "魅影追蹤者 地獄犬 第二服裝 female",
+      "data": "data/parts/job_female_shadow_chaser_cerberus_c1.json"
+    },
+    "job_male_shadow_chaser_cerberus": {
+      "key": "job_male_shadow_chaser_cerberus",
+      "kind": "body",
+      "label": "魅影追蹤者 地獄犬 male",
+      "data": "data/parts/job_male_shadow_chaser_cerberus.json"
+    },
+    "job_male_shadow_chaser_cerberus_c1": {
+      "key": "job_male_shadow_chaser_cerberus_c1",
+      "kind": "body",
+      "label": "魅影追蹤者 地獄犬 第二服裝 male",
+      "data": "data/parts/job_male_shadow_chaser_cerberus_c1.json"
+    },
+    "job_female_knight_lion": {
+      "key": "job_female_knight_lion",
+      "kind": "body",
+      "label": "騎士 獅子 female",
+      "data": "data/parts/job_female_knight_lion.json"
+    },
+    "job_male_knight_lion": {
+      "key": "job_male_knight_lion",
+      "kind": "body",
+      "label": "騎士 獅子 male",
+      "data": "data/parts/job_male_knight_lion.json"
+    },
+    "job_female_crusader_lion": {
+      "key": "job_female_crusader_lion",
+      "kind": "body",
+      "label": "十字軍 獅子 female",
+      "data": "data/parts/job_female_crusader_lion.json"
+    },
+    "job_male_crusader_lion": {
+      "key": "job_male_crusader_lion",
+      "kind": "body",
+      "label": "十字軍 獅子 male",
+      "data": "data/parts/job_male_crusader_lion.json"
+    },
+    "job_female_lord_knight_lion": {
+      "key": "job_female_lord_knight_lion",
+      "kind": "body",
+      "label": "騎士領主 獅子 female",
+      "data": "data/parts/job_female_lord_knight_lion.json"
+    },
+    "job_male_lord_knight_lion": {
+      "key": "job_male_lord_knight_lion",
+      "kind": "body",
+      "label": "騎士領主 獅子 male",
+      "data": "data/parts/job_male_lord_knight_lion.json"
+    },
+    "job_female_paladin_lion": {
+      "key": "job_female_paladin_lion",
+      "kind": "body",
+      "label": "聖殿十字軍 獅子 female",
+      "data": "data/parts/job_female_paladin_lion.json"
+    },
+    "job_male_paladin_lion": {
+      "key": "job_male_paladin_lion",
+      "kind": "body",
+      "label": "聖殿十字軍 獅子 male",
+      "data": "data/parts/job_male_paladin_lion.json"
+    },
+    "job_female_rune_knight_lion": {
+      "key": "job_female_rune_knight_lion",
+      "kind": "body",
+      "label": "盧恩騎士 獅子 female",
+      "data": "data/parts/job_female_rune_knight_lion.json"
+    },
+    "job_female_rune_knight_lion_c1": {
+      "key": "job_female_rune_knight_lion_c1",
+      "kind": "body",
+      "label": "盧恩騎士 獅子 第二服裝 female",
+      "data": "data/parts/job_female_rune_knight_lion_c1.json"
+    },
+    "job_male_rune_knight_lion": {
+      "key": "job_male_rune_knight_lion",
+      "kind": "body",
+      "label": "盧恩騎士 獅子 male",
+      "data": "data/parts/job_male_rune_knight_lion.json"
+    },
+    "job_male_rune_knight_lion_c1": {
+      "key": "job_male_rune_knight_lion_c1",
+      "kind": "body",
+      "label": "盧恩騎士 獅子 第二服裝 male",
+      "data": "data/parts/job_male_rune_knight_lion_c1.json"
+    },
+    "job_female_royal_guard_lion": {
+      "key": "job_female_royal_guard_lion",
+      "kind": "body",
+      "label": "皇家禁衛隊 獅子 female",
+      "data": "data/parts/job_female_royal_guard_lion.json"
+    },
+    "job_female_royal_guard_lion_c1": {
+      "key": "job_female_royal_guard_lion_c1",
+      "kind": "body",
+      "label": "皇家禁衛隊 獅子 第二服裝 female",
+      "data": "data/parts/job_female_royal_guard_lion_c1.json"
+    },
+    "job_male_royal_guard_lion": {
+      "key": "job_male_royal_guard_lion",
+      "kind": "body",
+      "label": "皇家禁衛隊 獅子 male",
+      "data": "data/parts/job_male_royal_guard_lion.json"
+    },
+    "job_male_royal_guard_lion_c1": {
+      "key": "job_male_royal_guard_lion_c1",
+      "kind": "body",
+      "label": "皇家禁衛隊 獅子 第二服裝 male",
+      "data": "data/parts/job_male_royal_guard_lion_c1.json"
+    },
+    "job_female_magician_fox": {
+      "key": "job_female_magician_fox",
+      "kind": "body",
+      "label": "魔法師 狐狸 female",
+      "data": "data/parts/job_female_magician_fox.json"
+    },
+    "job_male_magician_fox": {
+      "key": "job_male_magician_fox",
+      "kind": "body",
+      "label": "魔法師 狐狸 male",
+      "data": "data/parts/job_male_magician_fox.json"
+    },
+    "job_female_wizard_fox": {
+      "key": "job_female_wizard_fox",
+      "kind": "body",
+      "label": "巫師 狐狸 female",
+      "data": "data/parts/job_female_wizard_fox.json"
+    },
+    "job_male_wizard_fox": {
+      "key": "job_male_wizard_fox",
+      "kind": "body",
+      "label": "巫師 狐狸 male",
+      "data": "data/parts/job_male_wizard_fox.json"
+    },
+    "job_female_sage_fox": {
+      "key": "job_female_sage_fox",
+      "kind": "body",
+      "label": "賢者 狐狸 female",
+      "data": "data/parts/job_female_sage_fox.json"
+    },
+    "job_male_sage_fox": {
+      "key": "job_male_sage_fox",
+      "kind": "body",
+      "label": "賢者 狐狸 male",
+      "data": "data/parts/job_male_sage_fox.json"
+    },
+    "job_female_high_wizard_fox": {
+      "key": "job_female_high_wizard_fox",
+      "kind": "body",
+      "label": "超魔導師 狐狸 female",
+      "data": "data/parts/job_female_high_wizard_fox.json"
+    },
+    "job_male_high_wizard_fox": {
+      "key": "job_male_high_wizard_fox",
+      "kind": "body",
+      "label": "超魔導師 狐狸 male",
+      "data": "data/parts/job_male_high_wizard_fox.json"
+    },
+    "job_female_professor_fox": {
+      "key": "job_female_professor_fox",
+      "kind": "body",
+      "label": "智者 狐狸 female",
+      "data": "data/parts/job_female_professor_fox.json"
+    },
+    "job_male_professor_fox": {
+      "key": "job_male_professor_fox",
+      "kind": "body",
+      "label": "智者 狐狸 male",
+      "data": "data/parts/job_male_professor_fox.json"
+    },
+    "job_female_warlock_fox": {
+      "key": "job_female_warlock_fox",
+      "kind": "body",
+      "label": "咒術士 狐狸 female",
+      "data": "data/parts/job_female_warlock_fox.json"
+    },
+    "job_female_warlock_fox_c1": {
+      "key": "job_female_warlock_fox_c1",
+      "kind": "body",
+      "label": "咒術士 狐狸 第二服裝 female",
+      "data": "data/parts/job_female_warlock_fox_c1.json"
+    },
+    "job_male_warlock_fox": {
+      "key": "job_male_warlock_fox",
+      "kind": "body",
+      "label": "咒術士 狐狸 male",
+      "data": "data/parts/job_male_warlock_fox.json"
+    },
+    "job_male_warlock_fox_c1": {
+      "key": "job_male_warlock_fox_c1",
+      "kind": "body",
+      "label": "咒術士 狐狸 第二服裝 male",
+      "data": "data/parts/job_male_warlock_fox_c1.json"
+    },
+    "job_female_sorcerer_fox": {
+      "key": "job_female_sorcerer_fox",
+      "kind": "body",
+      "label": "妖術師 狐狸 female",
+      "data": "data/parts/job_female_sorcerer_fox.json"
+    },
+    "job_female_sorcerer_fox_c1": {
+      "key": "job_female_sorcerer_fox_c1",
+      "kind": "body",
+      "label": "妖術師 狐狸 第二服裝 female",
+      "data": "data/parts/job_female_sorcerer_fox_c1.json"
+    },
+    "job_male_sorcerer_fox": {
+      "key": "job_male_sorcerer_fox",
+      "kind": "body",
+      "label": "妖術師 狐狸 male",
+      "data": "data/parts/job_male_sorcerer_fox.json"
+    },
+    "job_male_sorcerer_fox_c1": {
+      "key": "job_male_sorcerer_fox_c1",
+      "kind": "body",
+      "label": "妖術師 狐狸 第二服裝 male",
+      "data": "data/parts/job_male_sorcerer_fox_c1.json"
+    },
+    "job_female_archer_ostrich": {
+      "key": "job_female_archer_ostrich",
+      "kind": "body",
+      "label": "弓箭手 鴕鳥 female",
+      "data": "data/parts/job_female_archer_ostrich.json"
+    },
+    "job_male_archer_ostrich": {
+      "key": "job_male_archer_ostrich",
+      "kind": "body",
+      "label": "弓箭手 鴕鳥 male",
+      "data": "data/parts/job_male_archer_ostrich.json"
+    },
+    "job_female_hunter_ostrich": {
+      "key": "job_female_hunter_ostrich",
+      "kind": "body",
+      "label": "獵人 鴕鳥 female",
+      "data": "data/parts/job_female_hunter_ostrich.json"
+    },
+    "job_male_hunter_ostrich": {
+      "key": "job_male_hunter_ostrich",
+      "kind": "body",
+      "label": "獵人 鴕鳥 male",
+      "data": "data/parts/job_male_hunter_ostrich.json"
+    },
+    "job_male_bard_ostrich": {
+      "key": "job_male_bard_ostrich",
+      "kind": "body",
+      "label": "詩人 鴕鳥 male",
+      "data": "data/parts/job_male_bard_ostrich.json"
+    },
+    "job_female_dancer_ostrich": {
+      "key": "job_female_dancer_ostrich",
+      "kind": "body",
+      "label": "舞孃 鴕鳥 female",
+      "data": "data/parts/job_female_dancer_ostrich.json"
+    },
+    "job_female_sniper_ostrich": {
+      "key": "job_female_sniper_ostrich",
+      "kind": "body",
+      "label": "神射手 鴕鳥 female",
+      "data": "data/parts/job_female_sniper_ostrich.json"
+    },
+    "job_male_sniper_ostrich": {
+      "key": "job_male_sniper_ostrich",
+      "kind": "body",
+      "label": "神射手 鴕鳥 male",
+      "data": "data/parts/job_male_sniper_ostrich.json"
+    },
+    "job_male_clown_ostrich": {
+      "key": "job_male_clown_ostrich",
+      "kind": "body",
+      "label": "搞笑藝人 鴕鳥 male",
+      "data": "data/parts/job_male_clown_ostrich.json"
+    },
+    "job_female_gypsy_ostrich": {
+      "key": "job_female_gypsy_ostrich",
+      "kind": "body",
+      "label": "冷豔舞姬 鴕鳥 female",
+      "data": "data/parts/job_female_gypsy_ostrich.json"
+    },
+    "job_female_ranger_ostrich": {
+      "key": "job_female_ranger_ostrich",
+      "kind": "body",
+      "label": "遊俠 鴕鳥 female",
+      "data": "data/parts/job_female_ranger_ostrich.json"
+    },
+    "job_female_ranger_ostrich_c1": {
+      "key": "job_female_ranger_ostrich_c1",
+      "kind": "body",
+      "label": "遊俠 鴕鳥 第二服裝 female",
+      "data": "data/parts/job_female_ranger_ostrich_c1.json"
+    },
+    "job_male_ranger_ostrich": {
+      "key": "job_male_ranger_ostrich",
+      "kind": "body",
+      "label": "遊俠 鴕鳥 male",
+      "data": "data/parts/job_male_ranger_ostrich.json"
+    },
+    "job_male_ranger_ostrich_c1": {
+      "key": "job_male_ranger_ostrich_c1",
+      "kind": "body",
+      "label": "遊俠 鴕鳥 第二服裝 male",
+      "data": "data/parts/job_male_ranger_ostrich_c1.json"
+    },
+    "job_male_minstrel_ostrich": {
+      "key": "job_male_minstrel_ostrich",
+      "kind": "body",
+      "label": "宮廷樂師 鴕鳥 male",
+      "data": "data/parts/job_male_minstrel_ostrich.json"
+    },
+    "job_male_minstrel_ostrich_c1": {
+      "key": "job_male_minstrel_ostrich_c1",
+      "kind": "body",
+      "label": "宮廷樂師 鴕鳥 第二服裝 male",
+      "data": "data/parts/job_male_minstrel_ostrich_c1.json"
+    },
+    "job_female_wanderer_ostrich": {
+      "key": "job_female_wanderer_ostrich",
+      "kind": "body",
+      "label": "浪姬舞者 鴕鳥 female",
+      "data": "data/parts/job_female_wanderer_ostrich.json"
+    },
+    "job_female_wanderer_ostrich_c1": {
+      "key": "job_female_wanderer_ostrich_c1",
+      "kind": "body",
+      "label": "浪姬舞者 鴕鳥 第二服裝 female",
+      "data": "data/parts/job_female_wanderer_ostrich_c1.json"
+    },
+    "job_female_acolyte_alpaca": {
+      "key": "job_female_acolyte_alpaca",
+      "kind": "body",
+      "label": "服事 羊駝 female",
+      "data": "data/parts/job_female_acolyte_alpaca.json"
+    },
+    "job_male_acolyte_alpaca": {
+      "key": "job_male_acolyte_alpaca",
+      "kind": "body",
+      "label": "服事 羊駝 male",
+      "data": "data/parts/job_male_acolyte_alpaca.json"
+    },
+    "job_female_priest_alpaca": {
+      "key": "job_female_priest_alpaca",
+      "kind": "body",
+      "label": "祭司 羊駝 female",
+      "data": "data/parts/job_female_priest_alpaca.json"
+    },
+    "job_male_priest_alpaca": {
+      "key": "job_male_priest_alpaca",
+      "kind": "body",
+      "label": "祭司 羊駝 male",
+      "data": "data/parts/job_male_priest_alpaca.json"
+    },
+    "job_female_monk_alpaca": {
+      "key": "job_female_monk_alpaca",
+      "kind": "body",
+      "label": "武僧 羊駝 female",
+      "data": "data/parts/job_female_monk_alpaca.json"
+    },
+    "job_male_monk_alpaca": {
+      "key": "job_male_monk_alpaca",
+      "kind": "body",
+      "label": "武僧 羊駝 male",
+      "data": "data/parts/job_male_monk_alpaca.json"
+    },
+    "job_female_high_priest_alpaca": {
+      "key": "job_female_high_priest_alpaca",
+      "kind": "body",
+      "label": "神官 羊駝 female",
+      "data": "data/parts/job_female_high_priest_alpaca.json"
+    },
+    "job_male_high_priest_alpaca": {
+      "key": "job_male_high_priest_alpaca",
+      "kind": "body",
+      "label": "神官 羊駝 male",
+      "data": "data/parts/job_male_high_priest_alpaca.json"
+    },
+    "job_female_champion_alpaca": {
+      "key": "job_female_champion_alpaca",
+      "kind": "body",
+      "label": "武術宗師 羊駝 female",
+      "data": "data/parts/job_female_champion_alpaca.json"
+    },
+    "job_male_champion_alpaca": {
+      "key": "job_male_champion_alpaca",
+      "kind": "body",
+      "label": "武術宗師 羊駝 male",
+      "data": "data/parts/job_male_champion_alpaca.json"
+    },
+    "job_female_arch_bishop_alpaca": {
+      "key": "job_female_arch_bishop_alpaca",
+      "kind": "body",
+      "label": "大主教 羊駝 female",
+      "data": "data/parts/job_female_arch_bishop_alpaca.json"
+    },
+    "job_female_arch_bishop_alpaca_c1": {
+      "key": "job_female_arch_bishop_alpaca_c1",
+      "kind": "body",
+      "label": "大主教 羊駝 第二服裝 female",
+      "data": "data/parts/job_female_arch_bishop_alpaca_c1.json"
+    },
+    "job_male_arch_bishop_alpaca": {
+      "key": "job_male_arch_bishop_alpaca",
+      "kind": "body",
+      "label": "大主教 羊駝 male",
+      "data": "data/parts/job_male_arch_bishop_alpaca.json"
+    },
+    "job_male_arch_bishop_alpaca_c1": {
+      "key": "job_male_arch_bishop_alpaca_c1",
+      "kind": "body",
+      "label": "大主教 羊駝 第二服裝 male",
+      "data": "data/parts/job_male_arch_bishop_alpaca_c1.json"
+    },
+    "job_female_sura_alpaca": {
+      "key": "job_female_sura_alpaca",
+      "kind": "body",
+      "label": "修羅 羊駝 female",
+      "data": "data/parts/job_female_sura_alpaca.json"
+    },
+    "job_female_sura_alpaca_c1": {
+      "key": "job_female_sura_alpaca_c1",
+      "kind": "body",
+      "label": "修羅 羊駝 第二服裝 female",
+      "data": "data/parts/job_female_sura_alpaca_c1.json"
+    },
+    "job_male_sura_alpaca": {
+      "key": "job_male_sura_alpaca",
+      "kind": "body",
+      "label": "修羅 羊駝 male",
+      "data": "data/parts/job_male_sura_alpaca.json"
+    },
+    "job_male_sura_alpaca_c1": {
+      "key": "job_male_sura_alpaca_c1",
+      "kind": "body",
+      "label": "修羅 羊駝 第二服裝 male",
+      "data": "data/parts/job_male_sura_alpaca_c1.json"
+    },
+    "job_female_merchant_boar": {
+      "key": "job_female_merchant_boar",
+      "kind": "body",
+      "label": "商人 野豬 female",
+      "data": "data/parts/job_female_merchant_boar.json"
+    },
+    "job_male_merchant_boar": {
+      "key": "job_male_merchant_boar",
+      "kind": "body",
+      "label": "商人 野豬 male",
+      "data": "data/parts/job_male_merchant_boar.json"
+    },
+    "job_female_blacksmith_boar": {
+      "key": "job_female_blacksmith_boar",
+      "kind": "body",
+      "label": "鐵匠 野豬 female",
+      "data": "data/parts/job_female_blacksmith_boar.json"
+    },
+    "job_male_blacksmith_boar": {
+      "key": "job_male_blacksmith_boar",
+      "kind": "body",
+      "label": "鐵匠 野豬 male",
+      "data": "data/parts/job_male_blacksmith_boar.json"
+    },
+    "job_female_alchemist_boar": {
+      "key": "job_female_alchemist_boar",
+      "kind": "body",
+      "label": "鍊金術師 野豬 female",
+      "data": "data/parts/job_female_alchemist_boar.json"
+    },
+    "job_male_alchemist_boar": {
+      "key": "job_male_alchemist_boar",
+      "kind": "body",
+      "label": "鍊金術師 野豬 male",
+      "data": "data/parts/job_male_alchemist_boar.json"
+    },
+    "job_female_whitesmith_boar": {
+      "key": "job_female_whitesmith_boar",
+      "kind": "body",
+      "label": "神工匠 野豬 female",
+      "data": "data/parts/job_female_whitesmith_boar.json"
+    },
+    "job_male_whitesmith_boar": {
+      "key": "job_male_whitesmith_boar",
+      "kind": "body",
+      "label": "神工匠 野豬 male",
+      "data": "data/parts/job_male_whitesmith_boar.json"
+    },
+    "job_female_creator_boar": {
+      "key": "job_female_creator_boar",
+      "kind": "body",
+      "label": "創造者 野豬 female",
+      "data": "data/parts/job_female_creator_boar.json"
+    },
+    "job_male_creator_boar": {
+      "key": "job_male_creator_boar",
+      "kind": "body",
+      "label": "創造者 野豬 male",
+      "data": "data/parts/job_male_creator_boar.json"
+    },
+    "job_female_mechanic_boar": {
+      "key": "job_female_mechanic_boar",
+      "kind": "body",
+      "label": "機械工匠 野豬 female",
+      "data": "data/parts/job_female_mechanic_boar.json"
+    },
+    "job_female_mechanic_boar_c1": {
+      "key": "job_female_mechanic_boar_c1",
+      "kind": "body",
+      "label": "機械工匠 野豬 第二服裝 female",
+      "data": "data/parts/job_female_mechanic_boar_c1.json"
+    },
+    "job_male_mechanic_boar": {
+      "key": "job_male_mechanic_boar",
+      "kind": "body",
+      "label": "機械工匠 野豬 male",
+      "data": "data/parts/job_male_mechanic_boar.json"
+    },
+    "job_male_mechanic_boar_c1": {
+      "key": "job_male_mechanic_boar_c1",
+      "kind": "body",
+      "label": "機械工匠 野豬 第二服裝 male",
+      "data": "data/parts/job_male_mechanic_boar_c1.json"
+    },
+    "job_female_genetic_boar": {
+      "key": "job_female_genetic_boar",
+      "kind": "body",
+      "label": "基因學者 野豬 female",
+      "data": "data/parts/job_female_genetic_boar.json"
+    },
+    "job_female_genetic_boar_c1": {
+      "key": "job_female_genetic_boar_c1",
+      "kind": "body",
+      "label": "基因學者 野豬 第二服裝 female",
+      "data": "data/parts/job_female_genetic_boar_c1.json"
+    },
+    "job_male_genetic_boar": {
+      "key": "job_male_genetic_boar",
+      "kind": "body",
+      "label": "基因學者 野豬 male",
+      "data": "data/parts/job_male_genetic_boar.json"
+    },
+    "job_male_genetic_boar_c1": {
+      "key": "job_male_genetic_boar_c1",
+      "kind": "body",
+      "label": "基因學者 野豬 第二服裝 male",
+      "data": "data/parts/job_male_genetic_boar_c1.json"
+    },
+    "job_female_gunslinger_peco": {
+      "key": "job_female_gunslinger_peco",
+      "kind": "body",
+      "label": "神槍手 大嘴鳥 female",
+      "data": "data/parts/job_female_gunslinger_peco.json"
+    },
+    "job_male_gunslinger_peco": {
+      "key": "job_male_gunslinger_peco",
+      "kind": "body",
+      "label": "神槍手 大嘴鳥 male",
+      "data": "data/parts/job_male_gunslinger_peco.json"
+    },
+    "job_female_rebellion_peco": {
+      "key": "job_female_rebellion_peco",
+      "kind": "body",
+      "label": "反叛者 大嘴鳥 female",
+      "data": "data/parts/job_female_rebellion_peco.json"
+    },
+    "job_male_rebellion_peco": {
+      "key": "job_male_rebellion_peco",
+      "kind": "body",
+      "label": "反叛者 大嘴鳥 male",
+      "data": "data/parts/job_male_rebellion_peco.json"
+    },
+    "job_male_troubadour_general": {
+      "key": "job_male_troubadour_general",
+      "kind": "body",
+      "label": "樂之舞靈 專用坐騎 male",
+      "data": "data/parts/job_male_troubadour_general.json"
+    },
+    "job_female_trouvere_general": {
+      "key": "job_female_trouvere_general",
+      "kind": "body",
+      "label": "月之舞靈 專用坐騎 female",
+      "data": "data/parts/job_female_trouvere_general.json"
+    },
+    "job_female_super_novice_poring": {
+      "key": "job_female_super_novice_poring",
+      "kind": "body",
+      "label": "超級初學者 波利 female",
+      "data": "data/parts/job_female_super_novice_poring.json"
+    },
+    "job_male_super_novice_poring": {
+      "key": "job_male_super_novice_poring",
+      "kind": "body",
+      "label": "超級初學者 波利 male",
+      "data": "data/parts/job_male_super_novice_poring.json"
+    },
+    "job_female_hyper_novice_general": {
+      "key": "job_female_hyper_novice_general",
+      "kind": "body",
+      "label": "究極初學者 專用坐騎 female",
+      "data": "data/parts/job_female_hyper_novice_general.json"
+    },
+    "job_male_hyper_novice_general": {
+      "key": "job_male_hyper_novice_general",
+      "kind": "body",
+      "label": "究極初學者 專用坐騎 male",
+      "data": "data/parts/job_male_hyper_novice_general.json"
+    },
+    "job_female_night_watch_general": {
+      "key": "job_female_night_watch_general",
+      "kind": "body",
+      "label": "夜巡者 專用坐騎 female",
+      "data": "data/parts/job_female_night_watch_general.json"
+    },
+    "job_male_night_watch_general": {
+      "key": "job_male_night_watch_general",
+      "kind": "body",
+      "label": "夜巡者 專用坐騎 male",
+      "data": "data/parts/job_male_night_watch_general.json"
+    },
+    "job_female_ninja_frog": {
+      "key": "job_female_ninja_frog",
+      "kind": "body",
+      "label": "忍者 蛤蟆 female",
+      "data": "data/parts/job_female_ninja_frog.json"
+    },
+    "job_male_ninja_frog": {
+      "key": "job_male_ninja_frog",
+      "kind": "body",
+      "label": "忍者 蛤蟆 male",
+      "data": "data/parts/job_male_ninja_frog.json"
+    },
+    "job_female_kagerou_frog": {
+      "key": "job_female_kagerou_frog",
+      "kind": "body",
+      "label": "影狼 蛤蟆 female",
+      "data": "data/parts/job_female_kagerou_frog.json"
+    },
+    "job_male_kagerou_frog": {
+      "key": "job_male_kagerou_frog",
+      "kind": "body",
+      "label": "影狼 蛤蟆 male",
+      "data": "data/parts/job_male_kagerou_frog.json"
+    },
+    "job_female_oboro_frog": {
+      "key": "job_female_oboro_frog",
+      "kind": "body",
+      "label": "朧 蛤蟆 female",
+      "data": "data/parts/job_female_oboro_frog.json"
+    },
+    "job_male_oboro_frog": {
+      "key": "job_male_oboro_frog",
+      "kind": "body",
+      "label": "朧 蛤蟆 male",
+      "data": "data/parts/job_male_oboro_frog.json"
+    },
+    "job_male_shinkiro_general": {
+      "key": "job_male_shinkiro_general",
+      "kind": "body",
+      "label": "蜃氣樓 專用坐騎 male",
+      "data": "data/parts/job_male_shinkiro_general.json"
+    },
+    "job_female_shiranui_general": {
+      "key": "job_female_shiranui_general",
+      "kind": "body",
+      "label": "不知火 專用坐騎 female",
+      "data": "data/parts/job_female_shiranui_general.json"
+    },
+    "job_female_taekwon_poring": {
+      "key": "job_female_taekwon_poring",
+      "kind": "body",
+      "label": "跆拳少年 波利 female",
+      "data": "data/parts/job_female_taekwon_poring.json"
+    },
+    "job_male_taekwon_poring": {
+      "key": "job_male_taekwon_poring",
+      "kind": "body",
+      "label": "跆拳少年 波利 male",
+      "data": "data/parts/job_male_taekwon_poring.json"
+    },
+    "job_female_star_gladiator_poring": {
+      "key": "job_female_star_gladiator_poring",
+      "kind": "body",
+      "label": "拳聖 波利 female",
+      "data": "data/parts/job_female_star_gladiator_poring.json"
+    },
+    "job_male_star_gladiator_poring": {
+      "key": "job_male_star_gladiator_poring",
+      "kind": "body",
+      "label": "拳聖 波利 male",
+      "data": "data/parts/job_male_star_gladiator_poring.json"
+    },
+    "job_female_soul_linker_frog": {
+      "key": "job_female_soul_linker_frog",
+      "kind": "body",
+      "label": "悟靈士 蛤蟆 female",
+      "data": "data/parts/job_female_soul_linker_frog.json"
+    },
+    "job_male_soul_linker_frog": {
+      "key": "job_male_soul_linker_frog",
+      "kind": "body",
+      "label": "悟靈士 蛤蟆 male",
+      "data": "data/parts/job_male_soul_linker_frog.json"
+    },
+    "job_female_star_emperor_haetae": {
+      "key": "job_female_star_emperor_haetae",
+      "kind": "body",
+      "label": "拳皇 神獸 female",
+      "data": "data/parts/job_female_star_emperor_haetae.json"
+    },
+    "job_male_star_emperor_haetae": {
+      "key": "job_male_star_emperor_haetae",
+      "kind": "body",
+      "label": "拳皇 神獸 male",
+      "data": "data/parts/job_male_star_emperor_haetae.json"
+    },
+    "job_female_sky_emperor_general": {
+      "key": "job_female_sky_emperor_general",
+      "kind": "body",
+      "label": "天帝 專用坐騎 female",
+      "data": "data/parts/job_female_sky_emperor_general.json"
+    },
+    "job_male_sky_emperor_general": {
+      "key": "job_male_sky_emperor_general",
+      "kind": "body",
+      "label": "天帝 專用坐騎 male",
+      "data": "data/parts/job_male_sky_emperor_general.json"
+    },
+    "job_female_soul_reaper_haetae": {
+      "key": "job_female_soul_reaper_haetae",
+      "kind": "body",
+      "label": "獵靈士 神獸 female",
+      "data": "data/parts/job_female_soul_reaper_haetae.json"
+    },
+    "job_male_soul_reaper_haetae": {
+      "key": "job_male_soul_reaper_haetae",
+      "kind": "body",
+      "label": "獵靈士 神獸 male",
+      "data": "data/parts/job_male_soul_reaper_haetae.json"
+    },
+    "job_female_soul_ascetic_general": {
+      "key": "job_female_soul_ascetic_general",
+      "kind": "body",
+      "label": "靈導士 專用坐騎 female",
+      "data": "data/parts/job_female_soul_ascetic_general.json"
+    },
+    "job_male_soul_ascetic_general": {
+      "key": "job_male_soul_ascetic_general",
+      "kind": "body",
+      "label": "靈導士 專用坐騎 male",
+      "data": "data/parts/job_male_soul_ascetic_general.json"
+    },
+    "job_female_mechanic_mado_armor": {
+      "key": "job_female_mechanic_mado_armor",
+      "kind": "body",
+      "label": "機械工匠 魔導裝甲 female",
+      "data": "data/parts/job_female_mechanic_mado_armor.json"
+    },
+    "job_female_mechanic_mado_armor_c1": {
+      "key": "job_female_mechanic_mado_armor_c1",
+      "kind": "body",
+      "label": "機械工匠 魔導裝甲 第二服裝 female",
+      "data": "data/parts/job_female_mechanic_mado_armor_c1.json"
+    },
+    "job_male_mechanic_mado_armor": {
+      "key": "job_male_mechanic_mado_armor",
+      "kind": "body",
+      "label": "機械工匠 魔導裝甲 male",
+      "data": "data/parts/job_male_mechanic_mado_armor.json"
+    },
+    "job_male_mechanic_mado_armor_c1": {
+      "key": "job_male_mechanic_mado_armor_c1",
+      "kind": "body",
+      "label": "機械工匠 魔導裝甲 第二服裝 male",
+      "data": "data/parts/job_male_mechanic_mado_armor_c1.json"
+    },
+    "job_female_meister_madogear2": {
+      "key": "job_female_meister_madogear2",
+      "kind": "body",
+      "label": "機甲神匠 魔導機甲 2 female",
+      "data": "data/parts/job_female_meister_madogear2.json"
+    },
+    "job_male_meister_madogear2": {
+      "key": "job_male_meister_madogear2",
+      "kind": "body",
+      "label": "機甲神匠 魔導機甲 2 male",
+      "data": "data/parts/job_male_meister_madogear2.json"
     },
     "hair_female_1": {
       "key": "hair_female_1",
@@ -68666,942 +69615,6 @@
       "kind": "cape",
       "label": "ROBE_C_Doram_Paw_Hammer",
       "data": "data/parts/cape_male_301.json"
-    },
-    "job_female_mechanic_mado": {
-      "key": "job_female_mechanic_mado",
-      "kind": "body",
-      "label": "機械工匠 魔導機甲 female",
-      "data": "data/parts/job_female_mechanic_mado.json"
-    },
-    "job_female_mechanic_mado_c1": {
-      "key": "job_female_mechanic_mado_c1",
-      "kind": "body",
-      "label": "機械工匠 魔導機甲 第二服裝 female",
-      "data": "data/parts/job_female_mechanic_mado_c1.json"
-    },
-    "job_male_mechanic_mado": {
-      "key": "job_male_mechanic_mado",
-      "kind": "body",
-      "label": "機械工匠 魔導機甲 male",
-      "data": "data/parts/job_male_mechanic_mado.json"
-    },
-    "job_male_mechanic_mado_c1": {
-      "key": "job_male_mechanic_mado_c1",
-      "kind": "body",
-      "label": "機械工匠 魔導機甲 第二服裝 male",
-      "data": "data/parts/job_male_mechanic_mado_c1.json"
-    },
-    "job_female_meister_madogear": {
-      "key": "job_female_meister_madogear",
-      "kind": "body",
-      "label": "機甲神匠 魔導機甲 female",
-      "data": "data/parts/job_female_meister_madogear.json"
-    },
-    "job_male_meister_madogear": {
-      "key": "job_male_meister_madogear",
-      "kind": "body",
-      "label": "機甲神匠 魔導機甲 male",
-      "data": "data/parts/job_male_meister_madogear.json"
-    },
-    "job_female_knight_lion": {
-      "key": "job_female_knight_lion",
-      "kind": "body",
-      "label": "騎士 獅子 female",
-      "data": "data/parts/job_female_knight_lion.json"
-    },
-    "job_male_knight_lion": {
-      "key": "job_male_knight_lion",
-      "kind": "body",
-      "label": "騎士 獅子 male",
-      "data": "data/parts/job_male_knight_lion.json"
-    },
-    "job_female_crusader_lion": {
-      "key": "job_female_crusader_lion",
-      "kind": "body",
-      "label": "十字軍 獅子 female",
-      "data": "data/parts/job_female_crusader_lion.json"
-    },
-    "job_male_crusader_lion": {
-      "key": "job_male_crusader_lion",
-      "kind": "body",
-      "label": "十字軍 獅子 male",
-      "data": "data/parts/job_male_crusader_lion.json"
-    },
-    "job_female_lord_knight_lion": {
-      "key": "job_female_lord_knight_lion",
-      "kind": "body",
-      "label": "騎士領主 獅子 female",
-      "data": "data/parts/job_female_lord_knight_lion.json"
-    },
-    "job_male_lord_knight_lion": {
-      "key": "job_male_lord_knight_lion",
-      "kind": "body",
-      "label": "騎士領主 獅子 male",
-      "data": "data/parts/job_male_lord_knight_lion.json"
-    },
-    "job_female_paladin_lion": {
-      "key": "job_female_paladin_lion",
-      "kind": "body",
-      "label": "聖殿十字軍 獅子 female",
-      "data": "data/parts/job_female_paladin_lion.json"
-    },
-    "job_male_paladin_lion": {
-      "key": "job_male_paladin_lion",
-      "kind": "body",
-      "label": "聖殿十字軍 獅子 male",
-      "data": "data/parts/job_male_paladin_lion.json"
-    },
-    "job_female_rune_knight_lion": {
-      "key": "job_female_rune_knight_lion",
-      "kind": "body",
-      "label": "盧恩騎士 獅子 female",
-      "data": "data/parts/job_female_rune_knight_lion.json"
-    },
-    "job_female_rune_knight_lion_c1": {
-      "key": "job_female_rune_knight_lion_c1",
-      "kind": "body",
-      "label": "盧恩騎士 獅子 第二服裝 female",
-      "data": "data/parts/job_female_rune_knight_lion_c1.json"
-    },
-    "job_male_rune_knight_lion": {
-      "key": "job_male_rune_knight_lion",
-      "kind": "body",
-      "label": "盧恩騎士 獅子 male",
-      "data": "data/parts/job_male_rune_knight_lion.json"
-    },
-    "job_male_rune_knight_lion_c1": {
-      "key": "job_male_rune_knight_lion_c1",
-      "kind": "body",
-      "label": "盧恩騎士 獅子 第二服裝 male",
-      "data": "data/parts/job_male_rune_knight_lion_c1.json"
-    },
-    "job_female_royal_guard_lion": {
-      "key": "job_female_royal_guard_lion",
-      "kind": "body",
-      "label": "皇家禁衛隊 獅子 female",
-      "data": "data/parts/job_female_royal_guard_lion.json"
-    },
-    "job_female_royal_guard_lion_c1": {
-      "key": "job_female_royal_guard_lion_c1",
-      "kind": "body",
-      "label": "皇家禁衛隊 獅子 第二服裝 female",
-      "data": "data/parts/job_female_royal_guard_lion_c1.json"
-    },
-    "job_male_royal_guard_lion": {
-      "key": "job_male_royal_guard_lion",
-      "kind": "body",
-      "label": "皇家禁衛隊 獅子 male",
-      "data": "data/parts/job_male_royal_guard_lion.json"
-    },
-    "job_male_royal_guard_lion_c1": {
-      "key": "job_male_royal_guard_lion_c1",
-      "kind": "body",
-      "label": "皇家禁衛隊 獅子 第二服裝 male",
-      "data": "data/parts/job_male_royal_guard_lion_c1.json"
-    },
-    "job_female_magician_fox": {
-      "key": "job_female_magician_fox",
-      "kind": "body",
-      "label": "魔法師 狐狸 female",
-      "data": "data/parts/job_female_magician_fox.json"
-    },
-    "job_male_magician_fox": {
-      "key": "job_male_magician_fox",
-      "kind": "body",
-      "label": "魔法師 狐狸 male",
-      "data": "data/parts/job_male_magician_fox.json"
-    },
-    "job_female_wizard_fox": {
-      "key": "job_female_wizard_fox",
-      "kind": "body",
-      "label": "巫師 狐狸 female",
-      "data": "data/parts/job_female_wizard_fox.json"
-    },
-    "job_male_wizard_fox": {
-      "key": "job_male_wizard_fox",
-      "kind": "body",
-      "label": "巫師 狐狸 male",
-      "data": "data/parts/job_male_wizard_fox.json"
-    },
-    "job_female_sage_fox": {
-      "key": "job_female_sage_fox",
-      "kind": "body",
-      "label": "賢者 狐狸 female",
-      "data": "data/parts/job_female_sage_fox.json"
-    },
-    "job_male_sage_fox": {
-      "key": "job_male_sage_fox",
-      "kind": "body",
-      "label": "賢者 狐狸 male",
-      "data": "data/parts/job_male_sage_fox.json"
-    },
-    "job_female_high_wizard_fox": {
-      "key": "job_female_high_wizard_fox",
-      "kind": "body",
-      "label": "超魔導師 狐狸 female",
-      "data": "data/parts/job_female_high_wizard_fox.json"
-    },
-    "job_male_high_wizard_fox": {
-      "key": "job_male_high_wizard_fox",
-      "kind": "body",
-      "label": "超魔導師 狐狸 male",
-      "data": "data/parts/job_male_high_wizard_fox.json"
-    },
-    "job_female_professor_fox": {
-      "key": "job_female_professor_fox",
-      "kind": "body",
-      "label": "智者 狐狸 female",
-      "data": "data/parts/job_female_professor_fox.json"
-    },
-    "job_male_professor_fox": {
-      "key": "job_male_professor_fox",
-      "kind": "body",
-      "label": "智者 狐狸 male",
-      "data": "data/parts/job_male_professor_fox.json"
-    },
-    "job_female_warlock_fox": {
-      "key": "job_female_warlock_fox",
-      "kind": "body",
-      "label": "咒術士 狐狸 female",
-      "data": "data/parts/job_female_warlock_fox.json"
-    },
-    "job_female_warlock_fox_c1": {
-      "key": "job_female_warlock_fox_c1",
-      "kind": "body",
-      "label": "咒術士 狐狸 第二服裝 female",
-      "data": "data/parts/job_female_warlock_fox_c1.json"
-    },
-    "job_male_warlock_fox": {
-      "key": "job_male_warlock_fox",
-      "kind": "body",
-      "label": "咒術士 狐狸 male",
-      "data": "data/parts/job_male_warlock_fox.json"
-    },
-    "job_male_warlock_fox_c1": {
-      "key": "job_male_warlock_fox_c1",
-      "kind": "body",
-      "label": "咒術士 狐狸 第二服裝 male",
-      "data": "data/parts/job_male_warlock_fox_c1.json"
-    },
-    "job_female_sorcerer_fox": {
-      "key": "job_female_sorcerer_fox",
-      "kind": "body",
-      "label": "妖術師 狐狸 female",
-      "data": "data/parts/job_female_sorcerer_fox.json"
-    },
-    "job_female_sorcerer_fox_c1": {
-      "key": "job_female_sorcerer_fox_c1",
-      "kind": "body",
-      "label": "妖術師 狐狸 第二服裝 female",
-      "data": "data/parts/job_female_sorcerer_fox_c1.json"
-    },
-    "job_male_sorcerer_fox": {
-      "key": "job_male_sorcerer_fox",
-      "kind": "body",
-      "label": "妖術師 狐狸 male",
-      "data": "data/parts/job_male_sorcerer_fox.json"
-    },
-    "job_male_sorcerer_fox_c1": {
-      "key": "job_male_sorcerer_fox_c1",
-      "kind": "body",
-      "label": "妖術師 狐狸 第二服裝 male",
-      "data": "data/parts/job_male_sorcerer_fox_c1.json"
-    },
-    "job_female_archer_ostrich": {
-      "key": "job_female_archer_ostrich",
-      "kind": "body",
-      "label": "弓箭手 鴕鳥 female",
-      "data": "data/parts/job_female_archer_ostrich.json"
-    },
-    "job_male_archer_ostrich": {
-      "key": "job_male_archer_ostrich",
-      "kind": "body",
-      "label": "弓箭手 鴕鳥 male",
-      "data": "data/parts/job_male_archer_ostrich.json"
-    },
-    "job_female_hunter_ostrich": {
-      "key": "job_female_hunter_ostrich",
-      "kind": "body",
-      "label": "獵人 鴕鳥 female",
-      "data": "data/parts/job_female_hunter_ostrich.json"
-    },
-    "job_male_hunter_ostrich": {
-      "key": "job_male_hunter_ostrich",
-      "kind": "body",
-      "label": "獵人 鴕鳥 male",
-      "data": "data/parts/job_male_hunter_ostrich.json"
-    },
-    "job_male_bard_ostrich": {
-      "key": "job_male_bard_ostrich",
-      "kind": "body",
-      "label": "詩人 鴕鳥 male",
-      "data": "data/parts/job_male_bard_ostrich.json"
-    },
-    "job_female_dancer_ostrich": {
-      "key": "job_female_dancer_ostrich",
-      "kind": "body",
-      "label": "舞孃 鴕鳥 female",
-      "data": "data/parts/job_female_dancer_ostrich.json"
-    },
-    "job_female_sniper_ostrich": {
-      "key": "job_female_sniper_ostrich",
-      "kind": "body",
-      "label": "神射手 鴕鳥 female",
-      "data": "data/parts/job_female_sniper_ostrich.json"
-    },
-    "job_male_sniper_ostrich": {
-      "key": "job_male_sniper_ostrich",
-      "kind": "body",
-      "label": "神射手 鴕鳥 male",
-      "data": "data/parts/job_male_sniper_ostrich.json"
-    },
-    "job_male_clown_ostrich": {
-      "key": "job_male_clown_ostrich",
-      "kind": "body",
-      "label": "搞笑藝人 鴕鳥 male",
-      "data": "data/parts/job_male_clown_ostrich.json"
-    },
-    "job_female_gypsy_ostrich": {
-      "key": "job_female_gypsy_ostrich",
-      "kind": "body",
-      "label": "冷豔舞姬 鴕鳥 female",
-      "data": "data/parts/job_female_gypsy_ostrich.json"
-    },
-    "job_female_ranger_ostrich": {
-      "key": "job_female_ranger_ostrich",
-      "kind": "body",
-      "label": "遊俠 鴕鳥 female",
-      "data": "data/parts/job_female_ranger_ostrich.json"
-    },
-    "job_female_ranger_ostrich_c1": {
-      "key": "job_female_ranger_ostrich_c1",
-      "kind": "body",
-      "label": "遊俠 鴕鳥 第二服裝 female",
-      "data": "data/parts/job_female_ranger_ostrich_c1.json"
-    },
-    "job_male_ranger_ostrich": {
-      "key": "job_male_ranger_ostrich",
-      "kind": "body",
-      "label": "遊俠 鴕鳥 male",
-      "data": "data/parts/job_male_ranger_ostrich.json"
-    },
-    "job_male_ranger_ostrich_c1": {
-      "key": "job_male_ranger_ostrich_c1",
-      "kind": "body",
-      "label": "遊俠 鴕鳥 第二服裝 male",
-      "data": "data/parts/job_male_ranger_ostrich_c1.json"
-    },
-    "job_male_minstrel_ostrich": {
-      "key": "job_male_minstrel_ostrich",
-      "kind": "body",
-      "label": "宮廷樂師 鴕鳥 male",
-      "data": "data/parts/job_male_minstrel_ostrich.json"
-    },
-    "job_male_minstrel_ostrich_c1": {
-      "key": "job_male_minstrel_ostrich_c1",
-      "kind": "body",
-      "label": "宮廷樂師 鴕鳥 第二服裝 male",
-      "data": "data/parts/job_male_minstrel_ostrich_c1.json"
-    },
-    "job_female_wanderer_ostrich": {
-      "key": "job_female_wanderer_ostrich",
-      "kind": "body",
-      "label": "浪姬舞者 鴕鳥 female",
-      "data": "data/parts/job_female_wanderer_ostrich.json"
-    },
-    "job_female_wanderer_ostrich_c1": {
-      "key": "job_female_wanderer_ostrich_c1",
-      "kind": "body",
-      "label": "浪姬舞者 鴕鳥 第二服裝 female",
-      "data": "data/parts/job_female_wanderer_ostrich_c1.json"
-    },
-    "job_female_acolyte_alpaca": {
-      "key": "job_female_acolyte_alpaca",
-      "kind": "body",
-      "label": "服事 羊駝 female",
-      "data": "data/parts/job_female_acolyte_alpaca.json"
-    },
-    "job_male_acolyte_alpaca": {
-      "key": "job_male_acolyte_alpaca",
-      "kind": "body",
-      "label": "服事 羊駝 male",
-      "data": "data/parts/job_male_acolyte_alpaca.json"
-    },
-    "job_female_priest_alpaca": {
-      "key": "job_female_priest_alpaca",
-      "kind": "body",
-      "label": "祭司 羊駝 female",
-      "data": "data/parts/job_female_priest_alpaca.json"
-    },
-    "job_male_priest_alpaca": {
-      "key": "job_male_priest_alpaca",
-      "kind": "body",
-      "label": "祭司 羊駝 male",
-      "data": "data/parts/job_male_priest_alpaca.json"
-    },
-    "job_female_monk_alpaca": {
-      "key": "job_female_monk_alpaca",
-      "kind": "body",
-      "label": "武僧 羊駝 female",
-      "data": "data/parts/job_female_monk_alpaca.json"
-    },
-    "job_male_monk_alpaca": {
-      "key": "job_male_monk_alpaca",
-      "kind": "body",
-      "label": "武僧 羊駝 male",
-      "data": "data/parts/job_male_monk_alpaca.json"
-    },
-    "job_female_high_priest_alpaca": {
-      "key": "job_female_high_priest_alpaca",
-      "kind": "body",
-      "label": "神官 羊駝 female",
-      "data": "data/parts/job_female_high_priest_alpaca.json"
-    },
-    "job_male_high_priest_alpaca": {
-      "key": "job_male_high_priest_alpaca",
-      "kind": "body",
-      "label": "神官 羊駝 male",
-      "data": "data/parts/job_male_high_priest_alpaca.json"
-    },
-    "job_female_champion_alpaca": {
-      "key": "job_female_champion_alpaca",
-      "kind": "body",
-      "label": "武術宗師 羊駝 female",
-      "data": "data/parts/job_female_champion_alpaca.json"
-    },
-    "job_male_champion_alpaca": {
-      "key": "job_male_champion_alpaca",
-      "kind": "body",
-      "label": "武術宗師 羊駝 male",
-      "data": "data/parts/job_male_champion_alpaca.json"
-    },
-    "job_female_arch_bishop_alpaca": {
-      "key": "job_female_arch_bishop_alpaca",
-      "kind": "body",
-      "label": "大主教 羊駝 female",
-      "data": "data/parts/job_female_arch_bishop_alpaca.json"
-    },
-    "job_female_arch_bishop_alpaca_c1": {
-      "key": "job_female_arch_bishop_alpaca_c1",
-      "kind": "body",
-      "label": "大主教 羊駝 第二服裝 female",
-      "data": "data/parts/job_female_arch_bishop_alpaca_c1.json"
-    },
-    "job_male_arch_bishop_alpaca": {
-      "key": "job_male_arch_bishop_alpaca",
-      "kind": "body",
-      "label": "大主教 羊駝 male",
-      "data": "data/parts/job_male_arch_bishop_alpaca.json"
-    },
-    "job_male_arch_bishop_alpaca_c1": {
-      "key": "job_male_arch_bishop_alpaca_c1",
-      "kind": "body",
-      "label": "大主教 羊駝 第二服裝 male",
-      "data": "data/parts/job_male_arch_bishop_alpaca_c1.json"
-    },
-    "job_female_sura_alpaca": {
-      "key": "job_female_sura_alpaca",
-      "kind": "body",
-      "label": "修羅 羊駝 female",
-      "data": "data/parts/job_female_sura_alpaca.json"
-    },
-    "job_female_sura_alpaca_c1": {
-      "key": "job_female_sura_alpaca_c1",
-      "kind": "body",
-      "label": "修羅 羊駝 第二服裝 female",
-      "data": "data/parts/job_female_sura_alpaca_c1.json"
-    },
-    "job_male_sura_alpaca": {
-      "key": "job_male_sura_alpaca",
-      "kind": "body",
-      "label": "修羅 羊駝 male",
-      "data": "data/parts/job_male_sura_alpaca.json"
-    },
-    "job_male_sura_alpaca_c1": {
-      "key": "job_male_sura_alpaca_c1",
-      "kind": "body",
-      "label": "修羅 羊駝 第二服裝 male",
-      "data": "data/parts/job_male_sura_alpaca_c1.json"
-    },
-    "job_female_merchant_boar": {
-      "key": "job_female_merchant_boar",
-      "kind": "body",
-      "label": "商人 野豬 female",
-      "data": "data/parts/job_female_merchant_boar.json"
-    },
-    "job_male_merchant_boar": {
-      "key": "job_male_merchant_boar",
-      "kind": "body",
-      "label": "商人 野豬 male",
-      "data": "data/parts/job_male_merchant_boar.json"
-    },
-    "job_female_blacksmith_boar": {
-      "key": "job_female_blacksmith_boar",
-      "kind": "body",
-      "label": "鐵匠 野豬 female",
-      "data": "data/parts/job_female_blacksmith_boar.json"
-    },
-    "job_male_blacksmith_boar": {
-      "key": "job_male_blacksmith_boar",
-      "kind": "body",
-      "label": "鐵匠 野豬 male",
-      "data": "data/parts/job_male_blacksmith_boar.json"
-    },
-    "job_female_alchemist_boar": {
-      "key": "job_female_alchemist_boar",
-      "kind": "body",
-      "label": "鍊金術師 野豬 female",
-      "data": "data/parts/job_female_alchemist_boar.json"
-    },
-    "job_male_alchemist_boar": {
-      "key": "job_male_alchemist_boar",
-      "kind": "body",
-      "label": "鍊金術師 野豬 male",
-      "data": "data/parts/job_male_alchemist_boar.json"
-    },
-    "job_female_whitesmith_boar": {
-      "key": "job_female_whitesmith_boar",
-      "kind": "body",
-      "label": "神工匠 野豬 female",
-      "data": "data/parts/job_female_whitesmith_boar.json"
-    },
-    "job_male_whitesmith_boar": {
-      "key": "job_male_whitesmith_boar",
-      "kind": "body",
-      "label": "神工匠 野豬 male",
-      "data": "data/parts/job_male_whitesmith_boar.json"
-    },
-    "job_female_creator_boar": {
-      "key": "job_female_creator_boar",
-      "kind": "body",
-      "label": "創造者 野豬 female",
-      "data": "data/parts/job_female_creator_boar.json"
-    },
-    "job_male_creator_boar": {
-      "key": "job_male_creator_boar",
-      "kind": "body",
-      "label": "創造者 野豬 male",
-      "data": "data/parts/job_male_creator_boar.json"
-    },
-    "job_female_mechanic_boar": {
-      "key": "job_female_mechanic_boar",
-      "kind": "body",
-      "label": "機械工匠 野豬 female",
-      "data": "data/parts/job_female_mechanic_boar.json"
-    },
-    "job_female_mechanic_boar_c1": {
-      "key": "job_female_mechanic_boar_c1",
-      "kind": "body",
-      "label": "機械工匠 野豬 第二服裝 female",
-      "data": "data/parts/job_female_mechanic_boar_c1.json"
-    },
-    "job_male_mechanic_boar": {
-      "key": "job_male_mechanic_boar",
-      "kind": "body",
-      "label": "機械工匠 野豬 male",
-      "data": "data/parts/job_male_mechanic_boar.json"
-    },
-    "job_male_mechanic_boar_c1": {
-      "key": "job_male_mechanic_boar_c1",
-      "kind": "body",
-      "label": "機械工匠 野豬 第二服裝 male",
-      "data": "data/parts/job_male_mechanic_boar_c1.json"
-    },
-    "job_female_genetic_boar": {
-      "key": "job_female_genetic_boar",
-      "kind": "body",
-      "label": "基因學者 野豬 female",
-      "data": "data/parts/job_female_genetic_boar.json"
-    },
-    "job_female_genetic_boar_c1": {
-      "key": "job_female_genetic_boar_c1",
-      "kind": "body",
-      "label": "基因學者 野豬 第二服裝 female",
-      "data": "data/parts/job_female_genetic_boar_c1.json"
-    },
-    "job_male_genetic_boar": {
-      "key": "job_male_genetic_boar",
-      "kind": "body",
-      "label": "基因學者 野豬 male",
-      "data": "data/parts/job_male_genetic_boar.json"
-    },
-    "job_male_genetic_boar_c1": {
-      "key": "job_male_genetic_boar_c1",
-      "kind": "body",
-      "label": "基因學者 野豬 第二服裝 male",
-      "data": "data/parts/job_male_genetic_boar_c1.json"
-    },
-    "job_female_gunslinger_peco": {
-      "key": "job_female_gunslinger_peco",
-      "kind": "body",
-      "label": "神槍手 大嘴鳥 female",
-      "data": "data/parts/job_female_gunslinger_peco.json"
-    },
-    "job_male_gunslinger_peco": {
-      "key": "job_male_gunslinger_peco",
-      "kind": "body",
-      "label": "神槍手 大嘴鳥 male",
-      "data": "data/parts/job_male_gunslinger_peco.json"
-    },
-    "job_female_rebellion_peco": {
-      "key": "job_female_rebellion_peco",
-      "kind": "body",
-      "label": "反叛者 大嘴鳥 female",
-      "data": "data/parts/job_female_rebellion_peco.json"
-    },
-    "job_male_rebellion_peco": {
-      "key": "job_male_rebellion_peco",
-      "kind": "body",
-      "label": "反叛者 大嘴鳥 male",
-      "data": "data/parts/job_male_rebellion_peco.json"
-    },
-    "job_female_mechanic_mado_armor": {
-      "key": "job_female_mechanic_mado_armor",
-      "kind": "body",
-      "label": "機械工匠 魔導裝甲 female",
-      "data": "data/parts/job_female_mechanic_mado_armor.json"
-    },
-    "job_female_mechanic_mado_armor_c1": {
-      "key": "job_female_mechanic_mado_armor_c1",
-      "kind": "body",
-      "label": "機械工匠 魔導裝甲 第二服裝 female",
-      "data": "data/parts/job_female_mechanic_mado_armor_c1.json"
-    },
-    "job_male_mechanic_mado_armor": {
-      "key": "job_male_mechanic_mado_armor",
-      "kind": "body",
-      "label": "機械工匠 魔導裝甲 male",
-      "data": "data/parts/job_male_mechanic_mado_armor.json"
-    },
-    "job_male_mechanic_mado_armor_c1": {
-      "key": "job_male_mechanic_mado_armor_c1",
-      "kind": "body",
-      "label": "機械工匠 魔導裝甲 第二服裝 male",
-      "data": "data/parts/job_male_mechanic_mado_armor_c1.json"
-    },
-    "job_female_meister_madogear2": {
-      "key": "job_female_meister_madogear2",
-      "kind": "body",
-      "label": "機甲神匠 魔導機甲 2 female",
-      "data": "data/parts/job_female_meister_madogear2.json"
-    },
-    "job_male_meister_madogear2": {
-      "key": "job_male_meister_madogear2",
-      "kind": "body",
-      "label": "機甲神匠 魔導機甲 2 male",
-      "data": "data/parts/job_male_meister_madogear2.json"
-    },
-    "job_female_novice_poring": {
-      "key": "job_female_novice_poring",
-      "kind": "body",
-      "label": "初學者 波利 female",
-      "data": "data/parts/job_female_novice_poring.json"
-    },
-    "job_male_novice_poring": {
-      "key": "job_male_novice_poring",
-      "kind": "body",
-      "label": "初學者 波利 male",
-      "data": "data/parts/job_male_novice_poring.json"
-    },
-    "job_female_swordman_peco": {
-      "key": "job_female_swordman_peco",
-      "kind": "body",
-      "label": "劍士 大嘴鳥 female",
-      "data": "data/parts/job_female_swordman_peco.json"
-    },
-    "job_male_swordman_peco": {
-      "key": "job_male_swordman_peco",
-      "kind": "body",
-      "label": "劍士 大嘴鳥 male",
-      "data": "data/parts/job_male_swordman_peco.json"
-    },
-    "job_female_thief_cerberus": {
-      "key": "job_female_thief_cerberus",
-      "kind": "body",
-      "label": "盜賊 地獄犬 female",
-      "data": "data/parts/job_female_thief_cerberus.json"
-    },
-    "job_male_thief_cerberus": {
-      "key": "job_male_thief_cerberus",
-      "kind": "body",
-      "label": "盜賊 地獄犬 male",
-      "data": "data/parts/job_male_thief_cerberus.json"
-    },
-    "job_female_assassin_cerberus": {
-      "key": "job_female_assassin_cerberus",
-      "kind": "body",
-      "label": "刺客 地獄犬 female",
-      "data": "data/parts/job_female_assassin_cerberus.json"
-    },
-    "job_male_assassin_cerberus": {
-      "key": "job_male_assassin_cerberus",
-      "kind": "body",
-      "label": "刺客 地獄犬 male",
-      "data": "data/parts/job_male_assassin_cerberus.json"
-    },
-    "job_female_rogue_cerberus": {
-      "key": "job_female_rogue_cerberus",
-      "kind": "body",
-      "label": "流氓 地獄犬 female",
-      "data": "data/parts/job_female_rogue_cerberus.json"
-    },
-    "job_male_rogue_cerberus": {
-      "key": "job_male_rogue_cerberus",
-      "kind": "body",
-      "label": "流氓 地獄犬 male",
-      "data": "data/parts/job_male_rogue_cerberus.json"
-    },
-    "job_female_assassin_cross_cerberus": {
-      "key": "job_female_assassin_cross_cerberus",
-      "kind": "body",
-      "label": "十字刺客 地獄犬 female",
-      "data": "data/parts/job_female_assassin_cross_cerberus.json"
-    },
-    "job_male_assassin_cross_cerberus": {
-      "key": "job_male_assassin_cross_cerberus",
-      "kind": "body",
-      "label": "十字刺客 地獄犬 male",
-      "data": "data/parts/job_male_assassin_cross_cerberus.json"
-    },
-    "job_female_stalker_cerberus": {
-      "key": "job_female_stalker_cerberus",
-      "kind": "body",
-      "label": "神行太保 地獄犬 female",
-      "data": "data/parts/job_female_stalker_cerberus.json"
-    },
-    "job_male_stalker_cerberus": {
-      "key": "job_male_stalker_cerberus",
-      "kind": "body",
-      "label": "神行太保 地獄犬 male",
-      "data": "data/parts/job_male_stalker_cerberus.json"
-    },
-    "job_female_guillotine_cross_cerberus": {
-      "key": "job_female_guillotine_cross_cerberus",
-      "kind": "body",
-      "label": "十字斬首者 地獄犬 female",
-      "data": "data/parts/job_female_guillotine_cross_cerberus.json"
-    },
-    "job_female_guillotine_cross_cerberus_c1": {
-      "key": "job_female_guillotine_cross_cerberus_c1",
-      "kind": "body",
-      "label": "十字斬首者 地獄犬 第二服裝 female",
-      "data": "data/parts/job_female_guillotine_cross_cerberus_c1.json"
-    },
-    "job_male_guillotine_cross_cerberus": {
-      "key": "job_male_guillotine_cross_cerberus",
-      "kind": "body",
-      "label": "十字斬首者 地獄犬 male",
-      "data": "data/parts/job_male_guillotine_cross_cerberus.json"
-    },
-    "job_male_guillotine_cross_cerberus_c1": {
-      "key": "job_male_guillotine_cross_cerberus_c1",
-      "kind": "body",
-      "label": "十字斬首者 地獄犬 第二服裝 male",
-      "data": "data/parts/job_male_guillotine_cross_cerberus_c1.json"
-    },
-    "job_female_shadow_chaser_cerberus": {
-      "key": "job_female_shadow_chaser_cerberus",
-      "kind": "body",
-      "label": "魅影追蹤者 地獄犬 female",
-      "data": "data/parts/job_female_shadow_chaser_cerberus.json"
-    },
-    "job_female_shadow_chaser_cerberus_c1": {
-      "key": "job_female_shadow_chaser_cerberus_c1",
-      "kind": "body",
-      "label": "魅影追蹤者 地獄犬 第二服裝 female",
-      "data": "data/parts/job_female_shadow_chaser_cerberus_c1.json"
-    },
-    "job_male_shadow_chaser_cerberus": {
-      "key": "job_male_shadow_chaser_cerberus",
-      "kind": "body",
-      "label": "魅影追蹤者 地獄犬 male",
-      "data": "data/parts/job_male_shadow_chaser_cerberus.json"
-    },
-    "job_male_shadow_chaser_cerberus_c1": {
-      "key": "job_male_shadow_chaser_cerberus_c1",
-      "kind": "body",
-      "label": "魅影追蹤者 地獄犬 第二服裝 male",
-      "data": "data/parts/job_male_shadow_chaser_cerberus_c1.json"
-    },
-    "job_male_troubadour_general": {
-      "key": "job_male_troubadour_general",
-      "kind": "body",
-      "label": "樂之舞靈 專用坐騎 male",
-      "data": "data/parts/job_male_troubadour_general.json"
-    },
-    "job_female_trouvere_general": {
-      "key": "job_female_trouvere_general",
-      "kind": "body",
-      "label": "月之舞靈 專用坐騎 female",
-      "data": "data/parts/job_female_trouvere_general.json"
-    },
-    "job_female_super_novice_poring": {
-      "key": "job_female_super_novice_poring",
-      "kind": "body",
-      "label": "超級初學者 波利 female",
-      "data": "data/parts/job_female_super_novice_poring.json"
-    },
-    "job_male_super_novice_poring": {
-      "key": "job_male_super_novice_poring",
-      "kind": "body",
-      "label": "超級初學者 波利 male",
-      "data": "data/parts/job_male_super_novice_poring.json"
-    },
-    "job_female_hyper_novice_general": {
-      "key": "job_female_hyper_novice_general",
-      "kind": "body",
-      "label": "究極初學者 專用坐騎 female",
-      "data": "data/parts/job_female_hyper_novice_general.json"
-    },
-    "job_male_hyper_novice_general": {
-      "key": "job_male_hyper_novice_general",
-      "kind": "body",
-      "label": "究極初學者 專用坐騎 male",
-      "data": "data/parts/job_male_hyper_novice_general.json"
-    },
-    "job_female_night_watch_general": {
-      "key": "job_female_night_watch_general",
-      "kind": "body",
-      "label": "夜巡者 專用坐騎 female",
-      "data": "data/parts/job_female_night_watch_general.json"
-    },
-    "job_male_night_watch_general": {
-      "key": "job_male_night_watch_general",
-      "kind": "body",
-      "label": "夜巡者 專用坐騎 male",
-      "data": "data/parts/job_male_night_watch_general.json"
-    },
-    "job_female_ninja_frog": {
-      "key": "job_female_ninja_frog",
-      "kind": "body",
-      "label": "忍者 蛤蟆 female",
-      "data": "data/parts/job_female_ninja_frog.json"
-    },
-    "job_male_ninja_frog": {
-      "key": "job_male_ninja_frog",
-      "kind": "body",
-      "label": "忍者 蛤蟆 male",
-      "data": "data/parts/job_male_ninja_frog.json"
-    },
-    "job_female_kagerou_frog": {
-      "key": "job_female_kagerou_frog",
-      "kind": "body",
-      "label": "影狼 蛤蟆 female",
-      "data": "data/parts/job_female_kagerou_frog.json"
-    },
-    "job_male_kagerou_frog": {
-      "key": "job_male_kagerou_frog",
-      "kind": "body",
-      "label": "影狼 蛤蟆 male",
-      "data": "data/parts/job_male_kagerou_frog.json"
-    },
-    "job_female_oboro_frog": {
-      "key": "job_female_oboro_frog",
-      "kind": "body",
-      "label": "朧 蛤蟆 female",
-      "data": "data/parts/job_female_oboro_frog.json"
-    },
-    "job_male_oboro_frog": {
-      "key": "job_male_oboro_frog",
-      "kind": "body",
-      "label": "朧 蛤蟆 male",
-      "data": "data/parts/job_male_oboro_frog.json"
-    },
-    "job_male_shinkiro_general": {
-      "key": "job_male_shinkiro_general",
-      "kind": "body",
-      "label": "蜃氣樓 專用坐騎 male",
-      "data": "data/parts/job_male_shinkiro_general.json"
-    },
-    "job_female_shiranui_general": {
-      "key": "job_female_shiranui_general",
-      "kind": "body",
-      "label": "不知火 專用坐騎 female",
-      "data": "data/parts/job_female_shiranui_general.json"
-    },
-    "job_female_taekwon_poring": {
-      "key": "job_female_taekwon_poring",
-      "kind": "body",
-      "label": "跆拳少年 波利 female",
-      "data": "data/parts/job_female_taekwon_poring.json"
-    },
-    "job_male_taekwon_poring": {
-      "key": "job_male_taekwon_poring",
-      "kind": "body",
-      "label": "跆拳少年 波利 male",
-      "data": "data/parts/job_male_taekwon_poring.json"
-    },
-    "job_female_star_gladiator_poring": {
-      "key": "job_female_star_gladiator_poring",
-      "kind": "body",
-      "label": "拳聖 波利 female",
-      "data": "data/parts/job_female_star_gladiator_poring.json"
-    },
-    "job_male_star_gladiator_poring": {
-      "key": "job_male_star_gladiator_poring",
-      "kind": "body",
-      "label": "拳聖 波利 male",
-      "data": "data/parts/job_male_star_gladiator_poring.json"
-    },
-    "job_female_soul_linker_frog": {
-      "key": "job_female_soul_linker_frog",
-      "kind": "body",
-      "label": "悟靈士 蛤蟆 female",
-      "data": "data/parts/job_female_soul_linker_frog.json"
-    },
-    "job_male_soul_linker_frog": {
-      "key": "job_male_soul_linker_frog",
-      "kind": "body",
-      "label": "悟靈士 蛤蟆 male",
-      "data": "data/parts/job_male_soul_linker_frog.json"
-    },
-    "job_female_star_emperor_haetae": {
-      "key": "job_female_star_emperor_haetae",
-      "kind": "body",
-      "label": "拳皇 神獸 female",
-      "data": "data/parts/job_female_star_emperor_haetae.json"
-    },
-    "job_male_star_emperor_haetae": {
-      "key": "job_male_star_emperor_haetae",
-      "kind": "body",
-      "label": "拳皇 神獸 male",
-      "data": "data/parts/job_male_star_emperor_haetae.json"
-    },
-    "job_female_sky_emperor_general": {
-      "key": "job_female_sky_emperor_general",
-      "kind": "body",
-      "label": "天帝 專用坐騎 female",
-      "data": "data/parts/job_female_sky_emperor_general.json"
-    },
-    "job_male_sky_emperor_general": {
-      "key": "job_male_sky_emperor_general",
-      "kind": "body",
-      "label": "天帝 專用坐騎 male",
-      "data": "data/parts/job_male_sky_emperor_general.json"
-    },
-    "job_female_soul_reaper_haetae": {
-      "key": "job_female_soul_reaper_haetae",
-      "kind": "body",
-      "label": "獵靈士 神獸 female",
-      "data": "data/parts/job_female_soul_reaper_haetae.json"
-    },
-    "job_male_soul_reaper_haetae": {
-      "key": "job_male_soul_reaper_haetae",
-      "kind": "body",
-      "label": "獵靈士 神獸 male",
-      "data": "data/parts/job_male_soul_reaper_haetae.json"
-    },
-    "job_female_soul_ascetic_general": {
-      "key": "job_female_soul_ascetic_general",
-      "kind": "body",
-      "label": "靈導士 專用坐騎 female",
-      "data": "data/parts/job_female_soul_ascetic_general.json"
-    },
-    "job_male_soul_ascetic_general": {
-      "key": "job_male_soul_ascetic_general",
-      "kind": "body",
-      "label": "靈導士 專用坐騎 male",
-      "data": "data/parts/job_male_soul_ascetic_general.json"
     }
   }
 }

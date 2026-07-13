@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <title>紙娃娃 V2 - Nori Preview List</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css?v=20260712-paperdoll-v2-mount-buttons-6" />
+  <link rel="stylesheet" href="paperdoll_v2/web/site.css?v=20260714-paperdoll-v2-ui-restore-4" />
 </head>
 <body class="section-paperdoll">
   <div class="layout">
@@ -44,13 +44,14 @@
       <header class="topbar">
         <div class="title-row">
           <h1>紙娃娃 V2</h1>
-          <span class="generated-at">開發測試版：2026-07-08</span>
+          <span class="generated-at">Beta：2026-07-13</span>
         </div>
         <div class="toolbar-controls">
           <button class="paperdoll-icon-button" id="playButton" type="button" title="播放動畫" aria-label="播放動畫">&gt;</button>
           <button class="paperdoll-icon-button" id="fitButton" type="button" title="重新置中" aria-label="重新置中">◎</button>
           <button class="paperdoll-icon-button toolbar-text-button" id="shareButton" type="button" title="複製分享連結" aria-label="複製分享連結">連結 (Link)</button>
           <button class="paperdoll-icon-button toolbar-text-button" id="saveImageButton" type="button" title="儲存 PNG" aria-label="儲存 PNG">儲存 (Save)</button>
+          <button class="paperdoll-icon-button gif-export-button" id="saveGifButton" type="button" title="儲存 GIF 動畫" aria-label="儲存 GIF 動畫">GIF</button>
           <button class="paperdoll-icon-button toolbar-text-button" id="clearButton" type="button" title="清空穿戴" aria-label="清空穿戴">清除 (Clear)</button>
         </div>
       </header>
@@ -62,13 +63,29 @@
               <strong>Nori 紙娃娃 V2</strong>
               <span id="statusText">載入資料中...</span>
             </div>
-            <label class="stage-background-control">
-              <span>背景</span>
-              <select id="backgroundSelect" aria-label="背景"></select>
-            </label>
+            <div class="stage-tools">
+              <label class="stage-background-control">
+                <span>背景 (Background)</span>
+                <select id="backgroundSelect" aria-label="背景"></select>
+              </label>
+              <label class="stage-shadow-control">
+                <input id="shadowToggle" type="checkbox" checked />
+                <span>陰影 (Shadow)</span>
+              </label>
+              <input class="background-color-input is-hidden" id="backgroundColor" type="color" value="#ffffff" title="背景顏色 (Background Color)" aria-label="背景顏色" />
+              <label class="background-file-button is-hidden" id="backgroundFileButton" for="backgroundFile">圖片 (Image)</label>
+              <input class="is-hidden" id="backgroundFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+              <button class="background-reset-button is-hidden" id="backgroundResetButton" type="button" title="重設背景位置 (Reset Background Position)" aria-label="重設背景位置">◎</button>
+              <div class="stage-zoom-control" role="group" aria-label="自由縮放">
+                <button id="zoomOutButton" type="button" title="縮小 (Zoom Out)" aria-label="縮小">&minus;</button>
+                <output id="zoomReadout" for="zoomOutButton zoomInButton">100%</output>
+                <button id="zoomInButton" type="button" title="放大 (Zoom In)" aria-label="放大">+</button>
+              </div>
+            </div>
           </div>
           <div class="preview-wrap" id="previewWrap">
             <div class="effect-layer effect-layer-behind" id="effectLayerBehind" aria-hidden="true"></div>
+            <div class="paperdoll-shadow" id="paperdollShadow" aria-hidden="true"></div>
             <canvas id="paperCanvas" width="180" height="180" aria-label="紙娃娃畫布"></canvas>
             <div class="effect-layer effect-layer-front" id="effectLayerFront" aria-hidden="true"></div>
           </div>
@@ -90,6 +107,21 @@
               <button type="button" data-clear-slot="cape">無</button>
             </div>
           </div>
+          <section class="closet-panel" aria-label="衣櫃預設">
+            <div class="closet-title-row">
+              <div class="closet-title">衣櫃 (Closet)</div>
+              <div class="closet-file-controls" role="group" aria-label="衣櫃匯入匯出">
+                <button id="exportClosetButton" type="button" title="匯出衣櫃 JSON (Export Closet JSON)" aria-label="匯出衣櫃 JSON">&darr;</button>
+                <label for="importClosetFile" title="匯入衣櫃 JSON (Import Closet JSON)" aria-label="匯入衣櫃 JSON">&uarr;</label>
+                <input class="is-hidden" id="importClosetFile" type="file" accept="application/json,.json" />
+              </div>
+            </div>
+            <div class="closet-create-row">
+              <input id="closetName" type="text" maxlength="32" placeholder="穿搭名稱 (Look Name)" aria-label="穿搭名稱" />
+              <button id="saveClosetButton" type="button">收藏 (Save)</button>
+            </div>
+            <div class="closet-list" id="closetList" aria-live="polite"></div>
+          </section>
         </section>
 
         <aside class="control-panel" aria-label="紙娃娃控制">
@@ -157,6 +189,7 @@
               <button type="button" data-equipment-filter="low" title="下段 (Lower)">下段</button>
               <button type="button" data-equipment-filter="cape" title="披肩 (Garment)">披肩</button>
             </div>
+            <button type="button" class="item-browser-launch" id="openItemBrowserButton">開啟物品篩選器 (Item Browser)</button>
             <input id="headgearFilter" class="filter-input" type="search" placeholder="篩選 ID 或名稱" aria-label="篩選服飾" />
             <select id="headgearSelect1" aria-label="服飾 1"></select>
             <select id="headgearSelect2" aria-label="服飾 2"></select>
@@ -169,18 +202,6 @@
             <select id="capeSelect" aria-label="披風"></select>
           </div>
 
-          <section class="item-browser is-hidden" aria-label="服飾庫">
-            <div class="item-browser-head">
-              <label>服飾庫</label>
-              <div class="button-strip" role="group" aria-label="服飾庫分類">
-                <button type="button" data-browser-kind="headgear" class="active">服飾</button>
-                <button type="button" data-browser-kind="cape">肩飾</button>
-              </div>
-            </div>
-            <input id="itemSearch" class="filter-input" type="search" placeholder="搜尋 ID / 名稱 / const" aria-label="搜尋服飾庫" />
-            <div id="itemResults" class="item-results" aria-live="polite"></div>
-          </section>
-
           <div class="control-group">
             <label>狀態</label>
             <div class="button-strip" role="group" aria-label="狀態">
@@ -189,6 +210,7 @@
               <button type="button" data-pose="walk">走</button>
               <button type="button" data-pose="pick">拾</button>
               <button type="button" data-pose="wait">待</button>
+              <button type="button" data-pose="dead">倒</button>
             </div>
           </div>
 
@@ -261,6 +283,95 @@
     </main>
   </div>
 
-  <script src="paperdoll_v2/web/app.js?v=20260713-paperdoll-v2-layer-priority-12"></script>
+  <dialog class="item-browser-dialog" id="itemBrowserDialog" aria-labelledby="itemBrowserDialogTitle">
+    <div class="item-browser">
+      <header class="item-browser-head">
+        <div>
+          <strong id="itemBrowserDialogTitle">物品篩選器 (Item Browser)</strong>
+          <span>選擇要套用的欄位</span>
+        </div>
+        <button type="button" class="item-browser-close" id="closeItemBrowserButton" title="關閉 (Close)" aria-label="關閉物品篩選器">×</button>
+      </header>
+      <div class="item-browser-slots button-strip" role="group" aria-label="套用欄位">
+        <button type="button" data-browser-slot="0" class="active">服飾 1</button>
+        <button type="button" data-browser-slot="1">服飾 2</button>
+        <button type="button" data-browser-slot="2">服飾 3</button>
+        <button type="button" data-browser-slot="cape">披肩</button>
+      </div>
+      <div class="item-browser-filters button-strip" role="group" aria-label="物品分類">
+        <button type="button" data-browser-filter="all" class="active">全部</button>
+        <button type="button" data-browser-filter="motion">動態</button>
+        <button type="button" data-browser-filter="effect">特效</button>
+        <button type="button" data-browser-filter="favorite">收藏</button>
+        <button type="button" data-browser-filter="top">上段</button>
+        <button type="button" data-browser-filter="mid">中段</button>
+        <button type="button" data-browser-filter="low">下段</button>
+      </div>
+      <input id="itemSearch" class="filter-input" type="search" placeholder="搜尋 ID / 名稱 / const" aria-label="搜尋服飾庫" />
+      <div id="itemResults" class="item-results" aria-live="polite"></div>
+      <footer class="item-browser-actions">
+        <span id="itemBrowserCount" aria-live="polite"></span>
+        <div>
+          <button type="button" id="clearItemBrowserSlotButton">清除目前欄位 (Clear)</button>
+          <button type="button" class="primary" id="finishItemBrowserButton">完成 (Done)</button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
+  <dialog class="png-dialog" id="pngDialog" aria-labelledby="pngDialogTitle">
+    <form method="dialog">
+      <div class="png-dialog-title" id="pngDialogTitle">儲存圖片 (Save PNG)</div>
+      <div class="png-option-row">
+        <span>尺寸 (Size)</span>
+        <div class="button-strip" role="group" aria-label="PNG 尺寸">
+          <button type="button" data-png-size="256" class="active">256</button>
+          <button type="button" data-png-size="512">512</button>
+        </div>
+      </div>
+      <div class="png-option-row">
+        <span>背景 (Background)</span>
+        <div class="button-strip" role="group" aria-label="PNG 背景">
+          <button type="button" data-png-background="current" class="active">目前 (Current)</button>
+          <button type="button" data-png-background="transparent">透明 (Transparent)</button>
+        </div>
+      </div>
+      <label class="png-info-option">
+        <input id="pngIncludeInfo" type="checkbox" />
+        <span>附穿戴名稱 (Include worn names)</span>
+      </label>
+      <div class="png-dialog-actions">
+        <button type="button" id="cancelPngButton">取消 (Cancel)</button>
+        <button type="button" id="confirmPngButton" class="primary">儲存 (Save)</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="png-dialog" id="gifDialog" aria-labelledby="gifDialogTitle">
+    <form method="dialog">
+      <div class="png-dialog-title" id="gifDialogTitle">儲存動畫 (Save GIF)</div>
+      <div class="png-option-row">
+        <span>長度 (Duration)</span>
+        <div class="button-strip" role="group" aria-label="GIF 長度">
+          <button type="button" data-gif-duration="2400" class="active">2.4 秒</button>
+          <button type="button" data-gif-duration="4800">4.8 秒</button>
+        </div>
+      </div>
+      <div class="png-option-row">
+        <span>背景 (Background)</span>
+        <div class="button-strip" role="group" aria-label="GIF 背景">
+          <button type="button" data-gif-background="current" class="active">目前 (Current)</button>
+          <button type="button" data-gif-background="transparent">透明 (Transparent)</button>
+        </div>
+      </div>
+      <div class="png-dialog-actions">
+        <button type="button" id="cancelGifButton">取消 (Cancel)</button>
+        <button type="button" id="confirmGifButton" class="primary">儲存 GIF (Save)</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="paperdoll_v2/web/effect-runtime.js?v=20260713-paperdoll-v2-item-browser-5"></script>
+  <script src="paperdoll_v2/web/app.js?v=20260713-paperdoll-v2-item-browser-5"></script>
 </body>
 </html>

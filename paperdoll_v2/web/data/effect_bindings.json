@@ -1,5 +1,5 @@
 {
-  "schema": "nori-paperdoll-v2/effect-bindings-1",
+  "schema": "nori-paperdoll-v2/effect-bindings-2",
   "generated_from": {
     "cape_runtime": "workspace_assets/official/json/cape_runtime.json",
     "headgear_runtime": "workspace_assets/official/json/headgear_runtime.json",
@@ -19,6 +19,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 86,
+            "frame_count": 43,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/153.png",
             "male": "assets/hateffects/male/153.png"
@@ -39,6 +46,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 106,
+            "frame_count": 53,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/162.png",
             "male": "assets/hateffects/male/162.png"
@@ -59,6 +73,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/173.png",
             "male": "assets/hateffects/male/173.png"
@@ -79,6 +100,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 86,
+            "frame_count": 43,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/185.png",
             "male": "assets/hateffects/male/185.png"
@@ -99,6 +127,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 86,
+            "frame_count": 43,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/187.png",
             "male": "assets/hateffects/male/187.png"
@@ -119,6 +154,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 81,
+            "frame_count": 41,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/189.png",
             "male": "assets/hateffects/male/189.png"
@@ -139,6 +181,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 81,
+            "frame_count": 41,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/190.png",
             "male": "assets/hateffects/male/190.png"
@@ -159,6 +208,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 81,
+            "frame_count": 41,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/191.png",
             "male": "assets/hateffects/male/191.png"
@@ -179,6 +235,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 91,
+            "frame_count": 46,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/218.png",
             "male": "assets/hateffects/male/218.png"
@@ -199,6 +262,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 91,
+            "frame_count": 46,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/220.png",
             "male": "assets/hateffects/male/220.png"
@@ -219,6 +289,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 126,
+            "frame_count": 63,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/239.png",
             "male": "assets/hateffects/male/239.png"
@@ -239,6 +316,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 111,
+            "frame_count": 56,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/243.png",
             "male": "assets/hateffects/male/243.png"
@@ -259,6 +343,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 64,
+            "frame_count": 32,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/282.png",
             "male": "assets/hateffects/male/282.png"
@@ -281,6 +372,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 81,
+            "frame_count": 41,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/40.png",
             "male": "assets/hateffects/male/40.png"
@@ -301,6 +399,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 131,
+            "frame_count": 66,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/4.png",
             "male": "assets/hateffects/male/4.png"
@@ -321,6 +426,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 121,
+            "frame_count": 61,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/45.png",
             "male": "assets/hateffects/male/45.png"
@@ -341,6 +453,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/18.png",
             "male": "assets/hateffects/male/18.png"
@@ -361,6 +480,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/14.png",
             "male": "assets/hateffects/male/14.png"
@@ -381,6 +507,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 141,
+            "frame_count": 71,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/53.png",
             "male": "assets/hateffects/male/53.png"
@@ -401,6 +534,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/52.png",
             "male": "assets/hateffects/male/52.png"
@@ -421,6 +561,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/81.png",
             "male": "assets/hateffects/male/81.png"
@@ -441,6 +588,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/91.png",
             "male": "assets/hateffects/male/91.png"
@@ -461,6 +615,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 103,
+            "frame_count": 52,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/98.png",
             "male": "assets/hateffects/male/98.png"
@@ -481,6 +642,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 161,
+            "frame_count": 81,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/95.png",
             "male": "assets/hateffects/male/95.png"
@@ -501,6 +669,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/125.png",
             "male": "assets/hateffects/male/125.png"
@@ -521,6 +696,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/126.png",
             "male": "assets/hateffects/male/126.png"
@@ -541,6 +723,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/127.png",
             "male": "assets/hateffects/male/127.png"
@@ -561,6 +750,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/124.png",
             "male": "assets/hateffects/male/124.png"
@@ -581,6 +777,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 151,
+            "frame_count": 76,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/130.png",
             "male": "assets/hateffects/male/130.png"
@@ -601,6 +804,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 136,
+            "frame_count": 68,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/132.png",
             "male": "assets/hateffects/male/132.png"
@@ -621,6 +831,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 141,
+            "frame_count": 71,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/133.png",
             "male": "assets/hateffects/male/133.png"
@@ -641,6 +858,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 121,
+            "frame_count": 61,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/135.png",
             "male": "assets/hateffects/male/135.png"
@@ -661,6 +885,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/134.png",
             "male": "assets/hateffects/male/134.png"
@@ -681,6 +912,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 146,
+            "frame_count": 73,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/136.png",
             "male": "assets/hateffects/male/136.png"
@@ -701,6 +939,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 146,
+            "frame_count": 73,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/137.png",
             "male": "assets/hateffects/male/137.png"
@@ -721,6 +966,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 146,
+            "frame_count": 73,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/138.png",
             "male": "assets/hateffects/male/138.png"
@@ -741,6 +993,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/152.png",
             "male": "assets/hateffects/male/152.png"
@@ -761,6 +1020,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 85,
+            "frame_count": 43,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/156.png",
             "male": "assets/hateffects/male/156.png"
@@ -781,6 +1047,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 121,
+            "frame_count": 61,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/157.png",
             "male": "assets/hateffects/male/157.png"
@@ -801,6 +1074,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 126,
+            "frame_count": 63,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/161.png",
             "male": "assets/hateffects/male/161.png"
@@ -821,6 +1101,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/221.png",
             "male": "assets/hateffects/male/221.png"
@@ -841,6 +1128,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 181,
+            "frame_count": 91,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/178.png",
             "male": "assets/hateffects/male/178.png"
@@ -861,6 +1155,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 146,
+            "frame_count": 73,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/181.png",
             "male": "assets/hateffects/male/181.png"
@@ -881,6 +1182,7 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {},
           "asset": {
             "female": "assets/hateffects/female/192.png",
             "male": "assets/hateffects/male/192.png"
@@ -901,6 +1203,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 91,
+            "frame_count": 46,
+            "frame_ms": 33,
+            "composite": "plus-lighter"
+          },
           "asset": {
             "female": "assets/hateffects/female/223.png",
             "male": "assets/hateffects/male/223.png"
@@ -921,6 +1230,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 1181,
+            "frame_count": 591,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/236.png",
             "male": "assets/hateffects/male/236.png"
@@ -941,6 +1257,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 121,
+            "frame_count": 61,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/237.png",
             "male": "assets/hateffects/male/237.png"
@@ -961,6 +1284,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 103,
+            "frame_count": 52,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/233.png",
             "male": "assets/hateffects/male/233.png"
@@ -981,6 +1311,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 103,
+            "frame_count": 52,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/234.png",
             "male": "assets/hateffects/male/234.png"
@@ -1001,6 +1338,13 @@
           "render_before_character": false,
           "attached_to_head": false,
           "ignore_riding": false,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 103,
+            "frame_count": 52,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/235.png",
             "male": "assets/hateffects/male/235.png"
@@ -1021,6 +1365,13 @@
           "render_before_character": true,
           "attached_to_head": false,
           "ignore_riding": true,
+          "runtime": {
+            "source_fps": 60,
+            "source_frames": 171,
+            "frame_count": 86,
+            "frame_ms": 33,
+            "composite": "source-over"
+          },
           "asset": {
             "female": "assets/hateffects/female/281.png",
             "male": "assets/hateffects/male/281.png"

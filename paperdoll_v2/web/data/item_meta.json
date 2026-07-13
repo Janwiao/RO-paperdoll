@@ -318,14 +318,18 @@
     "17": {
       "id": 17,
       "kind": "headgear",
-      "display_name": "Ribbon",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Ribbon",
+      "primary_itemid": 31400,
+      "itemids": [
+        31400
+      ],
+      "names": [
+        "Costume Ribbon"
+      ],
       "slots": [],
       "const": "ACCESSORY_RIBBON",
       "sprite": "_리본",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31400",
       "source": "master"
     },
     "18": {
@@ -975,14 +979,18 @@
     "52": {
       "id": 52,
       "kind": "headgear",
-      "display_name": "Hip Hop Mask",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Demo Mask",
+      "primary_itemid": 20061,
+      "itemids": [
+        20061
+      ],
+      "names": [
+        "Costume Demo Mask"
+      ],
       "slots": [],
       "const": "ACCESSORY_HIP_HOP_MASK",
       "sprite": "_시위용마스크",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20061",
       "source": "master"
     },
     "53": {
@@ -1104,14 +1112,18 @@
     "59": {
       "id": 59,
       "kind": "headgear",
-      "display_name": "Stop Signpost",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Stop Post",
+      "primary_itemid": 20051,
+      "itemids": [
+        20051
+      ],
+      "names": [
+        "Costume Stop Post"
+      ],
       "slots": [],
       "const": "ACCESSORY_STOP_SIGNPOST",
       "sprite": "_정지표지판",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20051",
       "source": "master"
     },
     "60": {
@@ -1404,14 +1416,18 @@
     "75": {
       "id": 75,
       "kind": "headgear",
-      "display_name": "Munchs Scream",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Scratch Mask",
+      "primary_itemid": 31129,
+      "itemids": [
+        31129
+      ],
+      "names": [
+        "Costume Scratch Mask"
+      ],
       "slots": [],
       "const": "ACCESSORY_MUNCHS_SCREAM",
       "sprite": "_스크래치마스크",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31129",
       "source": "master"
     },
     "76": {
@@ -1474,40 +1490,52 @@
     "79": {
       "id": 79,
       "kind": "headgear",
-      "display_name": "Welder Mask",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Welding Mask",
+      "primary_itemid": 20059,
+      "itemids": [
+        20059
+      ],
+      "names": [
+        "Costume Welding Mask"
+      ],
       "slots": [],
       "const": "ACCESSORY_WELDER_MASK",
       "sprite": "_용접마스크",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20059",
       "source": "master"
     },
     "80": {
       "id": 80,
       "kind": "headgear",
-      "display_name": "Pretend To Be Murdered",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)演劇的小道具",
+      "primary_itemid": 31114,
+      "itemids": [
+        31114
+      ],
+      "names": [
+        "(服飾)演劇的小道具"
+      ],
       "slots": [],
       "const": "ACCESSORY_PRETEND_TO_BE_MURDERED",
       "sprite": "_연극소도구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31114",
       "source": "master"
     },
     "81": {
       "id": 81,
       "kind": "headgear",
-      "display_name": "Star Dust",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Stardust",
+      "primary_itemid": 20260,
+      "itemids": [
+        20260
+      ],
+      "names": [
+        "Costume Stardust"
+      ],
       "slots": [],
       "const": "ACCESSORY_STAR_DUST",
       "sprite": "_스타더스트",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20260",
       "source": "master"
     },
     "82": {
@@ -1755,14 +1783,18 @@
     "95": {
       "id": 95,
       "kind": "headgear",
-      "display_name": "Crash Helmet",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Construction Helmet",
+      "primary_itemid": 20060,
+      "itemids": [
+        20060
+      ],
+      "names": [
+        "Costume Construction Helmet"
+      ],
       "slots": [],
       "const": "ACCESSORY_CRASH_HELMET",
       "sprite": "_안전모",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20060",
       "source": "master"
     },
     "96": {
@@ -1961,14 +1993,18 @@
     "107": {
       "id": 107,
       "kind": "headgear",
-      "display_name": "Lost Money Heart",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Bankruptcy of Heart",
+      "primary_itemid": 31035,
+      "itemids": [
+        31035
+      ],
+      "names": [
+        "Costume Bankruptcy of Heart"
+      ],
       "slots": [],
       "const": "ACCESSORY_LOST_MONEY_HEART",
       "sprite": "_돈잃은자의마음",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31035",
       "source": "master"
     },
     "108": {
@@ -2383,14 +2419,18 @@
     "131": {
       "id": 131,
       "kind": "headgear",
-      "display_name": "Fasion Sunglasses",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Fashionable Glasses",
+      "primary_itemid": 20185,
+      "itemids": [
+        20185
+      ],
+      "names": [
+        "Costume Fashionable Glasses"
+      ],
       "slots": [],
       "const": "ACCESSORY_FASION_SUNGLASSES",
       "sprite": "_패션선글래스",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20185",
       "source": "master"
     },
     "132": {
@@ -3739,14 +3779,18 @@
     "203": {
       "id": 203,
       "kind": "headgear",
-      "display_name": "Cross Helmet",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Close Helmet",
+      "primary_itemid": 440004,
+      "itemids": [
+        440004
+      ],
+      "names": [
+        "Costume Close Helmet"
+      ],
       "slots": [],
       "const": "ACCESSORY_CROSS_HELMET",
       "sprite": "_클로스헬멧",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/440004",
       "source": "master"
     },
     "204": {
@@ -4081,14 +4125,18 @@
     "221": {
       "id": 221,
       "kind": "headgear",
-      "display_name": "Bongcrown",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Phoenix Crown",
+      "primary_itemid": 19645,
+      "itemids": [
+        19645
+      ],
+      "names": [
+        "Costume Phoenix Crown"
+      ],
       "slots": [],
       "const": "ACCESSORY_BONGCROWN",
       "sprite": "_봉관",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19645",
       "source": "master"
     },
     "222": {
@@ -4306,14 +4354,18 @@
     "233": {
       "id": 233,
       "kind": "headgear",
-      "display_name": "Darkhelmet",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Helm of Darkness",
+      "primary_itemid": 19641,
+      "itemids": [
+        19641
+      ],
+      "names": [
+        "Costume Helm of Darkness"
+      ],
       "slots": [],
       "const": "ACCESSORY_DARKHELMET",
       "sprite": "_암흑의투구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19641",
       "source": "master"
     },
     "234": {
@@ -4452,14 +4504,18 @@
     "241": {
       "id": 241,
       "kind": "headgear",
-      "display_name": "Leaf",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Autumn Leaves",
+      "primary_itemid": 19648,
+      "itemids": [
+        19648
+      ],
+      "names": [
+        "Costume Autumn Leaves"
+      ],
       "slots": [],
       "const": "ACCESSORY_LEAF",
       "sprite": "_낙엽",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19648",
       "source": "master"
     },
     "242": {
@@ -4636,14 +4692,18 @@
     "251": {
       "id": 251,
       "kind": "headgear",
-      "display_name": "Prikacirclet",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Fricca's Circlet",
+      "primary_itemid": 20187,
+      "itemids": [
+        20187
+      ],
+      "names": [
+        "Costume Fricca's Circlet"
+      ],
       "slots": [],
       "const": "ACCESSORY_PRIKACIRCLET",
       "sprite": "_프리카서클릿",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20187",
       "source": "master"
     },
     "252": {
@@ -4671,10 +4731,12 @@
       "display_name": "Costume Tongue Mask",
       "primary_itemid": 19680,
       "itemids": [
-        19680
+        19680,
+        31243
       ],
       "names": [
-        "Costume Tongue Mask"
+        "Costume Tongue Mask",
+        "Costume Tongue Mask (Middle)"
       ],
       "slots": [
         "中段",
@@ -4714,14 +4776,18 @@
     "256": {
       "id": 256,
       "kind": "headgear",
-      "display_name": "Morphisdoogun",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Morpheus's Hood",
+      "primary_itemid": 20188,
+      "itemids": [
+        20188
+      ],
+      "names": [
+        "Costume Morpheus's Hood"
+      ],
       "slots": [],
       "const": "ACCESSORY_MORPHISDOOGUN",
       "sprite": "_모르피셔스두건",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20188",
       "source": "master"
     },
     "257": {
@@ -4746,14 +4812,18 @@
     "258": {
       "id": 258,
       "kind": "headgear",
-      "display_name": "Gevneitugoo",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Goibne's Helm",
+      "primary_itemid": 20189,
+      "itemids": [
+        20189
+      ],
+      "names": [
+        "Costume Goibne's Helm"
+      ],
       "slots": [],
       "const": "ACCESSORY_GEVNEITUGOO",
       "sprite": "_게브네이투구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20189",
       "source": "master"
     },
     "259": {
@@ -4937,10 +5007,12 @@
       "display_name": "(服飾)月夜貓帽子",
       "primary_itemid": 19642,
       "itemids": [
-        19642
+        19642,
+        31556
       ],
       "names": [
-        "(服飾)月夜貓帽子"
+        "(服飾)月夜貓帽子",
+        "Costume Moonlight Flower Hat (Upper)"
       ],
       "slots": [
         "上段",
@@ -4973,14 +5045,18 @@
     "270": {
       "id": 270,
       "kind": "headgear",
-      "display_name": "Propeller2",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Starry Sky Pen",
+      "primary_itemid": 480603,
+      "itemids": [
+        480603
+      ],
+      "names": [
+        "Costume Starry Sky Pen"
+      ],
       "slots": [],
       "const": "ACCESSORY_PROPELLER2",
       "sprite": "_프로펠라_",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480603",
       "source": "master"
     },
     "271": {
@@ -5160,10 +5236,12 @@
       "display_name": "Costume Blue Beanie",
       "primary_itemid": 19987,
       "itemids": [
-        19987
+        19987,
+        20630
       ],
       "names": [
-        "Costume Blue Beanie"
+        "Costume Blue Beanie",
+        "Costume_Sorcerer_Cape"
       ],
       "slots": [
         "上段"
@@ -5442,10 +5520,12 @@
       "display_name": "Costume Deviling Hat",
       "primary_itemid": 19727,
       "itemids": [
-        19727
+        19727,
+        480718
       ],
       "names": [
-        "Costume Deviling Hat"
+        "Costume Deviling Hat",
+        "Costume Sweet Folk"
       ],
       "slots": [
         "上段"
@@ -5882,14 +5962,20 @@
     "321": {
       "id": 321,
       "kind": "headgear",
-      "display_name": "Whisper Mask",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Whisper Mask",
+      "primary_itemid": 19610,
+      "itemids": [
+        19610,
+        31240
+      ],
+      "names": [
+        "Costume Whisper Mask",
+        "Costume Whisper Mask (Upper)"
+      ],
       "slots": [],
       "const": "ACCESSORY_WHISPER_MASK",
       "sprite": "_위스퍼마스크",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19610",
       "source": "master"
     },
     "322": {
@@ -5946,14 +6032,20 @@
     "325": {
       "id": 325,
       "kind": "headgear",
-      "display_name": "Ceremonial Coronet",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)四葉草花冠",
+      "primary_itemid": 20084,
+      "itemids": [
+        20084
+      ],
+      "names": [
+        "(服飾)四葉草花冠"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_CEREMONIAL_CORONET",
       "sprite": "_화관",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20084",
       "source": "master"
     },
     "326": {
@@ -6912,14 +7004,18 @@
     "376": {
       "id": 376,
       "kind": "headgear",
-      "display_name": "Nancho Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Orchid Hairband",
+      "primary_itemid": 19942,
+      "itemids": [
+        19942
+      ],
+      "names": [
+        "Costume Orchid Hairband"
+      ],
       "slots": [],
       "const": "ACCESSORY_NANCHO_HAT",
       "sprite": "_난초머리띠",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19942",
       "source": "master"
     },
     "377": {
@@ -6948,9 +7044,11 @@
       "display_name": "(服飾)進化的懶洋洋的貓",
       "primary_itemid": 31204,
       "itemids": [
+        19603,
         31204
       ],
       "names": [
+        "(服飾)隱形眼鏡",
         "(服飾)進化的懶洋洋的貓"
       ],
       "slots": [
@@ -7154,9 +7252,11 @@
       "display_name": "의상 헌팅캡",
       "primary_itemid": 20204,
       "itemids": [
+        19602,
         20204
       ],
       "names": [
+        "(服飾)隱形帽",
         "의상 헌팅캡"
       ],
       "slots": [
@@ -7384,14 +7484,18 @@
     "402": {
       "id": 402,
       "kind": "headgear",
-      "display_name": "Mandragora",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Mandragora Cap",
+      "primary_itemid": 20303,
+      "itemids": [
+        20303
+      ],
+      "names": [
+        "Costume Mandragora Cap"
+      ],
       "slots": [],
       "const": "ACCESSORY_MANDRAGORA",
       "sprite": "_만드라고라캡",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20303",
       "source": "master"
     },
     "403": {
@@ -7628,10 +7732,12 @@
       "display_name": "(服飾)一日爆米花帽",
       "primary_itemid": 31263,
       "itemids": [
-        31263
+        31263,
+        31520
       ],
       "names": [
-        "(服飾)一日爆米花帽"
+        "(服飾)一日爆米花帽",
+        "(服飾)爆米花帽子"
       ],
       "slots": [
         "上段"
@@ -7871,14 +7977,18 @@
     "429": {
       "id": 429,
       "kind": "headgear",
-      "display_name": "Breadhat1",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Suspicious Bread Bag",
+      "primary_itemid": 31174,
+      "itemids": [
+        31174
+      ],
+      "names": [
+        "Costume Suspicious Bread Bag"
+      ],
       "slots": [],
       "const": "ACCESSORY_BREADHAT1",
       "sprite": "_빵봉투1",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31174",
       "source": "master"
     },
     "430": {
@@ -8191,14 +8301,18 @@
     "447": {
       "id": 447,
       "kind": "headgear",
-      "display_name": "Catfoot",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Cat Paw Hairpin",
+      "primary_itemid": 20245,
+      "itemids": [
+        20245
+      ],
+      "names": [
+        "Costume Cat Paw Hairpin"
+      ],
       "slots": [],
       "const": "ACCESSORY_CATFOOT",
       "sprite": "_고양이발머리핀",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20245",
       "source": "master"
     },
     "448": {
@@ -8223,14 +8337,18 @@
     "449": {
       "id": 449,
       "kind": "headgear",
-      "display_name": "Facebox1",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Poporing Hairpin",
+      "primary_itemid": 31782,
+      "itemids": [
+        31782
+      ],
+      "names": [
+        "Costume Poporing Hairpin"
+      ],
       "slots": [],
       "const": "ACCESSORY_FACEBOX1",
       "sprite": "_혼자놀기상자1",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31782",
       "source": "master"
     },
     "450": {
@@ -8899,10 +9017,12 @@
       "display_name": "Costume Anubis Helm",
       "primary_itemid": 19743,
       "itemids": [
-        19743
+        19743,
+        31242
       ],
       "names": [
-        "Costume Anubis Helm"
+        "Costume Anubis Helm",
+        "Costume Anubis Hat (Upper)"
       ],
       "slots": [
         "上段",
@@ -8917,14 +9037,18 @@
     "486": {
       "id": 486,
       "kind": "headgear",
-      "display_name": "Hat Of Outlaw",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Hilarious Bandit Hat",
+      "primary_itemid": 31169,
+      "itemids": [
+        31169
+      ],
+      "names": [
+        "Costume Hilarious Bandit Hat"
+      ],
       "slots": [],
       "const": "ACCESSORY_HAT_OF_OUTLAW",
       "sprite": "_무법자모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31169",
       "source": "master"
     },
     "487": {
@@ -8971,10 +9095,12 @@
       "display_name": "Costume Good Wedding Veil",
       "primary_itemid": 19754,
       "itemids": [
-        19754
+        19754,
+        31238
       ],
       "names": [
-        "Costume Good Wedding Veil"
+        "Costume Good Wedding Veil",
+        "Costume Luxurious Wedding Veil (Upper)"
       ],
       "slots": [
         "上段",
@@ -9926,13 +10052,16 @@
       "display_name": "의상 와일드 로즈",
       "primary_itemid": 19530,
       "itemids": [
-        19530
+        19530,
+        19921
       ],
       "names": [
-        "의상 와일드 로즈"
+        "의상 와일드 로즈",
+        "(服飾)狂暴野貓帽子"
       ],
       "slots": [
-        "上段"
+        "上段",
+        "中段"
       ],
       "const": "ACCESSORY_WILD_ROSE_HAT",
       "sprite": "_와일드로즈모자",
@@ -10065,11 +10194,13 @@
       "primary_itemid": 19875,
       "itemids": [
         19875,
-        19938
+        19938,
+        31239
       ],
       "names": [
         "(服飾)愛心兔兔帽T",
-        "의상 러브 토끼 후드"
+        "의상 러브 토끼 후드",
+        "Costume Love Rabbit Hood (Upper)"
       ],
       "slots": [
         "上段",
@@ -10350,14 +10481,18 @@
     "566": {
       "id": 566,
       "kind": "headgear",
-      "display_name": "Leo Diadem",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Leo Diadem",
+      "primary_itemid": 31411,
+      "itemids": [
+        31411
+      ],
+      "names": [
+        "Costume Leo Diadem"
+      ],
       "slots": [],
       "const": "ACCESSORY_LEO_DIADEM",
       "sprite": "_사자궁보관",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31411",
       "source": "master"
     },
     "567": {
@@ -10573,14 +10708,20 @@
     "579": {
       "id": 579,
       "kind": "headgear",
-      "display_name": "Rtc Third Best",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)勝利女神",
+      "primary_itemid": 19944,
+      "itemids": [
+        19944
+      ],
+      "names": [
+        "(服飾)勝利女神"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_RTC_THIRD_BEST",
       "sprite": "_RTC3등전용",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19944",
       "source": "master"
     },
     "580": {
@@ -11864,11 +12005,13 @@
       "primary_itemid": 19507,
       "itemids": [
         19507,
-        19808
+        19808,
+        31241
       ],
       "names": [
         "(服飾)燦爛太陽",
-        "Costume Blazing Sun"
+        "Costume Blazing Sun",
+        "Costume Burning Sun (Lower)"
       ],
       "slots": [
         "上段"
@@ -12084,9 +12227,11 @@
       "display_name": "(服飾)達納托斯的悲哀面具(中)",
       "primary_itemid": 410319,
       "itemids": [
+        31311,
         410319
       ],
       "names": [
+        "Costume Thanatos's Maero Mask",
         "(服飾)達納托斯的悲哀面具(中)"
       ],
       "slots": [
@@ -12391,14 +12536,18 @@
     "685": {
       "id": 685,
       "kind": "headgear",
-      "display_name": "Rtc 3rd Headgear",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Winner Helmet(Copper)",
+      "primary_itemid": 19945,
+      "itemids": [
+        19945
+      ],
+      "names": [
+        "Costume Winner Helmet(Copper)"
+      ],
       "slots": [],
       "const": "ACCESSORY_RTC_3RD_HEADGEAR",
       "sprite": "_RTC3등투구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19945",
       "source": "master"
     },
     "686": {
@@ -12626,10 +12775,12 @@
       "display_name": "(服飾)藍色愛心時尚眼罩",
       "primary_itemid": 19511,
       "itemids": [
-        19511
+        19511,
+        31106
       ],
       "names": [
-        "(服飾)藍色愛心時尚眼罩"
+        "(服飾)藍色愛心時尚眼罩",
+        "(服飾)和平眼罩"
       ],
       "slots": [
         "中段"
@@ -12645,10 +12796,12 @@
       "display_name": "(服飾)粉紅愛心時尚眼罩",
       "primary_itemid": 19512,
       "itemids": [
-        19512
+        19512,
+        31107
       ],
       "names": [
-        "(服飾)粉紅愛心時尚眼罩"
+        "(服飾)粉紅愛心時尚眼罩",
+        "(服飾)繁榮眼罩"
       ],
       "slots": [
         "中段"
@@ -12823,10 +12976,12 @@
       "display_name": "(服飾)紅色小王冠",
       "primary_itemid": 19522,
       "itemids": [
-        19522
+        19522,
+        31135
       ],
       "names": [
-        "(服飾)紅色小王冠"
+        "(服飾)紅色小王冠",
+        "Costume Luxury Mini Crown"
       ],
       "slots": [
         "上段"
@@ -13110,14 +13265,18 @@
     "722": {
       "id": 722,
       "kind": "headgear",
-      "display_name": "Taini Cap",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的小惡魔帽(粉)",
+      "primary_itemid": 31104,
+      "itemids": [
+        31104
+      ],
+      "names": [
+        "(服飾)ECO的小惡魔帽(粉)"
+      ],
       "slots": [],
       "const": "ACCESSORY_TAINI_CAP",
       "sprite": "_타이니모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31104",
       "source": "master"
     },
     "723": {
@@ -13560,14 +13719,18 @@
     "746": {
       "id": 746,
       "kind": "headgear",
-      "display_name": "Yggdrasil Crown",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Yggdrasil Crown",
+      "primary_itemid": 31496,
+      "itemids": [
+        31496
+      ],
+      "names": [
+        "Costume Yggdrasil Crown"
+      ],
       "slots": [],
       "const": "ACCESSORY_YGGDRASIL_CROWN",
       "sprite": "_이그드라실왕관",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31496",
       "source": "master"
     },
     "747": {
@@ -13637,53 +13800,69 @@
     "751": {
       "id": 751,
       "kind": "headgear",
-      "display_name": "Orange Bunny Band",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)橙色兔耳髮圈",
+      "primary_itemid": 31769,
+      "itemids": [
+        31769
+      ],
+      "names": [
+        "(服飾)橙色兔耳髮圈"
+      ],
       "slots": [],
       "const": "ACCESSORY_ORANGE_BUNNY_BAND",
       "sprite": "_오렌지토끼머리띠",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31769",
       "source": "master"
     },
     "752": {
       "id": 752,
       "kind": "headgear",
-      "display_name": "Violet Bunny Band",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)紫色兔耳髮圈",
+      "primary_itemid": 31770,
+      "itemids": [
+        31770
+      ],
+      "names": [
+        "(服飾)紫色兔耳髮圈"
+      ],
       "slots": [],
       "const": "ACCESSORY_VIOLET_BUNNY_BAND",
       "sprite": "_바이올렛토끼머리띠",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31770",
       "source": "master"
     },
     "753": {
       "id": 753,
       "kind": "headgear",
-      "display_name": "Blue Bunny Band",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)青色兔耳髮圈",
+      "primary_itemid": 31771,
+      "itemids": [
+        31771
+      ],
+      "names": [
+        "(服飾)青色兔耳髮圈"
+      ],
       "slots": [],
       "const": "ACCESSORY_BLUE_BUNNY_BAND",
       "sprite": "_블루토끼머리띠",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31771",
       "source": "master"
     },
     "754": {
       "id": 754,
       "kind": "headgear",
-      "display_name": "Silvah Bunny Band",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)銀色兔耳髮圈",
+      "primary_itemid": 31772,
+      "itemids": [
+        31772
+      ],
+      "names": [
+        "(服飾)銀色兔耳髮圈"
+      ],
       "slots": [],
       "const": "ACCESSORY_SILVAH_BUNNY_BAND",
       "sprite": "_실버토끼머리띠",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31772",
       "source": "master"
     },
     "755": {
@@ -13928,14 +14107,18 @@
     "769": {
       "id": 769,
       "kind": "headgear",
-      "display_name": "Rwc Rocket Helm",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Shuttle to Apex(Blue)",
+      "primary_itemid": 19946,
+      "itemids": [
+        19946
+      ],
+      "names": [
+        "Costume Shuttle to Apex(Blue)"
+      ],
       "slots": [],
       "const": "ACCESSORY_RWC_ROCKET_HELM",
       "sprite": "_RWC로켓투구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19946",
       "source": "master"
     },
     "770": {
@@ -14325,14 +14508,18 @@
     "791": {
       "id": 791,
       "kind": "headgear",
-      "display_name": "Citron Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)柚子帽",
+      "primary_itemid": 31521,
+      "itemids": [
+        31521
+      ],
+      "names": [
+        "(服飾)柚子帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_CITRON_HAT",
       "sprite": "_유자모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31521",
       "source": "master"
     },
     "792": {
@@ -14491,14 +14678,18 @@
     "801": {
       "id": 801,
       "kind": "headgear",
-      "display_name": "Tongue Charm",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)惡魔之舌",
+      "primary_itemid": 31825,
+      "itemids": [
+        31825
+      ],
+      "names": [
+        "(服飾)惡魔之舌"
+      ],
       "slots": [],
       "const": "ACCESSORY_TONGUE_CHARM",
       "sprite": "_혓바닥부적",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31825",
       "source": "master"
     },
     "802": {
@@ -14672,14 +14863,18 @@
     "811": {
       "id": 811,
       "kind": "headgear",
-      "display_name": "Antler Gentlehat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)聖誕鹿角頭飾",
+      "primary_itemid": 31908,
+      "itemids": [
+        31908
+      ],
+      "names": [
+        "(服飾)聖誕鹿角頭飾"
+      ],
       "slots": [],
       "const": "ACCESSORY_ANTLER_GENTLEHAT",
       "sprite": "_사슴뿔신사모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31908",
       "source": "master"
     },
     "812": {
@@ -15518,14 +15713,18 @@
     "860": {
       "id": 860,
       "kind": "headgear",
-      "display_name": "Thoth Offcial Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Helm of Thoth",
+      "primary_itemid": 20291,
+      "itemids": [
+        20291
+      ],
+      "names": [
+        "Costume Helm of Thoth"
+      ],
       "slots": [],
       "const": "ACCESSORY_THOTH_OFFCIAL_HAT",
       "sprite": "_토트신관의투구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20291",
       "source": "master"
     },
     "861": {
@@ -15655,10 +15854,12 @@
       "display_name": "Costume Sky Helm",
       "primary_itemid": 20378,
       "itemids": [
-        20378
+        20378,
+        31244
       ],
       "names": [
-        "Costume Sky Helm"
+        "Costume Sky Helm",
+        "Costume Skymet (Upper)"
       ],
       "slots": [
         "上段",
@@ -15673,14 +15874,18 @@
     "869": {
       "id": 869,
       "kind": "headgear",
-      "display_name": "Sedora Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)賽杜拉之帽",
+      "primary_itemid": 31722,
+      "itemids": [
+        31722
+      ],
+      "names": [
+        "(服飾)賽杜拉之帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_SEDORA_HAT",
       "sprite": "_세도라의모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31722",
       "source": "master"
     },
     "870": {
@@ -15715,10 +15920,12 @@
       "display_name": "(服飾)克里圖拉學院帽",
       "primary_itemid": 19860,
       "itemids": [
-        19860
+        19860,
+        31929
       ],
       "names": [
-        "(服飾)克里圖拉學院帽"
+        "(服飾)克里圖拉學院帽",
+        "Costume Smile School Cap"
       ],
       "slots": [
         "上段"
@@ -16004,14 +16211,18 @@
     "890": {
       "id": 890,
       "kind": "headgear",
-      "display_name": "Ng Rideword",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)深紅魔典",
+      "primary_itemid": 31790,
+      "itemids": [
+        31790
+      ],
+      "names": [
+        "(服飾)深紅魔典"
+      ],
       "slots": [],
       "const": "ACCESSORY_NG_RIDEWORD",
       "sprite": "_저주받은책",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31790",
       "source": "master"
     },
     "891": {
@@ -16036,14 +16247,18 @@
     "892": {
       "id": 892,
       "kind": "headgear",
-      "display_name": "T Riceball",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Chimaki Hat",
+      "primary_itemid": 31723,
+      "itemids": [
+        31723
+      ],
+      "names": [
+        "Costume Chimaki Hat"
+      ],
       "slots": [],
       "const": "ACCESSORY_T_RICEBALL",
       "sprite": "_대만주먹밥",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31723",
       "source": "master"
     },
     "893": {
@@ -16423,14 +16638,18 @@
     "914": {
       "id": 914,
       "kind": "headgear",
-      "display_name": "Victory8",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Princess Tiara",
+      "primary_itemid": 19950,
+      "itemids": [
+        19950
+      ],
+      "names": [
+        "Costume Princess Tiara"
+      ],
       "slots": [],
       "const": "ACCESSORY_VICTORY8",
       "sprite": "_RWC승리의왕관_8강",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/19950",
       "source": "master"
     },
     "915": {
@@ -16601,14 +16820,18 @@
     "924": {
       "id": 924,
       "kind": "headgear",
-      "display_name": "Yellowcitron Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)白柚帽",
+      "primary_itemid": 31523,
+      "itemids": [
+        31523
+      ],
+      "names": [
+        "(服飾)白柚帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_YELLOWCITRON_HAT",
       "sprite": "_노랑유자모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31523",
       "source": "master"
     },
     "925": {
@@ -17012,14 +17235,18 @@
     "948": {
       "id": 948,
       "kind": "headgear",
-      "display_name": "Circlet Of Marin",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)冰波利之帽",
+      "primary_itemid": 31049,
+      "itemids": [
+        31049
+      ],
+      "names": [
+        "(服飾)冰波利之帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_CIRCLET_OF_MARIN",
       "sprite": "_마린의관",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31049",
       "source": "master"
     },
     "949": {
@@ -17976,9 +18203,11 @@
       "display_name": "(服飾)蛋殼小雞玩偶",
       "primary_itemid": 400557,
       "itemids": [
+        20104,
         400557
       ],
       "names": [
+        "Costume Picky Egg Shell",
         "(服飾)蛋殼小雞玩偶"
       ],
       "slots": [
@@ -18174,14 +18403,18 @@
     "1012": {
       "id": 1012,
       "kind": "headgear",
-      "display_name": "Aqua Bunny Band",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Bunny Hairband (Light Blue)",
+      "primary_itemid": 31773,
+      "itemids": [
+        31773
+      ],
+      "names": [
+        "Costume Bunny Hairband (Light Blue)"
+      ],
       "slots": [],
       "const": "ACCESSORY_AQUA_BUNNY_BAND",
       "sprite": "_아쿠아버니밴드",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31773",
       "source": "master"
     },
     "1013": {
@@ -18469,14 +18702,18 @@
     "1029": {
       "id": 1029,
       "kind": "headgear",
-      "display_name": "Drooping Panda",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Drooping Panda",
+      "primary_itemid": 20103,
+      "itemids": [
+        20103
+      ],
+      "names": [
+        "Costume Drooping Panda"
+      ],
       "slots": [],
       "const": "ACCESSORY_DROOPING_PANDA",
       "sprite": "_늘어진판다",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20103",
       "source": "master"
     },
     "1030": {
@@ -20957,14 +21194,18 @@
     "1174": {
       "id": 1174,
       "kind": "headgear",
-      "display_name": "Cheks Vandana",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Cheks Bandana",
+      "primary_itemid": 31038,
+      "itemids": [
+        31038
+      ],
+      "names": [
+        "Costume Cheks Bandana"
+      ],
       "slots": [],
       "const": "ACCESSORY_Cheks_Vandana",
       "sprite": "_체크패턴두건",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31038",
       "source": "master"
     },
     "1175": {
@@ -21066,14 +21307,18 @@
     "1181": {
       "id": 1181,
       "kind": "headgear",
-      "display_name": "Nobility Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)花絲帶草帽。",
+      "primary_itemid": 31728,
+      "itemids": [
+        31728
+      ],
+      "names": [
+        "(服飾)花絲帶草帽。"
+      ],
       "slots": [],
       "const": "ACCESSORY_Nobility_Hat",
       "sprite": "_귀족모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31728",
       "source": "master"
     },
     "1182": {
@@ -22073,14 +22318,18 @@
     "1237": {
       "id": 1237,
       "kind": "headgear",
-      "display_name": "10 Type Glasses",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)藍色造型眼鏡",
+      "primary_itemid": 31902,
+      "itemids": [
+        31902
+      ],
+      "names": [
+        "(服飾)藍色造型眼鏡"
+      ],
       "slots": [],
       "const": "ACCESSORY_10_Type_Glasses",
       "sprite": "_10식안경",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31902",
       "source": "master"
     },
     "1238": {
@@ -22162,40 +22411,52 @@
     "1242": {
       "id": 1242,
       "kind": "headgear",
-      "display_name": "Metaldragon Helm",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)金屬龍之盔",
+      "primary_itemid": 20081,
+      "itemids": [
+        20081
+      ],
+      "names": [
+        "(服飾)金屬龍之盔"
+      ],
       "slots": [],
       "const": "ACCESSORY_MetalDragon_Helm",
       "sprite": "_메탈드래곤투구",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20081",
       "source": "master"
     },
     "1243": {
       "id": 1243,
       "kind": "headgear",
-      "display_name": "Metaldragon Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)金屬龍趴趴帽",
+      "primary_itemid": 20082,
+      "itemids": [
+        20082
+      ],
+      "names": [
+        "(服飾)金屬龍趴趴帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_MetalDragon_Hat",
       "sprite": "_메탈드래곤모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20082",
       "source": "master"
     },
     "1244": {
       "id": 1244,
       "kind": "headgear",
-      "display_name": "Mythlit Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)神秘石龍的帽子",
+      "primary_itemid": 20083,
+      "itemids": [
+        20083
+      ],
+      "names": [
+        "(服飾)神秘石龍的帽子"
+      ],
       "slots": [],
       "const": "ACCESSORY_Mythlit_Hat",
       "sprite": "_미스릿모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20083",
       "source": "master"
     },
     "1245": {
@@ -22616,10 +22877,12 @@
       "display_name": "(服飾)邪惡氣息",
       "primary_itemid": 20132,
       "itemids": [
-        20132
+        20132,
+        31236
       ],
       "names": [
-        "(服飾)邪惡氣息"
+        "(服飾)邪惡氣息",
+        "Costume Aura of Thought (Middle)"
       ],
       "slots": [
         "下段"
@@ -23415,14 +23678,18 @@
     "1308": {
       "id": 1308,
       "kind": "headgear",
-      "display_name": "Moon Cat Hat",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)滿月貓頭罩",
+      "primary_itemid": 31702,
+      "itemids": [
+        31702
+      ],
+      "names": [
+        "(服飾)滿月貓頭罩"
+      ],
       "slots": [],
       "const": "ACCESSORY_Moon_Cat_Hat",
       "sprite": "_달고양이모자",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31702",
       "source": "master"
     },
     "1309": {
@@ -23856,14 +24123,20 @@
     "1331": {
       "id": 1331,
       "kind": "headgear",
-      "display_name": "Cherry Blossom Fluttering",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)飄落櫻花",
+      "primary_itemid": 20285,
+      "itemids": [
+        20285
+      ],
+      "names": [
+        "(服飾)飄落櫻花"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_Cherry_Blossom_Fluttering",
       "sprite": "_흩날리는벚꽃",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20285",
       "source": "master"
     },
     "1332": {
@@ -24729,40 +25002,58 @@
     "1377": {
       "id": 1377,
       "kind": "headgear",
-      "display_name": "Souvenirs Of Izlude",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)依斯魯得紀念髮圈",
+      "primary_itemid": 400168,
+      "itemids": [
+        400168
+      ],
+      "names": [
+        "(服飾)依斯魯得紀念髮圈"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_Souvenirs_Of_Izlude",
       "sprite": "_이즈루드의기념품",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/400168",
       "source": "master"
     },
     "1378": {
       "id": 1378,
       "kind": "headgear",
-      "display_name": "C Flutter Butterfly",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)飄揚的蝴蝶",
+      "primary_itemid": 5914,
+      "itemids": [
+        5914
+      ],
+      "names": [
+        "(服飾)飄揚的蝴蝶"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Flutter_Butterfly",
       "sprite": "_C나비의날갯짓",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/5914",
       "source": "master"
     },
     "1379": {
       "id": 1379,
       "kind": "headgear",
-      "display_name": "C Angel Veil",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)天使面紗",
+      "primary_itemid": 5915,
+      "itemids": [
+        5915
+      ],
+      "names": [
+        "(服飾)天使面紗"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_C_Angel_Veil",
       "sprite": "_C천사의베일",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/5915",
       "source": "master"
     },
     "1380": {
@@ -26592,10 +26883,12 @@
       "display_name": "(服飾)教皇髮帶",
       "primary_itemid": 20488,
       "itemids": [
-        20488
+        20488,
+        31237
       ],
       "names": [
-        "(服飾)教皇髮帶"
+        "(服飾)教皇髮帶",
+        "Costume Pale Yellow Ribbon (Lower)"
       ],
       "slots": [
         "中段"
@@ -27727,118 +28020,154 @@
     "1532": {
       "id": 1532,
       "kind": "headgear",
-      "display_name": "C Jp Ev01",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)魔神巴風特的號角",
+      "primary_itemid": 31095,
+      "itemids": [
+        31095
+      ],
+      "names": [
+        "(服飾)魔神巴風特的號角"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV01",
       "sprite": "_C_JP_EV01",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31095",
       "source": "master"
     },
     "1533": {
       "id": 1533,
       "kind": "headgear",
-      "display_name": "C Jp Ev02",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的犬耳",
+      "primary_itemid": 31096,
+      "itemids": [
+        31096
+      ],
+      "names": [
+        "(服飾)ECO的犬耳"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV02",
       "sprite": "_C_JP_EV02",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31096",
       "source": "master"
     },
     "1534": {
       "id": 1534,
       "kind": "headgear",
-      "display_name": "C Jp Ev03",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的兔耳",
+      "primary_itemid": 31097,
+      "itemids": [
+        31097
+      ],
+      "names": [
+        "(服飾)ECO的兔耳"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV03",
       "sprite": "_C_JP_EV03",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31097",
       "source": "master"
     },
     "1535": {
       "id": 1535,
       "kind": "headgear",
-      "display_name": "C Jp Ev04",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的玉藻狐耳",
+      "primary_itemid": 31098,
+      "itemids": [
+        31098
+      ],
+      "names": [
+        "(服飾)ECO的玉藻狐耳"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV04",
       "sprite": "_C_JP_EV04",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31098",
       "source": "master"
     },
     "1536": {
       "id": 1536,
       "kind": "headgear",
-      "display_name": "C Jp Ev05",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的御魂頭飾",
+      "primary_itemid": 31099,
+      "itemids": [
+        31099
+      ],
+      "names": [
+        "(服飾)ECO的御魂頭飾"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV05",
       "sprite": "_C_JP_EV05",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31099",
       "source": "master"
     },
     "1537": {
       "id": 1537,
       "kind": "headgear",
-      "display_name": "C Jp Ev06",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的小惡魔帽",
+      "primary_itemid": 31100,
+      "itemids": [
+        31100
+      ],
+      "names": [
+        "(服飾)ECO的小惡魔帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV06",
       "sprite": "_C_JP_EV06",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31100",
       "source": "master"
     },
     "1538": {
       "id": 1538,
       "kind": "headgear",
-      "display_name": "C Jp Ev07",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的小惡魔帽(青)",
+      "primary_itemid": 31101,
+      "itemids": [
+        31101
+      ],
+      "names": [
+        "(服飾)ECO的小惡魔帽(青)"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV07",
       "sprite": "_C_JP_EV07",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31101",
       "source": "master"
     },
     "1539": {
       "id": 1539,
       "kind": "headgear",
-      "display_name": "C Jp Ev08",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的小惡魔帽(橙)",
+      "primary_itemid": 31102,
+      "itemids": [
+        31102
+      ],
+      "names": [
+        "(服飾)ECO的小惡魔帽(橙)"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV08",
       "sprite": "_C_JP_EV08",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31102",
       "source": "master"
     },
     "1540": {
       "id": 1540,
       "kind": "headgear",
-      "display_name": "C Jp Ev09",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)ECO的小惡魔帽(綠)",
+      "primary_itemid": 31103,
+      "itemids": [
+        31103
+      ],
+      "names": [
+        "(服飾)ECO的小惡魔帽(綠)"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_JP_EV09",
       "sprite": "_C_JP_EV09",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31103",
       "source": "master"
     },
     "1541": {
@@ -30103,14 +30432,20 @@
     "1665": {
       "id": 1665,
       "kind": "headgear",
-      "display_name": "C Flutterbutterfly Bl",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)幽暗的蝴蝶",
+      "primary_itemid": 31316,
+      "itemids": [
+        31316
+      ],
+      "names": [
+        "(服飾)幽暗的蝴蝶"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_FlutterButterfly_BL",
       "sprite": "_C_FlutterButterfly_BL",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31316",
       "source": "master"
     },
     "1666": {
@@ -31396,14 +31731,18 @@
     "1734": {
       "id": 1734,
       "kind": "headgear",
-      "display_name": "Bearballoon",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Bear Balloon",
+      "primary_itemid": 31732,
+      "itemids": [
+        31732
+      ],
+      "names": [
+        "Costume Bear Balloon"
+      ],
       "slots": [],
       "const": "ACCESSORY_BearBalloon",
       "sprite": "_BearBalloon",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31732",
       "source": "master"
     },
     "1735": {
@@ -33061,14 +33400,18 @@
     "1823": {
       "id": 1823,
       "kind": "headgear",
-      "display_name": "Resonatetaego",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)轟鳴鼓。龍鳴",
+      "primary_itemid": 31721,
+      "itemids": [
+        31721
+      ],
+      "names": [
+        "(服飾)轟鳴鼓。龍鳴"
+      ],
       "slots": [],
       "const": "ACCESSORY_ResonateTaego",
       "sprite": "_ResonateTaego",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31721",
       "source": "master"
     },
     "1824": {
@@ -33949,10 +34292,12 @@
       "display_name": "(服飾)豬仔",
       "primary_itemid": 21202,
       "itemids": [
-        21202
+        21202,
+        31791
       ],
       "names": [
-        "(服飾)豬仔"
+        "(服飾)豬仔",
+        "(服飾)可愛豬豬面具"
       ],
       "slots": [
         "中段",
@@ -34197,14 +34542,18 @@
     "1882": {
       "id": 1882,
       "kind": "headgear",
-      "display_name": "C Scarfofhero Tw",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)勇士圍巾",
+      "primary_itemid": 31700,
+      "itemids": [
+        31700
+      ],
+      "names": [
+        "(服飾)勇士圍巾"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_ScarfOfHero_TW",
       "sprite": "_C_ScarfOfHero_TW",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31700",
       "source": "master"
     },
     "1883": {
@@ -34229,14 +34578,18 @@
     "1884": {
       "id": 1884,
       "kind": "headgear",
-      "display_name": "C Nine Tail Fox Hair",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Nine Tail Fox Hair",
+      "primary_itemid": 31883,
+      "itemids": [
+        31883
+      ],
+      "names": [
+        "Costume Nine Tail Fox Hair"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_Nine_Tail_Fox_Hair",
       "sprite": "_C_Nine_Tail_Fox_Hair",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31883",
       "source": "master"
     },
     "1885": {
@@ -34325,14 +34678,18 @@
     "1890": {
       "id": 1890,
       "kind": "headgear",
-      "display_name": "Cons Of Fire",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)火之支配者",
+      "primary_itemid": 31719,
+      "itemids": [
+        31719
+      ],
+      "names": [
+        "(服飾)火之支配者"
+      ],
       "slots": [],
       "const": "ACCESSORY_Cons_Of_Fire",
       "sprite": "_Cons_Of_Fire",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31719",
       "source": "master"
     },
     "1891": {
@@ -34389,27 +34746,35 @@
     "1894": {
       "id": 1894,
       "kind": "headgear",
-      "display_name": "C Volume Low Twin Cb",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)清純雙馬尾波浪接髮(粉)",
+      "primary_itemid": 31730,
+      "itemids": [
+        31730
+      ],
+      "names": [
+        "(服飾)清純雙馬尾波浪接髮(粉)"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_Volume_Low_Twin_CB",
       "sprite": "_C_Volume_Low_Twin_CB",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31730",
       "source": "master"
     },
     "1895": {
       "id": 1895,
       "kind": "headgear",
-      "display_name": "Popcorn Hair",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)卡滋爆米花假髮帽",
+      "primary_itemid": 31736,
+      "itemids": [
+        31736
+      ],
+      "names": [
+        "(服飾)卡滋爆米花假髮帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_Popcorn_hair",
       "sprite": "_Popcorn_hair",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31736",
       "source": "master"
     },
     "1896": {
@@ -34475,27 +34840,35 @@
     "1899": {
       "id": 1899,
       "kind": "headgear",
-      "display_name": "Phantom Of Masquerade",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)幽靈幻影帽",
+      "primary_itemid": 31733,
+      "itemids": [
+        31733
+      ],
+      "names": [
+        "(服飾)幽靈幻影帽"
+      ],
       "slots": [],
       "const": "ACCESSORY_Phantom_Of_Masquerade",
       "sprite": "_Phantom_Of_Masquerade",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31733",
       "source": "master"
     },
     "1900": {
       "id": 1900,
       "kind": "headgear",
-      "display_name": "Citrusribbon",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)橘色髮帶",
+      "primary_itemid": 31734,
+      "itemids": [
+        31734
+      ],
+      "names": [
+        "(服飾)橘色髮帶"
+      ],
       "slots": [],
       "const": "ACCESSORY_CitrusRibbon",
       "sprite": "_CitrusRibbon",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31734",
       "source": "master"
     },
     "1901": {
@@ -36008,14 +36381,18 @@
     "1983": {
       "id": 1983,
       "kind": "headgear",
-      "display_name": "C Blanc Neige Prince",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)冰雪公主假髮",
+      "primary_itemid": 31905,
+      "itemids": [
+        31905
+      ],
+      "names": [
+        "(服飾)冰雪公主假髮"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_Blanc_Neige_Prince",
       "sprite": "_C_Blanc_Neige_Prince",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31905",
       "source": "master"
     },
     "1984": {
@@ -36040,14 +36417,18 @@
     "1985": {
       "id": 1985,
       "kind": "headgear",
-      "display_name": "C Pgstone Knit Hat Bw",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)喵喵肉球守護者(男)",
+      "primary_itemid": 31907,
+      "itemids": [
+        31907
+      ],
+      "names": [
+        "(服飾)喵喵肉球守護者(男)"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_PGstone_Knit_Hat_BW",
       "sprite": "_C_PGstone_Knit_Hat_BW",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31907",
       "source": "master"
     },
     "1986": {
@@ -36303,9 +36684,11 @@
       "display_name": "(服飾)浪漫玫瑰",
       "primary_itemid": 400073,
       "itemids": [
+        31942,
         400073
       ],
       "names": [
+        "Costume Pretty Rose",
         "(服飾)浪漫玫瑰"
       ],
       "slots": [
@@ -37190,105 +37573,153 @@
     "2047": {
       "id": 2047,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Bu",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Blue)",
+      "primary_itemid": 420099,
+      "itemids": [
+        420099
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Blue)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_BU",
       "sprite": "_C_Braid_Half_Up_BU",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420099",
       "source": "master"
     },
     "2048": {
       "id": 2048,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Rd",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Red)",
+      "primary_itemid": 420101,
+      "itemids": [
+        420101
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Red)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_RD",
       "sprite": "_C_Braid_Half_Up_RD",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420101",
       "source": "master"
     },
     "2049": {
       "id": 2049,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Yl",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Yellow)",
+      "primary_itemid": 420100,
+      "itemids": [
+        420100
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Yellow)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_YL",
       "sprite": "_C_Braid_Half_Up_YL",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420100",
       "source": "master"
     },
     "2050": {
       "id": 2050,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Gn",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Green)",
+      "primary_itemid": 420102,
+      "itemids": [
+        420102
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Green)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_GN",
       "sprite": "_C_Braid_Half_Up_GN",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420102",
       "source": "master"
     },
     "2051": {
       "id": 2051,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Bl",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Black)",
+      "primary_itemid": 420098,
+      "itemids": [
+        420098
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Black)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_BL",
       "sprite": "_C_Braid_Half_Up_BL",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420098",
       "source": "master"
     },
     "2052": {
       "id": 2052,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Wh",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(White)",
+      "primary_itemid": 420095,
+      "itemids": [
+        420095
+      ],
+      "names": [
+        "Costume Pigtails Half Up(White)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_WH",
       "sprite": "_C_Braid_Half_Up_WH",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420095",
       "source": "master"
     },
     "2053": {
       "id": 2053,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Om",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Orange)",
+      "primary_itemid": 420096,
+      "itemids": [
+        420096
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Orange)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_OM",
       "sprite": "_C_Braid_Half_Up_OM",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420096",
       "source": "master"
     },
     "2054": {
       "id": 2054,
       "kind": "headgear",
-      "display_name": "C Braid Half Up Pp",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Pigtails Half Up(Purple)",
+      "primary_itemid": 420097,
+      "itemids": [
+        420097
+      ],
+      "names": [
+        "Costume Pigtails Half Up(Purple)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Braid_Half_Up_PP",
       "sprite": "_C_Braid_Half_Up_PP",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420097",
       "source": "master"
     },
     "2055": {
@@ -39082,10 +39513,12 @@
       "display_name": "(服飾)紅色大耳魔女帽",
       "primary_itemid": 400204,
       "itemids": [
-        400204
+        400204,
+        400348
       ],
       "names": [
-        "(服飾)紅色大耳魔女帽"
+        "(服飾)紅色大耳魔女帽",
+        "(時裝)紅色貓耳魔女帽"
       ],
       "slots": [
         "上段"
@@ -40222,14 +40655,20 @@
     "2219": {
       "id": 2219,
       "kind": "headgear",
-      "display_name": "Viva Adul Hat Sp",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Sun Rune Helm",
+      "primary_itemid": 401180,
+      "itemids": [
+        401180
+      ],
+      "names": [
+        "Costume Sun Rune Helm"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_Viva_Adul_Hat_SP",
       "sprite": "_Viva_Adul_Hat_SP",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/401180",
       "source": "master"
     },
     "2220": {
@@ -42332,14 +42771,18 @@
     "2337": {
       "id": 2337,
       "kind": "headgear",
-      "display_name": "Sacred Lapel",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)蛋頭博士面具",
+      "primary_itemid": 420245,
+      "itemids": [
+        420245
+      ],
+      "names": [
+        "(服飾)蛋頭博士面具"
+      ],
       "slots": [],
       "const": "ACCESSORY_Sacred_Lapel",
       "sprite": "_Sacred_Lapel",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420245",
       "source": "master"
     },
     "2338": {
@@ -47961,14 +48404,18 @@
     "2655": {
       "id": 2655,
       "kind": "headgear",
-      "display_name": "C Knit Ribbon Lowtwin N",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Braided Twin Ribbons (No Decoration)",
+      "primary_itemid": 420434,
+      "itemids": [
+        420434
+      ],
+      "names": [
+        "Costume Braided Twin Ribbons (No Decoration)"
+      ],
       "slots": [],
       "const": "ACCESSORY_C_Knit_Ribbon_Lowtwin_N",
       "sprite": "_C_Knit_Ribbon_Lowtwin_N",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420434",
       "source": "master"
     },
     "2656": {
@@ -48351,27 +48798,39 @@
     "2679": {
       "id": 2679,
       "kind": "headgear",
-      "display_name": "C Muka Sombrero",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)摩卡帽",
+      "primary_itemid": 400803,
+      "itemids": [
+        400803
+      ],
+      "names": [
+        "(服飾)摩卡帽"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_C_Muka_Sombrero",
       "sprite": "_C_Muka_Sombrero",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/400803",
       "source": "master"
     },
     "2680": {
       "id": 2680,
       "kind": "headgear",
-      "display_name": "C Capybara",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)水豚君",
+      "primary_itemid": 410399,
+      "itemids": [
+        410399
+      ],
+      "names": [
+        "(服飾)水豚君"
+      ],
+      "slots": [
+        "中段"
+      ],
       "const": "ACCESSORY_C_Capybara",
       "sprite": "_C_Capybara",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/410399",
       "source": "master"
     },
     "2681": {
@@ -48485,14 +48944,20 @@
     "2687": {
       "id": 2687,
       "kind": "headgear",
-      "display_name": "C Frog Cap Bw",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Frog Cap (Brown)",
+      "primary_itemid": 400901,
+      "itemids": [
+        400901
+      ],
+      "names": [
+        "Costume Frog Cap (Brown)"
+      ],
+      "slots": [
+        "上段"
+      ],
       "const": "ACCESSORY_C_Frog_Cap_BW",
       "sprite": "_C_Frog_Cap_BW",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/400901",
       "source": "master"
     },
     "2688": {
@@ -49590,14 +50055,20 @@
     "2751": {
       "id": 2751,
       "kind": "headgear",
-      "display_name": "Solid State Recognition",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)JRO固態識別牌",
+      "primary_itemid": 420618,
+      "itemids": [
+        420618
+      ],
+      "names": [
+        "(服飾)JRO固態識別牌"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_Solid_State_Recognition",
       "sprite": "_Solid_State_Recognition",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420618",
       "source": "master"
     },
     "2752": {
@@ -49768,14 +50239,20 @@
     "2761": {
       "id": 2761,
       "kind": "headgear",
-      "display_name": "C Skia Two Side Up Bd",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)斯基亞假髮(金)",
+      "primary_itemid": 420652,
+      "itemids": [
+        420652
+      ],
+      "names": [
+        "(服飾)斯基亞假髮(金)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Skia_Two_Side_Up_BD",
       "sprite": "_C_Skia_Two_Side_Up_BD",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420652",
       "source": "master"
     },
     "2762": {
@@ -49857,27 +50334,39 @@
     "2766": {
       "id": 2766,
       "kind": "headgear",
-      "display_name": "C Skia Two Side Up Wh",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)斯基亞假髮(白)",
+      "primary_itemid": 420657,
+      "itemids": [
+        420657
+      ],
+      "names": [
+        "(服飾)斯基亞假髮(白)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Skia_Two_Side_Up_WH",
       "sprite": "_C_Skia_Two_Side_Up_WH",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420657",
       "source": "master"
     },
     "2767": {
       "id": 2767,
       "kind": "headgear",
-      "display_name": "C Skia Two Side Up Om",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)斯基亞假髮(棕)",
+      "primary_itemid": 420658,
+      "itemids": [
+        420658
+      ],
+      "names": [
+        "(服飾)斯基亞假髮(棕)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Skia_Two_Side_Up_OM",
       "sprite": "_C_Skia_Two_Side_Up_OM",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420658",
       "source": "master"
     },
     "2768": {
@@ -49987,14 +50476,20 @@
     "2776": {
       "id": 2776,
       "kind": "headgear",
-      "display_name": "C Rocking Short Bg",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)搖滾短假髮(青)",
+      "primary_itemid": 420667,
+      "itemids": [
+        420667
+      ],
+      "names": [
+        "(服飾)搖滾短假髮(青)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Rocking_Short_BG",
       "sprite": "_C_Rocking_Short_BG",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420667",
       "source": "master"
     },
     "2777": {
@@ -50057,14 +50552,20 @@
     "2780": {
       "id": 2780,
       "kind": "headgear",
-      "display_name": "C Rocking Short Sv",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)搖滾短假髮(銀)",
+      "primary_itemid": 420671,
+      "itemids": [
+        420671
+      ],
+      "names": [
+        "(服飾)搖滾短假髮(銀)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Rocking_Short_SV",
       "sprite": "_C_Rocking_Short_SV",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420671",
       "source": "master"
     },
     "2781": {
@@ -50108,14 +50609,20 @@
     "2783": {
       "id": 2783,
       "kind": "headgear",
-      "display_name": "C Rocking Short Om",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "(服飾)搖滾短假髮(棕)",
+      "primary_itemid": 420674,
+      "itemids": [
+        420674
+      ],
+      "names": [
+        "(服飾)搖滾短假髮(棕)"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Rocking_Short_OM",
       "sprite": "_C_Rocking_Short_OM",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420674",
       "source": "master"
     },
     "2784": {
@@ -50269,14 +50776,20 @@
     "2794": {
       "id": 2794,
       "kind": "headgear",
-      "display_name": "C Lots Braided Hair",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
-      "slots": [],
+      "display_name": "Costume Lots Braided Hair",
+      "primary_itemid": 420727,
+      "itemids": [
+        420727
+      ],
+      "names": [
+        "Costume Lots Braided Hair"
+      ],
+      "slots": [
+        "下段"
+      ],
       "const": "ACCESSORY_C_Lots_Braided_Hair",
       "sprite": "_C_Lots_Braided_Hair",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/420727",
       "source": "master"
     },
     "2795": {
@@ -51203,16 +51716,20 @@
     "20": {
       "id": 20,
       "kind": "cape",
-      "display_name": "Robe Light Darkness Wing",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)光明與黑暗之翼",
+      "primary_itemid": 20587,
+      "itemids": [
+        20587
+      ],
+      "names": [
+        "(服飾)光明與黑暗之翼"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_Light_Darkness_Wing",
       "sprite": "빛과어둠의날개",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20587",
       "source": "master"
     },
     "21": {
@@ -51315,16 +51832,20 @@
     "26": {
       "id": 26,
       "kind": "cape",
-      "display_name": "Robe Blackcatbag",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)黑色貓咪背包",
+      "primary_itemid": 20521,
+      "itemids": [
+        20521
+      ],
+      "names": [
+        "(服飾)黑色貓咪背包"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_BlackCatBag",
       "sprite": "BlackCatBag",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20521",
       "source": "master"
     },
     "27": {
@@ -51349,16 +51870,20 @@
     "28": {
       "id": 28,
       "kind": "cape",
-      "display_name": "Robe C 2018 Rtc Cape Tw",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2018-RTC紀念斗篷",
+      "primary_itemid": 20523,
+      "itemids": [
+        20523
+      ],
+      "names": [
+        "(服飾)2018-RTC紀念斗篷"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_2018_RTC_Cape_TW",
       "sprite": "2018_RTC_Cape4_TW",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20523",
       "source": "master"
     },
     "29": {
@@ -51585,16 +52110,20 @@
     "42": {
       "id": 42,
       "kind": "cape",
-      "display_name": "Robe Angelribbonwing",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)天使緞帶羽翼",
+      "primary_itemid": 20541,
+      "itemids": [
+        20541
+      ],
+      "names": [
+        "(服飾)天使緞帶羽翼"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_AngelRibbonWing",
       "sprite": "AngelRibbonWing",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20541",
       "source": "master"
     },
     "43": {
@@ -51747,10 +52276,12 @@
       "display_name": "(服飾)女學生書包",
       "primary_itemid": 20574,
       "itemids": [
-        20574
+        20574,
+        20595
       ],
       "names": [
-        "(服飾)女學生書包"
+        "(服飾)女學生書包",
+        "(服飾)新手紅色書包(歸屬)"
       ],
       "slots": [
         "披肩"
@@ -51822,16 +52353,20 @@
     "55": {
       "id": 55,
       "kind": "cape",
-      "display_name": "Robe Wings Of Lucifer",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)露西法翅膀",
+      "primary_itemid": 31737,
+      "itemids": [
+        31737
+      ],
+      "names": [
+        "(服飾)露西法翅膀"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_Wings_Of_Lucifer",
       "sprite": "Wings_Of_Lucifer",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/31737",
       "source": "master"
     },
     "56": {
@@ -51894,16 +52429,20 @@
     "59": {
       "id": 59,
       "kind": "cape",
-      "display_name": "Robe C Soldier Backpack",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)迷彩旅行包",
+      "primary_itemid": 20581,
+      "itemids": [
+        20581
+      ],
+      "names": [
+        "(服飾)迷彩旅行包"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_Soldier_Backpack",
       "sprite": "C_Soldier_Backpack",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20581",
       "source": "master"
     },
     "60": {
@@ -51967,16 +52506,20 @@
     "63": {
       "id": 63,
       "kind": "cape",
-      "display_name": "Robe Ru Bear Bag",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)棕熊背包",
+      "primary_itemid": 20585,
+      "itemids": [
+        20585
+      ],
+      "names": [
+        "(服飾)棕熊背包"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_Ru_Bear_Bag",
       "sprite": "Ru_Bear_Bag",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20585",
       "source": "master"
     },
     "64": {
@@ -54009,16 +54552,20 @@
     "174": {
       "id": 174,
       "kind": "cape",
-      "display_name": "Robe C Songkran Watergun",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "Costume Songkran Water Gun",
+      "primary_itemid": 20620,
+      "itemids": [
+        20620
+      ],
+      "names": [
+        "Costume Songkran Water Gun"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_Songkran_Watergun",
       "sprite": "C_Songkran_Watergun",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/20620",
       "source": "master"
     },
     "175": {
@@ -54674,16 +55221,20 @@
     "211": {
       "id": 211,
       "kind": "cape",
-      "display_name": "Robe C Unicorn Fan Trav",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)獨角獸的奇幻旅程",
+      "primary_itemid": 480423,
+      "itemids": [
+        480423
+      ],
+      "names": [
+        "(服飾)獨角獸的奇幻旅程"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_Unicorn_Fan_trav",
       "sprite": "C_Unicorn_Fan_trav",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480423",
       "source": "master"
     },
     "212": {
@@ -55380,61 +55931,77 @@
     "249": {
       "id": 249,
       "kind": "cape",
-      "display_name": "Robe C Ros2024 Wing 1",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2024 ROS冠軍翅膀",
+      "primary_itemid": 480505,
+      "itemids": [
+        480505
+      ],
+      "names": [
+        "(服飾)2024 ROS冠軍翅膀"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_ROS2024_Wing_1",
       "sprite": "C_ROS2024_Wing_1",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480505",
       "source": "master"
     },
     "250": {
       "id": 250,
       "kind": "cape",
-      "display_name": "Robe C Ros2024 Wing 2",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2024 ROS亞軍翅膀",
+      "primary_itemid": 480506,
+      "itemids": [
+        480506
+      ],
+      "names": [
+        "(服飾)2024 ROS亞軍翅膀"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_ROS2024_Wing_2",
       "sprite": "C_ROS2024_Wing_2",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480506",
       "source": "master"
     },
     "251": {
       "id": 251,
       "kind": "cape",
-      "display_name": "Robe C Ros2024 Wing 3",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2024 ROS季軍翅膀",
+      "primary_itemid": 480507,
+      "itemids": [
+        480507
+      ],
+      "names": [
+        "(服飾)2024 ROS季軍翅膀"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_ROS2024_Wing_3",
       "sprite": "C_ROS2024_Wing_3",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480507",
       "source": "master"
     },
     "252": {
       "id": 252,
       "kind": "cape",
-      "display_name": "Robe C Ros2024 Wing 4",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2024 ROS紀念翅膀",
+      "primary_itemid": 480508,
+      "itemids": [
+        480508
+      ],
+      "names": [
+        "(服飾)2024 ROS紀念翅膀"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_ROS2024_Wing_4",
       "sprite": "C_ROS2024_Wing_4",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480508",
       "source": "master"
     },
     "253": {
@@ -55869,46 +56436,58 @@
     "276": {
       "id": 276,
       "kind": "cape",
-      "display_name": "Robe C Qualifier 1st",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2025ROS霸主之劍",
+      "primary_itemid": 480616,
+      "itemids": [
+        480616
+      ],
+      "names": [
+        "(服飾)2025ROS霸主之劍"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_Qualifier_1st",
       "sprite": "C_Qualifier_1st",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480616",
       "source": "master"
     },
     "277": {
       "id": 277,
       "kind": "cape",
-      "display_name": "Robe C Qualifier 2nd",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2025ROS勝利之劍",
+      "primary_itemid": 480617,
+      "itemids": [
+        480617
+      ],
+      "names": [
+        "(服飾)2025ROS勝利之劍"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_Qualifier_2nd",
       "sprite": "C_Qualifier_2nd",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480617",
       "source": "master"
     },
     "278": {
       "id": 278,
       "kind": "cape",
-      "display_name": "Robe C Qualifier 3rd",
-      "primary_itemid": null,
-      "itemids": [],
-      "names": [],
+      "display_name": "(服飾)2025ROS決戰之劍",
+      "primary_itemid": 480618,
+      "itemids": [
+        480618
+      ],
+      "names": [
+        "(服飾)2025ROS決戰之劍"
+      ],
       "slots": [
         "披肩"
       ],
       "const": "ROBE_C_Qualifier_3rd",
       "sprite": "C_Qualifier_3rd",
-      "detail_url": null,
+      "detail_url": "https://www.divine-pride.net/database/item/480618",
       "source": "master"
     },
     "279": {
