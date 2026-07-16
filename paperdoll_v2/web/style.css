@@ -443,6 +443,16 @@ p {
   color: #fff;
 }
 
+.race-segmented {
+  width: min(100%, 220px);
+}
+
+.race-segmented button {
+  min-width: 0;
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
 .button-strip {
   display: inline-flex;
   flex-wrap: wrap;

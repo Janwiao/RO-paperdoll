@@ -10,9 +10,11 @@
   previewBackgrounds: [{ id: "transparent", name: "透明", type: "checkerboard" }],
   images: new Map(),
   loadingImages: new Map(),
+  loadingPartShards: new Map(),
   effectImages: new Map(),
   loadingEffectImages: new Map(),
   failedEffectImages: new Set(),
+  race: "human",
   sex: "female",
   job: "novice",
   mount: "none",
@@ -115,6 +117,8 @@ const itemSearch = document.getElementById("itemSearch");
 const itemResults = document.getElementById("itemResults");
 const itemBrowserCount = document.getElementById("itemBrowserCount");
 const itemBrowserDialog = document.getElementById("itemBrowserDialog");
+const itemBrowserContent = document.getElementById("itemBrowserContent");
+const itemBrowserDetail = document.getElementById("itemBrowserDetail");
 const openItemBrowserButton = document.getElementById("openItemBrowserButton");
 const closeItemBrowserButton = document.getElementById("closeItemBrowserButton");
 const finishItemBrowserButton = document.getElementById("finishItemBrowserButton");
@@ -400,7 +404,7 @@ const languageOptions = {
   },
 };
 
-const appVersion = "20260713-paperdoll-v2-item-browser-5";
+const appVersion = "20260716-paperdoll-v2-resource-shards-1";
 const storageKey = "nori.paperdoll.state.v2";
 const closetStorageKey = "nori.paperdoll.closet.v2";
 const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
@@ -423,11 +427,13 @@ let itemThumbnailObserver = null;
 let itemBrowserLoadObserver = null;
 let itemBrowserMatches = [];
 let itemBrowserRenderedCount = 0;
+let itemBrowserDetailItem = null;
 const itemBrowserBatchSize = 72;
 const itemBrowserFavoritesKey = "nori.paperdoll.item-browser.favorites.v1";
 let itemBrowserFavorites = loadItemBrowserFavorites();
 let browserFilterTimer = 0;
 let backgroundDrag = null;
+const raceSelectionMemory = new Map();
 const forceRgbaFlipYAllActionItemIds = new Set([
   668, 958, 961, 975, 976, 1005, 1038, 1039, 1040,
   1132, 1133, 1145, 1146, 1147, 1148, 1248, 1326,
@@ -723,7 +729,9 @@ function isDisplayableJob(job) {
 }
 
 function displayableJobs() {
-  return (state.data.jobs || []).filter(isDisplayableJob);
+  return (state.data.jobs || []).filter((job) => (
+    isDisplayableJob(job) && String(job.race || "human") === state.race
+  ));
 }
 
 function displayableJobsForSex(sex = state.sex) {
@@ -779,6 +787,9 @@ async function ensurePartImages(partKey) {
     } else {
       pools.indexed = await loadImage(part.sheet);
     }
+    if (part.palette?.indexSheet) {
+      pools.paletteIndex = await loadImage(part.palette.indexSheet);
+    }
     state.images.set(partKey, pools);
   })();
   state.loadingImages.set(partKey, loading);
@@ -789,7 +800,55 @@ async function ensurePartImages(partKey) {
   }
 }
 
+function partShardDescriptor(partKey) {
+  const descriptors = state.data?.resourceShards?.parts || {};
+  return Object.values(descriptors).find((descriptor) => (
+    (descriptor.prefixes || []).some((prefix) => partKey.startsWith(prefix))
+  )) || null;
+}
+
+function partShardUrl(partKey, descriptor) {
+  const match = partKey.match(/_(\d+)$/);
+  if (!descriptor?.path) {
+    return null;
+  }
+  const bucketSize = Math.max(1, Number(descriptor.bucketSize) || 100);
+  const bucketPad = Math.max(0, Number(descriptor.bucketPad) || 0);
+  const bucket = match
+    ? String(Math.floor(Number(match[1]) / bucketSize)).padStart(bucketPad, "0")
+    : "misc";
+  return descriptor.path.replace("{bucket}", bucket);
+}
+
+async function ensurePartIndex(partKey) {
+  if (state.data.parts?.[partKey]) {
+    return;
+  }
+  const descriptor = partShardDescriptor(partKey);
+  const shardUrl = partShardUrl(partKey, descriptor);
+  if (!shardUrl) {
+    return;
+  }
+  if (!state.loadingPartShards.has(shardUrl)) {
+    const loading = (async () => {
+      const response = await fetch(appUrl(`${shardUrl}?v=${appVersion}`));
+      if (!response.ok) {
+        throw new Error(`Failed to load part shard ${shardUrl}`);
+      }
+      const payload = await response.json();
+      Object.assign(state.data.parts, payload.parts || {});
+    })();
+    state.loadingPartShards.set(shardUrl, loading);
+  }
+  try {
+    await state.loadingPartShards.get(shardUrl);
+  } finally {
+    state.loadingPartShards.delete(shardUrl);
+  }
+}
+
 async function ensurePartData(partKey) {
+  await ensurePartIndex(partKey);
   const part = state.data.parts[partKey];
   if (!part || part.actions) {
     return;
@@ -806,7 +865,18 @@ async function ensurePartData(partKey) {
     if (!response.ok) {
       throw new Error(`Failed to load ${part.data}`);
     }
-    const detail = await response.json();
+    let detail;
+    if (part.data.endsWith(".gz")) {
+      if (!window.pako?.ungzip) {
+        throw new Error("Compressed part decoder unavailable");
+      }
+      detail = JSON.parse(window.pako.ungzip(
+        new Uint8Array(await response.arrayBuffer()),
+        { to: "string" },
+      ));
+    } else {
+      detail = await response.json();
+    }
     Object.assign(part, detail);
   })();
   try {
@@ -824,7 +894,8 @@ function clampFrame() {
 }
 
 function currentCharacter() {
-  return state.data.characters[state.sex];
+  return state.data.races?.[state.race]?.characters?.[state.sex]
+    || state.data.characters[state.sex];
 }
 
 function currentFramesForPart(partKey, action = state.action) {
@@ -988,13 +1059,13 @@ function paletteColorForPart(part) {
   if (part.kind === "body") {
     return state.bodyColor;
   }
-  if (part.key?.startsWith("hair_")) {
+  if (part.kind === "head" && (part.key?.startsWith("hair_") || part.key?.startsWith("doram_hair_"))) {
     return state.hairColor;
   }
   return null;
 }
 
-function paletteImageForPart(part, image, poolName) {
+function paletteImageForPart(part, image, indexImage, poolName) {
   const colorId = paletteColorForPart(part);
   if (poolName !== "indexed" || !colorId || !part.palette?.base || !part.palette?.variants?.[colorId]) {
     return image;
@@ -1004,14 +1075,7 @@ function paletteImageForPart(part, image, poolName) {
     return state.images.get(cacheKey);
   }
 
-  const basePalette = decodePalette(part.palette.base);
   const targetPalette = decodePalette(part.palette.variants[colorId]);
-  const map = new Map();
-  for (let index = 1; index < basePalette.length; index += 1) {
-    const base = basePalette[index];
-    const target = targetPalette[index];
-    map.set(`${base[0]},${base[1]},${base[2]}`, target);
-  }
 
   const swapCanvas = document.createElement("canvas");
   swapCanvas.width = image.naturalWidth || image.width;
@@ -1020,17 +1084,45 @@ function paletteImageForPart(part, image, poolName) {
   swapCtx.drawImage(image, 0, 0);
   const imageData = swapCtx.getImageData(0, 0, swapCanvas.width, swapCanvas.height);
   const pixels = imageData.data;
-  for (let offset = 0; offset < pixels.length; offset += 4) {
-    if (pixels[offset + 3] === 0) {
-      continue;
+  if (indexImage) {
+    const indexCanvas = document.createElement("canvas");
+    indexCanvas.width = swapCanvas.width;
+    indexCanvas.height = swapCanvas.height;
+    const indexCtx = indexCanvas.getContext("2d", { willReadFrequently: true });
+    indexCtx.drawImage(indexImage, 0, 0);
+    const indices = indexCtx.getImageData(0, 0, indexCanvas.width, indexCanvas.height).data;
+    for (let offset = 0; offset < pixels.length; offset += 4) {
+      const paletteIndex = indices[offset];
+      if (paletteIndex === 0 || pixels[offset + 3] === 0) {
+        pixels[offset + 3] = 0;
+        continue;
+      }
+      const replacement = targetPalette[paletteIndex];
+      pixels[offset] = replacement[0];
+      pixels[offset + 1] = replacement[1];
+      pixels[offset + 2] = replacement[2];
     }
-    const replacement = map.get(`${pixels[offset]},${pixels[offset + 1]},${pixels[offset + 2]}`);
-    if (!replacement) {
-      continue;
+  } else {
+    // Compatibility fallback for older exports that do not include an index sheet.
+    const basePalette = decodePalette(part.palette.base);
+    const map = new Map();
+    for (let index = 1; index < basePalette.length; index += 1) {
+      const base = basePalette[index];
+      const target = targetPalette[index];
+      map.set(`${base[0]},${base[1]},${base[2]}`, target);
     }
-    pixels[offset] = replacement[0];
-    pixels[offset + 1] = replacement[1];
-    pixels[offset + 2] = replacement[2];
+    for (let offset = 0; offset < pixels.length; offset += 4) {
+      if (pixels[offset + 3] === 0) {
+        continue;
+      }
+      const replacement = map.get(`${pixels[offset]},${pixels[offset + 1]},${pixels[offset + 2]}`);
+      if (!replacement) {
+        continue;
+      }
+      pixels[offset] = replacement[0];
+      pixels[offset + 1] = replacement[1];
+      pixels[offset + 2] = replacement[2];
+    }
   }
   swapCtx.putImageData(imageData, 0, 0);
   state.images.set(cacheKey, swapCanvas);
@@ -1106,7 +1198,9 @@ function drawLayer(part, imagePools, layer, anchor) {
   const poolName = poolNameForLayer(layer);
   const pool = part.pools?.[poolName] || (poolName === "rgba" ? null : { cells: part.cells });
   const baseImage = imagePools?.[poolName] || (poolName === "rgba" ? null : imagePools?.indexed);
-  const image = baseImage ? paletteImageForPart(part, baseImage, poolName) : null;
+  const image = baseImage
+    ? paletteImageForPart(part, baseImage, imagePools?.paletteIndex, poolName)
+    : null;
   const cell = pool?.cells?.[layer.cell];
   if (!image || !cell) {
     return;
@@ -1156,9 +1250,10 @@ function drawPart(partKey, frameIndex, anchor = state.data.anchor, action = stat
   }
 
   const frame = frames[frameIndex % frames.length];
+  const positionOffset = part.positionOffset || {};
   const paddedAnchor = {
-    x: anchor.x + renderPadding,
-    y: anchor.y + renderPadding,
+    x: anchor.x + renderPadding + Number(positionOffset.x || 0),
+    y: anchor.y + renderPadding + Number(positionOffset.y || 0),
   };
   for (const layer of frame.layers) {
     drawLayer(part, imagePools, layer, paddedAnchor);
@@ -1171,7 +1266,7 @@ function selectedHeadgearPartKey(slotIndex = 0) {
     return null;
   }
   const entry = state.data.headgear.find((item) => String(item.id) === String(itemId));
-  return entry?.parts?.[state.sex] || null;
+  return itemPartKey(entry, "headgear");
 }
 
 function headgearLayerPriority(item, slotIndex = 0) {
@@ -1204,7 +1299,7 @@ function selectedHeadgearLayers() {
       return;
     }
     const item = state.data.headgear.find((candidate) => String(candidate.id) === String(itemId));
-    const partKey = item?.parts?.[state.sex];
+    const partKey = itemPartKey(item, "headgear");
     if (!item || !partKey || seen.has(partKey)) {
       return;
     }
@@ -1237,7 +1332,7 @@ function selectedCapePartKey() {
     return null;
   }
   const entry = state.data.capes.find((item) => String(item.id) === String(state.cape));
-  return entry?.parts?.[state.sex] || null;
+  return itemPartKey(entry, "cape");
 }
 
 function headgearEntryAt(slotIndex) {
@@ -1336,11 +1431,7 @@ function partKeyForItem(item, kind = null) {
   if (!item) {
     return null;
   }
-  const itemKind = kind || itemKindFor(item);
-  if (itemKind === "cape") {
-    return item.parts?.[state.sex] || null;
-  }
-  return item.parts?.[state.sex] || null;
+  return itemPartKey(item, kind || itemKindFor(item));
 }
 
 function itemHasEffect(item, kind = null) {
@@ -1443,8 +1534,12 @@ async function ensureEffectImage(effect) {
 }
 
 function selectedHairPartKey() {
-  const entry = (state.data.hairstyles || []).find((item) => String(item.id) === String(state.hairstyle));
+  const entry = hairstylesForCurrentRace().find((item) => String(item.id) === String(state.hairstyle));
   return entry?.parts?.[state.sex] || currentCharacter().head;
+}
+
+function hairstylesForCurrentRace() {
+  return (state.data.hairstyles || []).filter((hair) => String(hair.race || "human") === state.race);
 }
 
 function selectedJob() {
@@ -1880,6 +1975,7 @@ function draw() {
 
 function statePayload() {
   return {
+    race: state.race,
     sex: state.sex,
     job: state.job,
     mount: state.mount,
@@ -1901,6 +1997,35 @@ function statePayload() {
     bgY: String(state.backgroundOffsetY),
     shadow: state.showShadow ? "1" : "0",
   };
+}
+
+function rememberRaceSelection() {
+  raceSelectionMemory.set(state.race, {
+    job: state.job,
+    mount: state.mount,
+    secondCostume: state.secondCostume,
+    hairstyle: state.hairstyle,
+    bodyColor: state.bodyColor,
+    hairColor: state.hairColor,
+    headgearSlots: [...state.headgearSlots],
+    cape: state.cape,
+  });
+}
+
+function restoreRaceSelection(race) {
+  const remembered = raceSelectionMemory.get(race);
+  if (!remembered) {
+    return false;
+  }
+  state.job = remembered.job;
+  state.mount = remembered.mount;
+  state.secondCostume = remembered.secondCostume;
+  state.hairstyle = remembered.hairstyle;
+  state.bodyColor = remembered.bodyColor;
+  state.hairColor = remembered.hairColor;
+  state.headgearSlots = [...remembered.headgearSlots];
+  state.cape = remembered.cape;
+  return true;
 }
 
 function stateHash() {
@@ -1937,6 +2062,7 @@ function applyStatePayload(payload) {
   if (!payload || typeof payload !== "object") {
     return;
   }
+  if (payload.race) state.race = String(payload.race);
   if (payload.sex) state.sex = String(payload.sex);
   if (payload.job) state.job = String(payload.job);
   if (payload.mount) {
@@ -1973,6 +2099,9 @@ function applyStatePayload(payload) {
 }
 
 function normalizeState() {
+  if (!state.data.races?.[state.race]) {
+    state.race = "human";
+  }
   if (!state.data.characters[state.sex]) {
     state.sex = "female";
   }
@@ -2004,9 +2133,10 @@ function normalizeState() {
   ensureSelectedJobSupportsSex();
   normalizeJobModes();
 
-  const hair = (state.data.hairstyles || []).find((item) => String(item.id) === String(state.hairstyle));
+  const raceHairstyles = hairstylesForCurrentRace();
+  const hair = raceHairstyles.find((item) => String(item.id) === String(state.hairstyle));
   if (!hair?.parts?.[state.sex]) {
-    const fallback = (state.data.hairstyles || []).find((item) => item.parts?.[state.sex]);
+    const fallback = raceHairstyles.find((item) => item.parts?.[state.sex]);
     if (fallback) {
       state.hairstyle = String(fallback.id);
     }
@@ -2022,18 +2152,21 @@ function normalizeState() {
 
   state.headgearSlots = state.headgearSlots.slice(0, 3).map((value, index) => {
     const entry = (state.data.headgear || []).find((item) => String(item.id) === String(value));
-    return entry?.parts?.[state.sex] ? String(value) : "none";
+    return itemPartKey(entry, "headgear") ? String(value) : "none";
   });
   while (state.headgearSlots.length < 3) {
     state.headgearSlots.push("none");
   }
   const capeEntry = (state.data.capes || []).find((item) => String(item.id) === String(state.cape));
-  if (!capeEntry?.parts?.[state.sex]) {
+  if (!itemPartKey(capeEntry, "cape")) {
     state.cape = "none";
   }
 }
 
 function syncControls() {
+  document.querySelectorAll("[data-race]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.race === state.race);
+  });
   document.querySelectorAll("[data-sex]").forEach((button) => {
     button.classList.toggle("active", button.dataset.sex === state.sex);
   });
@@ -2146,6 +2279,25 @@ function itemKindFor(item) {
   return "headgear";
 }
 
+function itemPartKey(item, explicitKind = null) {
+  if (!item) {
+    return null;
+  }
+  if (state.race === "doram") {
+    const directPart = item.doramParts?.[state.sex];
+    if (directPart) {
+      return directPart;
+    }
+    const resource = selectedJobVariant()?.resource || selectedJob()?.resource;
+    return item.doramParts?.[resource]?.[state.sex] || null;
+  }
+  return item.parts?.[state.sex] || null;
+}
+
+function itemSupportedForCurrentCharacter(item, explicitKind = null) {
+  return Boolean(itemPartKey(item, explicitKind));
+}
+
 function itemMetaFor(item, explicitKind = null) {
   if (!item) {
     return null;
@@ -2208,7 +2360,9 @@ function fillItemSelect(select, items, selectedValue, query, noneLabel = "無", 
 
   let hasSelected = previous === "none";
   for (const item of items) {
-    if (!itemMatchesQuery(item, cleanQuery, itemKind) || !itemMatchesEquipmentFilter(item, itemKind)) {
+    if (!itemSupportedForCurrentCharacter(item, itemKind)
+      || !itemMatchesQuery(item, cleanQuery, itemKind)
+      || !itemMatchesEquipmentFilter(item, itemKind)) {
       continue;
     }
     matchedCount += 1;
@@ -2299,7 +2453,8 @@ function refreshWornPanel() {
 }
 
 function browserItems() {
-  return state.browserKind === "cape" ? (state.data.capes || []) : (state.data.headgear || []);
+  const items = state.browserKind === "cape" ? (state.data.capes || []) : (state.data.headgear || []);
+  return items.filter((item) => itemSupportedForCurrentCharacter(item, state.browserKind));
 }
 
 function loadItemBrowserFavorites() {
@@ -2373,6 +2528,127 @@ function selectBrowserItem(item) {
   prepareAndDraw();
 }
 
+function closeItemBrowserDetail() {
+  itemBrowserDetailItem = null;
+  itemBrowserDialog?.classList.remove("has-detail");
+  itemBrowserContent?.classList.remove("has-detail");
+  if (itemBrowserDetail) {
+    itemBrowserDetail.hidden = true;
+    itemBrowserDetail.replaceChildren();
+  }
+  itemResults?.querySelectorAll(".item-info.active").forEach((button) => button.classList.remove("active"));
+}
+
+function appendItemDetailRow(container, label, value) {
+  if (value === undefined || value === null || value === "" || (Array.isArray(value) && !value.length)) {
+    return;
+  }
+  const row = document.createElement("div");
+  row.className = "item-detail-row";
+  const term = document.createElement("dt");
+  term.textContent = label;
+  const description = document.createElement("dd");
+  description.textContent = Array.isArray(value) ? value.join(" / ") : String(value);
+  row.append(term, description);
+  container.appendChild(row);
+}
+
+function showItemBrowserDetail(item, kind = state.browserKind) {
+  if (!itemBrowserDetail || !item) {
+    return;
+  }
+  itemBrowserDetailItem = { item, kind };
+  itemBrowserDialog?.classList.add("has-detail");
+  itemBrowserDetail.hidden = false;
+  itemBrowserContent?.classList.add("has-detail");
+  itemBrowserDetail.replaceChildren();
+
+  const head = document.createElement("header");
+  const title = document.createElement("strong");
+  title.textContent = "物品資訊 (Item Details)";
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "item-detail-close";
+  close.textContent = "×";
+  close.title = "關閉資訊 (Close details)";
+  close.setAttribute("aria-label", close.title);
+  close.addEventListener("click", closeItemBrowserDetail);
+  head.append(title, close);
+
+  const thumb = document.createElement("div");
+  thumb.className = "item-detail-thumb";
+  const image = document.createElement("img");
+  const paths = itemThumbnailPaths(item, kind);
+  image.src = paths.primary;
+  image.alt = "";
+  image.addEventListener("error", () => {
+    if (!image.dataset.fallbackUsed) {
+      image.dataset.fallbackUsed = "1";
+      image.src = paths.fallback;
+      return;
+    }
+    image.hidden = true;
+  });
+  thumb.appendChild(image);
+
+  const name = document.createElement("h3");
+  name.textContent = shortItemName(item, kind);
+  const meta = itemMetaFor(item, kind) || {};
+  const flags = itemFlagLabels(item, kind);
+  const tags = document.createElement("div");
+  tags.className = "item-detail-tags";
+  for (const flag of flags) {
+    const tag = document.createElement("span");
+    tag.className = `item-tag ${flag}`;
+    tag.textContent = trText(flag);
+    tags.appendChild(tag);
+  }
+  for (const slot of meta.slots || []) {
+    const tag = document.createElement("span");
+    tag.className = "item-tag slot";
+    tag.textContent = slot;
+    tags.appendChild(tag);
+  }
+
+  const details = document.createElement("dl");
+  details.className = "item-detail-list";
+  appendItemDetailRow(details, "View ID", item.id);
+  appendItemDetailRow(details, "Item ID", meta.itemids?.length ? meta.itemids : meta.primary_itemid);
+  appendItemDetailRow(details, "Const", meta.const || item.const);
+  appendItemDetailRow(details, "Sprite", meta.sprite);
+  appendItemDetailRow(details, "名稱 (Names)", meta.names);
+
+  const actions = document.createElement("div");
+  actions.className = "item-detail-actions";
+  const equip = document.createElement("button");
+  equip.type = "button";
+  equip.className = "primary";
+  equip.textContent = "套用 (Equip)";
+  equip.addEventListener("click", () => selectBrowserItem(item));
+  actions.appendChild(equip);
+  if (meta.detail_url) {
+    const link = document.createElement("a");
+    link.href = meta.detail_url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Divine Pride";
+    actions.appendChild(link);
+  }
+
+  itemBrowserDetail.append(head, thumb, name);
+  if (tags.childElementCount) {
+    itemBrowserDetail.appendChild(tags);
+  }
+  itemBrowserDetail.append(details, actions);
+  itemResults?.querySelectorAll(".item-info").forEach((button) => {
+    button.classList.toggle(
+      "active",
+      button.closest(".item-card")?.dataset.itemId === String(item.id)
+        && button.closest(".item-card")?.dataset.itemKind === kind,
+    );
+  });
+}
+
 const ITEM_THUMBNAIL_BASE = "paperdoll_v2/web/thumbnails";
 
 function itemThumbnailPaths(item, kind = state.browserKind) {
@@ -2436,6 +2712,21 @@ function createItemBrowserCard(item) {
     toggleItemBrowserFavorite(item, kind);
   });
 
+  const info = document.createElement("button");
+  info.type = "button";
+  info.className = "item-info";
+  info.textContent = "ⓘ";
+  info.title = "物品資訊 (Item details)";
+  info.setAttribute("aria-label", info.title);
+  info.addEventListener("click", (event) => {
+    event.stopPropagation();
+    if (itemBrowserDetailItem?.kind === kind && String(itemBrowserDetailItem.item?.id) === String(item.id)) {
+      closeItemBrowserDetail();
+      return;
+    }
+    showItemBrowserDetail(item, kind);
+  });
+
   const thumb = document.createElement("span");
   thumb.className = "item-thumb";
   const thumbImage = document.createElement("img");
@@ -2466,7 +2757,7 @@ function createItemBrowserCard(item) {
   meta.textContent = `${item.const || " "}${slotText}`;
   card.title = itemDisplayName(item, kind);
 
-  const content = [favorite, thumb, id];
+  const content = [favorite, info, thumb, id];
   const flags = itemFlagLabels(item, kind);
   if (flags.length) {
     const tagRow = document.createElement("span");
@@ -2556,6 +2847,7 @@ function refreshItemBrowser() {
   itemResults.scrollTop = 0;
   updateItemBrowserCount();
   if (!itemBrowserMatches.length) {
+    closeItemBrowserDetail();
     const empty = document.createElement("p");
     empty.className = "item-empty";
     empty.textContent = trText("noResults");
@@ -2563,6 +2855,16 @@ function refreshItemBrowser() {
     return;
   }
   appendItemBrowserBatch();
+  if (itemBrowserDetailItem) {
+    const detailStillVisible = itemBrowserMatches.some((candidate) => (
+      String(candidate.id) === String(itemBrowserDetailItem.item?.id)
+    ));
+    if (detailStillVisible && itemBrowserDetailItem.kind === state.browserKind) {
+      showItemBrowserDetail(itemBrowserDetailItem.item, itemBrowserDetailItem.kind);
+    } else {
+      closeItemBrowserDetail();
+    }
+  }
 }
 
 function syncItemBrowserControls() {
@@ -2579,6 +2881,9 @@ function syncItemBrowserControls() {
 function setItemBrowserSlot(slot) {
   itemBrowserSlot = slot === "cape" ? "cape" : String(Math.min(2, Math.max(0, Number(slot) || 0)));
   state.browserKind = itemBrowserSlot === "cape" ? "cape" : "headgear";
+  if (itemBrowserDetailItem?.kind !== state.browserKind) {
+    closeItemBrowserDetail();
+  }
   if (itemBrowserSlot === "cape" && ["top", "mid", "low"].includes(itemBrowserFilter)) {
     itemBrowserFilter = "all";
   }
@@ -2630,8 +2935,28 @@ function refreshColorSelect(select, items, value) {
   select.value = value;
 }
 
+function bodyColorOptionsForCurrentPart() {
+  const allColors = state.data.bodyColors || [];
+  const part = state.data.parts?.[selectedJobBodyPartKey()];
+  const variants = part?.palette?.variants || {};
+  const available = new Set(Object.keys(variants).map(String));
+  if (!available.size) {
+    return allColors.filter((item) => String(item.id) === "0");
+  }
+  return allColors.filter((item) => available.has(String(item.id)));
+}
+
+function normalizeBodyColorForCurrentPart() {
+  const options = bodyColorOptionsForCurrentPart();
+  if (!options.some((item) => String(item.id) === String(state.bodyColor))) {
+    state.bodyColor = String(options[0]?.id ?? "0");
+    return true;
+  }
+  return false;
+}
+
 function refreshColorSelects() {
-  refreshColorSelect(bodyColorSelect, state.data.bodyColors || [], state.bodyColor);
+  refreshColorSelect(bodyColorSelect, bodyColorOptionsForCurrentPart(), state.bodyColor);
   refreshColorSelect(hairColorSelect, state.data.hairColors || [], state.hairColor);
 }
 
@@ -2734,7 +3059,8 @@ function refreshMountButtons() {
 
 function refreshHairSelect() {
   hairSelect.replaceChildren();
-  for (const hair of state.data.hairstyles || []) {
+  const hairstyles = hairstylesForCurrentRace();
+  for (const hair of hairstyles) {
     if (!hair.parts?.[state.sex]) {
       continue;
     }
@@ -2743,9 +3069,9 @@ function refreshHairSelect() {
     option.textContent = hair.label;
     hairSelect.appendChild(option);
   }
-  const selected = (state.data.hairstyles || []).find((hair) => String(hair.id) === String(state.hairstyle));
-  if (!selected?.parts?.[state.sex] && state.data.hairstyles?.length) {
-    const fallback = state.data.hairstyles.find((hair) => hair.parts?.[state.sex]);
+  const selected = hairstyles.find((hair) => String(hair.id) === String(state.hairstyle));
+  if (!selected?.parts?.[state.sex] && hairstyles.length) {
+    const fallback = hairstyles.find((hair) => hair.parts?.[state.sex]);
     if (fallback) {
       state.hairstyle = String(fallback.id);
     }
@@ -2765,6 +3091,8 @@ function visiblePartKeys() {
 async function prepareAndDraw() {
   resetRenderFitScale();
   await Promise.all(visiblePartKeys().map((partKey) => ensurePartImages(partKey)));
+  normalizeBodyColorForCurrentPart();
+  refreshColorSelects();
   syncControls();
   draw();
   saveLocalState();
@@ -3537,8 +3865,21 @@ function enableSelectWheel(select) {
 }
 
 async function boot() {
-  const response = await fetch(appUrl(`data/paperdoll.json?v=${appVersion}`));
+  let response = null;
+  try {
+    response = await fetch(appUrl(`data/paperdoll.bootstrap.json?v=${appVersion}`));
+  } catch (error) {
+    console.warn("Resource bootstrap request failed; falling back to full manifest", error);
+  }
+  if (!response?.ok) {
+    console.warn("Resource bootstrap unavailable; falling back to full manifest");
+    response = await fetch(appUrl(`data/paperdoll.json?v=${appVersion}`));
+  }
+  if (!response.ok) {
+    throw new Error("Paperdoll manifest unavailable");
+  }
   state.data = await response.json();
+  state.data.parts ||= {};
   try {
     const effectResponse = await fetch(appUrl(`data/effect_bindings.json?v=${appVersion}`));
     if (effectResponse.ok) {
@@ -3600,6 +3941,7 @@ async function boot() {
   applyStatePayload(readLocalState());
   applyStatePayload(readHashState());
   normalizeState();
+  rememberRaceSelection();
 
   refreshJobSelect();
   refreshMountSelect();
@@ -3608,6 +3950,36 @@ async function boot() {
   refreshEquipmentSelects();
   refreshBackgroundSelect();
   refreshCloset();
+
+  document.querySelectorAll("[data-race]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextRace = button.dataset.race || "human";
+      if (nextRace === state.race || !state.data.races?.[nextRace]) {
+        return;
+      }
+      rememberRaceSelection();
+      state.race = nextRace;
+      if (!restoreRaceSelection(nextRace)) {
+        state.job = displayableJobsForSex()[0]?.key || state.job;
+        state.hairstyle = String(hairstylesForCurrentRace().find((hair) => hair.parts?.[state.sex])?.id || "1");
+        state.mount = "none";
+        state.secondCostume = false;
+        state.headgearSlots = ["none", "none", "none"];
+        state.cape = "none";
+      }
+      state.riding = state.mount !== "none";
+      state.frame = 0;
+      state.wearableFrame = 0;
+      normalizeState();
+      rememberRaceSelection();
+      refreshJobSelect();
+      refreshMountSelect();
+      refreshHairSelect();
+      refreshEquipmentSelects();
+      refreshItemBrowser();
+      prepareAndDraw();
+    });
+  });
 
   document.querySelectorAll("[data-sex]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -3624,6 +3996,8 @@ async function boot() {
       if (state.cape !== "none" && !selectedCapePartKey()) {
         state.cape = "none";
       }
+      refreshEquipmentSelects();
+      refreshItemBrowser();
       prepareAndDraw();
     });
   });
@@ -3735,6 +4109,7 @@ async function boot() {
     ensureSelectedJobSupportsSex();
     normalizeJobModes();
     refreshMountSelect();
+    refreshEquipmentSelects();
     prepareAndDraw();
   });
   if (mountSelect) {
@@ -3745,6 +4120,7 @@ async function boot() {
       state.frame = 0;
       state.wearableFrame = 0;
       refreshMountSelect();
+      refreshEquipmentSelects();
       prepareAndDraw();
     });
   }
@@ -3766,6 +4142,7 @@ async function boot() {
       state.frame = 0;
       state.wearableFrame = 0;
       refreshMountSelect();
+      refreshEquipmentSelects();
       prepareAndDraw();
     });
   }

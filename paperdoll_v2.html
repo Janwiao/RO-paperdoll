@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <title>紙娃娃 V2 - Nori Preview List</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="paperdoll_v2/web/site.css?v=20260714-paperdoll-v2-ui-restore-4" />
+  <link rel="stylesheet" href="paperdoll_v2/web/site.css?v=20260715-paperdoll-v2-indexed-palette-2" />
 </head>
 <body class="section-paperdoll">
   <div class="layout">
@@ -44,7 +44,7 @@
       <header class="topbar">
         <div class="title-row">
           <h1>紙娃娃 V2</h1>
-          <span class="generated-at">Beta：2026-07-13</span>
+          <span class="generated-at">Beta：2026-07-15</span>
         </div>
         <div class="toolbar-controls">
           <button class="paperdoll-icon-button" id="playButton" type="button" title="播放動畫" aria-label="播放動畫">&gt;</button>
@@ -125,6 +125,14 @@
         </section>
 
         <aside class="control-panel" aria-label="紙娃娃控制">
+          <div class="control-group">
+            <label>種族 (Race)</label>
+            <div class="segmented race-segmented" role="group" aria-label="角色種族">
+              <button type="button" data-race="human" class="active">人類 (Human)</button>
+              <button type="button" data-race="doram">喵族 (Doram)</button>
+            </div>
+          </div>
+
           <div class="control-group">
             <label>性別</label>
             <div class="segmented" role="group" aria-label="角色性別">
@@ -308,7 +316,10 @@
         <button type="button" data-browser-filter="low">下段</button>
       </div>
       <input id="itemSearch" class="filter-input" type="search" placeholder="搜尋 ID / 名稱 / const" aria-label="搜尋服飾庫" />
-      <div id="itemResults" class="item-results" aria-live="polite"></div>
+      <div class="item-browser-content" id="itemBrowserContent">
+        <div id="itemResults" class="item-results" aria-live="polite"></div>
+        <aside class="item-browser-detail" id="itemBrowserDetail" aria-live="polite" aria-label="物品詳細資訊" hidden></aside>
+      </div>
       <footer class="item-browser-actions">
         <span id="itemBrowserCount" aria-live="polite"></span>
         <div>
@@ -372,6 +383,7 @@
   </dialog>
 
   <script src="paperdoll_v2/web/effect-runtime.js?v=20260713-paperdoll-v2-item-browser-5"></script>
-  <script src="paperdoll_v2/web/app.js?v=20260713-paperdoll-v2-item-browser-5"></script>
+  <script src="paperdoll_v2/web/vendor/pako_inflate.min.js?v=2.1.0"></script>
+  <script src="paperdoll_v2/web/app.js?v=20260716-paperdoll-v2-doram-capes-1"></script>
 </body>
 </html>
