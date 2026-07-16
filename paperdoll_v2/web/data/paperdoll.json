@@ -253,15 +253,6 @@
           },
           "resource": "초보자"
         },
-        "second": {
-          "parts": {
-            "female": "job_female_novice_c1",
-            "male": "job_male_novice_c1"
-          },
-          "resource": "초보자",
-          "source": "costume_1",
-          "label": "第二服裝"
-        },
         "mount_poring": {
           "parts": {
             "female": "job_female_novice_poring",
@@ -282,7 +273,7 @@
       ],
       "supports": {
         "riding": true,
-        "secondCostume": true
+        "secondCostume": false
       }
     },
     {
@@ -3302,15 +3293,6 @@
           },
           "resource": "kagerou"
         },
-        "second": {
-          "parts": {
-            "female": "job_female_kagerou_c1",
-            "male": "job_male_kagerou_c1"
-          },
-          "resource": "kagerou",
-          "source": "costume_1",
-          "label": "第二服裝"
-        },
         "mount_frog": {
           "parts": {
             "female": "job_female_kagerou_frog",
@@ -3331,7 +3313,7 @@
       ],
       "supports": {
         "riding": true,
-        "secondCostume": true
+        "secondCostume": false
       }
     },
     {
@@ -3350,15 +3332,6 @@
             "male": "job_male_oboro"
           },
           "resource": "oboro"
-        },
-        "second": {
-          "parts": {
-            "female": "job_female_oboro_c1",
-            "male": "job_male_oboro_c1"
-          },
-          "resource": "oboro",
-          "source": "costume_1",
-          "label": "第二服裝"
         },
         "mount_frog": {
           "parts": {
@@ -3380,7 +3353,7 @@
       ],
       "supports": {
         "riding": true,
-        "secondCostume": true
+        "secondCostume": false
       }
     },
     {
@@ -35582,23 +35555,11 @@
       "label": "初學者 female",
       "data": "data/parts/job_female_novice.json"
     },
-    "job_female_novice_c1": {
-      "key": "job_female_novice_c1",
-      "kind": "body",
-      "label": "初學者 第二服裝 female",
-      "data": "data/parts/job_female_novice_c1.json"
-    },
     "job_male_novice": {
       "key": "job_male_novice",
       "kind": "body",
       "label": "初學者 male",
       "data": "data/parts/job_male_novice.json"
-    },
-    "job_male_novice_c1": {
-      "key": "job_male_novice_c1",
-      "kind": "body",
-      "label": "初學者 第二服裝 male",
-      "data": "data/parts/job_male_novice_c1.json"
     },
     "job_female_swordman": {
       "key": "job_female_swordman",
@@ -36806,23 +36767,11 @@
       "label": "影狼 female",
       "data": "data/parts/job_female_kagerou.json"
     },
-    "job_female_kagerou_c1": {
-      "key": "job_female_kagerou_c1",
-      "kind": "body",
-      "label": "影狼 第二服裝 female",
-      "data": "data/parts/job_female_kagerou_c1.json"
-    },
     "job_male_kagerou": {
       "key": "job_male_kagerou",
       "kind": "body",
       "label": "影狼 male",
       "data": "data/parts/job_male_kagerou.json"
-    },
-    "job_male_kagerou_c1": {
-      "key": "job_male_kagerou_c1",
-      "kind": "body",
-      "label": "影狼 第二服裝 male",
-      "data": "data/parts/job_male_kagerou_c1.json"
     },
     "job_female_oboro": {
       "key": "job_female_oboro",
@@ -36830,23 +36779,11 @@
       "label": "朧 female",
       "data": "data/parts/job_female_oboro.json"
     },
-    "job_female_oboro_c1": {
-      "key": "job_female_oboro_c1",
-      "kind": "body",
-      "label": "朧 第二服裝 female",
-      "data": "data/parts/job_female_oboro_c1.json"
-    },
     "job_male_oboro": {
       "key": "job_male_oboro",
       "kind": "body",
       "label": "朧 male",
       "data": "data/parts/job_male_oboro.json"
-    },
-    "job_male_oboro_c1": {
-      "key": "job_male_oboro_c1",
-      "kind": "body",
-      "label": "朧 第二服裝 male",
-      "data": "data/parts/job_male_oboro_c1.json"
     },
     "job_male_shinkiro": {
       "key": "job_male_shinkiro",
