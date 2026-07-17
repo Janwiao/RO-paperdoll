@@ -123,6 +123,12 @@ const openItemBrowserButton = document.getElementById("openItemBrowserButton");
 const closeItemBrowserButton = document.getElementById("closeItemBrowserButton");
 const finishItemBrowserButton = document.getElementById("finishItemBrowserButton");
 const clearItemBrowserSlotButton = document.getElementById("clearItemBrowserSlotButton");
+const quickFavoritePanel = document.getElementById("quickFavoritePanel");
+const quickFavoriteTitle = document.getElementById("quickFavoriteTitle");
+const quickFavoriteList = document.getElementById("quickFavoriteList");
+const addQuickFavoriteButton = document.getElementById("addQuickFavoriteButton");
+const closeQuickFavoriteButton = document.getElementById("closeQuickFavoriteButton");
+const quickFavoriteButtons = [...document.querySelectorAll("[data-favorite-slot]")];
 const itemBrowserSlotButtons = [...document.querySelectorAll("[data-browser-slot]")];
 const itemBrowserFilterButtons = [...document.querySelectorAll("[data-browser-filter]")];
 const equipmentQuickFilterButtons = [...document.querySelectorAll("[data-equipment-filter]")];
@@ -206,6 +212,9 @@ const languageOptions = {
       share: "連結 (Link)",
       save: "儲存 (Save)",
       clear: "清除 (Clear)",
+      shareDone: "已複製",
+      shareUpdatedDone: "已更新",
+      clearDone: "已清除",
     },
     text: {
       none: "無",
@@ -290,6 +299,9 @@ const languageOptions = {
       share: "URL",
       save: "PNG",
       clear: "Clear",
+      shareDone: "Copied",
+      shareUpdatedDone: "Updated",
+      clearDone: "Cleared",
     },
     text: {
       none: "None",
@@ -374,6 +386,9 @@ const languageOptions = {
       share: "URL",
       save: "PNG",
       clear: "Limpar",
+      shareDone: "Copiado",
+      shareUpdatedDone: "Atualizado",
+      clearDone: "Limpo",
     },
     text: {
       none: "Nenhum",
@@ -404,7 +419,7 @@ const languageOptions = {
   },
 };
 
-const appVersion = "20260716-paperdoll-v2-resource-shards-1";
+const appVersion = "20260718-paperdoll-v2-favorite-cycling-1";
 const storageKey = "nori.paperdoll.state.v2";
 const closetStorageKey = "nori.paperdoll.closet.v2";
 const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
@@ -431,8 +446,12 @@ let itemBrowserDetailItem = null;
 const itemBrowserBatchSize = 72;
 const itemBrowserFavoritesKey = "nori.paperdoll.item-browser.favorites.v1";
 let itemBrowserFavorites = loadItemBrowserFavorites();
+const quickFavoritesStorageKey = "nori.paperdoll.quick-favorites.v2";
+let quickFavoriteSlot = "headgear-0";
+let quickFavorites = loadQuickFavorites();
 let browserFilterTimer = 0;
 let backgroundDrag = null;
+const toolbarFeedbackTimers = new WeakMap();
 const raceSelectionMemory = new Map();
 const forceRgbaFlipYAllActionItemIds = new Set([
   668, 958, 961, 975, 976, 1005, 1038, 1039, 1040,
@@ -2433,7 +2452,7 @@ function shortItemName(item, explicitKind = null) {
 function refreshWornPanel() {
   document.querySelectorAll("[data-worn-slot]").forEach((row) => {
     const slot = row.dataset.wornSlot;
-    const button = row.querySelector("button");
+    const button = row.querySelector("[data-clear-slot]");
     if (!button) {
       return;
     }
@@ -2450,6 +2469,201 @@ function refreshWornPanel() {
     button.title = item ? itemDisplayName(item, kind) : trText("none");
     row.classList.toggle("is-filled", Boolean(item));
   });
+  syncQuickFavoriteButtons();
+  if (quickFavoritePanel && !quickFavoritePanel.hidden) {
+    renderQuickFavoritePanel();
+  }
+}
+
+function showToolbarButtonFeedback(button, feedbackKey, defaultKey) {
+  if (!button) {
+    return;
+  }
+  window.clearTimeout(toolbarFeedbackTimers.get(button));
+  button.textContent = `✓ ${tr("button", feedbackKey)}`;
+  button.classList.add("is-confirmed");
+  button.setAttribute("aria-live", "polite");
+  const timer = window.setTimeout(() => {
+    button.textContent = tr("button", defaultKey);
+    button.classList.remove("is-confirmed");
+    button.removeAttribute("aria-live");
+    toolbarFeedbackTimers.delete(button);
+  }, 1600);
+  toolbarFeedbackTimers.set(button, timer);
+}
+
+function loadQuickFavorites() {
+  const result = { "headgear-0": [], "headgear-1": [], "headgear-2": [], cape: [] };
+  try {
+    const saved = JSON.parse(localStorage.getItem(quickFavoritesStorageKey) || "null");
+    if (!saved || typeof saved !== "object") {
+      return result;
+    }
+    for (const slot of Object.keys(result)) {
+      result[slot] = Array.isArray(saved[slot])
+        ? [...new Set(saved[slot].map(String).filter((id) => id && id !== "none"))]
+        : [];
+    }
+  } catch (_error) {
+    // Keep an empty in-memory list when storage is unavailable.
+  }
+  return result;
+}
+
+function saveQuickFavorites() {
+  try {
+    localStorage.setItem(quickFavoritesStorageKey, JSON.stringify(quickFavorites));
+  } catch (_error) {
+    // Favorites remain available for the current session when storage is unavailable.
+  }
+}
+
+function quickFavoriteSlotLabel(slot = quickFavoriteSlot) {
+  return {
+    "headgear-0": "服飾 1",
+    "headgear-1": "服飾 2",
+    "headgear-2": "服飾 3",
+    cape: "肩飾",
+  }[slot] || "服飾";
+}
+
+function quickFavoriteKind(slot = quickFavoriteSlot) {
+  return slot === "cape" ? "cape" : "headgear";
+}
+
+function currentQuickFavoriteItem(slot = quickFavoriteSlot) {
+  if (slot === "cape") {
+    return selectedCapeEntry();
+  }
+  return headgearEntryAt(Number(slot.split("-")[1] || 0));
+}
+
+function quickFavoriteItem(itemId, slot = quickFavoriteSlot) {
+  const items = quickFavoriteKind(slot) === "cape" ? (state.data?.capes || []) : (state.data?.headgear || []);
+  return items.find((item) => String(item.id) === String(itemId)) || null;
+}
+
+function setQuickFavoriteItem(itemId, slot = quickFavoriteSlot) {
+  if (slot === "cape") {
+    state.cape = String(itemId);
+  } else {
+    state.headgearSlots[Number(slot.split("-")[1] || 0)] = String(itemId);
+  }
+  state.wearableFrame = 0;
+  state.lastWearableTick = performance.now();
+  refreshEquipmentSelects();
+  prepareAndDraw();
+}
+
+function syncQuickFavoriteButtons() {
+  quickFavoriteButtons.forEach((button) => {
+    const slot = button.dataset.favoriteSlot;
+    const count = quickFavorites[slot]?.length || 0;
+    button.classList.toggle("active", count > 0);
+    button.textContent = count > 0 ? "★" : "☆";
+    button.title = count > 0
+      ? `${quickFavoriteSlotLabel(slot)} 單件最愛；方向鍵快速切換 ${count} 件收藏`
+      : `${quickFavoriteSlotLabel(slot)} 單件最愛`;
+    button.setAttribute("aria-expanded", String(Boolean(
+      quickFavoritePanel && !quickFavoritePanel.hidden && quickFavoriteSlot === slot
+    )));
+  });
+}
+
+function cycleQuickFavoriteItem(button, direction) {
+  const slot = button.dataset.favoriteSlot;
+  const entries = (quickFavorites[slot] || [])
+    .map((itemId) => quickFavoriteItem(itemId, slot))
+    .filter((item) => item && itemSupportedForCurrentCharacter(item, quickFavoriteKind(slot)));
+  if (!entries.length) return;
+  const currentId = String(currentQuickFavoriteItem(slot)?.id || "none");
+  const currentIndex = entries.findIndex((item) => String(item.id) === currentId);
+  const nextIndex = currentIndex < 0
+    ? (direction > 0 ? 0 : entries.length - 1)
+    : (currentIndex + direction + entries.length) % entries.length;
+  const nextItem = entries[nextIndex];
+  setQuickFavoriteItem(nextItem.id, slot);
+  notifyStatus(`${quickFavoriteSlotLabel(slot)}：${shortItemName(nextItem, quickFavoriteKind(slot))}`);
+}
+
+function renderQuickFavoritePanel() {
+  if (!quickFavoritePanel || !quickFavoriteTitle || !quickFavoriteList || !addQuickFavoriteButton || !state.data) {
+    return;
+  }
+  const current = currentQuickFavoriteItem();
+  const ids = quickFavorites[quickFavoriteSlot] || [];
+  const currentSaved = Boolean(current && ids.includes(String(current.id)));
+  quickFavoriteTitle.textContent = `${quickFavoriteSlotLabel()} 單件最愛 (Favorites)`;
+  addQuickFavoriteButton.disabled = !current || currentSaved;
+  addQuickFavoriteButton.textContent = currentSaved
+    ? "目前服飾已收藏 (Saved)"
+    : "加入目前服飾 (Add Current)";
+  quickFavoriteList.replaceChildren();
+  const entries = ids.map((id) => quickFavoriteItem(id)).filter(Boolean);
+  if (!entries.length) {
+    const empty = document.createElement("p");
+    empty.className = "quick-favorite-empty";
+    empty.textContent = "尚未加入單件最愛";
+    quickFavoriteList.appendChild(empty);
+    return;
+  }
+  for (const item of entries) {
+    const row = document.createElement("div");
+    row.className = "quick-favorite-item";
+    const applyButton = document.createElement("button");
+    applyButton.type = "button";
+    applyButton.className = "quick-favorite-apply";
+    applyButton.textContent = shortItemName(item, quickFavoriteKind());
+    applyButton.title = itemDisplayName(item, quickFavoriteKind());
+    applyButton.classList.toggle("active", String(current?.id) === String(item.id));
+    applyButton.disabled = !itemSupportedForCurrentCharacter(item, quickFavoriteKind());
+    applyButton.addEventListener("click", () => setQuickFavoriteItem(item.id));
+    const removeButton = document.createElement("button");
+    removeButton.type = "button";
+    removeButton.className = "quick-favorite-remove";
+    removeButton.textContent = "×";
+    removeButton.title = "移除最愛";
+    removeButton.setAttribute("aria-label", `從單件最愛移除 ${shortItemName(item, quickFavoriteKind())}`);
+    removeButton.addEventListener("click", () => {
+      quickFavorites[quickFavoriteSlot] = ids.filter((id) => String(id) !== String(item.id));
+      saveQuickFavorites();
+      syncQuickFavoriteButtons();
+      renderQuickFavoritePanel();
+    });
+    row.append(applyButton, removeButton);
+    quickFavoriteList.appendChild(row);
+  }
+}
+
+function openQuickFavoritePanel(slot) {
+  if (!quickFavoritePanel) {
+    return;
+  }
+  quickFavoriteSlot = slot;
+  quickFavoritePanel.hidden = false;
+  renderQuickFavoritePanel();
+  syncQuickFavoriteButtons();
+}
+
+function closeQuickFavoritePanel() {
+  if (quickFavoritePanel) {
+    quickFavoritePanel.hidden = true;
+  }
+  syncQuickFavoriteButtons();
+}
+
+function addCurrentQuickFavorite() {
+  const item = currentQuickFavoriteItem();
+  if (!item) {
+    return;
+  }
+  const ids = quickFavorites[quickFavoriteSlot] || [];
+  if (!ids.includes(String(item.id))) {
+    quickFavorites[quickFavoriteSlot] = [...ids, String(item.id)];
+    saveQuickFavorites();
+  }
+  syncQuickFavoriteButtons();
+  renderQuickFavoritePanel();
 }
 
 function browserItems() {
@@ -2940,6 +3154,9 @@ function bodyColorOptionsForCurrentPart() {
   const part = state.data.parts?.[selectedJobBodyPartKey()];
   const variants = part?.palette?.variants || {};
   const available = new Set(Object.keys(variants).map(String));
+  if (part?.palette?.base) {
+    available.add("0");
+  }
   if (!available.size) {
     return allColors.filter((item) => String(item.id) === "0");
   }
@@ -3047,13 +3264,28 @@ function refreshMountButtons() {
     return;
   }
   const mounts = mountOptionsForJob();
-  const activeCategory = mountCategory(selectedMountOption());
+  const activeMount = selectedMountOption();
+  const activeCategory = mountCategory(activeMount);
   mountButtons.querySelectorAll("[data-mount-category]").forEach((button) => {
     const category = button.dataset.mountCategory;
-    const available = mounts.some((mount) => mountCategory(mount) === category);
+    const categoryMounts = mounts.filter((mount) => mountCategory(mount) === category);
+    const available = categoryMounts.length > 0;
     button.disabled = !available;
     button.classList.toggle("active", available && activeCategory === category);
-    button.title = available ? "" : tr("text", "modeUnavailable");
+    if (!available) {
+      button.title = tr("text", "modeUnavailable");
+      return;
+    }
+    if (categoryMounts.length > 1) {
+      const labels = categoryMounts.map((mount) => mount.label || mount.key).join(" → ");
+      button.title = `點擊依序切換：${labels} → 關閉`;
+      button.setAttribute("aria-label", button.title);
+      return;
+    }
+    button.title = activeMount === categoryMounts[0]
+      ? `${categoryMounts[0].label || categoryMounts[0].key}；再次點擊關閉`
+      : categoryMounts[0].label || "";
+    button.setAttribute("aria-label", button.title || button.textContent);
   });
 }
 
@@ -3612,9 +3844,11 @@ async function copyShareLink() {
   try {
     await navigator.clipboard.writeText(url.toString());
     notifyStatus(trText("shareCopied"));
+    showToolbarButtonFeedback(shareButton, "shareDone", "share");
   } catch (_) {
     window.location.hash = url.hash;
     notifyStatus(trText("shareUpdated"));
+    showToolbarButtonFeedback(shareButton, "shareUpdatedDone", "share");
   }
 }
 
@@ -3817,7 +4051,7 @@ async function saveCurrentGif() {
   }
 }
 
-function clearWearables() {
+async function clearWearables() {
   state.headgearSlots = ["none", "none", "none"];
   state.cape = "none";
   state.wearableFrame = 0;
@@ -3835,8 +4069,9 @@ function clearWearables() {
   }
   refreshEquipmentSelects();
   refreshColorSelects();
-  prepareAndDraw();
+  await prepareAndDraw();
   notifyStatus(trText("cleared"));
+  showToolbarButtonFeedback(clearButton, "clearDone", "clear");
 }
 
 function enableSelectWheel(select) {
@@ -4087,6 +4322,29 @@ async function boot() {
       }
     });
   });
+  quickFavoriteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const slot = button.dataset.favoriteSlot;
+      if (!quickFavoritePanel.hidden && quickFavoriteSlot === slot) {
+        closeQuickFavoritePanel();
+      } else {
+        openQuickFavoritePanel(slot);
+      }
+    });
+    button.addEventListener("keydown", (event) => {
+      const direction = {
+        ArrowUp: -1,
+        ArrowLeft: -1,
+        ArrowDown: 1,
+        ArrowRight: 1,
+      }[event.key];
+      if (!direction) return;
+      event.preventDefault();
+      cycleQuickFavoriteItem(button, direction);
+    });
+  });
+  addQuickFavoriteButton?.addEventListener("click", addCurrentQuickFavorite);
+  closeQuickFavoriteButton?.addEventListener("click", closeQuickFavoritePanel);
   document.querySelectorAll("[data-clear-slot]").forEach((button) => {
     button.addEventListener("click", () => {
       const slot = button.dataset.clearSlot;
@@ -4132,10 +4390,14 @@ async function boot() {
       }
       const category = button.dataset.mountCategory;
       const activeMount = selectedMountOption();
-      if (activeMount && mountCategory(activeMount) === category) {
+      const categoryMounts = mountOptionsForJob().filter((mount) => mountCategory(mount) === category);
+      if (activeMount && mountCategory(activeMount) === category && categoryMounts.length > 1) {
+        const activeIndex = categoryMounts.findIndex((mount) => mount.key === activeMount.key);
+        state.mount = categoryMounts[activeIndex + 1]?.key || "none";
+      } else if (activeMount && mountCategory(activeMount) === category) {
         state.mount = "none";
       } else {
-        state.mount = mountOptionsForJob().find((mount) => mountCategory(mount) === category)?.key || "none";
+        state.mount = categoryMounts[0]?.key || "none";
       }
       state.riding = state.mount !== "none";
       normalizeJobModes();

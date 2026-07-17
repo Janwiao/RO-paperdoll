@@ -2462,6 +2462,14 @@
           },
           "resource": "dragon_knight_riding",
           "label": "通用坐騎 (General Mount)"
+        },
+        "mount_dragon": {
+          "parts": {
+            "female": "job_female_dragon_knight_chicken",
+            "male": "job_male_dragon_knight_chicken"
+          },
+          "resource": "dragon_knight_chicken",
+          "label": "龍 (Dragon)"
         }
       },
       "mounts": [
@@ -2470,6 +2478,13 @@
           "label": "通用坐騎 (General Mount)",
           "group": "general",
           "variant": "mount_general",
+          "secondVariant": null
+        },
+        {
+          "key": "dragon",
+          "label": "龍 (Dragon)",
+          "group": "job",
+          "variant": "mount_dragon",
           "secondVariant": null
         }
       ],
@@ -2502,6 +2517,14 @@
           },
           "resource": "imperial_guard_riding",
           "label": "通用坐騎 (General Mount)"
+        },
+        "mount_griffon": {
+          "parts": {
+            "female": "job_female_imperial_guard_chicken",
+            "male": "job_male_imperial_guard_chicken"
+          },
+          "resource": "imperial_guard_chicken",
+          "label": "獅鷲 (Griffon)"
         }
       },
       "mounts": [
@@ -2510,6 +2533,13 @@
           "label": "通用坐騎 (General Mount)",
           "group": "general",
           "variant": "mount_general",
+          "secondVariant": null
+        },
+        {
+          "key": "griffon",
+          "label": "獅鷲 (Griffon)",
+          "group": "job",
+          "variant": "mount_griffon",
           "secondVariant": null
         }
       ],
@@ -2640,6 +2670,14 @@
           },
           "resource": "windhawk_riding",
           "label": "通用坐騎 (General Mount)"
+        },
+        "mount_warg": {
+          "parts": {
+            "female": "job_female_windhawk_wolf",
+            "male": "job_male_windhawk_wolf"
+          },
+          "resource": "wolf_windhawk",
+          "label": "狼 (Warg)"
         }
       },
       "mounts": [
@@ -2648,6 +2686,13 @@
           "label": "通用坐騎 (General Mount)",
           "group": "general",
           "variant": "mount_general",
+          "secondVariant": null
+        },
+        {
+          "key": "warg",
+          "label": "狼 (Warg)",
+          "group": "job",
+          "variant": "mount_warg",
           "secondVariant": null
         }
       ],
@@ -2744,16 +2789,8 @@
             "female": "job_female_meister_madogear",
             "male": "job_male_meister_madogear"
           },
-          "resource": "meister_madogear1",
-          "label": "魔導機甲 (Madogear)"
-        },
-        "mount_madogear2": {
-          "parts": {
-            "female": "job_female_meister_madogear2",
-            "male": "job_male_meister_madogear2"
-          },
           "resource": "meister_madogear2",
-          "label": "魔導機甲 2 (Madogear 2)"
+          "label": "魔導機甲 (Madogear)"
         }
       },
       "mounts": [
@@ -2769,13 +2806,6 @@
           "label": "魔導機甲 (Madogear)",
           "group": "special",
           "variant": "mount_madogear",
-          "secondVariant": null
-        },
-        {
-          "key": "madogear2",
-          "label": "魔導機甲 2 (Madogear 2)",
-          "group": "special",
-          "variant": "mount_madogear2",
           "secondVariant": null
         }
       ],
@@ -37768,18 +37798,6 @@
       "kind": "body",
       "label": "機械工匠 魔導裝甲 第二服裝 male",
       "data": "data/parts/job_male_mechanic_mado_armor_c1.json"
-    },
-    "job_female_meister_madogear2": {
-      "key": "job_female_meister_madogear2",
-      "kind": "body",
-      "label": "機甲神匠 魔導機甲 2 female",
-      "data": "data/parts/job_female_meister_madogear2.json"
-    },
-    "job_male_meister_madogear2": {
-      "key": "job_male_meister_madogear2",
-      "kind": "body",
-      "label": "機甲神匠 魔導機甲 2 male",
-      "data": "data/parts/job_male_meister_madogear2.json"
     },
     "hair_female_1": {
       "key": "hair_female_1",
@@ -85828,6 +85846,42 @@
       "kind": "cape",
       "label": "ROBE_C_Doram_Paw_Hammer",
       "data": "data/parts/doram_cape_spirit_handler_riding_male_301.json.gz"
+    },
+    "job_female_dragon_knight_chicken": {
+      "key": "job_female_dragon_knight_chicken",
+      "kind": "body",
+      "label": "天龍騎士 龍騎 female",
+      "data": "data/parts/job_female_dragon_knight_chicken.json"
+    },
+    "job_male_dragon_knight_chicken": {
+      "key": "job_male_dragon_knight_chicken",
+      "kind": "body",
+      "label": "天龍騎士 龍騎 male",
+      "data": "data/parts/job_male_dragon_knight_chicken.json"
+    },
+    "job_female_imperial_guard_chicken": {
+      "key": "job_female_imperial_guard_chicken",
+      "kind": "body",
+      "label": "帝國聖衛軍 獅鷲 female",
+      "data": "data/parts/job_female_imperial_guard_chicken.json"
+    },
+    "job_male_imperial_guard_chicken": {
+      "key": "job_male_imperial_guard_chicken",
+      "kind": "body",
+      "label": "帝國聖衛軍 獅鷲 male",
+      "data": "data/parts/job_male_imperial_guard_chicken.json"
+    },
+    "job_female_windhawk_wolf": {
+      "key": "job_female_windhawk_wolf",
+      "kind": "body",
+      "label": "疾風獵人 狼 female",
+      "data": "data/parts/job_female_windhawk_wolf.json"
+    },
+    "job_male_windhawk_wolf": {
+      "key": "job_male_windhawk_wolf",
+      "kind": "body",
+      "label": "疾風獵人 狼 male",
+      "data": "data/parts/job_male_windhawk_wolf.json"
     }
   },
   "races": {

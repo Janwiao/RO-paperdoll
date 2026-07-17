@@ -37,22 +37,38 @@
       </div>
 
       <div class="worn-panel" aria-label="目前穿戴">
+        <p class="worn-panel-note">
+          <span>點一下欄位可快速卸下服飾／肩飾</span>
+          <span>選取星號後，可用方向鍵快速切換收藏服飾</span>
+        </p>
         <div class="worn-row" data-worn-slot="headgear-0">
           <span>服飾 1</span>
           <button type="button" data-clear-slot="headgear-0">無</button>
+          <button type="button" class="quick-favorite-open" data-favorite-slot="headgear-0" title="服飾 1 單件最愛" aria-label="開啟服飾 1 單件最愛" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight">☆</button>
         </div>
         <div class="worn-row" data-worn-slot="headgear-1">
           <span>服飾 2</span>
           <button type="button" data-clear-slot="headgear-1">無</button>
+          <button type="button" class="quick-favorite-open" data-favorite-slot="headgear-1" title="服飾 2 單件最愛" aria-label="開啟服飾 2 單件最愛" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight">☆</button>
         </div>
         <div class="worn-row" data-worn-slot="headgear-2">
           <span>服飾 3</span>
           <button type="button" data-clear-slot="headgear-2">無</button>
+          <button type="button" class="quick-favorite-open" data-favorite-slot="headgear-2" title="服飾 3 單件最愛" aria-label="開啟服飾 3 單件最愛" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight">☆</button>
         </div>
         <div class="worn-row" data-worn-slot="cape">
           <span>肩飾</span>
           <button type="button" data-clear-slot="cape">無</button>
+          <button type="button" class="quick-favorite-open" data-favorite-slot="cape" title="肩飾單件最愛" aria-label="開啟肩飾單件最愛" aria-keyshortcuts="ArrowUp ArrowDown ArrowLeft ArrowRight">☆</button>
         </div>
+        <section class="quick-favorite-panel" id="quickFavoritePanel" aria-label="單件最愛" hidden>
+          <div class="quick-favorite-head">
+            <strong id="quickFavoriteTitle">服飾 1 單件最愛</strong>
+            <button type="button" id="closeQuickFavoriteButton" title="關閉" aria-label="關閉單件最愛">×</button>
+          </div>
+          <button type="button" class="primary quick-favorite-add" id="addQuickFavoriteButton">加入目前服飾 (Add Current)</button>
+          <div class="quick-favorite-list" id="quickFavoriteList" aria-live="polite"></div>
+        </section>
       </div>
     </section>
 
@@ -226,6 +242,6 @@
   </main>
 
   <script src="vendor/pako_inflate.min.js?v=2.1.0"></script>
-  <script src="app.js?v=20260716-paperdoll-v2-doram-capes-1"></script>
+  <script src="app.js?v=20260718-paperdoll-v2-favorite-cycling-1"></script>
 </body>
 </html>

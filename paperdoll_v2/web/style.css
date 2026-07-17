@@ -146,6 +146,13 @@ p {
   padding: 0 8px;
 }
 
+.icon-button.toolbar-text-button.is-confirmed {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent 82%);
+}
+
 .icon-button:hover,
 .segmented button:hover,
 .button-strip button:hover,
@@ -178,9 +185,18 @@ p {
   border-top: 1px solid var(--line);
 }
 
+.worn-panel-note {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
 .worn-row {
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
+  grid-template-columns: 96px minmax(0, 1fr) 30px;
   align-items: center;
   gap: 6px;
   min-height: 30px;
@@ -208,6 +224,49 @@ p {
 .worn-row.is-filled button {
   color: var(--text);
   background: #fff;
+}
+
+.quick-favorite-open {
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+}
+
+.quick-favorite-open:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.quick-favorite-panel {
+  display: grid;
+  gap: 7px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.quick-favorite-panel[hidden] { display: none; }
+
+.quick-favorite-head,
+.quick-favorite-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px;
+  align-items: center;
+  gap: 5px;
+}
+
+.quick-favorite-list {
+  display: grid;
+  gap: 5px;
+  max-height: 176px;
+  overflow-y: auto;
+}
+
+.quick-favorite-apply {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #paperCanvas {

@@ -702,6 +702,13 @@ body.section-paperdoll .paperdoll-icon-button.toolbar-text-button {
   padding: 0 8px;
 }
 
+body.section-paperdoll .paperdoll-icon-button.toolbar-text-button.is-confirmed {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent 82%);
+}
+
 body.section-paperdoll .paperdoll-icon-button.gif-export-button {
   width: 52px;
   min-width: 52px;
@@ -1150,9 +1157,18 @@ body.section-paperdoll .worn-panel {
   margin-top: 10px;
 }
 
+body.section-paperdoll .worn-panel-note {
+  display: grid;
+  gap: 2px;
+  margin: 0 0 2px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
 body.section-paperdoll .worn-row {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
+  grid-template-columns: 92px minmax(0, 1fr) 30px;
   align-items: center;
   gap: 6px;
   min-height: 28px;
@@ -1182,6 +1198,93 @@ body.section-paperdoll .worn-row button {
 body.section-paperdoll .worn-row.is-filled button {
   color: var(--text);
   background: #fff;
+}
+
+body.section-paperdoll .worn-row .quick-favorite-open {
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+  color: var(--accent);
+  background: #fff;
+  text-align: center;
+}
+
+body.section-paperdoll .worn-row .quick-favorite-open.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+body.section-paperdoll .worn-row .quick-favorite-open:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+body.section-paperdoll .quick-favorite-panel {
+  display: grid;
+  gap: 7px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+body.section-paperdoll .quick-favorite-panel[hidden] {
+  display: none;
+}
+
+body.section-paperdoll .quick-favorite-head,
+body.section-paperdoll .quick-favorite-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px;
+  align-items: center;
+  gap: 5px;
+}
+
+body.section-paperdoll .quick-favorite-head strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+body.section-paperdoll .quick-favorite-head button,
+body.section-paperdoll .quick-favorite-remove {
+  width: 30px;
+  min-width: 30px;
+  padding: 0;
+}
+
+body.section-paperdoll .quick-favorite-add {
+  width: 100%;
+  min-height: 32px;
+  font-size: 12px;
+}
+
+body.section-paperdoll .quick-favorite-list {
+  display: grid;
+  gap: 5px;
+  max-height: 176px;
+  overflow-y: auto;
+}
+
+body.section-paperdoll .quick-favorite-apply {
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.section-paperdoll .quick-favorite-apply.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+body.section-paperdoll .quick-favorite-empty {
+  margin: 2px 0;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 body.section-paperdoll .closet-panel {
