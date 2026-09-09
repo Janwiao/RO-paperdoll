@@ -1,4 +1,4 @@
-﻿const state = {
+const state = {
   data: null,
   effectBindings: { cape: {}, headgear: {} },
   itemFlags: { cape: {}, headgear: {} },
@@ -419,7 +419,7 @@ const languageOptions = {
   },
 };
 
-const appVersion = "20260718-paperdoll-v2-favorite-cycling-1";
+const appVersion = "20260718-paperdoll-v2-favorite-cycling-1-gz1-1931c511e5df";
 const storageKey = "nori.paperdoll.state.v2";
 const closetStorageKey = "nori.paperdoll.closet.v2";
 const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
