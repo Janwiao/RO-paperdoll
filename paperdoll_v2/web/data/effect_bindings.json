@@ -28,7 +28,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/153.png",
-            "male": "assets/hateffects/male/153.png"
+            "male": "assets/hateffects/female/153.png"
           }
         }
       ]
@@ -55,7 +55,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/162.png",
-            "male": "assets/hateffects/male/162.png"
+            "male": "assets/hateffects/female/162.png"
           }
         }
       ]
@@ -82,7 +82,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/173.png",
-            "male": "assets/hateffects/male/173.png"
+            "male": "assets/hateffects/female/173.png"
           }
         }
       ]
@@ -109,7 +109,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/185.png",
-            "male": "assets/hateffects/male/185.png"
+            "male": "assets/hateffects/female/185.png"
           }
         }
       ]
@@ -136,7 +136,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/187.png",
-            "male": "assets/hateffects/male/187.png"
+            "male": "assets/hateffects/female/187.png"
           }
         }
       ]
@@ -163,7 +163,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/189.png",
-            "male": "assets/hateffects/male/189.png"
+            "male": "assets/hateffects/female/189.png"
           }
         }
       ]
@@ -190,7 +190,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/190.png",
-            "male": "assets/hateffects/male/190.png"
+            "male": "assets/hateffects/female/190.png"
           }
         }
       ]
@@ -217,7 +217,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/191.png",
-            "male": "assets/hateffects/male/191.png"
+            "male": "assets/hateffects/female/191.png"
           }
         }
       ]
@@ -244,7 +244,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/218.png",
-            "male": "assets/hateffects/male/218.png"
+            "male": "assets/hateffects/female/218.png"
           }
         }
       ]
@@ -271,7 +271,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/220.png",
-            "male": "assets/hateffects/male/220.png"
+            "male": "assets/hateffects/female/220.png"
           }
         }
       ]
@@ -298,7 +298,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/239.png",
-            "male": "assets/hateffects/male/239.png"
+            "male": "assets/hateffects/female/239.png"
           }
         }
       ]
@@ -325,7 +325,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/243.png",
-            "male": "assets/hateffects/male/243.png"
+            "male": "assets/hateffects/female/243.png"
           }
         }
       ]
@@ -352,7 +352,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/282.png",
-            "male": "assets/hateffects/male/282.png"
+            "male": "assets/hateffects/female/282.png"
           }
         }
       ]
@@ -381,7 +381,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/40.png",
-            "male": "assets/hateffects/male/40.png"
+            "male": "assets/hateffects/female/40.png"
           }
         }
       ]
@@ -408,7 +408,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/4.png",
-            "male": "assets/hateffects/male/4.png"
+            "male": "assets/hateffects/female/4.png"
           }
         }
       ]
@@ -435,7 +435,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/45.png",
-            "male": "assets/hateffects/male/45.png"
+            "male": "assets/hateffects/female/45.png"
           }
         }
       ]
@@ -462,7 +462,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/18.png",
-            "male": "assets/hateffects/male/18.png"
+            "male": "assets/hateffects/female/18.png"
           }
         }
       ]
@@ -489,7 +489,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/14.png",
-            "male": "assets/hateffects/male/14.png"
+            "male": "assets/hateffects/female/14.png"
           }
         }
       ]
@@ -516,7 +516,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/53.png",
-            "male": "assets/hateffects/male/53.png"
+            "male": "assets/hateffects/female/53.png"
           }
         }
       ]
@@ -542,8 +542,8 @@
             "composite": "plus-lighter"
           },
           "asset": {
-            "female": "assets/hateffects/female/52.png",
-            "male": "assets/hateffects/male/52.png"
+            "female": "assets/hateffects/female/14.png",
+            "male": "assets/hateffects/female/14.png"
           }
         }
       ]
@@ -570,7 +570,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/81.png",
-            "male": "assets/hateffects/male/81.png"
+            "male": "assets/hateffects/female/81.png"
           }
         }
       ]
@@ -597,7 +597,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/91.png",
-            "male": "assets/hateffects/male/91.png"
+            "male": "assets/hateffects/female/91.png"
           }
         }
       ]
@@ -624,7 +624,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/98.png",
-            "male": "assets/hateffects/male/98.png"
+            "male": "assets/hateffects/female/98.png"
           }
         }
       ]
@@ -651,7 +651,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/95.png",
-            "male": "assets/hateffects/male/95.png"
+            "male": "assets/hateffects/female/95.png"
           }
         }
       ]
@@ -678,7 +678,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/125.png",
-            "male": "assets/hateffects/male/125.png"
+            "male": "assets/hateffects/female/125.png"
           }
         }
       ]
@@ -705,7 +705,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/126.png",
-            "male": "assets/hateffects/male/126.png"
+            "male": "assets/hateffects/female/126.png"
           }
         }
       ]
@@ -732,7 +732,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/127.png",
-            "male": "assets/hateffects/male/127.png"
+            "male": "assets/hateffects/female/127.png"
           }
         }
       ]
@@ -759,7 +759,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/124.png",
-            "male": "assets/hateffects/male/124.png"
+            "male": "assets/hateffects/female/124.png"
           }
         }
       ]
@@ -786,7 +786,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/130.png",
-            "male": "assets/hateffects/male/130.png"
+            "male": "assets/hateffects/female/130.png"
           }
         }
       ]
@@ -813,7 +813,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/132.png",
-            "male": "assets/hateffects/male/132.png"
+            "male": "assets/hateffects/female/132.png"
           }
         }
       ]
@@ -840,7 +840,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/133.png",
-            "male": "assets/hateffects/male/133.png"
+            "male": "assets/hateffects/female/133.png"
           }
         }
       ]
@@ -867,7 +867,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/135.png",
-            "male": "assets/hateffects/male/135.png"
+            "male": "assets/hateffects/female/135.png"
           }
         }
       ]
@@ -894,7 +894,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/134.png",
-            "male": "assets/hateffects/male/134.png"
+            "male": "assets/hateffects/female/134.png"
           }
         }
       ]
@@ -921,7 +921,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/136.png",
-            "male": "assets/hateffects/male/136.png"
+            "male": "assets/hateffects/female/136.png"
           }
         }
       ]
@@ -948,7 +948,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/137.png",
-            "male": "assets/hateffects/male/137.png"
+            "male": "assets/hateffects/female/137.png"
           }
         }
       ]
@@ -975,7 +975,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/138.png",
-            "male": "assets/hateffects/male/138.png"
+            "male": "assets/hateffects/female/138.png"
           }
         }
       ]
@@ -1002,7 +1002,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/152.png",
-            "male": "assets/hateffects/male/152.png"
+            "male": "assets/hateffects/female/152.png"
           }
         }
       ]
@@ -1029,7 +1029,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/156.png",
-            "male": "assets/hateffects/male/156.png"
+            "male": "assets/hateffects/female/156.png"
           }
         }
       ]
@@ -1056,7 +1056,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/157.png",
-            "male": "assets/hateffects/male/157.png"
+            "male": "assets/hateffects/female/157.png"
           }
         }
       ]
@@ -1083,7 +1083,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/161.png",
-            "male": "assets/hateffects/male/161.png"
+            "male": "assets/hateffects/female/161.png"
           }
         }
       ]
@@ -1110,7 +1110,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/221.png",
-            "male": "assets/hateffects/male/221.png"
+            "male": "assets/hateffects/female/221.png"
           }
         }
       ]
@@ -1136,8 +1136,8 @@
             "composite": "plus-lighter"
           },
           "asset": {
-            "female": "assets/hateffects/female/178.png",
-            "male": "assets/hateffects/male/178.png"
+            "female": "assets/hateffects/female/152.png",
+            "male": "assets/hateffects/female/152.png"
           }
         }
       ]
@@ -1164,7 +1164,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/181.png",
-            "male": "assets/hateffects/male/181.png"
+            "male": "assets/hateffects/female/181.png"
           }
         }
       ]
@@ -1212,7 +1212,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/223.png",
-            "male": "assets/hateffects/male/223.png"
+            "male": "assets/hateffects/female/223.png"
           }
         }
       ]
@@ -1239,7 +1239,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/236.png",
-            "male": "assets/hateffects/male/236.png"
+            "male": "assets/hateffects/female/236.png"
           }
         }
       ]
@@ -1266,7 +1266,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/237.png",
-            "male": "assets/hateffects/male/237.png"
+            "male": "assets/hateffects/female/237.png"
           }
         }
       ]
@@ -1293,7 +1293,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/233.png",
-            "male": "assets/hateffects/male/233.png"
+            "male": "assets/hateffects/female/233.png"
           }
         }
       ]
@@ -1320,7 +1320,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/234.png",
-            "male": "assets/hateffects/male/234.png"
+            "male": "assets/hateffects/female/234.png"
           }
         }
       ]
@@ -1347,7 +1347,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/235.png",
-            "male": "assets/hateffects/male/235.png"
+            "male": "assets/hateffects/female/235.png"
           }
         }
       ]
@@ -1374,7 +1374,7 @@
           },
           "asset": {
             "female": "assets/hateffects/female/281.png",
-            "male": "assets/hateffects/male/281.png"
+            "male": "assets/hateffects/female/281.png"
           }
         }
       ]

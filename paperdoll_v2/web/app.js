@@ -8,7 +8,7 @@ const state = {
     items: {},
   },
   previewBackgrounds: [{ id: "transparent", name: "透明", type: "checkerboard" }],
-  images: new Map(),
+  images: new window.NoriImageCache(),
   loadingImages: new Map(),
   loadingPartShards: new Map(),
   effectImages: new Map(),
@@ -419,7 +419,7 @@ const languageOptions = {
   },
 };
 
-const appVersion = "20260718-paperdoll-v2-favorite-cycling-1-gz1-1931c511e5df";
+const appVersion = "20260916-paperdoll-v2-resource-cache-1-img1-26544f23f610-gz1-3ff009f5c091";
 const storageKey = "nori.paperdoll.state.v2";
 const closetStorageKey = "nori.paperdoll.closet.v2";
 const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
@@ -772,13 +772,33 @@ function notifyStatus(message) {
   }, 1200);
 }
 
+const pendingImageUrls = new Map();
+const imageLoadStats = { requests: 0, shared: 0 };
+
 function loadImage(src) {
-  return new Promise((resolve, reject) => {
+  const url = new URL(appUrl(`${src}?v=${appVersion}`), window.location.href).href;
+  // Part identities stay separate; identical URLs can share one decoded image.
+  for (const value of state.images.values()) {
+    const images = value instanceof HTMLCanvasElement ? [] : Object.values(value);
+    const image = images.find(candidate => candidate?.src === url);
+    if (image) {
+      imageLoadStats.shared += 1;
+      return Promise.resolve(image);
+    }
+  }
+  if (pendingImageUrls.has(url)) {
+    imageLoadStats.shared += 1;
+    return pendingImageUrls.get(url);
+  }
+  imageLoadStats.requests += 1;
+  const pending = new Promise((resolve, reject) => {
     const image = new Image();
     image.onload = () => resolve(image);
     image.onerror = () => reject(new Error(`Failed to load ${src}`));
-    image.src = appUrl(`${src}?v=${appVersion}`);
-  });
+    image.src = url;
+  }).finally(() => pendingImageUrls.delete(url));
+  pendingImageUrls.set(url, pending);
+  return pending;
 }
 
 async function ensurePartImages(partKey) {
@@ -786,7 +806,7 @@ async function ensurePartImages(partKey) {
     return;
   }
   await ensurePartData(partKey);
-  if (state.images.has(partKey)) {
+  if (state.images.get(partKey)) {
     return;
   }
   if (state.loadingImages.has(partKey)) {
@@ -3320,14 +3340,38 @@ function visiblePartKeys() {
   return keys.filter(Boolean);
 }
 
+let prepareRevision = 0;
+
+function imageCacheStats() {
+  return { ...state.images.stats(), ...imageLoadStats, pendingUrls: pendingImageUrls.size };
+}
+
+function pruneImageCache() {
+  // A current outfit is allowed to exceed the budget. Loaded/in-flight parts
+  // must not be removed while another preparation is still assembling pools.
+  if (state.loadingImages.size) return;
+  const protectedKeys = new Set(visiblePartKeys());
+  for (const key of visiblePartKeys()) {
+    const part = state.data.parts[key];
+    if (part) protectedKeys.add(`${key}|indexed|${paletteColorForPart(part)}`);
+  }
+  state.images.prune(protectedKeys);
+}
+
 async function prepareAndDraw() {
+  const revision = ++prepareRevision;
   resetRenderFitScale();
   await Promise.all(visiblePartKeys().map((partKey) => ensurePartImages(partKey)));
+  if (revision !== prepareRevision) {
+    pruneImageCache();
+    return;
+  }
   normalizeBodyColorForCurrentPart();
   refreshColorSelects();
   syncControls();
   draw();
   saveLocalState();
+  pruneImageCache();
 }
 
 async function setAction(action) {
