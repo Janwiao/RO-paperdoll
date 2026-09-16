@@ -1,6 +1,6 @@
 ﻿Nori Paperdoll V2 release package
 
-Built: 2026-09-16 15:00:01
+Built: 2026-09-16 20:03:02
 Part detail files: 8388
 Main JSON bytes: 1953559
 Asset files: 4334

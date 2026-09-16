@@ -419,7 +419,7 @@ const languageOptions = {
   },
 };
 
-const appVersion = "20260916-paperdoll-v2-resource-cache-1-img1-26544f23f610-gz1-3ff009f5c091";
+const appVersion = "20260916-paperdoll-v2-startup-1-img1-26544f23f610-gz1-3ff009f5c091";
 const storageKey = "nori.paperdoll.state.v2";
 const closetStorageKey = "nori.paperdoll.closet.v2";
 const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
@@ -806,29 +806,34 @@ async function ensurePartImages(partKey) {
     return;
   }
   await ensurePartData(partKey);
-  if (state.images.get(partKey)) {
-    return;
-  }
   if (state.loadingImages.has(partKey)) {
     await state.loadingImages.get(partKey);
-    return;
+    // The selected color may have changed while this part was loading.
+    return ensurePartImages(partKey);
   }
   const part = state.data.parts[partKey];
   if (!part) {
     return;
   }
+  const existing = state.images.get(partKey);
+  // Standard colors use the original image. Some jobs have an external color
+  // "0", so test the actual palette entry rather than the numeric color ID.
+  const needsIndex = Boolean(part.palette?.indexSheet && part.palette?.base
+    && part.palette?.variants?.[paletteColorForPart(part)]
+    && part.palette.variants[paletteColorForPart(part)] !== part.palette.base);
+  if (existing && (!needsIndex || existing.paletteIndex)) return;
   const loading = (async () => {
-    const pools = {};
-    if (part.pools) {
-      await Promise.all(Object.entries(part.pools).map(async ([poolName, pool]) => {
-        pools[poolName] = await loadImage(pool.sheet);
-      }));
-    } else {
-      pools.indexed = await loadImage(part.sheet);
+    const pools = existing || {};
+    const requests = [];
+    if (!existing) {
+      for (const [poolName, pool] of Object.entries(part.pools || { indexed: { sheet: part.sheet } })) {
+        requests.push(loadImage(pool.sheet).then(image => { pools[poolName] = image; }));
+      }
     }
-    if (part.palette?.indexSheet) {
-      pools.paletteIndex = await loadImage(part.palette.indexSheet);
+    if (needsIndex && !pools.paletteIndex) {
+      requests.push(loadImage(part.palette.indexSheet).then(image => { pools.paletteIndex = image; }));
     }
+    await Promise.all(requests);
     state.images.set(partKey, pools);
   })();
   state.loadingImages.set(partKey, loading);
@@ -1106,7 +1111,8 @@ function paletteColorForPart(part) {
 
 function paletteImageForPart(part, image, indexImage, poolName) {
   const colorId = paletteColorForPart(part);
-  if (poolName !== "indexed" || !colorId || !part.palette?.base || !part.palette?.variants?.[colorId]) {
+  if (poolName !== "indexed" || !colorId || !part.palette?.base || !part.palette?.variants?.[colorId]
+      || part.palette.variants[colorId] === part.palette.base) {
     return image;
   }
   const cacheKey = `${part.key}|${poolName}|${colorId}`;
@@ -4143,62 +4149,63 @@ function enableSelectWheel(select) {
   }, { passive: false });
 }
 
+const startupProgress = { stage: "讀取人物與物品資料", started: 0, timer: null, retry: null };
+
+function updateStartupProgress() {
+  const seconds = Math.floor((performance.now() - startupProgress.started) / 1000);
+  statusText.textContent = `${startupProgress.stage}…（${seconds} 秒）`;
+  if (seconds >= 10 && !startupProgress.retry) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "重新載入";
+    button.addEventListener("click", () => window.location.reload());
+    statusText.after(button);
+    startupProgress.retry = button;
+  }
+}
+
+async function startupJson(path) {
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), 30000);
+  try {
+    const response = await fetch(appUrl(`${path}?v=${appVersion}`), { signal: controller.signal });
+    if (!response.ok) throw new Error(`HTTP ${response.status}: ${path}`);
+    return await response.json();
+  } finally {
+    window.clearTimeout(timer);
+  }
+}
+
 async function boot() {
-  let response = null;
+  startupProgress.started = performance.now();
+  statusText.setAttribute("role", "status");
+  updateStartupProgress();
+  startupProgress.timer = window.setInterval(updateStartupProgress, 1000);
+  // Start independent documents together instead of making the first frame
+  // wait for six consecutive network round trips. Keep the same fallback data.
+  const supplemental = Promise.all([
+    ["effectBindings", "effect_bindings.json"],
+    ["itemMeta", "item_meta.json"],
+    ["itemFlags", "item_flags.json"],
+    ["layerPriority", "layer_priority.json"],
+    ["previewBackgrounds", "preview_backgrounds.json"],
+  ].map(async ([key, file]) => {
+    try {
+      state[key] = await startupJson(`data/${file}`);
+    } catch (error) {
+      console.warn(`${file} unavailable`, error);
+    }
+  }));
   try {
-    response = await fetch(appUrl(`data/paperdoll.bootstrap.json?v=${appVersion}`));
+    state.data = await startupJson("data/paperdoll.bootstrap.json");
   } catch (error) {
-    console.warn("Resource bootstrap request failed; falling back to full manifest", error);
+    console.warn("Resource bootstrap unavailable; falling back to full manifest", error);
+    state.data = await startupJson("data/paperdoll.json");
   }
-  if (!response?.ok) {
-    console.warn("Resource bootstrap unavailable; falling back to full manifest");
-    response = await fetch(appUrl(`data/paperdoll.json?v=${appVersion}`));
-  }
-  if (!response.ok) {
-    throw new Error("Paperdoll manifest unavailable");
-  }
-  state.data = await response.json();
   state.data.parts ||= {};
-  try {
-    const effectResponse = await fetch(appUrl(`data/effect_bindings.json?v=${appVersion}`));
-    if (effectResponse.ok) {
-      state.effectBindings = await effectResponse.json();
-    }
-  } catch (error) {
-    console.warn("Effect bindings unavailable", error);
-  }
-  try {
-    const itemMetaResponse = await fetch(appUrl(`data/item_meta.json?v=${appVersion}`));
-    if (itemMetaResponse.ok) {
-      state.itemMeta = await itemMetaResponse.json();
-    }
-  } catch (error) {
-    console.warn("Item metadata unavailable", error);
-  }
-  try {
-    const itemFlagsResponse = await fetch(appUrl(`data/item_flags.json?v=${appVersion}`));
-    if (itemFlagsResponse.ok) {
-      state.itemFlags = await itemFlagsResponse.json();
-    }
-  } catch (error) {
-    console.warn("Item flags unavailable", error);
-  }
-  try {
-    const layerPriorityResponse = await fetch(appUrl(`data/layer_priority.json?v=${appVersion}`));
-    if (layerPriorityResponse.ok) {
-      state.layerPriority = await layerPriorityResponse.json();
-    }
-  } catch (error) {
-    console.warn("Layer priority unavailable", error);
-  }
-  try {
-    const backgroundResponse = await fetch(appUrl(`data/preview_backgrounds.json?v=${appVersion}`));
-    if (backgroundResponse.ok) {
-      state.previewBackgrounds = await backgroundResponse.json();
-    }
-  } catch (error) {
-    console.warn("Preview backgrounds unavailable", error);
-  }
+  await supplemental;
+  startupProgress.stage = "載入人物圖片";
+  updateStartupProgress();
   try {
     state.customBackgroundData = localStorage.getItem(customBackgroundStorageKey) || "";
   } catch (_) {
@@ -4661,10 +4668,17 @@ async function boot() {
     syncControls();
     draw();
   }
+  window.clearInterval(startupProgress.timer);
+  startupProgress.retry?.remove();
   window.requestAnimationFrame(tick);
 }
 
 boot().catch((error) => {
   console.error(error);
-  statusText.textContent = error.message;
+  window.clearInterval(startupProgress.timer);
+  if (!startupProgress.retry) {
+    startupProgress.started = performance.now() - 10000;
+    updateStartupProgress();
+  }
+  statusText.textContent = `載入失敗，請重新載入。${error.message}`;
 });
