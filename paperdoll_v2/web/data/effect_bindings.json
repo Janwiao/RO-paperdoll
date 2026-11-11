@@ -356,6 +356,27 @@
           }
         }
       ]
+    },
+    "302": {
+      "item_id": 302,
+      "item_const": "ROBE_C_Angel_Gift",
+      "effects": [
+        {
+          "id": 292,
+          "const": "HAT_EF_C_Angel_Gift",
+          "resource_file": "efst_C_Angel_Gift\\\\hikariri.str",
+          "hat_effect_pos": -11.0,
+          "hat_effect_pos_x": 0.0,
+          "render_before_character": true,
+          "attached_to_head": false,
+          "ignore_riding": false,
+          "runtime": {},
+          "asset": {
+            "female": "assets/hateffects/female/292.png",
+            "male": "assets/hateffects/male/292.png"
+          }
+        }
+      ]
     }
   },
   "headgear": {

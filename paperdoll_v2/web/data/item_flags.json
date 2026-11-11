@@ -67,6 +67,12 @@
     "291": {
       "effect": true
     },
+    "302": {
+      "effect": true
+    },
+    "325": {
+      "motion": true
+    },
     "61": {
       "motion": true
     },
@@ -1392,6 +1398,54 @@
       "motion": true
     },
     "2817": {
+      "motion": true
+    },
+    "2827": {
+      "motion": true
+    },
+    "2830": {
+      "motion": true
+    },
+    "2839": {
+      "motion": true
+    },
+    "2840": {
+      "motion": true
+    },
+    "2844": {
+      "motion": true
+    },
+    "2852": {
+      "motion": true
+    },
+    "2855": {
+      "motion": true
+    },
+    "2856": {
+      "motion": true
+    },
+    "2860": {
+      "motion": true
+    },
+    "2862": {
+      "motion": true
+    },
+    "2863": {
+      "motion": true
+    },
+    "2864": {
+      "motion": true
+    },
+    "2868": {
+      "motion": true
+    },
+    "2887": {
+      "motion": true
+    },
+    "2892": {
+      "motion": true
+    },
+    "2897": {
       "motion": true
     },
     "311": {

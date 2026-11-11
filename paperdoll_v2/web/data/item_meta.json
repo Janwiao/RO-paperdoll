@@ -51332,8 +51332,21 @@
       "detail_url": null,
       "source": "master"
     },
-    "2829": {
-      "id": 2829,
+    "2830": {
+      "id": 2830,
+      "kind": "headgear",
+      "display_name": "Primordial Weapons",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Primordial_Weapons",
+      "sprite": "_Primordial_Weapons",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2831": {
+      "id": 2831,
       "kind": "headgear",
       "display_name": "Two Side Wing",
       "primary_itemid": null,
@@ -51345,16 +51358,859 @@
       "detail_url": null,
       "source": "master"
     },
-    "2830": {
-      "id": 2830,
+    "2832": {
+      "id": 2832,
       "kind": "headgear",
-      "display_name": "Primordial Weapons",
+      "display_name": "Pride A Helm",
       "primary_itemid": null,
       "itemids": [],
       "names": [],
       "slots": [],
-      "const": "ACCESSORY_Primordial_Weapons",
-      "sprite": "_Primordial_Weapons",
+      "const": "ACCESSORY_Pride_A_Helm",
+      "sprite": "_Pride_A_Helm",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2833": {
+      "id": 2833,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Head",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Head",
+      "sprite": "_C_CLB_BS_Head",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2834": {
+      "id": 2834,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Hood B",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Hood_B",
+      "sprite": "_C_CLB_BS_Hood_B",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2835": {
+      "id": 2835,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Hood M",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Hood_M",
+      "sprite": "_C_CLB_BS_Hood_M",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2836": {
+      "id": 2836,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Hood F",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Hood_F",
+      "sprite": "_C_CLB_BS_Hood_F",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2837": {
+      "id": 2837,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Hood Gm",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Hood_GM",
+      "sprite": "_C_CLB_BS_Hood_GM",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2838": {
+      "id": 2838,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Hood Gf",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Hood_GF",
+      "sprite": "_C_CLB_BS_Hood_GF",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2839": {
+      "id": 2839,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Pilot Fish",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Pilot_Fish",
+      "sprite": "_C_CLB_BS_Pilot_Fish",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2840": {
+      "id": 2840,
+      "kind": "headgear",
+      "display_name": "C Clb Bs Mini",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_CLB_BS_Mini",
+      "sprite": "_C_CLB_BS_Mini",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2841": {
+      "id": 2841,
+      "kind": "headgear",
+      "display_name": "C Spiritual Eye Mask",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Spiritual_Eye_Mask",
+      "sprite": "_C_Spiritual_Eye_Mask",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2842": {
+      "id": 2842,
+      "kind": "headgear",
+      "display_name": "C Water Elem Dragon",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Water_Elem_Dragon",
+      "sprite": "_C_Water_Elem_Dragon",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2843": {
+      "id": 2843,
+      "kind": "headgear",
+      "display_name": "Holy Rosario Silver",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Holy_Rosario_Silver",
+      "sprite": "_Holy_Rosario_Silver",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2844": {
+      "id": 2844,
+      "kind": "headgear",
+      "display_name": "C Culture Pod",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Culture_Pod",
+      "sprite": "_C_Culture_Pod",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2845": {
+      "id": 2845,
+      "kind": "headgear",
+      "display_name": "C Tarou Magical Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Tarou_Magical_Hat",
+      "sprite": "_C_Tarou_Magical_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2846": {
+      "id": 2846,
+      "kind": "headgear",
+      "display_name": "C Mask Of Ifrit",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Mask_of_Ifrit",
+      "sprite": "_C_Mask_of_Ifrit",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2847": {
+      "id": 2847,
+      "kind": "headgear",
+      "display_name": "C Fine Chada",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Fine_Chada",
+      "sprite": "_C_Fine_Chada",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2848": {
+      "id": 2848,
+      "kind": "headgear",
+      "display_name": "C Vibrant Jeepney",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Vibrant_Jeepney",
+      "sprite": "_C_Vibrant_Jeepney",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2849": {
+      "id": 2849,
+      "kind": "headgear",
+      "display_name": "C Swift Bicycle",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Swift_Bicycle",
+      "sprite": "_C_Swift_Bicycle",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2850": {
+      "id": 2850,
+      "kind": "headgear",
+      "display_name": "C Giant Panda",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Giant_Panda",
+      "sprite": "_C_Giant_Panda",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2851": {
+      "id": 2851,
+      "kind": "headgear",
+      "display_name": "C Moonbow Long Hair",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Moonbow_Long_Hair",
+      "sprite": "_C_Moonbow_Long_Hair",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2852": {
+      "id": 2852,
+      "kind": "headgear",
+      "display_name": "C Nf Stamp",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Nf_Stamp",
+      "sprite": "_C_Nf_Stamp",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2853": {
+      "id": 2853,
+      "kind": "headgear",
+      "display_name": "Bandana Il",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Bandana_IL",
+      "sprite": "_Bandana_IL",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2854": {
+      "id": 2854,
+      "kind": "headgear",
+      "display_name": "Poporing Sunvisor",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Poporing_SunVisor",
+      "sprite": "_Poporing_SunVisor",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2855": {
+      "id": 2855,
+      "kind": "headgear",
+      "display_name": "Pulse Of Yggdrasil",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Pulse_Of_Yggdrasil",
+      "sprite": "_Pulse_Of_Yggdrasil",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2856": {
+      "id": 2856,
+      "kind": "headgear",
+      "display_name": "Furios Orb",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Furios_Orb",
+      "sprite": "_Furios_Orb",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2857": {
+      "id": 2857,
+      "kind": "headgear",
+      "display_name": "Dauntless",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Dauntless",
+      "sprite": "_Dauntless",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2858": {
+      "id": 2858,
+      "kind": "headgear",
+      "display_name": "C Gerero Hair",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Gerero_Hair",
+      "sprite": "_C_Gerero_Hair",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2859": {
+      "id": 2859,
+      "kind": "headgear",
+      "display_name": "C Hanom Hair",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Hanom_Hair",
+      "sprite": "_C_Hanom_Hair",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2860": {
+      "id": 2860,
+      "kind": "headgear",
+      "display_name": "C Gerero Hairpin",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Gerero_Hairpin",
+      "sprite": "_C_Gerero_Hairpin",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2861": {
+      "id": 2861,
+      "kind": "headgear",
+      "display_name": "C Sirena Hairband",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Sirena_Hairband",
+      "sprite": "_C_Sirena_Hairband",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2862": {
+      "id": 2862,
+      "kind": "headgear",
+      "display_name": "C Blink Eyes Hanom",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Blink_Eyes_Hanom",
+      "sprite": "_C_Blink_Eyes_Hanom",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2863": {
+      "id": 2863,
+      "kind": "headgear",
+      "display_name": "C Diosa Rod",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Diosa_Rod",
+      "sprite": "_C_Diosa_Rod",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2864": {
+      "id": 2864,
+      "kind": "headgear",
+      "display_name": "C Bluehole Bubble",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Bluehole_Bubble",
+      "sprite": "_C_Bluehole_Bubble",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2865": {
+      "id": 2865,
+      "kind": "headgear",
+      "display_name": "C Tassie Helm",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Tassie_Helm",
+      "sprite": "_C_Tassie_Helm",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2866": {
+      "id": 2866,
+      "kind": "headgear",
+      "display_name": "C Aqua Marin",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Aqua_Marin",
+      "sprite": "_C_Aqua_Marin",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2867": {
+      "id": 2867,
+      "kind": "headgear",
+      "display_name": "C Aqua Marin N",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Aqua_Marin_N",
+      "sprite": "_C_Aqua_Marin_N",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2868": {
+      "id": 2868,
+      "kind": "headgear",
+      "display_name": "C Angler Dream",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Angler_Dream",
+      "sprite": "_C_Angler_Dream",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2869": {
+      "id": 2869,
+      "kind": "headgear",
+      "display_name": "C Deepsea Pearls Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Deepsea_Pearls_Hat",
+      "sprite": "_C_Deepsea_Pearls_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2870": {
+      "id": 2870,
+      "kind": "headgear",
+      "display_name": "Magical Cape",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Magical_Cape",
+      "sprite": "_Magical_Cape",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2871": {
+      "id": 2871,
+      "kind": "headgear",
+      "display_name": "Fan In Mouth Pp",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Fan_In_Mouth_PP",
+      "sprite": "_Fan_In_Mouth_PP",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2872": {
+      "id": 2872,
+      "kind": "headgear",
+      "display_name": "C Black Dragon Style2",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Black_Dragon_Style2",
+      "sprite": "_C_Black_Dragon_Style2",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2873": {
+      "id": 2873,
+      "kind": "headgear",
+      "display_name": "C Black Dragon Style3",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Black_Dragon_Style3",
+      "sprite": "_C_Black_Dragon_Style3",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2874": {
+      "id": 2874,
+      "kind": "headgear",
+      "display_name": "C Dana Rabbit Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Dana_Rabbit_Hat",
+      "sprite": "_C_Dana_Rabbit_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2875": {
+      "id": 2875,
+      "kind": "headgear",
+      "display_name": "C Momo Balloon Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Momo_Balloon_Hat",
+      "sprite": "_C_Momo_Balloon_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2876": {
+      "id": 2876,
+      "kind": "headgear",
+      "display_name": "C Boss Ka Hairpin",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Boss_Ka_Hairpin",
+      "sprite": "_C_Boss_Ka_Hairpin",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2877": {
+      "id": 2877,
+      "kind": "headgear",
+      "display_name": "C 70 Chocolate Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_70_Chocolate_Hat",
+      "sprite": "_C_70_Chocolate_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2878": {
+      "id": 2878,
+      "kind": "headgear",
+      "display_name": "Nord Onyx Helm",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Nord_Onyx_Helm",
+      "sprite": "_Nord_Onyx_Helm",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2879": {
+      "id": 2879,
+      "kind": "headgear",
+      "display_name": "Nord Platinum Helm",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Nord_Platinum_Helm",
+      "sprite": "_Nord_Platinum_Helm",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2880": {
+      "id": 2880,
+      "kind": "headgear",
+      "display_name": "C K Shaman Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_K_Shaman_Hat",
+      "sprite": "_C_K_Shaman_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2881": {
+      "id": 2881,
+      "kind": "headgear",
+      "display_name": "C Gat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Gat",
+      "sprite": "_C_Gat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2882": {
+      "id": 2882,
+      "kind": "headgear",
+      "display_name": "C Neo Ul Hat",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Neo_Ul_Hat",
+      "sprite": "_C_Neo_Ul_Hat",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2883": {
+      "id": 2883,
+      "kind": "headgear",
+      "display_name": "C Fluffy Candy Long",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Fluffy_Candy_Long",
+      "sprite": "_C_Fluffy_Candy_Long",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2884": {
+      "id": 2884,
+      "kind": "headgear",
+      "display_name": "C Fluffy Candy Long N",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Fluffy_Candy_Long_N",
+      "sprite": "_C_Fluffy_Candy_Long_N",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2885": {
+      "id": 2885,
+      "kind": "headgear",
+      "display_name": "C Pitaya Ramen Stall",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Pitaya_Ramen_Stall",
+      "sprite": "_C_Pitaya_Ramen_Stall",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2886": {
+      "id": 2886,
+      "kind": "headgear",
+      "display_name": "C Grapes Dresshat Wh",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_Grapes_Dresshat_WH",
+      "sprite": "_C_Grapes_Dresshat_WH",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2887": {
+      "id": 2887,
+      "kind": "headgear",
+      "display_name": "Rebel In Onlooker",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Rebel_in_Onlooker",
+      "sprite": "_Rebel_in_Onlooker",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2889": {
+      "id": 2889,
+      "kind": "headgear",
+      "display_name": "[衣装] ワイルドローズウィッグ",
+      "primary_itemid": 420974,
+      "itemids": [
+        420974
+      ],
+      "names": [
+        "[衣装] ワイルドローズウィッグ"
+      ],
+      "slots": [],
+      "const": "ACCESSORY_C_Wildrose_Wig",
+      "sprite": "_C_Wildrose_Wig",
+      "detail_url": "https://divine-pride.net/database/item/420974",
+      "source": "master"
+    },
+    "2890": {
+      "id": 2890,
+      "kind": "headgear",
+      "display_name": "[衣装] ワイルドローズウィッグ(装飾無し)",
+      "primary_itemid": 420975,
+      "itemids": [
+        420975
+      ],
+      "names": [
+        "[衣装] ワイルドローズウィッグ(装飾無し)"
+      ],
+      "slots": [],
+      "const": "ACCESSORY_C_Wildrose_Wig_N",
+      "sprite": "_C_Wildrose_Wig_N",
+      "detail_url": "https://divine-pride.net/database/item/420975",
+      "source": "master"
+    },
+    "2891": {
+      "id": 2891,
+      "kind": "headgear",
+      "display_name": "[衣装] ゴーストキューブの布",
+      "primary_itemid": 420976,
+      "itemids": [
+        420976
+      ],
+      "names": [
+        "[衣装] ゴーストキューブの布"
+      ],
+      "slots": [],
+      "const": "ACCESSORY_C_Ghost_Cube_Cloth",
+      "sprite": "_C_Ghost_Cube_Cloth",
+      "detail_url": "https://divine-pride.net/database/item/420976",
+      "source": "master"
+    },
+    "2892": {
+      "id": 2892,
+      "kind": "headgear",
+      "display_name": "[衣装] ハロウィンヘッドドレス",
+      "primary_itemid": 420977,
+      "itemids": [
+        420977
+      ],
+      "names": [
+        "[衣装] ハロウィンヘッドドレス"
+      ],
+      "slots": [],
+      "const": "ACCESSORY_C_Halloween_HD",
+      "sprite": "_C_Halloween_HD",
+      "detail_url": "https://divine-pride.net/database/item/420977",
+      "source": "master"
+    },
+    "2895": {
+      "id": 2895,
+      "kind": "headgear",
+      "display_name": "Costume: Halloween Candy Hair",
+      "primary_itemid": 420985,
+      "itemids": [
+        420985
+      ],
+      "names": [
+        "Costume: Halloween Candy Hair"
+      ],
+      "slots": [],
+      "const": "ACCESSORY_C_Halloween_Candy_Hair_B",
+      "sprite": "_C_Halloween_Candy_Hair",
+      "detail_url": "https://divine-pride.net/database/item/420985",
+      "source": "master"
+    },
+    "2896": {
+      "id": 2896,
+      "kind": "headgear",
+      "display_name": "Costume: Halloween Candy Hair (No Decoration)",
+      "primary_itemid": 420984,
+      "itemids": [
+        420984
+      ],
+      "names": [
+        "Costume: Halloween Candy Hair (No Decoration)"
+      ],
+      "slots": [],
+      "const": "ACCESSORY_C_HalloCandy_Hair_N_B",
+      "sprite": "_C_HalloCandy_Hair_N",
+      "detail_url": "https://divine-pride.net/database/item/420984",
+      "source": "master"
+    },
+    "2897": {
+      "id": 2897,
+      "kind": "headgear",
+      "display_name": "C Tw 2th Balloon V2",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_C_TW_2th_Balloon_v2",
+      "sprite": "_C_TW_2th_Balloon_v2",
+      "detail_url": null,
+      "source": "master"
+    },
+    "2898": {
+      "id": 2898,
+      "kind": "headgear",
+      "display_name": "Romantic Blue Flower",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [],
+      "const": "ACCESSORY_Romantic_Blue_Flower",
+      "sprite": "_Romantic_Blue_Flower",
       "detail_url": null,
       "source": "master"
     }
@@ -56994,6 +57850,434 @@
       ],
       "const": "ROBE_Magnus_Dominus",
       "sprite": "Magnus_Dominus",
+      "detail_url": null,
+      "source": "master"
+    },
+    "308": {
+      "id": 308,
+      "kind": "cape",
+      "display_name": "Robe C Clb Bs Bag B",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_CLB_BS_Bag_B",
+      "sprite": "C_CLB_BS_Bag_B",
+      "detail_url": null,
+      "source": "master"
+    },
+    "309": {
+      "id": 309,
+      "kind": "cape",
+      "display_name": "Robe C Clb Bs Bag M",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_CLB_BS_Bag_M",
+      "sprite": "C_CLB_BS_Bag_M",
+      "detail_url": null,
+      "source": "master"
+    },
+    "310": {
+      "id": 310,
+      "kind": "cape",
+      "display_name": "Robe C Clb Bs Bag F",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_CLB_BS_Bag_F",
+      "sprite": "C_CLB_BS_Bag_F",
+      "detail_url": null,
+      "source": "master"
+    },
+    "311": {
+      "id": 311,
+      "kind": "cape",
+      "display_name": "Robe C Clb Bs Bag Gm",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_CLB_BS_Bag_GM",
+      "sprite": "C_CLB_BS_Bag_GM",
+      "detail_url": null,
+      "source": "master"
+    },
+    "312": {
+      "id": 312,
+      "kind": "cape",
+      "display_name": "Robe C Clb Bs Bag Gf",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_CLB_BS_Bag_GF",
+      "sprite": "C_CLB_BS_Bag_GF",
+      "detail_url": null,
+      "source": "master"
+    },
+    "313": {
+      "id": 313,
+      "kind": "cape",
+      "display_name": "Robe C Stylish Arch Quiver",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Stylish_Arch_Quiver",
+      "sprite": "C_Stylish_Arch_Quiver",
+      "detail_url": null,
+      "source": "master"
+    },
+    "314": {
+      "id": 314,
+      "kind": "cape",
+      "display_name": "Robe C Adventures Backpack",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Adventures_Backpack",
+      "sprite": "C_Adventures_Backpack",
+      "detail_url": null,
+      "source": "master"
+    },
+    "315": {
+      "id": 315,
+      "kind": "cape",
+      "display_name": "Robe C Mushroom Umbrella Rd",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Mushroom_Umbrella_RD",
+      "sprite": "C_Mushroom_Umbrella_RD",
+      "detail_url": null,
+      "source": "master"
+    },
+    "316": {
+      "id": 316,
+      "kind": "cape",
+      "display_name": "Robe C Eddga Rest",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Eddga_Rest",
+      "sprite": "C_Eddga_Rest",
+      "detail_url": null,
+      "source": "master"
+    },
+    "317": {
+      "id": 317,
+      "kind": "cape",
+      "display_name": "Robe C Accordion Bag",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Accordion_Bag",
+      "sprite": "C_Accordion_Bag",
+      "detail_url": null,
+      "source": "master"
+    },
+    "318": {
+      "id": 318,
+      "kind": "cape",
+      "display_name": "Robe C Panda Bamboo",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Panda_Bamboo",
+      "sprite": "C_Panda_Bamboo",
+      "detail_url": null,
+      "source": "master"
+    },
+    "319": {
+      "id": 319,
+      "kind": "cape",
+      "display_name": "Robe C Star Glasspen",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Star_Glasspen",
+      "sprite": "C_Star_Glasspen",
+      "detail_url": null,
+      "source": "master"
+    },
+    "320": {
+      "id": 320,
+      "kind": "cape",
+      "display_name": "Robe C Thoughts Window",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Thoughts_Window",
+      "sprite": "C_Thoughts_Window ",
+      "detail_url": null,
+      "source": "master"
+    },
+    "321": {
+      "id": 321,
+      "kind": "cape",
+      "display_name": "Robe C Tassie Anchor",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Tassie_Anchor",
+      "sprite": "C_Tassie_Anchor",
+      "detail_url": null,
+      "source": "master"
+    },
+    "322": {
+      "id": 322,
+      "kind": "cape",
+      "display_name": "Robe C Gerero Spear",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Gerero_Spear",
+      "sprite": "C_Gerero_Spear",
+      "detail_url": null,
+      "source": "master"
+    },
+    "323": {
+      "id": 323,
+      "kind": "cape",
+      "display_name": "Robe C S Thanatos Wing",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_S_Thanatos_Wing",
+      "sprite": "C_S_Thanatos_Wing",
+      "detail_url": null,
+      "source": "master"
+    },
+    "324": {
+      "id": 324,
+      "kind": "cape",
+      "display_name": "Robe C Tuna Fishing",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Tuna_Fishing",
+      "sprite": "C_Tuna_Fishing",
+      "detail_url": null,
+      "source": "master"
+    },
+    "325": {
+      "id": 325,
+      "kind": "cape",
+      "display_name": "Robe C 2026rosfesta 1st",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_2026RosFesta_1st",
+      "sprite": "C_2026RosFesta_1st",
+      "detail_url": null,
+      "source": "master"
+    },
+    "326": {
+      "id": 326,
+      "kind": "cape",
+      "display_name": "Robe C 2026rosfesta 2nd",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_2026RosFesta_2nd",
+      "sprite": "C_2026RosFesta_2nd",
+      "detail_url": null,
+      "source": "master"
+    },
+    "327": {
+      "id": 327,
+      "kind": "cape",
+      "display_name": "Robe C 2026rosfesta 3rd",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_2026RosFesta_3rd",
+      "sprite": "C_2026RosFesta_3rd",
+      "detail_url": null,
+      "source": "master"
+    },
+    "328": {
+      "id": 328,
+      "kind": "cape",
+      "display_name": "Robe C 2026rosfesta 4th",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_2026RosFesta_4th",
+      "sprite": "C_2026RosFesta_4th",
+      "detail_url": null,
+      "source": "master"
+    },
+    "329": {
+      "id": 329,
+      "kind": "cape",
+      "display_name": "Robe C Han Do",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Han_Do",
+      "sprite": "C_Han_Do",
+      "detail_url": null,
+      "source": "master"
+    },
+    "330": {
+      "id": 330,
+      "kind": "cape",
+      "display_name": "Robe C Smokie Basket",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Smokie_Basket",
+      "sprite": "C_Smokie_Basket",
+      "detail_url": null,
+      "source": "master"
+    },
+    "331": {
+      "id": 331,
+      "kind": "cape",
+      "display_name": "Robe C Cat Fryingpan",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Cat_Fryingpan",
+      "sprite": "C_Cat_Fryingpan",
+      "detail_url": null,
+      "source": "master"
+    },
+    "332": {
+      "id": 332,
+      "kind": "cape",
+      "display_name": "Robe Dimension Criminal Arc",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_Dimension_Criminal_Arc",
+      "sprite": "Dimension_Criminal_Arc",
+      "detail_url": null,
+      "source": "master"
+    },
+    "333": {
+      "id": 333,
+      "kind": "cape",
+      "display_name": "[衣装] ローズガーデンサイズ",
+      "primary_itemid": 480941,
+      "itemids": [
+        480941
+      ],
+      "names": [
+        "[衣装] ローズガーデンサイズ"
+      ],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Rose_Garden_Scythe",
+      "sprite": "C_Rose_Garden_Scythe",
+      "detail_url": "https://divine-pride.net/database/item/480941",
+      "source": "master"
+    },
+    "334": {
+      "id": 334,
+      "kind": "cape",
+      "display_name": "[衣装] デビルリングの小悪魔リュック",
+      "primary_itemid": 480942,
+      "itemids": [
+        480942
+      ],
+      "names": [
+        "[衣装] デビルリングの小悪魔リュック"
+      ],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_C_Deviling_Little_BP",
+      "sprite": "C_Deviling_Little_BP",
+      "detail_url": "https://divine-pride.net/database/item/480942",
+      "source": "master"
+    },
+    "338": {
+      "id": 338,
+      "kind": "cape",
+      "display_name": "Robe Nox Gratia",
+      "primary_itemid": null,
+      "itemids": [],
+      "names": [],
+      "slots": [
+        "披肩"
+      ],
+      "const": "ROBE_Nox_Gratia",
+      "sprite": "Nox_Gratia",
       "detail_url": null,
       "source": "master"
     }

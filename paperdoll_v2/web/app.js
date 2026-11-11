@@ -419,7 +419,7 @@ const languageOptions = {
   },
 };
 
-const appVersion = "20260916-paperdoll-v2-startup-1-img1-26544f23f610-gz1-3ff009f5c091";
+const appVersion = "20260916-paperdoll-v2-startup-1-img1-3b98b004a34e-gz1-b5bb19af2134";
 const storageKey = "nori.paperdoll.state.v2";
 const closetStorageKey = "nori.paperdoll.closet.v2";
 const customBackgroundStorageKey = "nori.paperdoll.custom-background.v2";
